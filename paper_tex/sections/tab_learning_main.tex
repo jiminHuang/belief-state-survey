@@ -5,20 +5,20 @@
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}llll@{}}
 \toprule
-Level & Credited object & Signed by $o_{t+1}$? & Representative \\
+Level & Credited object & Supervisory source & Representative \\
 \midrule
-Output & finished response & no & RLHF, DPO \\
-Trajectory & sampled steps & no & PRMs, GRPO, LATS \\
-Interaction & actions, tool calls & no (task reward) & ArCHer, RAGEN, HiPER \\
-Interaction & memory operations & no (operation reward) & MEM1, Memento, Memory-R2 \\
-State & written belief & closed-world oracle & CBM \\
+Output & finished response & human preference & RLHF, DPO \\
+Trajectory & sampled steps & verifier, PRM & PRMs, GRPO, LATS \\
+Interaction & actions, tool calls & task reward & ArCHer, RAGEN, HiPER \\
+Interaction & memory operations & task reward, verifier & MEM1, Memory-R1, VerMem \\
+State & written belief & symbolic verifier & CBM \\
 State & claim + certainty & calibration target & Agent-BRACE \\
-State & posterior tag & Bayesian teacher & BOND \\
+State & posterior over claims & Bayesian teacher & BOND, DEL-ToM \\
 State & state prediction & simulator state & VAGEN, Dyna-Think, SPA \\
 State & belief over answers & known answer & T3, IGPO, InfoPO \\
-State & written belief & \emph{own prediction} & (none published) \\
+State & written belief & \emph{own later observation} & (none published) \\
 \bottomrule
 \end{tabular}}
-\caption{Learning signals by credited object and where the sign of the signal comes from (Section~\ref{sec:learning}); the full version with feedback source, granularity, and evidence level is Table~\ref{tab:learning} in the appendix.}
+\caption{Learning signals on two axes: the object that receives the gradient and the source that signs it (Section~\ref{sec:learning}); the full version with granularity and evidence level is Table~\ref{tab:learning} in the appendix.}
 \label{tab:learningmain}
 \end{table}

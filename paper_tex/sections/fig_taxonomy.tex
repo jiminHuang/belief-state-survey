@@ -9,12 +9,12 @@ for tree={
 }
 [{\textbf{Belief state} in LLM\\decision agents (\S\ref{sec:formulation})\\\op{Construct} $\cdot$ \op{Test} $\cdot$ \op{Revise}\\462 papers, 2020--2026}, fill=blue!10
   [{\S\ref{sec:representation} \textbf{Who maintains}\\\textbf{the belief}}, fill=gray!10
-    [{Context as state (146)}, [{CoT \citep{wei2022chain}, ReAct \citep{yao2023react}; drifts as context accumulates \citep{geng2025accumulating,laban2025lost}}]]
-    [{External memory (109)}, [{MemGPT \citep{packer2023memgpt}, Generative Agents \citep{park2023generative}, A-MEM \citep{xu2025amem}, Mem0 \citep{chhikara2025mem0};\\structured: Zep \citep{rasmussen2025zep}, AGM-revision graphs \citep{park2026graph}}]]
-    [{Probabilistic memory (9)}, [{BeliefMem \citep{liao2026belief}, D-MEM \citep{song2026d}, Nous \citep{singh2026when}}]]
-    [{External Bayesian filter (20)}, [{Belief-State Engine \citep{chattopadhayay2026belief}, Belief at Risk \citep{dixon2026belief}, BayesEvolve \citep{wu2026bayesevolve},\\Align-While-Search \citep{bae2025align}, CA-BED \citep{arnould2026cabed}}]]
-    [{Model-written belief (55)}, [{calibrated: DST \citep{lee2021dialogue}, Agent-BRACE \citep{singh2026agent}, BOND \citep{cui2026distilling}; goal-state: ReflAct \citep{kim2025reflact}, CoEx \citep{kim2025coex}}] [{testable: Hypothetical Minds \citep{cross2024hypothetical}, CBM \citep{xu2026should}, EvoSCM \citep{zhao2026evoscm}}]]
-    [{Learned world model (51)}, [{Dreamer \citep{hafner2023mastering}, RAP \citep{hao2023reasoning}, BB-WM \citep{kumar2026towards}, Qwen-AgentWorld \citep{zuo2026qwenagentworld};\\executable: PatchWorld \citep{bai2026patchworld}; written + parametric check: Hybrid-WM \citep{song2026agent}}]]
+    [{Context as state (146; 60 P)}, [{CoT \citep{wei2022chain}, ReAct \citep{yao2023react}; drifts as context accumulates \citep{geng2025accumulating,laban2025lost}}]]
+    [{External memory (109; 34 P)}, [{MemGPT \citep{packer2023memgpt}, Generative Agents \citep{park2023generative}, A-MEM \citep{xu2025amem}, Mem0 \citep{chhikara2025mem0};\\structured: Zep \citep{rasmussen2025zep}, AGM-revision graphs \citep{park2026graph}}]]
+    [{Probabilistic memory (9; 3 P)}, [{BeliefMem \citep{liao2026belief}, D-MEM \citep{song2026d}, Nous \citep{singh2026when}}]]
+    [{External Bayesian filter (20; 7 P)}, [{Belief-State Engine \citep{chattopadhayay2026belief}, Belief at Risk \citep{dixon2026belief}, BayesEvolve \citep{wu2026bayesevolve},\\Align-While-Search \citep{bae2025align}, CA-BED \citep{arnould2026cabed}}]]
+    [{Model-written belief (55; 20 P)}, [{calibrated: DST \citep{lee2021dialogue}, Agent-BRACE \citep{singh2026agent}, BOND \citep{cui2026distilling}; goal-state: ReflAct \citep{kim2025reflact}, CoEx \citep{kim2025coex}}] [{testable: Hypothetical Minds \citep{cross2024hypothetical}, CBM \citep{xu2026should}, EvoSCM \citep{zhao2026evoscm}}]]
+    [{Learned world model (51; 18 P)}, [{Dreamer \citep{hafner2023mastering}, RAP \citep{hao2023reasoning}, BB-WM \citep{kumar2026towards}, Qwen-AgentWorld \citep{zuo2026qwenagentworld};\\executable: PatchWorld \citep{bai2026patchworld}; written + parametric check: Hybrid-WM \citep{song2026agent}}]]
   ]
   [{\S\ref{sec:revision} \textbf{How revision fails}\\\textbf{and what triggers it}}, fill=gray!10
     [{Base-model defaults}, [{sycophancy \citep{sharma2023towards,atwell2025basil}, exponential forgetting \citep{zhang2025large}, memory writes the misconception in \citep{bensal2026recalling}}]]
@@ -23,11 +23,11 @@ for tree={
     [{Triggers}, [{contradiction: TOKI \citep{wang2026toki}; before commitment: SAVeR \citep{yuan2026verify}; surprise: D-MEM \citep{song2026d}, WorldEvolver \citep{zhang2026selfevolvingx}}]]
   ]
   [{\S\ref{sec:learning} \textbf{Which object}\\\textbf{receives credit}}, fill=yellow!25
-    [{Output (54)}, fill=yellow!10, [{RLHF \citep{ouyang2022training}, DPO \citep{rafailov2023direct}, Self-Refine \citep{madaan2023self}}]]
-    [{Trajectory (72)}, fill=yellow!10, [{PRMs \citep{lightman2023lets}, GRPO \citep{shao2024deepseekmath}, LATS \citep{zhou2023language}, AgentRefine \citep{fu2025agentrefine}, T3 \citep{zou2025t3}}]]
-    [{Interaction (93)}, fill=yellow!10, [{actions: ArCHer \citep{zhou2024archer}, RAGEN \citep{wang2025ragen}, GiGPO \citep{feng2025group}, AgentPRM \citep{xi2025agentprm}, IGPO \citep{wang2025information}}] [{memory operations: MEM1 \citep{zhou2025mem1}, Memory-R1 \citep{yan2025memory}, AgeMem \citep{yu2026agentic}, VerMem \citep{sun2026verifiable}}]]
-    [{World-model loss (19)}, fill=yellow!10, [{Dyna-Think \citep{yu2025dynathink}, SPA \citep{chen2025why}, RLVR-World \citep{wu2025rlvrworld}}]]
-    [{State (39)}, fill=yellow!10, [{signed by a simulator or verifier: VAGEN \citep{wang2025vagen}, CBM \citep{xu2026should}; by a teacher: BOND \citep{cui2026distilling}, DEL-ToM \citep{wu2025deltom};\\by a calibration target: Agent-BRACE \citep{singh2026agent}; by the agent's own prediction: \emph{none}}]]
+    [{Output (54; 32 P)}, fill=yellow!10, [{RLHF \citep{ouyang2022training}, DPO \citep{rafailov2023direct}, Self-Refine \citep{madaan2023self}}]]
+    [{Trajectory (72; 23 P)}, fill=yellow!10, [{PRMs \citep{lightman2023lets}, GRPO \citep{shao2024deepseekmath}, LATS \citep{zhou2023language}, AgentRefine \citep{fu2025agentrefine}, T3 \citep{zou2025t3}}]]
+    [{Interaction (93; 32 P)}, fill=yellow!10, [{actions: ArCHer \citep{zhou2024archer}, RAGEN \citep{wang2025ragen}, GiGPO \citep{feng2025group}, AgentPRM \citep{xi2025agentprm}, IGPO \citep{wang2025information}}] [{memory operations: MEM1 \citep{zhou2025mem1}, Memory-R1 \citep{yan2025memory}, AgeMem \citep{yu2026agentic}, VerMem \citep{sun2026verifiable}}]]
+    [{World-model loss (19; 7 P)}, fill=yellow!10, [{Dyna-Think \citep{yu2025dynathink}, SPA \citep{chen2025why}, RLVR-World \citep{wu2025rlvrworld}}]]
+    [{State (39; 10 P)}, fill=yellow!10, [{signed by a simulator or verifier: VAGEN \citep{wang2025vagen}, CBM \citep{xu2026should}; by a teacher: BOND \citep{cui2026distilling}, DEL-ToM \citep{wu2025deltom};\\by a calibration target: Agent-BRACE \citep{singh2026agent}; by the agent's own prediction: \emph{none}}]]
   ]
   [{\S\ref{sec:evidence} \textbf{Evidence acquisition}\\\textbf{conditioned on belief}}, fill=gray!10
     [{BayesEvolve \citep{wu2026bayesevolve}, EvoSCM \citep{zhao2026evoscm}, Align-While-Search \citep{bae2025align}, CA-BED \citep{arnould2026cabed}, InfoPO \citep{kong2026infopo}}]
@@ -40,6 +40,6 @@ for tree={
   ]
 ]
 }}
-\caption{Taxonomy of the survey with representative systems. Counts in parentheses are the number of included papers coded in each class (Appendix~\ref{app:method}); the credited object (yellow) is the axis every method is placed on, and its last leaf is empty. Table~\ref{tab:masterfull} in the appendix places every included paper.}
+\caption{Taxonomy of the survey with representative systems. Counts in parentheses are the included papers coded in each class and, after the semicolon, how many of them are peer-reviewed (Appendix~\ref{app:method}); the credited object (yellow) is the axis every method is placed on, and its last leaf is empty. Table~\ref{tab:masterfull} in the appendix places every included paper.}
 \label{fig:taxonomy}
 \end{figure*}

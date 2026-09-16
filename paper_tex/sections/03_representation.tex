@@ -3,7 +3,7 @@
 
 \input{tab_reprprops}
 
-We order representations by \emph{who maintains the belief}, from no one to an explicit estimator, and by whether the belief is \emph{testable}, that is, commits to a prediction that a returned observation can falsify. Table~\ref{tab:reprprops} summarises the classes; Figure~\ref{fig:repr} and Table~\ref{tab:master} in the appendix place every system on both axes.
+We order representations by two attributes rather than by method family: the \emph{locus} of the belief (in the context, in a store outside the model, in an external estimator, or in learned dynamics) and its \emph{form} (a trace, a claim, or a distribution). The classes in Table~\ref{tab:reprprops} are locus--form pairs, so a system can occupy more than one, and the last column records which of conditions (i)--(iii) each class meets; Figure~\ref{fig:repr} and Table~\ref{tab:master} in the appendix place every system.
 
 \subsection{Context and Memory}
 \label{sec:repr:memory}
@@ -22,7 +22,7 @@ A different line takes the belief out of the model. The model maps evidence to a
 
 The third line keeps the belief in context but gives it structure the model writes and reads. Dialogue state tracking wrote a slot-value belief in 2021 \citep{lee2021dialogue}, verbalised confidence attached a probability to an answer \citep{lin2022teaching,kadavath2022language}, 2024 agents wrote beliefs about tasks, opponents, and markets \citep{kim2024qube,christakopoulou2024agents,cross2024hypothetical,yu2024fincon}, in 2025 MEM1 and MemAgent learned to overwrite a fixed written state each turn \citep{zhou2025mem1,yu2025memagent}, ReflAct reflected on a goal state before each action \citep{kim2025reflact}, and CoEx kept a neurosymbolic belief that co-evolves with exploration \citep{kim2025coex}. The newest systems add uncertainty and verification to the written object, from certainty tags and Bayesian-teacher posteriors to symbolic verification and populations of causal models \citep{singh2026agent,murphy2026agentic,cui2026distilling,xu2026should,chen2026beliefcalibrated,seo2026assumptions,giovannelli2026chal,zhao2026evoscm}.
 
-Testability separates them, and we define it operationally: a written belief is testable if it contains a statement about a future observation with a horizon, so that the returned observation yields a signed error for that statement. By this definition most written beliefs are calibrated but not testable: they state confidence or revise the belief but never name the observation that would falsify it. Hypothetical Minds, CBM, and EvoSCM do.
+Condition (iii) separates them: a written belief is testable only if it names a future observation with a horizon, so that the returned observation yields a signed error. Most written beliefs are calibrated but not testable, stating confidence without naming what would falsify it; Hypothetical Minds, CBM, and EvoSCM do.
 
 \subsection{Learned World Models}
 \label{sec:repr:wm}

@@ -3,20 +3,24 @@
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.08}
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{@{}lccccl@{}}
+\begin{tabular}{@{}lcccccl@{}}
 \toprule
-Who maintains the belief & Written & Uncert. & Testable & Auditable & Example \\
+Locus and form & Written & Uncert. & Testable & Auditable & Belief & Example \\
 \midrule
-Context as state & \hbhalf & \hbnone & \hbnone & \hbnone & ReAct \\
-External memory & \hbnone & \hbnone & \hbnone & \hbhalf & MemGPT \\
-Probabilistic memory & \hbnone & \hbfull & \hbnone & \hbhalf & Nous \\
-External Bayesian filter & \hbnone & \hbfull & \hbfull & \hbfull & Belief-State Engine \\
-Written, calibrated & \hbfull & \hbfull & \hbnone & \hbhalf & Agent-BRACE, BOND \\
-Written, testable & \hbfull & \hbhalf & \hbfull & \hbhalf & CBM, EvoSCM \\
-Learned world model & \hbnone & \hbhalf & \hbfull & \hbnone & Dreamer, BB-WM \\
-Written + parametric check & \hbfull & \hbfull & \hbfull & \hbhalf & Hybrid-WM \\
+\grpp{In the context}
+Trace as state & \hbhalf & \hbnone & \hbnone & \hbnone & \hbnone & ReAct \\
+Written claim, calibrated & \hbfull & \hbfull & \hbnone & \hbhalf & \hbhalf & Agent-BRACE, BOND \\
+Written claim, testable & \hbfull & \hbhalf & \hbfull & \hbhalf & \hbfull & CBM, EvoSCM \\
+\grpp{In a store outside the model}
+Trace store & \hbnone & \hbnone & \hbnone & \hbhalf & \hbnone & MemGPT, A-MEM \\
+Claim store with probabilities & \hbnone & \hbfull & \hbnone & \hbhalf & \hbfull & Nous, BeliefMem \\
+\grpp{In an external estimator}
+Bayesian filter over fixed space & \hbnone & \hbfull & \hbfull & \hbfull & \hbfull & Belief-State Engine \\
+\grpp{In learned dynamics}
+Latent world model & \hbnone & \hbhalf & \hbfull & \hbnone & \hbhalf & Dreamer, BB-WM \\
+Written claim + parametric check & \hbfull & \hbfull & \hbfull & \hbhalf & \hbfull & Hybrid-WM \\
 \bottomrule
 \end{tabular}}
-\caption{Representation classes. \emph{Written}: the model writes and reads the belief; \emph{Uncert.}: it carries uncertainty; \emph{Testable}: it commits to a falsifiable prediction; \emph{Auditable}: it can be validated against a closed-form oracle. \hbfull\ yes, \hbhalf\ partly, \hbnone\ no.}
+\caption{Representation classes as locus--form pairs. \emph{Written}: the model writes and reads the belief; \emph{Uncert.}: it carries uncertainty; \emph{Testable}: it commits to a falsifiable prediction; \emph{Auditable}: it can be validated against a closed-form oracle; \emph{Belief}: meets conditions (i)--(iii) of Section~\ref{sec:formulation}. \hbfull\ yes, \hbhalf\ partly, \hbnone\ no.}
 \label{tab:reprprops}
 \end{table}
