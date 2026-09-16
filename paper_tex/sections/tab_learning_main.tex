@@ -1,11 +1,11 @@
 \begin{table}[t]
 \centering\scriptsize
 \setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.08}
+\renewcommand{\arraystretch}{1.0}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}llll@{}}
 \toprule
-Level & Credited object & Supervisory source & Representative \\
+Level & Credited object & Likelihood from & Representative \\
 \midrule
 Output & finished response & human preference & RLHF, DPO \\
 Trajectory & sampled steps & verifier, PRM & PRMs, GRPO, LATS \\
@@ -16,9 +16,9 @@ State & claim + certainty & calibration target & Agent-BRACE \\
 State & posterior over claims & Bayesian teacher & BOND, DEL-ToM \\
 State & state prediction & simulator state & VAGEN, Dyna-Think, SPA \\
 State & belief over answers & known answer & T3, IGPO, InfoPO \\
-State & written belief & \emph{own later observation} & (none published) \\
+State & written belief & \emph{own later observation} & (none in corpus) \\
 \bottomrule
 \end{tabular}}
-\caption{Learning signals on two axes: the object that receives the gradient and the source that signs it (Section~\ref{sec:learning}); the full version with granularity and evidence level is Table~\ref{tab:learning} in the appendix.}
+\caption{Learning signals on two axes: the object that receives the gradient and where the likelihood that signs it comes from (Section~\ref{sec:learning}); the full version with granularity and evidence level is Table~\ref{tab:learning} in the appendix.}
 \label{tab:learningmain}
 \end{table}

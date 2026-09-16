@@ -3,7 +3,7 @@
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lllllccc}
 \toprule
-Level & Representative methods & Feedback source & Granularity & Signed by returned $o_{t+1}$ & Delayed evidence & Partial obs. & Evidence \\
+Level & Representative methods & Likelihood from & Granularity & Signed by returned $o_{t+1}$ & Delayed evidence & Partial obs. & Evidence \\
 \midrule
 Output & SFT, RLHF, DPO \citep{ouyang2022training,rafailov2023direct} & demos, preferences & response & \xmark & \xmark & \xmark & P \\
 Trajectory & PPO, GRPO, PRMs \citep{schulman2017proximal,shao2024deepseekmath,lightman2023lets} & verifier, PRM & step / rollout & \xmark & \xmark & \xmark & P \\
@@ -14,6 +14,6 @@ State & Agent-BRACE \citep{singh2026agent} & joint RL, calibration & claim + cer
 State & BOND \citep{cui2026distilling} & Bayesian teacher & posterior tag & teacher & \xmark & \cmark & A \\
 \bottomrule
 \end{tabular}}
-\caption{Learning signals by credited object. Evidence: P = peer-reviewed venue, A = arXiv preprint at the time of writing.}
+\caption{Learning signals by credited object, with the source of the likelihood that signs them. Evidence: P = peer-reviewed venue, A = arXiv preprint at the time of writing.}
 \label{tab:learning}
 \end{table*}

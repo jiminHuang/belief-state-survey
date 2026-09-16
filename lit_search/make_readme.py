@@ -12,8 +12,8 @@ for line in old.splitlines():
     if line.startswith("### "): sec = line[4:].strip()
     m = re.match(r"\| \[(.*?)\]\(", line)
     if m and sec: prev[re.sub(r"[^a-z0-9]", "", m.group(1).lower())] = sec
-SEC = {"3": "Belief representation (who maintains the belief)", "4": "Belief revision and failure modes", "5": "Learning signals by credited object",
-       "6": "Belief-guided evidence acquisition", "7": "Evaluation and benchmarks"}
+SEC = {"3": "The state term: where the belief lives and who writes it", "4": "The transition term: revision and its failures", "5": "The likelihood term as a learning signal",
+       "6": "The likelihood term as a choice of evidence", "7": "The likelihood term as a metric: evaluation and benchmarks"}
 ORDER = list(SEC.values()) + ["Other"]
 groups = {k: [] for k in ORDER}
 for r in rows:

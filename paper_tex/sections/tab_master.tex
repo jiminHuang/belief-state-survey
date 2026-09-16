@@ -4,7 +4,7 @@
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lcllllc}
 \toprule
-System & Year & Belief kept by & Credited & Revision trigger & Metric & Ev. \\
+System & Year & State kept by & Credited & Revision trigger & Metric & Ev. \\
 \midrule
 Schema-driven DST \citep{lee2021dialogue} & 2021 & written & none & dialogue history plus schema\ldots & \cmark & P \\
 Verbalized Uncertainty \citep{lin2022teaching} & 2022 & written & output & fine-tuning on calibrated\ldots & \cmark & P \\
@@ -29,7 +29,7 @@ ReflectiChain\ldots \citep{luo2026topology} & 2026 & world model & trajectory & 
 \end{tabular}\hfill
 \begin{tabular}{lcllllc}
 \toprule
-System & Year & Belief kept by & Credited & Revision trigger & Metric & Ev. \\
+System & Year & State kept by & Credited & Revision trigger & Metric & Ev. \\
 \midrule
 Cyclic subtask graphs \citep{gharzeddine2026complete} & 2026 & written & none & state-analysis-and-routing\ldots &  & A \\
 CHAL \citep{giovannelli2026chal} & 2026 & written & none & gradient-informed revision on\ldots & $\circ$ & A \\
@@ -51,6 +51,6 @@ Semantic Bayesian World\ldots \citep{soru2026semantic} & 2026 & ext.\ filter & n
 Belief-State Engine \citep{chattopadhayay2026belief} & 2026 & ext.\ filter & none (prompting) & Bayesian posterior & \cmark & A \\
 \bottomrule
 \end{tabular}}
-\caption{Systems with an explicit belief mechanism, by year. Belief kept by: who maintains the belief (Section~\ref{sec:representation}); Credited: the object that receives the learning signal under the criterion of Section~\ref{sec:learning}, \emph{none} if the belief is not trained; Metric: \cmark\ reports a belief-level quantity, $\circ$ a proxy; Ev.: P peer-reviewed, A arXiv preprint.}
+\caption{Systems with an explicit belief mechanism, by year. State kept by: who maintains the belief (Section~\ref{sec:representation}); Credited: the object that receives the learning signal under the criterion of Section~\ref{sec:learning}, \emph{none} if the belief is not trained; Metric: \cmark\ reports a belief-level quantity, $\circ$ a proxy; Ev.: P peer-reviewed, A arXiv preprint.}
 \label{tab:master}
 \end{table*}

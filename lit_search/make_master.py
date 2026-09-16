@@ -28,7 +28,7 @@ N = 52
 chunks = [lines[i:i+N] for i in range(0, len(lines), N)]
 o = []
 for i, ch in enumerate(chunks):
-    o.append("\\begin{table*}[t]\n\\centering\\tiny\n\\setlength{\\tabcolsep}{2.5pt}\n\\resizebox{\\textwidth}{!}{%\n\\begin{tabular}{lcllllc}\n\\toprule\nSystem & Year & Belief kept by & Credited & Revision trigger & Metric & Ev. \\\\\n\\midrule\n" + "\n".join(ch) +
+    o.append("\\begin{table*}[t]\n\\centering\\tiny\n\\setlength{\\tabcolsep}{2.5pt}\n\\resizebox{\\textwidth}{!}{%\n\\begin{tabular}{lcllllc}\n\\toprule\nSystem & Year & State kept by & Credited & Revision trigger & Metric & Ev. \\\\\n\\midrule\n" + "\n".join(ch) +
              "\n\\bottomrule\n\\end{tabular}}\n\\caption{" + ("Every paper included after full-text reading, ordered by year and first author" if i == 0 else f"Master table, continued ({i+1}/{len(chunks)})") +
              ". \\emph{Metric}: \\cmark\\ belief-level metric reported, \\pmark\\ proxy only. \\emph{Ev.}: P peer-reviewed, A preprint.}\n\\label{tab:masterfull" + ("" if i == 0 else str(i+1)) + "}\n\\end{table*}\n")
 open(out, "w").write("\n".join(o)); print(len(lines), "rows in", len(chunks), "tables;", len(missing), "without bib entry:", missing[:10], file=sys.stderr)

@@ -2,7 +2,7 @@
 
 % ACL Rolling Review (ARR 2026) template. Change "review" to "final" for camera-ready,
 % or to "preprint" for a non-anonymous arXiv version.
-\usepackage[review]{acl}
+\usepackage[preprint]{acl}
 
 \usepackage{times}
 \usepackage{latexsym}
@@ -41,9 +41,13 @@
 \newcommand{\grpp}[1]{\rowcolor{gray!12}\multicolumn{7}{@{}l@{}}{\textsc{#1}}\\}
 \usepackage{pifont}
 
+\usepackage{url}
+\newcommand{\artifacturl}{\footnote{\url{https://github.com/jiminHuang/belief-state-survey}}}
 \title{From Memory to Belief: A Survey of State Maintenance and Belief Revision in LLM Decision Agents}
 
-\author{Anonymous ARR submission}
+\author{Jimin Huang$^{1,2}$ \quad Yuyan Wang$^{1}$ \quad Xueqing Peng$^{2}$ \quad Sophia Ananiadou$^{1}$ \quad Jun'ichi Tsujii$^{3}$ \\[2pt]
+{\normalsize $^1$The University of Manchester \quad $^2$The Fin AI \quad $^3$AIST, Japan} \\[2pt]
+{\normalsize\texttt{jimin.huang@postgrad.manchester.ac.uk}}}
 
 \begin{document}
 \maketitle
@@ -62,7 +66,7 @@ Language-model agents now plan, call tools, and act over many steps, and the fai
 \input{07_evaluation}
 \input{08_discussion}
 \input{08_challenges}
-\input{09_conclusion}
+\input{09_conclusion_preprint}
 
 \section*{Limitations}
 This survey covers work indexed by OpenAlex and arXiv from January 2020 to 15 September 2026 and retrieved by the keyword protocol and four rounds of citation-tree expansion in Appendix~\ref{app:method}; papers that describe belief maintenance without using any of our search terms may be missed. Our taxonomy assigns each method one source per term, although several systems combine sources; the codings are ours and were not independently replicated. Appendix~\ref{app:method} reports how each insight fares on the peer-reviewed subset alone. The survey reports numbers as stated by the cited papers and does not re-run any method; headline figures from preprints may change in later versions. Finance is used as the running example because delayed and partially observed evidence is the norm there; the taxonomy itself is domain-agnostic, but we have not validated it against embodied or dialogue agents in the same depth.

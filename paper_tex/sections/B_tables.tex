@@ -8,7 +8,7 @@
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{llcccccl}
 \toprule
-Class & Method & Model-written & Append-only & Uncertainty & \op{Test} & \op{Revise} & Domain \\
+Class & Method & State written by model & Append-only & Uncertainty & Likelihood (\op{Test}) & Transition (\op{Revise}) & Domain \\
 \midrule
 Context as state & ReAct \citep{yao2023react} & \cmark & \cmark & \xmark & \xmark & \xmark & general \\
 External memory & MemGPT \citep{packer2023memgpt} & \xmark & \xmark & \xmark & \xmark & store update & dialogue \\
@@ -24,7 +24,7 @@ Model-written & EvoSCM \citep{zhao2026evoscm} & \cmark & \cmark & population & \
 World model & BB-WM \citep{kumar2026towards} & \xmark & \xmark & latent & \cmark & learned & general \\
 \bottomrule
 \end{tabular}}
-\caption{Belief representation by who maintains the belief. \op{Test}: the belief commits to a falsifiable prediction. All 2026 entries are arXiv preprints at the time of writing; ReAct and MemGPT are peer-reviewed.}
+\caption{The state term by who maintains it, with the transition and likelihood terms each system carries. \op{Test}: the belief commits to a falsifiable prediction. All 2026 entries are arXiv preprints at the time of writing; ReAct and MemGPT are peer-reviewed.}
 \label{tab:representation}
 \end{table*}
 
