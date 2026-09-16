@@ -1,0 +1,23 @@
+\begin{figure}[t]
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tikzpicture}[font=\scriptsize,
+  tok/.style={draw, minimum width=9mm, minimum height=6mm, align=center, font=\tiny},
+  lvl/.style={font=\tiny, anchor=east}]
+% one span of a trajectory: b_t (written belief) then a_t (action), then o_{t+1}
+\node[tok, fill=yellow!25] (b1) at (0,0) {belief\\$\belief_t$};
+\node[tok, fill=yellow!25, right=0mm of b1] (b2) {\op{Predict}};
+\node[tok, fill=gray!15, right=0mm of b2] (r1) {step};
+\node[tok, fill=gray!15, right=0mm of r1] (r2) {step};
+\node[tok, fill=blue!12, right=0mm of r2] (a1) {action\\$a_t$};
+\node[tok, dashed, right=1.5mm of a1] (o1) {$o_{t+1}$};
+\node[tok, fill=gray!15, right=1.5mm of o1] (nx) {$\cdots$};
+% credit brackets
+\draw[decorate, decoration={brace, amplitude=2pt}, thick] ([yshift=4mm]b1.north west) -- ([yshift=4mm]a1.north east) node[midway, above=2pt, font=\tiny] {\textbf{output / trajectory}: reward the response or every step};
+\draw[decorate, decoration={brace, amplitude=2pt, mirror}, thick] ([yshift=-4mm]a1.south west) -- ([yshift=-4mm]a1.south east) node[midway, below=2pt, font=\tiny] {\textbf{interaction}: reward the action};
+\draw[decorate, decoration={brace, amplitude=2pt, mirror}, thick, red!60!black] ([yshift=-11mm]b1.south west) -- ([yshift=-11mm]b2.south east) node[midway, below=2pt, font=\tiny, text=red!60!black] {\textbf{state}: reward the belief, signed by $o_{t+1}$};
+\draw[-{Latex}, red!60!black, thick] (o1.south) to[out=-90, in=-90, looseness=0.9] node[pos=0.5, below, font=\tiny, text=red!60!black] {surprise} ([xshift=2mm,yshift=-1mm]b2.south);
+\end{tikzpicture}}
+\caption{The credited object on one span of a trajectory. Output- and trajectory-level credit reaches text generated from the context; interaction-level credit reaches the action; state-level credit reaches the written belief, and its sign comes from the observation returned after the action.}
+\label{fig:credit}
+\end{figure}

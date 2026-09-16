@@ -1,0 +1,56 @@
+\begin{table*}[t]
+\centering\tiny
+\setlength{\tabcolsep}{2.5pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcllllc}
+\toprule
+System & Year & Belief kept by & Credited & Revision trigger & Metric & Ev. \\
+\midrule
+Schema-driven DST \citep{lee2021dialogue} & 2021 & written & none & dialogue history plus schema\ldots & \cmark & P \\
+Verbalized Uncertainty \citep{lin2022teaching} & 2022 & written & output & fine-tuning on calibrated\ldots & \cmark & P \\
+LMs Know \citep{kadavath2022language} & 2022 & written & output & self-evaluation P and P of\ldots & \cmark & A \\
+DreamerV3 \citep{hafner2023mastering} & 2023 & world model & world-model loss & RSSM latent posterior updated\ldots & $\circ$ & P \\
+RecurrentGPT \citep{zhou2023recurrentgpt} & 2023 & written & output & LLM rewrites its own\ldots &  & A \\
+LLM-MCTS \citep{zhao2023large} & 2023 & world model & trajectory & LLM-sampled world state\ldots & $\circ$ & P \\
+RAP \citep{hao2023reasoning} & 2023 & world model & trajectory & LLM-as-world-model predicted\ldots &  & P \\
+Reflect-RL \citep{zhou2024reflectrl} & 2024 & written & interaction & frozen reflection model\ldots &  & P \\
+Hypothetical Minds \citep{cross2024hypothetical} & 2024 & written & none & hypotheses about other\ldots & $\circ$ & A \\
+Talker-Reasoner \citep{christakopoulou2024agents} & 2024 & written & none & Reasoner writes/updates\ldots &  & A \\
+QuBE \citep{kim2024qube} & 2024 & written & none & question-answering over\ldots &  & P \\
+MEM1 \citep{zhou2025mem1} & 2025 & written & outcome (written state) & internal state rewritten each\ldots & $\circ$ & A \\
+MemAgent \citep{yu2025memagent} & 2025 & written & outcome (written state) & chunk-wise overwrite of\ldots & $\circ$ & P \\
+PCE \citep{seo2026assumptions} & 2026 & written & none & scenario likelihood scoring & $\circ$ & A \\
+RB-VLA \citep{bagaria2026recursive} & 2026 & world model & world-model loss & self-supervised world-model\ldots & $\circ$ & A \\
+REDEREF \citep{hosseini2026trainingfree} & 2026 & prob.\ memory & interaction & judge feedback updates\ldots &  & A \\
+TAMTRL \citep{wang2026tamtrl} & 2026 & written & trajectory & teacher likelihood of memory\ldots & $\circ$ & A \\
+Self-Guide internal\ldots \citep{wang2026coevolution} & 2026 & written & trajectory & self-generated guidance as\ldots &  & A \\
+ReflectiChain\ldots \citep{luo2026topology} & 2026 & world model & trajectory & latent trajectory rehearsal\ldots &  & A \\
+\bottomrule
+\end{tabular}\hfill
+\begin{tabular}{lcllllc}
+\toprule
+System & Year & Belief kept by & Credited & Revision trigger & Metric & Ev. \\
+\midrule
+Cyclic subtask graphs \citep{gharzeddine2026complete} & 2026 & written & none & state-analysis-and-routing\ldots &  & A \\
+CHAL \citep{giovannelli2026chal} & 2026 & written & none & gradient-informed revision on\ldots & $\circ$ & A \\
+Pinductor \citep{six2026learning} & 2026 & world model & world-model loss & belief-based likelihood score\ldots & $\circ$ & A \\
+Belief Engine stance\ldots \citep{yang2026belief} & 2026 & prob.\ memory & none & log-odds update with evidence\ldots & \cmark & A \\
+HIPIF \citep{diao2026hipif} & 2026 & written & trajectory & subgoal completion +\ldots &  & A \\
+ProPlay \citep{ma2026proplay} & 2026 & world model & trajectory & post-episode graph refinement\ldots & $\circ$ & A \\
+POMDP validation\ldots \citep{dixon2026model} & 2026 & ext.\ filter & none & Bayesian & \cmark & A \\
+Internalizing the Future \citep{zhang2026internalizing} & 2026 & written & trajectory & foresight-conditioned RL\ldots & $\circ$ & A \\
+Hybrid-WM \citep{song2026agent} & 2026 & world model & world-model loss & consistency gate & \cmark & A \\
+Governance-aware POMDP\ldots \citep{dixon2026adaptive} & 2026 & ext.\ filter & none & Bayesian update on evidence\ldots & $\circ$ & A \\
+BayesEvolve \citep{wu2026bayesevolve} & 2026 & ext.\ filter & none & posterior refit after each\ldots & \cmark & A \\
+WorldEvolver \citep{zhang2026selfevolvingx} & 2026 & world model & world-model loss & prediction-observation\ldots & $\circ$ & A \\
+WM-SAR \citep{song2026repair} & 2026 & world model & trajectory & spectral error amplification &  & A \\
+BCO \citep{chen2026beliefcalibrated} & 2026 & written & none & evaluation of new candidate\ldots & \cmark & A \\
+EvoSCM causal belief\ldots \citep{zhao2026evoscm} & 2026 & written & none & prediction-observation\ldots & \cmark & A \\
+CAPTURE \citep{hossain2026capture} & 2026 & world model & world-model loss & uncertainty-triggered\ldots & \cmark & A \\
+Semantic Bayesian World\ldots \citep{soru2026semantic} & 2026 & ext.\ filter & none & Bayesian conditioning on\ldots &  & A \\
+Belief-State Engine \citep{chattopadhayay2026belief} & 2026 & ext.\ filter & none (prompting) & Bayesian posterior & \cmark & A \\
+\bottomrule
+\end{tabular}}
+\caption{Systems with an explicit belief mechanism, by year. Belief kept by: who maintains the belief (Section~\ref{sec:representation}); Credited: the object that receives the learning signal under the criterion of Section~\ref{sec:learning}, \emph{none} if the belief is not trained; Metric: \cmark\ reports a belief-level quantity, $\circ$ a proxy; Ev.: P peer-reviewed, A arXiv preprint.}
+\label{tab:master}
+\end{table*}

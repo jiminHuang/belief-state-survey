@@ -1,0 +1,15 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\input{tab_levels}
+
+Table~\ref{tab:levels} compares the four credit levels along the properties the preceding sections exposed; three observations follow.
+
+\paragraph{The sign is the scarce resource.}
+Output and trajectory levels take the sign of their signal from humans or verifiers, the interaction level from the task reward, and the state level, in all three published cases, from an oracle or teacher the environment does not supply. Denser credit multiplies a sign the environment already gives; state credit needs a sign for a claim, and without an oracle that sign can only come from the agent's own prediction settled against the next observation. That row is empty.
+
+\paragraph{Auditability and expressiveness pull apart.}
+Filters are validated in closed form but cannot introduce a factor they were not given; written beliefs can name a new factor but are rarely testable; world models are testable but mute. The field is converging on hybrids that write the belief and check it parametrically \citep{song2026agent,zhang2026selfevolvingx,kumar2026towards}.
+
+\paragraph{The belief--action gap is a training problem.}
+Wherever belief and action are scored on the same episodes, prompting and oracles improve the belief while action--belief consistency barely moves \citep{deb2026stocktake,gao2026auditing}; the one system that moves both trains belief and policy jointly \citep{singh2026agent}. A policy conditioned on a stale belief does not change when the belief is corrected in context, so closing the gap requires the state-level and interaction-level signals of Table~\ref{tab:levels} in one objective, not a better belief alone.

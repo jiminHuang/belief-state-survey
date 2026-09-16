@@ -1,0 +1,139 @@
+\begin{table*}[t]
+\centering\tiny
+\setlength{\tabcolsep}{2.5pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcllllc}
+\toprule
+System & Year & Belief kept by & Credited & Revision trigger & Metric & Ev. \\
+\midrule
+Decision Transformer \citep{chen2021decision} & 2021 & context & interaction & return-to-go conditioning\ldots &  & P \\
+Schema-driven DST \citep{lee2021dialogue} & 2021 & written & none & dialogue history plus schema\ldots & \cmark & P \\
+Chain-of-Thought \citep{wei2022chain} & 2022 & context & output & none &  & P \\
+Verbalized Uncertainty \citep{lin2022teaching} & 2022 & written & output & fine-tuning on calibrated\ldots & \cmark & P \\
+LMs Know \citep{kadavath2022language} & 2022 & written & output & self-evaluation P and P of\ldots & \cmark & A \\
+Inner Monologue \citep{huang2022inner} & 2022 & context & interaction & success detection, scene\ldots &  & P \\
+DreamerV3 \citep{hafner2023mastering} & 2023 & world model & world-model loss & RSSM latent posterior updated\ldots & $\circ$ & P \\
+DEPS \citep{wang2023describe} & 2023 & context & trajectory & descriptor of execution\ldots &  & P \\
+Reflexion \citep{shinn2023reflexion} & 2023 & ext.\ memory & trajectory & verbal self-reflection after\ldots &  & P \\
+RCI \citep{kim2023language} & 2023 & context & interaction & recursive self-criticism of\ldots &  & P \\
+Self-Refine \citep{madaan2023self} & 2023 & context & output & self-generated\ldots &  & P \\
+Generative Agents \citep{park2023generative} & 2023 & ext.\ memory & interaction & observation stream; periodic\ldots &  & P \\
+Self-Debug \citep{chen2023teaching} & 2023 & context & output & execution feedback +\ldots &  & P \\
+Tree of Thoughts \citep{yao2023tree} & 2023 & context & trajectory & self-evaluation of\ldots &  & P \\
+MemoryBank \citep{zhong2023memorybank} & 2023 & ext.\ memory & output & Ebbinghaus-style forgetting\ldots &  & P \\
+RecurrentGPT \citep{zhou2023recurrentgpt} & 2023 & written & output & LLM rewrites its own\ldots &  & A \\
+LLM-MCTS \citep{zhao2023large} & 2023 & world model & trajectory & LLM-sampled world state\ldots & $\circ$ & P \\
+RAP \citep{hao2023reasoning} & 2023 & world model & trajectory & LLM-as-world-model predicted\ldots &  & P \\
+Voyager \citep{wang2023voyager} & 2023 & ext.\ memory & trajectory & environment execution\ldots &  & P \\
+ExpeL \citep{zhao2023expel} & 2023 & ext.\ memory & trajectory & cross-task insight extraction\ldots &  & P \\
+CoALA \citep{sumers2023cognitive} & 2023 & ext.\ memory & none & conceptual &  & P \\
+TradingGPT \citep{li2023tradinggpt} & 2023 & ext.\ memory & interaction & layered memory decay +\ldots &  & A \\
+FaR / T4D \citep{zhou2023how} & 2023 & context & interaction & foresee-and-reflect\ldots & $\circ$ & P \\
+LATS \citep{zhou2023language} & 2023 & ext.\ memory & trajectory & MCTS backup of LM-valued\ldots & $\circ$ & P \\
+FireAct \citep{chen2023fireact} & 2023 & context & trajectory & supervised fine-tuning on\ldots &  & A \\
+MemGPT \citep{packer2023memgpt} & 2023 & ext.\ memory & output & self-directed memory paging\ldots &  & A \\
+AgentTuning \citep{zeng2023agenttuning} & 2023 & context & trajectory & hybrid instruction tuning on\ldots &  & P \\
+FinMem \citep{yu2023finmem} & 2023 & ext.\ memory & interaction & layered memory with\ldots &  & P \\
+Reflect-RL \citep{zhou2024reflectrl} & 2024 & written & interaction & frozen reflection model\ldots &  & P \\
+FinAgent \citep{zhang2024multimodal} & 2024 & ext.\ memory & interaction & low-level and high-level\ldots &  & P \\
+AgentGym \citep{xi2024agentgym} & 2024 & context & trajectory & AgentEvol &  & A \\
+Hypothetical Minds \citep{cross2024hypothetical} & 2024 & written & none & hypotheses about other\ldots & $\circ$ & A \\
+FinCon \citep{yu2024fincon} & 2024 & ext.\ memory & none & episodic self-critique\ldots &  & P \\
+Agent Q \citep{putta2024agent} & 2024 & ext.\ memory & trajectory & MCTS with AI self-critique\ldots & $\circ$ & A \\
+Agent Workflow Memory \citep{wang2024agent} & 2024 & ext.\ memory & none & induction of reusable\ldots &  & A \\
+Talker-Reasoner \citep{christakopoulou2024agents} & 2024 & written & none & Reasoner writes/updates\ldots &  & A \\
+QuBE \citep{kim2024qube} & 2024 & written & none & question-answering over\ldots &  & P \\
+TradingAgents \citep{xiao2024tradingagents} & 2024 & context & output & multi-agent debate and\ldots &  & A \\
+AgentRefine \citep{fu2025agentrefine} & 2025 & context & trajectory & environment observation\ldots &  & P \\
+LOOP \citep{chen2025reinforcement} & 2025 & context & trajectory & environment feedback via API\ldots &  & A \\
+A-Mem \citep{xu2025mem} & 2025 & ext.\ memory & output & memory evolution &  & P \\
+Search-R1 \citep{jin2025searchr1} & 2025 & context & output & retrieved documents\ldots &  & A \\
+ReSearch \citep{chen2025research} & 2025 & context & output & search results inserted into\ldots &  & P \\
+RAGEN / StarPO \citep{wang2025ragen} & 2025 & context & trajectory & environment reward\ldots &  & A \\
+Mem0 \citep{chhikara2025mem0} & 2025 & ext.\ memory & none & LLM-driven extraction\ldots &  & A \\
+TTI \citep{shen2025thinking} & 2025 & context & trajectory & additional environment\ldots &  & A \\
+MEM1 \citep{zhou2025mem1} & 2025 & written & outcome (written state) & internal state rewritten each\ldots & $\circ$ & A \\
+MemAgent \citep{yu2025memagent} & 2025 & written & outcome (written state) & chunk-wise overwrite of\ldots & $\circ$ & P \\
+ARPO \citep{dong2025agentic} & 2025 & context & trajectory & token entropy spike after\ldots & $\circ$ & A \\
+Memento \citep{zhou2025memento} & 2025 & ext.\ memory & interaction & environment feedback rewrites\ldots &  & A \\
+Agent-R1 \citep{cheng2025agentr1} & 2025 & context & trajectory & tool/environment feedback per\ldots &  & A \\
+MATTRL test-time\ldots \citep{hu2026collaborative} & 2026 & ext.\ memory & interaction & turn-level credit for\ldots &  & A \\
+SuS strategy-aware\ldots \citep{kashirskiy2026sus} & 2026 & context & output & surprise residual &  & A \\
+External affective\ldots \citep{subaharan2026controlling} & 2026 & ext.\ memory & none & exponential smoothing or\ldots &  & A \\
+PCE \citep{seo2026assumptions} & 2026 & written & none & scenario likelihood scoring & $\circ$ & A \\
+HiPER \citep{peng2026hiper} & 2026 & context & trajectory & none &  & A \\
+RB-VLA \citep{bagaria2026recursive} & 2026 & world model & world-model loss & self-supervised world-model\ldots & $\circ$ & A \\
+REDEREF \citep{hosseini2026trainingfree} & 2026 & prob.\ memory & interaction & judge feedback updates\ldots &  & A \\
+DenoiseFlow \citep{yan2026denoiseflow} & 2026 & context & trajectory & semantic entropy over samples & $\circ$ & A \\
+MICA \citep{zhang2026mica} & 2026 & ext.\ memory & interaction & none &  & A \\
+\bottomrule
+\end{tabular}\hfill
+\begin{tabular}{lcllllc}
+\toprule
+System & Year & Belief kept by & Credited & Revision trigger & Metric & Ev. \\
+\midrule
+HCAPO hindsight critic \citep{tan2026hindsight} & 2026 & context & trajectory & post-hoc LLM critic refinement &  & A \\
+TIPS \citep{xie2026tips} & 2026 & context & interaction & teacher answer-likelihood gain & $\circ$ & A \\
+DToM-Track \citep{nguyen2026dynamic} & 2026 & context & none & none & \cmark & A \\
+D-MEM \citep{song2026d} & 2026 & ext.\ memory & none & reward prediction error gating & $\circ$ & A \\
+SLEA-RL \citep{wang2026slearl} & 2026 & ext.\ memory & trajectory & observation change triggers\ldots &  & A \\
+Graph of States \citep{luo2026graph} & 2026 & ext.\ memory & none & symbolic check &  & A \\
+TAMTRL \citep{wang2026tamtrl} & 2026 & written & trajectory & teacher likelihood of memory\ldots & $\circ$ & A \\
+MT-GRPO Iterative\ldots \citep{modecrua2026multiturn} & 2026 & context & interaction & none &  & A \\
+Self-Guide internal\ldots \citep{wang2026coevolution} & 2026 & written & trajectory & self-generated guidance as\ldots &  & A \\
+SAVeR \citep{yuan2026verify} & 2026 & context & none & adversarial audit locating\ldots & $\circ$ & A \\
+ReflectiChain\ldots \citep{luo2026topology} & 2026 & world model & trajectory & latent trajectory rehearsal\ldots &  & A \\
+Cyclic subtask graphs \citep{gharzeddine2026complete} & 2026 & written & none & state-analysis-and-routing\ldots &  & A \\
+CAPO \citep{wang2026capo} & 2026 & context & interaction & none &  & A \\
+AEM adaptive entropy\ldots \citep{zhao2026aem} & 2026 & context & trajectory & response-level surprisal x\ldots &  & A \\
+T2PO \citep{wang2026t2po} & 2026 & context & interaction & token-level\ldots & $\circ$ & A \\
+MedExAgent \citep{gao2026medexagent} & 2026 & context & output & none &  & A \\
+TRACE turn credit for\ldots \citep{he2026turns} & 2026 & context & interaction & leave-one-turn-out semantic\ldots &  & A \\
+PiCA pivot-based credit \citep{liu2026pica} & 2026 & context & trajectory & pivot-step potential-based\ldots &  & A \\
+CHAL \citep{giovannelli2026chal} & 2026 & written & none & gradient-informed revision on\ldots & $\circ$ & A \\
+Why world models \citep{alaswad2026why} & 2026 & context & none & none & $\circ$ & A \\
+Pinductor \citep{six2026learning} & 2026 & world model & world-model loss & belief-based likelihood score\ldots & $\circ$ & A \\
+Belief Engine stance\ldots \citep{yang2026belief} & 2026 & prob.\ memory & none & log-odds update with evidence\ldots & \cmark & A \\
+CAGE-2 compound agent\ldots \citep{bogdanov2026context} & 2026 & ext.\ memory & none & deterministic state-tracking\ldots &  & A \\
+Representation\ldots \citep{xue2026representation} & 2026 & context & output & structured risk feedback & $\circ$ & A \\
+CMI \citep{srivastava2026causal} & 2026 & ext.\ memory & none & counterfactual answer-score\ldots & $\circ$ & A \\
+SERL selective\ldots \citep{li2026what} & 2026 & context & interaction & per-step environment feedback\ldots &  & A \\
+Memory-R2 / LoGo-GRPO \citep{yan2026memoryr2} & 2026 & ext.\ memory & none & local rerollouts from shared\ldots & $\circ$ & A \\
+SkillC \citep{lin2026skillc} & 2026 & context & trajectory & skill-vs-no-skill reward gap &  & A \\
+InKH financial harness \citep{borjigin2026absorbing} & 2026 & ext.\ memory & none & passive knowledge injection\ldots & $\circ$ & A \\
+TOKI \citep{wang2026toki} & 2026 & ext.\ memory & none & bitemporal operators & $\circ$ & A \\
+Q-Evolve \citep{zhang2026selfevolving} & 2026 & context & trajectory & advantage from\ldots &  & A \\
+HIPIF \citep{diao2026hipif} & 2026 & written & trajectory & subgoal completion +\ldots &  & A \\
+ProPlay \citep{ma2026proplay} & 2026 & world model & trajectory & post-episode graph refinement\ldots & $\circ$ & A \\
+POMDP validation\ldots \citep{dixon2026model} & 2026 & ext.\ filter & none & Bayesian & \cmark & A \\
+G2PO \citep{wang2026groupgraph} & 2026 & context & trajectory & globally standardized TD\ldots &  & A \\
+Internalizing the Future \citep{zhang2026internalizing} & 2026 & written & trajectory & foresight-conditioned RL\ldots & $\circ$ & A \\
+Hybrid-WM \citep{song2026agent} & 2026 & world model & world-model loss & consistency gate & \cmark & A \\
+Governance-aware POMDP\ldots \citep{dixon2026adaptive} & 2026 & ext.\ filter & none & Bayesian update on evidence\ldots & $\circ$ & A \\
+BayesEvolve \citep{wu2026bayesevolve} & 2026 & ext.\ filter & none & posterior refit after each\ldots & \cmark & A \\
+WorldEvolver \citep{zhang2026selfevolvingx} & 2026 & world model & world-model loss & prediction-observation\ldots & $\circ$ & A \\
+WM-SAR \citep{song2026repair} & 2026 & world model & trajectory & spectral error amplification &  & A \\
+STAPO\ldots \citep{qi2026stapo} & 2026 & context & trajectory & normalized-entropy outlier\ldots &  & A \\
+Auditing\ldots \citep{gao2026auditing} & 2026 & ext.\ memory & none & logged per-turn belief updates & \cmark & A \\
+RLAW \citep{ali2026reward} & 2026 & ext.\ memory & interaction & critique score &  & A \\
+NeSyFS \citep{xu2026nesyfs} & 2026 & ext.\ memory & interaction & repeated fast-action failure\ldots &  & A \\
+MADE \citep{liu2026made} & 2026 & ext.\ memory & interaction & execution failure ->\ldots &  & A \\
+MD5 state tracking \citep{pai2026longhorizon} & 2026 & context & none & majority vote over arithmetic &  & A \\
+TCPO turn-level credit \citep{liao2026tcpo} & 2026 & context & interaction & verifier score-to-credit\ldots &  & A \\
+When Memory Updates but\ldots \citep{sun2026memory} & 2026 & ext.\ memory & none & stale dependency repair & $\circ$ & A \\
+EvoHarness-RL learned\ldots \citep{ning2026evoharness} & 2026 & ext.\ memory & interaction & learned\ldots & $\circ$ & A \\
+GPM \citep{xu2026governed} & 2026 & ext.\ memory & none & symbolic check & $\circ$ & A \\
+CrEST \citep{wang2026teach} & 2026 & context & interaction & verified turn reward with\ldots &  & A \\
+HiDiffTIR \citep{guo2026hidifftir} & 2026 & context & interaction & group tool-call success rate &  & A \\
+IAPO \citep{ren2026iapo} & 2026 & context & interaction & none &  & A \\
+BCO \citep{chen2026beliefcalibrated} & 2026 & written & none & evaluation of new candidate\ldots & \cmark & A \\
+EvoSCM causal belief\ldots \citep{zhao2026evoscm} & 2026 & written & none & prediction-observation\ldots & \cmark & A \\
+CAPTURE \citep{hossain2026capture} & 2026 & world model & world-model loss & uncertainty-triggered\ldots & \cmark & A \\
+PGPO \citep{zheng2026pgpo} & 2026 & context & interaction & potential difference between\ldots &  & A \\
+Semantic Bayesian World\ldots \citep{soru2026semantic} & 2026 & ext.\ filter & none & Bayesian conditioning on\ldots &  & A \\
+Belief-State Engine \citep{chattopadhayay2026belief} & 2026 & ext.\ filter & none (prompting) & Bayesian posterior & \cmark & A \\
+\bottomrule
+\end{tabular}}
+\caption{All 120 screened systems with a state or memory mechanism, by year (columns as in Table~\ref{tab:master}).}
+\label{tab:master_full}
+\end{table*}

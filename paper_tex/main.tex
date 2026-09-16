@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+
+% ACL Rolling Review (ARR 2026) template. Change "review" to "final" for camera-ready,
+% or to "preprint" for a non-anonymous arXiv version.
+\usepackage[review]{acl}
+
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{inconsolata}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{forest}
+\usetikzlibrary{arrows.meta,positioning,shapes.misc,decorations.pathreplacing}
+
+% ---- macros ----
+\newcommand{\op}[1]{\textsc{#1}}                 % operation names: \op{Predict}
+\newcommand{\belief}{\mathbf{b}}
+\newcommand{\hist}{H}
+\newcommand{\level}[1]{\textbf{#1}}              % credit levels
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\pmark}{$\circ$}
+\usepackage{makecell}
+\usepackage{colortbl}
+\usepackage[most]{tcolorbox}
+\newcommand{\insight}[2]{\begin{tcolorbox}[colback=blue!4,colframe=blue!45!black,boxrule=0.35pt,arc=1.5pt,left=4pt,right=4pt,top=2pt,bottom=2pt,boxsep=0pt,before skip=4pt,after skip=4pt]\footnotesize\textbf{Insight #1.}~#2\end{tcolorbox}}
+% Harvey balls
+\DeclareRobustCommand{\hbfull}{\tikz[baseline=-0.6ex]{\draw[line width=0.4pt,fill=black] (0,0) circle (0.72ex);}}
+\DeclareRobustCommand{\hbhalf}{\tikz[baseline=-0.6ex]{\draw[line width=0.4pt] (0,0) circle (0.72ex); \fill (0,0) -- (90:0.72ex) arc (90:270:0.72ex) -- cycle;}}
+\DeclareRobustCommand{\hbnone}{\tikz[baseline=-0.6ex]{\draw[line width=0.4pt] (0,0) circle (0.72ex);}}
+\newcommand{\grp}[1]{\rowcolor{gray!12}\multicolumn{6}{@{}l@{}}{\textsc{#1}}\\}
+\usepackage{pifont}
+
+\title{From Memory to Belief: A Survey of State Maintenance and Belief Revision in LLM Decision Agents}
+
+\author{Anonymous ARR submission}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Language-model agents now plan, call tools, and act over many steps, and the failures that dominate reports from such settings are failures of state rather than of reasoning: the agent loses track of what it has learned, keeps acting on evidence that has since been contradicted, or revises what it believes without changing what it does. Memory mechanisms, uncertainty estimation, and post-training with denser rewards each address one part of this problem, but the object that connects them, a persistent, uncertainty-aware belief about a partially observed world, has no survey of its own. This survey takes the belief state as its organising object and traces its development from 2020 to 2026, from context and memory stores through external Bayesian filters and model-written beliefs to learned world models exposed to the policy. We ask one question of every method, \emph{which object receives credit}, the output, the trajectory, the interaction, or the state, and use it to organise three axes: how the belief is represented and whether it commits to testable predictions, how it is revised and where revision fails, and how learning signals reach it. We then align the fragmented belief-level evaluation literature by construct, catalogue 33 benchmarks, and identify the gap the alignment exposes: no published method yet obtains a signed learning signal for a written belief from the agent's own predictions.
+\end{abstract}
+
+\input{01_introduction}
+\input{01b_related}
+\input{02_formulation}
+\input{03_representation}
+\input{04_revision}
+\input{05_learning}
+\input{06_evidence}
+\input{07_evaluation}
+\input{08_discussion}
+\input{08_challenges}
+\input{09_conclusion}
+
+\section*{Limitations}
+This survey covers work indexed by OpenAlex and arXiv from January 2020 to 15 September 2026 and retrieved by the keyword protocol in Appendix~\ref{app:method}; papers that describe belief maintenance without using any of our search terms may be missed. Our taxonomy assigns each method to one representation class and one credit level, although several systems combine classes. The survey reports numbers as stated by the cited papers and does not re-run any method; headline figures from preprints may change in later versions. Finance is used as the running example because delayed and partially observed evidence is the norm there; the taxonomy itself is domain-agnostic, but we have not validated it against embodied or dialogue agents in the same depth.
+
+\bibliography{custom,recent2026,foundations}
+
+\appendix
+\input{A_method}
+\input{B_tables}
+\input{C_taxonomy}
+
+\end{document}

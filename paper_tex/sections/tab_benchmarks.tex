@@ -1,0 +1,45 @@
+\begin{table*}[t]
+\centering\footnotesize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllccl}
+\toprule
+Benchmark & Domain & Horizon & Latent state & Observable to evaluator & Delayed evidence & Belief-level quantity reported \\
+\midrule
+ALFWorld \citep{shridhar2020alfworld} & text + embodied & episodic & household state & \cmark & partial & none (task success) \\
+PlanBench \citep{valmeekam2022planbench} & classical planning & plan-length & PDDL state & \cmark & \xmark & plan verification, replanning \\
+AgentBench \citep{liu2023agentbench} & 8 environments & episodic & environment state & \cmark & partial & none (task success) \\
+SmartPlay \citep{wu2023smartplay} & 6 games & episodic & game state & \cmark & partial & none (9 capability scores) \\
+T4D / FaR \citep{zhou2023how} & theory of mind & single-turn & others' beliefs & \cmark (annotated) & \xmark & belief tracking vs.\ action selection \\
+False-belief tasks \citep{kosinski2023evaluating} & theory of mind & single-turn & others' beliefs & \cmark (annotated) & \xmark & false-belief accuracy \\
+LoCoMo \citep{maharana2024evaluating} & long conversations & 35 sessions & conversation facts & annotated & \cmark & temporal QA (proxy) \\
+$\tau$-bench / $\tau^2$-bench \citep{yao2024taubench,barres2025tau2bench} & tool--user interaction & multi-turn & database state & \cmark & \cmark & pass\textasciicircum{}k consistency; reasoning vs.\ communication errors \\
+MemoryAgentBench \citep{hu2025evaluating} & incremental multi-turn & long-horizon & memory contents & annotated & \cmark & retrieval, test-time learning, conflict resolution \\
+BeliefTrack \citep{xu2026should} & closed-world reasoning & multi-turn & finite belief space & \cmark (symbolic) & \cmark & turn-level belief accuracy; failed stay/update/isolation \\
+DeltaLogic \citep{dhanda2026deltalogic} & logical reasoning & 2 steps & premise set & \cmark & \cmark & revision accuracy vs.\ initial accuracy \\
+DToM-Track \citep{nguyen2026dynamic} & dialogue & multi-turn & interlocutor belief & \cmark (annotated) & \cmark & prior-belief recall; change detection \\
+BeliefShift \citep{myakala2026beliefshift} & user modelling & multi-session & user opinion & annotated & \cmark & revision accuracy; drift coherence; evidence sensitivity \\
+OmniToM \citep{bawatneh2026omnitom} & theory of mind & narrative & actors' beliefs & \cmark (annotated) & \xmark & belief-proposition extraction; schema labels \\
+MINDGAMES \citep{wang2026mindgames} & social games & repeated games & hidden roles, opponents & \cmark & \cmark & TrueSkill; turn-level logs \\
+MEDLEY-BENCH \citep{abtahi2026medleybench} & social pressure & 2 rounds & --- & \xmark & \xmark & sensitivity to manipulated consensus \\
+STALE \citep{chao2026stale} & memory validity & multi-turn & fact validity & annotated & \cmark & state resolution; premise resistance; policy adaptation \\
+MemOps \citep{hao2026memops} & long conversations & multi-session & memory lifecycle & annotated & \cmark & operation-level probes \\
+GroupMemBench \citep{yang2026groupmembench} & multi-party dialogue & multi-session & per-speaker knowledge & annotated & \cmark & information-update accuracy \\
+MemGym \citep{xu2026memgym} & mixed agent tasks & long-horizon & --- & \xmark & partial & memory-isolated score delta \\
+STOCKTAKE \citep{deb2026stocktake} & inventory control & weekly, long & demand factors & \cmark (Bayes filter) & \cmark & detection lag; skill vs.\ oracle; knowing-doing rate \\
+Flux \citep{alaswad2026why} & text game & long-horizon & simulator state & \cmark & \cmark & state-tracking error modes \\
+YC-Bench \citep{he2026ycbench} & startup simulation & hundreds of turns & market, clients & privileged outcome & \cmark & scratchpad usage (proxy) \\
+RetailBench \citep{zhang2026retailbenchx} & retail POMDP & 180 days & demand, supply & privileged oracle & \cmark & evidence-acquisition behaviour (proxy) \\
+EnterpriseArena \citep{han2026can} & lending & 132 months & borrower pool & privileged outcome & \cmark & observation-budget allocation (proxy) \\
+Business Arena \citep{pan2026business} & marketplace & long-horizon & market & privileged outcome & \cmark & action-level attribution \\
+Werewolf audit \citep{gao2026auditing} & social deduction & 9-player game & roles & \cmark & \cmark & action--belief consistency \\
+CAGE-2 study \citep{bogdanov2026context} & cyber defence & episodic & network state & \cmark & partial & state-abstraction return gain \\
+MD5 state tracking \citep{pai2026longhorizon} & tool chains & 196 calls & registers & \cmark & \xmark & exact-state success \\
+FinBench (time-gated) \citep{ghosh2026finbench} & asset forecasting & daily & returns & realised & \cmark & Brier; interval scores \\
+TradeArena \citep{xue2026representation} & trading & multi-week & regimes & realised & \cmark & representation drift (early warning) \\
+HERCULEAN \citep{herculean2026} & finance workflows & multi-step & market, books & partial & \cmark & state-tracking sub-score \\
+FinBen / InvestorBench \citep{xie2025finben,li2024investorbench} & finance tasks / trading & task / episodic & --- & \xmark & partial & none (outcome only) \\
+\bottomrule
+\end{tabular}}
+\caption{Benchmarks that exercise belief maintenance, by whether the evaluator can observe the latent state and what belief-level quantity is reported. \lq\lq{}Annotated\rq\rq{} means human labels stand in for the latent state; \lq\lq{}privileged\rq\rq{} means the simulator knows it but the benchmark reports only outcomes. Ev.\ column omitted for space; peer-reviewed entries are ALFWorld, PlanBench, AgentBench, SmartPlay, T4D, false-belief tasks, LoCoMo, FinBen, and InvestorBench; the rest are arXiv preprints at the time of writing.}
+\label{tab:benchmarks}
+\end{table*}

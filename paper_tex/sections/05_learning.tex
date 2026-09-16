@@ -1,0 +1,24 @@
+\section{Learning Signals by Credited Object}
+\label{sec:learning}
+
+\input{fig_credit}
+\input{tab_learning_main}
+
+Existing surveys organise post-training by where the reward comes from, where the trajectories come from, and how dense the signal is \citep{wu2025rewards,zhang2026reasoning,zheng2025prm}. We hold those fixed and vary one thing, the object that receives the gradient (Figure~\ref{fig:credit}, Table~\ref{tab:learningmain}). The criterion is operational: a method is at the \emph{state level} if the quantity that receives a gradient is a claim about the environment and its sign depends on an observation returned after the action. A method that rewards a memory write regardless of whether the written claim was true is at the interaction level, however dense its credit.
+
+\subsection{Output and Trajectory}
+\label{sec:learn:traj}
+
+Supervised fine-tuning and preference optimisation credit the completed response \citep{ouyang2022training,wei2022finetuned,rafailov2023direct}, and self-consistency and self-improvement select the responses to train on \citep{wang2022self,huang2022large}. Trajectory-level credit began by imitating and searching over agent trajectories \citep{chen2023fireact,zeng2023agenttuning,xi2024agentgym,zhou2023language,putta2024agent,fu2025agentrefine}, then credited sampled steps directly through PPO, GRPO, and process reward models \citep{schulman2017proximal,shao2024deepseekmath,lightman2023lets,zheng2025prm,zhang2026selfevolving,tan2026hindsight}.
+
+\subsection{Interaction}
+\label{sec:learn:inter}
+
+Agentic reinforcement learning credits actions over several turns \citep{zhou2024archer,qi2024webrl,wang2025ragen,chen2025reinforcement,zhou2025sweetrl,feng2025group,dong2025agentic}, and the open question is how to make that credit denser without making it wrong, by hierarchical advantages, counterfactual estimators over shared states, potential-based shaping, or verifier-structured credit \citep{peng2026hiper,wang2026capo,diao2026hipif,wang2026groupgraph,ren2026iapo,liao2026tcpo,he2026turns,liu2026pica,xie2026tips,zheng2026pgpo,zhang2026mica,li2026vict,wang2026teach,guo2026hidifftir,qi2026stapo,zhao2026aem,lin2026skillc}; denser is not free \citep{modecrua2026multiturn,pu2026explore}. The nearest this level comes to the state is a group that credits the write to a memory, from a rewritten case bank to an RL-trained overwrite of a fixed written state \citep{zhou2025memento,zhou2025mem1,yu2025memagent,yan2026memoryr2,wang2026tamtrl,ning2026evoharness,wang2026slearl,hu2026collaborative}. By the criterion above these remain interaction-level: they credit the \emph{operation}, so a well-executed update to a wrong claim is still rewarded.
+
+\subsection{State}
+\label{sec:learn:state}
+
+Three published methods meet the criterion. CBM trains with belief-state rewards from symbolic verification and cuts belief-management failures by about 71\% \citep{xu2026should}. Agent-BRACE trains belief model and policy jointly with verbalised certainty as the belief's output \citep{singh2026agent}. BOND distils a Bayesian teacher's posterior into an 8B student whose Brier score beats a 70B prompted baseline \citep{cui2026distilling}.
+
+\insight{3}{\textbf{Credit has been getting denser, not deeper.} Agentic reinforcement learning has refined which action to prefer; no method changed what the action is conditioned on. The two axes are orthogonal, and the first system to combine them will need a sign for its belief that the environment, not an oracle, supplies.}

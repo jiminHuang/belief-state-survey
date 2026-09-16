@@ -1,0 +1,21 @@
+\section{Belief Revision and Its Failure Modes}
+\label{sec:revision}
+
+\input{fig_failures}
+\input{tab_failures}
+
+Bayesian filtering and active inference agree on how a belief should change: it predicts, evidence arrives, and the mismatch drives the update \citep{friston2010free,friston2017active}; factor graphs then assign the error to the factors that produced the prediction \citep{kschischang2001factor,loeliger2004introduction}. The language-model literature imported the vocabulary but rarely the routing: feedback is appended to the context or folded into self-critique loops that revise an output, a plan, or a trajectory \citep{huang2022inner,madaan2023self,chen2023teaching,kim2023language,wang2023describe}.
+
+\subsection{Four Failure Modes}
+\label{sec:rev:modes}
+
+Contextual Belief Management names three ways a belief can fail on new input, a \emph{failed stay} in which the belief moves without evidence, a \emph{failed update} in which it survives evidence against it, and a \emph{failed isolation} in which irrelevant input contaminates it \citep{xu2026should}. Three independent studies document a fourth, the \emph{failed act}, in which the belief is revised but the action is not, so that a belief-level oracle finds the diagnosis right while the action stays wrong \citep{deb2026stocktake,gao2026auditing}. Table~\ref{tab:failures} lists the benchmark that isolates each mode; their placement on the construct--test--revise--act cycle (Figure~\ref{fig:failures}) is ours, and each names the operation whose signal should receive the error.
+
+\subsection{Mechanisms of Revision}
+\label{sec:rev:mech}
+
+Failed update is now a benchmark topic in its own right \citep{chao2026stale,sun2026memory,nakayashiki2026stale,yang2026groupmembench}; in finance it is a stale factor, visible as drift in the agent's planning embeddings before the trading loss appears \citep{xue2026representation}. The mechanisms that respond fall into three families by what triggers them. The first is triggered by \emph{contradiction} among stored claims and resolves it with an operator algebra, first-class update and forget operations, or supersession contracts that keep the superseded claim visible \citep{wang2026toki,hao2026memops,xu2026governed}. The second is triggered \emph{before commitment}, by self-audit, a parametric veto, semantic entropy, or resampling \citep{yuan2026verify,song2026agent,yan2026denoiseflow,wang2026t2po}; these see no future observation and so cannot catch a belief that is consistent and wrong. The third is triggered by \emph{surprise}: reward-prediction error routes writes to a fast or a slow path \citep{song2026d}, and prediction--observation mismatches become semantic rules \citep{zhang2026selfevolvingx}.
+
+Routing the error to the claim that produced the prediction, the factor-graph step with which this section opened, is what none of the surveyed systems implements in the model's own context.
+
+\insight{2}{\textbf{Revision is triggered, not routed.} Contradiction, self-audit, and surprise decide \emph{when} a belief changes; none decides \emph{which claim} the error belongs to. Until the error is routed to the claim that made the prediction, agents will keep repairing memories while beliefs stay wrong, and failed act will remain the unmeasured mode.}

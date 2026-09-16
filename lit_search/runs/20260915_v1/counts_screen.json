@@ -1,0 +1,22 @@
+{
+ "timestamp": "20260915_v1",
+ "sources": {
+  "raw.json": 715,
+  "raw_arxiv.json": 1008
+ },
+ "unique_after_dedup_all_sources": 1685,
+ "unique_after_title_dedup": 1460,
+ "excluded_no_abstract": 45,
+ "excluded_I1_not_llm": 160,
+ "excluded_E1_offdomain": 35,
+ "excluded_I2_topic": 357,
+ "included": 863,
+ "included_recent": 656,
+ "included_by_section": {
+  "S3_representation": 203,
+  "S4_revision": 236,
+  "S7_eval": 204,
+  "S5_learning": 219,
+  "S6_evidence": 193
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "timestamp": "20260916_v3",
+ "sources": {
+  "raw.json": 1930,
+  "raw_arxiv.json": 2616
+ },
+ "unique_after_dedup_all_sources": 4471,
+ "unique_after_title_dedup": 3999,
+ "excluded_no_abstract": 93,
+ "excluded_I1_not_llm": 688,
+ "excluded_E1_offdomain": 80,
+ "excluded_I2_topic": 1059,
+ "included": 2079,
+ "included_recent": 1565,
+ "included_by_section": {
+  "S3_representation": 377,
+  "S4_revision": 552,
+  "S6_evidence": 740,
+  "S7_eval": 403,
+  "S5_learning": 409,
+  "S3b_theory_of_mind": 258
+ }
+}

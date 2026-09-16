@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}lp{2.05cm}p{1.75cm}p{1.9cm}@{}}
+\toprule
+Failure mode & Definition & Measured by & Headline result \\
+\midrule
+Failed stay & belief moves without evidence & BeliefShift, MEDLEY-BENCH & consensus sensitivity from near 0 to large across 35 models \\
+Failed update & belief survives contradicting evidence & DeltaLogic, DToM-Track, STALE & 66.7\% on a conclusion, 46.7\% on whether an edit changes it \\
+Failed isolation & irrelevant input enters the belief & BeliefTrack, MemOps & belief-state reward cuts failures by 71\% \\
+Failed act & belief revised, action unchanged & STOCKTAKE, Werewolf audit & 34--43\% of correctly diagnosed weeks end in the wrong action \\
+\bottomrule
+\end{tabular}}
+\caption{Four failure modes of belief revision, the benchmarks that isolate each, and their headline results \citep{myakala2026beliefshift,abtahi2026medleybench,dhanda2026deltalogic,nguyen2026dynamic,chao2026stale,xu2026should,hao2026memops,deb2026stocktake,gao2026auditing}.}
+\label{tab:failures}
+\end{table}

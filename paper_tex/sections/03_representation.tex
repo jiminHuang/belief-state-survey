@@ -1,0 +1,32 @@
+\section{Belief Representation: Who Maintains the State}
+\label{sec:representation}
+
+\input{tab_reprprops}
+
+Where does the belief live, who writes it, and can it be wrong in a way that later evidence can show? We order representations by \emph{who maintains the belief}, from no one to an explicit estimator, and by whether the belief is \emph{testable}, that is, commits to a prediction that a returned observation can falsify. Table~\ref{tab:reprprops} summarises the classes; Figure~\ref{fig:repr} and Table~\ref{tab:master} in the appendix place every system on both axes.
+
+\subsection{Context and Memory}
+\label{sec:repr:memory}
+
+The most common design has no representation at all: the reasoning trace is the state \citep{wei2022chain,yao2023react}, the belief implicit and its uncertainty unstated. In a text game, agents that read the simulator's latent state win about 79\% of episodes against 11\% for agents that read only observations \citep{alaswad2026why}, and on STALE the best model resolves old-versus-new conflicts in 55\% of cases \citep{chao2026stale}, and programmatic state abstraction alone helps substantially \citep{bogdanov2026context,he2026ycbench}.
+
+Memory-augmented agents moved the state into a store retrieved into context \citep{packer2023memgpt,park2023generative,zhong2024memorybank,xu2025amem}, the evolution that \citet{luo2026storage} survey. Two limits matter for belief: the stored unit is a trace rather than a claim with a probability, and an update is an operation on the store rather than on a hypothesis, so answer accuracy hides failures in the update and forget operations themselves \citep{hao2026memops}. Structured stores narrow the first limit with schemas, graphs, or bitemporal transitions \citep{xu2026nesyfs,luo2026graph,liu2026made,xu2026governed,ning2026evoharness}; probabilistic stores narrow the second by attaching a number to each claim \citep{liao2026belief,song2026d,yang2026belief}. Even closed-form Bayesian updates per stored claim barely beat last-write-wins on LoCoMo \citep{singh2026when,srivastava2026causal}.
+
+\subsection{External Bayesian Filters}
+\label{sec:repr:filter}
+
+A different line takes the belief out of the model. The model maps evidence to a likelihood over a fixed set of latent regimes, hypotheses, or user states, and an explicit filter maintains the posterior, whose entropy and drift can then be reported as model risk \citep{chattopadhayay2026belief,dixon2026belief,dixon2026model,dixon2026adaptive,wu2026bayesevolve,hossain2026capture,soru2026semantic}. These are the only beliefs in the survey validated against a closed-form oracle, and they are auditable by construction. The price is a hypothesis space fixed in advance: the filter cannot introduce a factor it was not given.
+
+\subsection{Model-Written Beliefs}
+\label{sec:repr:written}
+
+The third line keeps the belief in context but gives it structure the model writes and reads. Dialogue state tracking wrote a slot-value belief in 2021 \citep{lee2021dialogue}, verbalised confidence attached a probability to an answer \citep{lin2022teaching,kadavath2022language}, 2024 agents wrote beliefs about tasks, opponents, and markets \citep{kim2024qube,christakopoulou2024agents,cross2024hypothetical,yu2024fincon}, and in 2025 MEM1 and MemAgent learned to overwrite a fixed written state each turn \citep{zhou2025mem1,yu2025memagent}. The newest systems add uncertainty and verification to the written object, from certainty tags and Bayesian-teacher posteriors to symbolic verification and populations of causal models \citep{singh2026agent,murphy2026agentic,cui2026distilling,xu2026should,chen2026beliefcalibrated,seo2026assumptions,giovannelli2026chal,zhao2026evoscm}.
+
+Testability separates them, and we define it operationally: a written belief is testable if it contains a statement about a future observation with a horizon, so that the returned observation yields a signed error for that statement. By this definition most written beliefs are calibrated but not testable: they state confidence or revise the belief but never name the observation that would falsify it. Hypothetical Minds, CBM, and EvoSCM do, and Section~\ref{sec:learning} turns on this distinction.
+
+\subsection{Learned World Models}
+\label{sec:repr:wm}
+
+The fourth line learns the dynamics and exposes the resulting belief to the policy: recurrent latent states \citep{ha2018world,hafner2019learning,hafner2023mastering}, the language model as its own world model for tree search \citep{hao2023reasoning,zhao2023large,zhou2023language}, LLM-proposed POMDPs refined to a belief-based likelihood \citep{six2026learning}, and a world-model belief the policy can query \citep{kumar2026towards,li2026bridging,bagaria2026recursive}. World-model beliefs are testable by construction but, unless written back, cannot be reasoned about in language. Two 2026 systems close that gap by using the learned model as a check on a written belief rather than a replacement: a parametric consistency gate that cuts the hallucinated-state rate from 0.176 to 0.035 \citep{song2026agent}, and semantic rules distilled from prediction--observation mismatches \citep{zhang2026selfevolvingx}. 
+
+\insight{1}{\textbf{Structure is not testability.} Memory design has made the belief steadily more structured without making it falsifiable, and the representations that can be falsified, filters and world models, cannot be reasoned about in language. The belief the field needs is written and testable at once; no peer-reviewed system has one yet.}

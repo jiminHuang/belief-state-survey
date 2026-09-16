@@ -1,0 +1,44 @@
+\begin{figure*}[t]
+\centering
+\resizebox{\textwidth}{!}{\Forest{
+for tree={
+  grow'=east, parent anchor=east, child anchor=west, anchor=west,
+  draw, rounded corners=2pt, font=\tiny, align=left,
+  edge={-, gray!70}, l sep=3.5mm, s sep=0.35mm, fit=band,
+  inner xsep=3pt, inner ysep=1.2pt
+}
+[{\textbf{Belief state} in LLM\\decision agents (\S\ref{sec:formulation})\\\op{Construct} $\cdot$ \op{Test} $\cdot$ \op{Revise}}, fill=blue!10
+  [{\S\ref{sec:representation} \textbf{Who maintains}\\\textbf{the belief}}, fill=gray!10
+    [{Context as state}, [{CoT \citep{wei2022chain}, ReAct \citep{yao2023react}}]]
+    [{External memory}, [{MemGPT \citep{packer2023memgpt}, Generative Agents \citep{park2023generative},\\A-MEM \citep{xu2025amem}, Mem0 \citep{chhikara2025mem0}}]]
+    [{Probabilistic memory}, [{BeliefMem \citep{liao2026belief}, D-MEM \citep{song2026d}, Nous \citep{singh2026when}}]]
+    [{External Bayesian filter}, [{Belief-State Engine \citep{chattopadhayay2026belief}, Belief at Risk \citep{dixon2026belief},\\BayesEvolve \citep{wu2026bayesevolve}, CAPTURE \citep{hossain2026capture}}]]
+    [{Model-written belief}, [{calibrated: DST \citep{lee2021dialogue}, Talker-Reasoner \citep{christakopoulou2024agents},\\Agent-BRACE \citep{singh2026agent}, BOND \citep{cui2026distilling}, BCO \citep{chen2026beliefcalibrated}}] [{testable: Hypothetical Minds \citep{cross2024hypothetical}, CBM \citep{xu2026should}, EvoSCM \citep{zhao2026evoscm}}]]
+    [{Learned world model}, [{Dreamer \citep{hafner2023mastering}, RAP \citep{hao2023reasoning}, BB-WM \citep{kumar2026towards};\\written + parametric check: Hybrid-WM \citep{song2026agent}}]]
+  ]
+  [{\S\ref{sec:revision} \textbf{How revision fails}}, fill=gray!10
+    [{Failed stay}, [{BeliefShift \citep{myakala2026beliefshift}, MEDLEY-BENCH \citep{abtahi2026medleybench}}]]
+    [{Failed update}, [{STALE \citep{chao2026stale}, DeltaLogic \citep{dhanda2026deltalogic}, DToM-Track \citep{nguyen2026dynamic}}]]
+    [{Failed isolation}, [{CBM \citep{xu2026should}, MemOps \citep{hao2026memops}}]]
+    [{Failed act}, [{STOCKTAKE \citep{deb2026stocktake}, Werewolf audit \citep{gao2026auditing}}]]
+  ]
+  [{\S\ref{sec:learning} \textbf{Which object}\\\textbf{receives credit}}, fill=yellow!25
+    [{Output}, fill=yellow!10, [{RLHF \citep{ouyang2022training}, DPO \citep{rafailov2023direct}, Self-Refine \citep{madaan2023self}}]]
+    [{Trajectory}, fill=yellow!10, [{PRMs \citep{lightman2023lets}, GRPO \citep{shao2024deepseekmath}, LATS \citep{zhou2023language},\\AgentTuning \citep{zeng2023agenttuning}, AgentRefine \citep{fu2025agentrefine}}]]
+    [{Interaction}, fill=yellow!10, [{actions: ArCHer \citep{zhou2024archer}, RAGEN \citep{wang2025ragen}, GiGPO \citep{feng2025group}, HiPER \citep{peng2026hiper}}] [{memory operations: MEM1 \citep{zhou2025mem1}, Memento \citep{zhou2025memento}, Memory-R2 \citep{yan2026memoryr2}}]]
+    [{State}, fill=yellow!10, [{CBM \citep{xu2026should}, Agent-BRACE \citep{singh2026agent}, BOND \citep{cui2026distilling}}]]
+  ]
+  [{\S\ref{sec:evidence} \textbf{Evidence acquisition}\\\textbf{conditioned on belief}}, fill=gray!10
+    [{BayesEvolve \citep{wu2026bayesevolve}, EvoSCM \citep{zhao2026evoscm}, DenoiseFlow \citep{yan2026denoiseflow}, Bayesian-Agent \citep{wu2026bayesian}}]
+  ]
+  [{\S\ref{sec:evaluation} \textbf{Belief-level}\\\textbf{evaluation}}, fill=gray!10
+    [{Calibration}, [{TC-ECE \citep{lin2026uncertainty}, posterior entropy \citep{dixon2026belief}, FinBench \citep{ghosh2026finbench}}]]
+    [{Accuracy and revision}, [{BeliefTrack \citep{xu2026should}, BeliefShift \citep{myakala2026beliefshift}, STALE \citep{chao2026stale}, MemOps \citep{hao2026memops}}]]
+    [{Belief--action gap}, [{STOCKTAKE \citep{deb2026stocktake}, Werewolf audit \citep{gao2026auditing}, Agent-ToM \citep{ahmed2026agenttom}}]]
+    [{Outcome only}, [{FinBen \citep{xie2025finben}, InvestorBench \citep{li2024investorbench}, HERCULEAN \citep{herculean2026}}]]
+  ]
+]
+}}
+\caption{Taxonomy of the survey with representative systems by year. The credited object (yellow) is the axis every method is placed on; Table~\ref{tab:master} in the appendix places every screened system.}
+\label{fig:taxonomy}
+\end{figure*}

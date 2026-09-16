@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}llll@{}}
+\toprule
+Level & Credited object & Signed by $o_{t+1}$? & Representative \\
+\midrule
+Output & finished response & no & RLHF, DPO \\
+Trajectory & sampled steps & no & PRMs, GRPO, LATS \\
+Interaction & actions, tool calls & no (task reward) & ArCHer, RAGEN, HiPER \\
+Interaction & memory operations & no (operation reward) & MEM1, Memento, Memory-R2 \\
+State & written belief & closed-world oracle & CBM \\
+State & claim + certainty & calibration target & Agent-BRACE \\
+State & posterior tag & Bayesian teacher & BOND \\
+State & written belief & \emph{own prediction} & (none published) \\
+\bottomrule
+\end{tabular}}
+\caption{Learning signals by credited object and where the sign of the signal comes from (Section~\ref{sec:learning}); the full version with feedback source, granularity, and evidence level is Table~\ref{tab:learning} in the appendix.}
+\label{tab:learningmain}
+\end{table}

@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering\footnotesize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllllccc}
+\toprule
+Level & Representative methods & Feedback source & Granularity & Signed by returned $o_{t+1}$ & Delayed evidence & Partial obs. & Evidence \\
+\midrule
+Output & SFT, RLHF, DPO \citep{ouyang2022training,rafailov2023direct} & demos, preferences & response & \xmark & \xmark & \xmark & P \\
+Trajectory & PPO, GRPO, PRMs \citep{schulman2017proximal,shao2024deepseekmath,lightman2023lets} & verifier, PRM & step / rollout & \xmark & \xmark & \xmark & P \\
+Interaction & HiPER, G$^2$PO, ECPO, IAPO \citep{peng2026hiper,wang2026groupgraph,li2026denser,ren2026iapo} & environment & turn / action & \xmark & partial & \xmark & A \\
+Interaction & Memory-R2, TAMTRL, EvoHarness-RL \citep{yan2026memoryr2,wang2026tamtrl,ning2026evoharness} & environment, teacher & memory operation & \xmark & partial & \cmark & A \\
+State & CBM \citep{xu2026should} & symbolic belief reward & belief state & closed world & \cmark & \cmark & A \\
+State & Agent-BRACE \citep{singh2026agent} & joint RL, calibration & claim + certainty & calibration target & \cmark & \cmark & A \\
+State & BOND \citep{cui2026distilling} & Bayesian teacher & posterior tag & teacher & \xmark & \cmark & A \\
+\bottomrule
+\end{tabular}}
+\caption{Learning signals by credited object. Evidence: P = peer-reviewed venue, A = arXiv preprint at the time of writing.}
+\label{tab:learning}
+\end{table*}

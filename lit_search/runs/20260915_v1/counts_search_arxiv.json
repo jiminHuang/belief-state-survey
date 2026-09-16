@@ -1,0 +1,124 @@
+{
+ "timestamp": "20260915_v1",
+ "source": "openalex_arxiv_only",
+ "window_from": "2026-01-01",
+ "per_query": [
+  {
+   "section": "S3_representation",
+   "query": "belief state language model agent",
+   "hits": 50
+  },
+  {
+   "section": "S3_representation",
+   "query": "LLM agent world model planning",
+   "hits": 50
+  },
+  {
+   "section": "S3_representation",
+   "query": "structured state representation LLM agent",
+   "hits": 50
+  },
+  {
+   "section": "S3_representation",
+   "query": "LLM agent memory mechanism",
+   "hits": 50
+  },
+  {
+   "section": "S3_representation",
+   "query": "language model latent state tracking long-horizon",
+   "hits": 50
+  },
+  {
+   "section": "S4_revision",
+   "query": "belief revision large language model",
+   "hits": 50
+  },
+  {
+   "section": "S4_revision",
+   "query": "prediction error surprise language model agent",
+   "hits": 50
+  },
+  {
+   "section": "S4_revision",
+   "query": "self-reflection LLM agent belief update",
+   "hits": 50
+  },
+  {
+   "section": "S4_revision",
+   "query": "uncertainty calibration LLM agent decision",
+   "hits": 50
+  },
+  {
+   "section": "S4_revision",
+   "query": "stale belief long-horizon LLM agent",
+   "hits": 50
+  },
+  {
+   "section": "S5_learning",
+   "query": "credit assignment multi-turn LLM reinforcement learning",
+   "hits": 50
+  },
+  {
+   "section": "S5_learning",
+   "query": "agentic reinforcement learning language model",
+   "hits": 50
+  },
+  {
+   "section": "S5_learning",
+   "query": "delayed reward LLM agent training",
+   "hits": 50
+  },
+  {
+   "section": "S5_learning",
+   "query": "process reward model reasoning",
+   "hits": 50
+  },
+  {
+   "section": "S5_learning",
+   "query": "on-policy distillation LLM",
+   "hits": 50
+  },
+  {
+   "section": "S6_evidence",
+   "query": "agentic retrieval augmented generation uncertainty",
+   "hits": 50
+  },
+  {
+   "section": "S6_evidence",
+   "query": "tool selection routing uncertainty LLM",
+   "hits": 50
+  },
+  {
+   "section": "S6_evidence",
+   "query": "active information acquisition LLM agent",
+   "hits": 50
+  },
+  {
+   "section": "S6_evidence",
+   "query": "mixture of experts routing LLM decision",
+   "hits": 50
+  },
+  {
+   "section": "S7_eval",
+   "query": "LLM agent evaluation long-horizon benchmark",
+   "hits": 50
+  },
+  {
+   "section": "S7_eval",
+   "query": "partially observable benchmark LLM agent",
+   "hits": 50
+  },
+  {
+   "section": "S7_eval",
+   "query": "financial trading LLM agent benchmark",
+   "hits": 50
+  },
+  {
+   "section": "S7_eval",
+   "query": "LLM agent state consistency evaluation",
+   "hits": 50
+  }
+ ],
+ "raw_hits_total": 1150,
+ "unique_after_dedup": 1008
+}

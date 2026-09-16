@@ -1,0 +1,11 @@
+\section{Open Problems}
+\label{sec:challenges}
+
+\paragraph{Self-supervised testability.}
+The state-level methods need an external source of truth, and the surprise-triggered mechanisms of Section~\ref{sec:revision} have the ingredient that would remove that need but attach the error to a memory entry rather than to the written claim. Combining the two, so that the agent's own matured predictions supply the signed signal for its written belief, is the most direct open problem this survey identifies. Which evidence horizon to commit to \citep{ghosh2026finbench,zhao2026evoscm} and how much superseded belief must stay visible \citep{singh2026agent,diao2026hipif} are its open parameters.
+
+\paragraph{Latent beliefs without ground truth.}
+Every construct beyond calibration needs an oracle, a closed world, or annotation; historical data has none. Filter-recovered latents and representation drift are candidate substitutes, unvalidated against each other \citep{dixon2026belief,xue2026representation}; a benchmark pairing a controlled environment with a replay of the same instrument would settle whether belief-level gains transfer.
+
+\paragraph{Belief without action, and belief under governance.}
+Revising the belief does not revise a policy conditioned on the old one, and action--belief consistency sits far below belief accuracy wherever both are measured \citep{gao2026auditing,deb2026stocktake}. Regulated domains add that the belief must be auditable, which today only fixed-space filters provide; LLM-proposed spaces \citep{six2026learning,soru2026semantic,chen2026beliefcalibrated} are the candidate bridge \citep{dixon2026model}.

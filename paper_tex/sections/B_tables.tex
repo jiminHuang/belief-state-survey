@@ -1,0 +1,61 @@
+\section{Additional Tables and Figures}
+\label{app:tables}
+
+\input{fig_repr}
+
+\begin{table*}[t]
+\centering\footnotesize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llcccccl}
+\toprule
+Class & Method & Model-written & Append-only & Uncertainty & \op{Test} & \op{Revise} & Domain \\
+\midrule
+Context as state & ReAct \citep{yao2023react} & \cmark & \cmark & \xmark & \xmark & \xmark & general \\
+External memory & MemGPT \citep{packer2023memgpt} & \xmark & \xmark & \xmark & \xmark & store update & dialogue \\
+Probabilistic memory & BeliefMem \citep{liao2026belief} & \xmark & \xmark & prob. & \xmark & noisy-OR & LoCoMo, ALFWorld \\
+Probabilistic memory & D-MEM \citep{song2026d} & \xmark & \xmark & RPE & \xmark & gated write & LoCoMo \\
+External filter & Belief-State Engine \citep{chattopadhayay2026belief} & \xmark & \xmark & posterior & \cmark & Bayes & Tiger, security \\
+External filter & Belief at Risk \citep{dixon2026belief} & \xmark & \xmark & posterior & \cmark & Bayes & equities \\
+Model-written & Agent-BRACE \citep{singh2026agent} & \cmark & \xmark & ordinal & \xmark & RL & ALFWorld-style \\
+Model-written & Linguistic forecaster \citep{murphy2026agentic} & \cmark & \cmark & numeric & \cmark & sequential & ForecastBench \\
+Model-written & BOND \citep{cui2026distilling} & \cmark & \cmark & posterior tag & \xmark & distilled & negotiation \\
+Model-written & CBM \citep{xu2026should} & \cmark & \cmark & \xmark & \cmark (symbolic) & RL & closed world \\
+Model-written & EvoSCM \citep{zhao2026evoscm} & \cmark & \cmark & population & \cmark (interventions) & rule distillation & science \\
+World model & BB-WM \citep{kumar2026towards} & \xmark & \xmark & latent & \cmark & learned & general \\
+\bottomrule
+\end{tabular}}
+\caption{Belief representation by who maintains the belief. \op{Test}: the belief commits to a falsifiable prediction. All 2026 entries are arXiv preprints at the time of writing; ReAct and MemGPT are peer-reviewed.}
+\label{tab:representation}
+\end{table*}
+
+\begin{table*}[t]
+\centering\footnotesize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccl}
+\toprule
+Method & Failed stay & Failed update & Failed isolation & Failed act & Trigger & Signal projected to \\
+\midrule
+Reflexion \citep{shinn2023reflexion} & & \cmark & & & task failure & whole context \\
+BeliefShift \citep{myakala2026beliefshift} & \cmark & \cmark & & & user evidence & (benchmark) \\
+STALE \citep{chao2026stale} & & \cmark & & \cmark & implicit conflict & (benchmark) \\
+CBM \citep{xu2026should} & \cmark & \cmark & \cmark & & symbolic check & belief state \\
+TOKI \citep{wang2026toki} & & \cmark & & & contradiction & memory rows \\
+MemOps \citep{hao2026memops} & & \cmark & \cmark & & lifecycle op & (benchmark) \\
+D-MEM \citep{song2026d} & & \cmark & \cmark & & reward pred. error & memory path \\
+STOCKTAKE \citep{deb2026stocktake} & & \cmark & & \cmark & oracle mismatch & (benchmark) \\
+Agent-BRACE \citep{singh2026agent} & & \cmark & & \cmark & certainty & belief model \\
+Werewolf audit \citep{gao2026auditing} & & \cmark & & \cmark & external belief log & (benchmark) \\
+\bottomrule
+\end{tabular}}
+\caption{Belief revision methods and benchmarks by failure mode addressed, revision trigger, and where the signal is projected.}
+\label{tab:revision}
+\end{table*}
+
+
+\input{tab_learning}
+
+\input{tab_benchmarks}
+
+\input{tab_master}
+
+\input{tab_master_full}

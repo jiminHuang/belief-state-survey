@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}lccccl@{}}
+\toprule
+Who maintains the belief & Written & Uncert. & Testable & Auditable & Example \\
+\midrule
+Context as state & \hbhalf & \hbnone & \hbnone & \hbnone & ReAct \\
+External memory & \hbnone & \hbnone & \hbnone & \hbhalf & MemGPT \\
+Probabilistic memory & \hbnone & \hbfull & \hbnone & \hbhalf & Nous \\
+External Bayesian filter & \hbnone & \hbfull & \hbfull & \hbfull & Belief-State Engine \\
+Written, calibrated & \hbfull & \hbfull & \hbnone & \hbhalf & Agent-BRACE, BOND \\
+Written, testable & \hbfull & \hbhalf & \hbfull & \hbhalf & CBM, EvoSCM \\
+Learned world model & \hbnone & \hbhalf & \hbfull & \hbnone & Dreamer, BB-WM \\
+Written + parametric check & \hbfull & \hbfull & \hbfull & \hbhalf & Hybrid-WM \\
+\bottomrule
+\end{tabular}}
+\caption{Representation classes and the properties they trade off. \emph{Written}: the model writes and reads the belief; \emph{Uncert.}: it carries uncertainty; \emph{Testable}: it commits to a falsifiable prediction; \emph{Auditable}: it can be validated against a closed-form oracle. \hbfull\ yes, \hbhalf\ partly, \hbnone\ no.}
+\label{tab:reprprops}
+\end{table}

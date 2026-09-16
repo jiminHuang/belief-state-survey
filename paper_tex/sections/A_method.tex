@@ -1,0 +1,47 @@
+\section{Paper Collection Protocol}
+\label{app:method}
+
+The search is scripted and rerunnable; the configuration, raw hits, and per-stage counts for the runs reported here (identifiers \texttt{20260915\_v1} for 2025--2026 and \texttt{20260916\_v3} for the 2020--2026 window) are released with the paper.
+
+\paragraph{Queries.}
+Twenty-three keyword queries were defined in the first run, four to five per survey section; a second run added eleven queries on evidence acquisition and theory-of-mind belief modelling (34 in total): representation (Section~\ref{sec:representation}), revision (Section~\ref{sec:revision}), learning (Section~\ref{sec:learning}), evidence (Section~\ref{sec:evidence}), and evaluation (Section~\ref{sec:evaluation}).
+
+\paragraph{Sources.}
+Source A queried OpenAlex across all venues with publication date from 1~January 2025, 50 results per query. Source B queried OpenAlex restricted to the arXiv source with publication date from 1~January 2026, 50 results per query, to improve recall of preprints. The arXiv API itself was rate-limited during the run; the OpenAlex mirror of arXiv lags by a few days.
+
+\paragraph{Screening.}
+Records were deduplicated by identifier and then by normalised title, so that a preprint and its journal version count once. Rule-based screening on title and abstract applied one inclusion criterion for an LLM-related term (I1), one exclusion criterion for off-domain applications (E1), and one inclusion criterion requiring at least two topic terms from a fixed list (I2). Records without an abstract of at least 200 characters were excluded. Included records were ranked by a relevance score used only for ordering the manual full-text screen, never for inclusion.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lr}
+\toprule
+Stage & Count \\
+\midrule
+Queries & 23 \\
+Source A raw hits / unique & 1{,}150 / 715 \\
+Source B raw hits / unique & 1{,}150 / 1{,}008 \\
+Merged unique (identifier) & 1{,}685 \\
+After title-level deduplication & 1{,}460 \\
+Excluded: no or short abstract & 45 \\
+Excluded I1: no LLM term & 160 \\
+Excluded E1: off-domain & 35 \\
+Excluded I2: fewer than two topic terms & 357 \\
+Included after rule screening & 863 \\
+\quad of which published in 2026 & 656 \\
+Full-text screened & 117 \\
+\quad of which included after reading & 106 \\
+\bottomrule
+\end{tabular}
+\caption{Paper-collection counts for run \texttt{20260915\_v1}.}
+\label{tab:counts}
+\end{table}
+
+\paragraph{Second and third runs.}
+The second run (34 queries, same sources and rules) returned 834 unique records, 338 after screening, of which 96 were published in 2026; only two of those had not already been read in the first run, which we take as evidence that the first run had saturated the keyword neighbourhood. The third run extended the window to 1~January 2020 with 100 results per query and returned 4{,}471 unique records, 3{,}999 after title deduplication and 2{,}079 after rule screening. Keyword ranking is dominated by generic high-citation papers before 2025, so the 2020--2025 foundations were enumerated as a curated list of 90 titles resolved through OpenAlex for venue and citation data (Table~\ref{tab:master_full}); 75 of them were read in full and 73 included.
+
+\paragraph{Evidence level.}
+Each cited source is labelled P (peer-reviewed venue) or A (arXiv preprint at the time of writing) in the tables and in Figure~\ref{fig:metrics}. Of the 179 papers included after full-text reading, 47 are peer-reviewed and 132 are preprints; every number quoted in the text is the paper's own headline figure, taken from the abstract or the reported table, and none has been reproduced by us.
+
+\paragraph{Full-text screening.}
+Each paper read in full was recorded with the fields: who maintains the belief, credited object, revision signal, whether belief-level metrics are reported, survey section, and role. The record is the source of Tables~\ref{tab:representation}--\ref{tab:benchmarks} and Figure~\ref{fig:metrics}.

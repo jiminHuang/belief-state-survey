@@ -1,0 +1,178 @@
+{
+ "timestamp": "20260916_v3",
+ "source": "openalex",
+ "per_query": [
+  {
+   "section": "S3_representation",
+   "query": "belief state language model agent",
+   "hits": 100
+  },
+  {
+   "section": "S3_representation",
+   "query": "LLM agent world model planning",
+   "hits": 100
+  },
+  {
+   "section": "S3_representation",
+   "query": "structured state representation LLM agent",
+   "hits": 100
+  },
+  {
+   "section": "S3_representation",
+   "query": "LLM agent memory mechanism",
+   "hits": 100
+  },
+  {
+   "section": "S3_representation",
+   "query": "language model latent state tracking long-horizon",
+   "hits": 100
+  },
+  {
+   "section": "S4_revision",
+   "query": "belief revision large language model",
+   "hits": 100
+  },
+  {
+   "section": "S4_revision",
+   "query": "prediction error surprise language model agent",
+   "hits": 100
+  },
+  {
+   "section": "S4_revision",
+   "query": "self-reflection LLM agent belief update",
+   "hits": 100
+  },
+  {
+   "section": "S4_revision",
+   "query": "uncertainty calibration LLM agent decision",
+   "hits": 100
+  },
+  {
+   "section": "S4_revision",
+   "query": "stale belief long-horizon LLM agent",
+   "hits": 100
+  },
+  {
+   "section": "S4_revision",
+   "query": "LLM agent knowledge conflict update context",
+   "hits": 100
+  },
+  {
+   "section": "S4_revision",
+   "query": "hypothesis revision language model agent experiment",
+   "hits": 100
+  },
+  {
+   "section": "S5_learning",
+   "query": "credit assignment multi-turn LLM reinforcement learning",
+   "hits": 100
+  },
+  {
+   "section": "S5_learning",
+   "query": "agentic reinforcement learning language model",
+   "hits": 100
+  },
+  {
+   "section": "S5_learning",
+   "query": "delayed reward LLM agent training",
+   "hits": 100
+  },
+  {
+   "section": "S5_learning",
+   "query": "process reward model reasoning",
+   "hits": 100
+  },
+  {
+   "section": "S5_learning",
+   "query": "on-policy distillation LLM",
+   "hits": 100
+  },
+  {
+   "section": "S6_evidence",
+   "query": "agentic retrieval augmented generation uncertainty",
+   "hits": 100
+  },
+  {
+   "section": "S6_evidence",
+   "query": "tool selection routing uncertainty LLM",
+   "hits": 100
+  },
+  {
+   "section": "S6_evidence",
+   "query": "active information acquisition LLM agent",
+   "hits": 100
+  },
+  {
+   "section": "S6_evidence",
+   "query": "mixture of experts routing LLM decision",
+   "hits": 100
+  },
+  {
+   "section": "S6_evidence",
+   "query": "agentic RAG when to retrieve decision",
+   "hits": 100
+  },
+  {
+   "section": "S6_evidence",
+   "query": "adaptive retrieval uncertainty language model",
+   "hits": 100
+  },
+  {
+   "section": "S6_evidence",
+   "query": "LLM agent tool selection belief",
+   "hits": 100
+  },
+  {
+   "section": "S6_evidence",
+   "query": "information seeking LLM agent uncertainty reduction",
+   "hits": 100
+  },
+  {
+   "section": "S6_evidence",
+   "query": "reasoning-intensive retrieval agent",
+   "hits": 100
+  },
+  {
+   "section": "S7_eval",
+   "query": "LLM agent evaluation long-horizon benchmark",
+   "hits": 100
+  },
+  {
+   "section": "S7_eval",
+   "query": "partially observable benchmark LLM agent",
+   "hits": 100
+  },
+  {
+   "section": "S7_eval",
+   "query": "financial trading LLM agent benchmark",
+   "hits": 100
+  },
+  {
+   "section": "S7_eval",
+   "query": "LLM agent state consistency evaluation",
+   "hits": 100
+  },
+  {
+   "section": "S3b_theory_of_mind",
+   "query": "theory of mind LLM agent belief tracking",
+   "hits": 100
+  },
+  {
+   "section": "S3b_theory_of_mind",
+   "query": "opponent modeling LLM agent belief",
+   "hits": 100
+  },
+  {
+   "section": "S3b_theory_of_mind",
+   "query": "LLM agent belief about other agents negotiation",
+   "hits": 100
+  },
+  {
+   "section": "S3b_theory_of_mind",
+   "query": "recursive belief modeling language model",
+   "hits": 100
+  }
+ ],
+ "raw_hits_total": 3400,
+ "unique_after_dedup": 1930
+}

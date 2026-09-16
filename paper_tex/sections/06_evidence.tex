@@ -1,0 +1,29 @@
+\section{Belief-Guided Evidence Acquisition}
+\label{sec:evidence}
+
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}p{2.2cm}p{2.9cm}p{2.3cm}@{}}
+\toprule
+Acquisition conditioned on & Systems & Belief object \\
+\midrule
+fixed heuristic & agentic RAG \citep{gao2024rag} & none \\
+task-level POMDP & CGDP \citep{kausik2026context}, MedExAgent \citep{gao2026medexagent} & searcher, patient state \\
+uncertainty of an explicit belief & BayesEvolve \citep{wu2026bayesevolve}, EvoSCM \citep{zhao2026evoscm}, DenoiseFlow \citep{yan2026denoiseflow} & hypothesis posterior, causal population, step entropy \\
+belief over own resources & Bayesian-Agent \citep{wu2026bayesian}, REDEREF \citep{hosseini2026trainingfree}, CMI \citep{srivastava2026causal} & skill, delegate, memory reliability \\
+information gain as reward & PiCA \citep{liu2026pica}, TIPS \citep{xie2026tips} & implicit \\
+written testable belief & \emph{none found} & --- \\
+\bottomrule
+\end{tabular}}
+\caption{Evidence-acquisition decisions by what they are conditioned on.}
+\label{tab:evidence}
+\end{table}
+
+A testable belief tells the agent what evidence would change it, which turns retrieval, tool use, and routing from fixed pipeline stages into decisions (Table~\ref{tab:evidence}). Agentic search \citep{kausik2026context} and clinical diagnosis \citep{gao2026medexagent} have been framed as POMDPs whose actions include what to observe next, and two finance simulators show why it matters: failing agents spend 62\% of their observation budget re-reading internal state, and failures trace to incomplete acquisition rather than to reasoning \citep{han2026can,zhang2026retailbenchx}.
+
+The methods that condition acquisition on a belief differ in what the belief is over (Table~\ref{tab:evidence}). Agentic retrieval first let the model decide when to retrieve \citep{gao2024rag}; recent systems condition that decision on measured uncertainty about the task \citep{wu2026bayesevolve,zhao2026evoscm,xu2026nesyfs,yan2026denoiseflow}, make information gain the training signal itself \citep{liu2026pica,xie2026tips}, or keep a belief over the agent's own skills, delegates, or memories \citep{wu2026bayesian,hosseini2026trainingfree,srivastava2026causal}. Financial evidence adds a constraint, since much of it cannot leave its silo; knowledge harnesses and federated adaptation are the compliance-aware forms of integration \citep{borjigin2026absorbing,concordia2026}. 
+
+\insight{4}{\textbf{Acquisition is a belief problem.} Agents lose by re-reading what they know rather than seeking what would change it. A testable belief names that evidence, so evidence acquisition will move from a fixed retrieval stage to a consequence of the belief.}

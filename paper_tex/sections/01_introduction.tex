@@ -1,0 +1,30 @@
+\section{Introduction}
+\label{sec:intro}
+\input{tab_surveys}
+\input{fig_taxonomy}
+
+Language-model agents now plan, call tools, retrieve evidence, and act over horizons of hours or months, and the failures reported from these settings are failures of state rather than of reasoning. A model that solves a problem in one pass loses much of its accuracy when the same information arrives over several turns \citep{laban2025lost}; an agent that plans well falls to near-random success once the environment moves while it deliberates \citep{gonzalez2025robotouille}; an agent given only observations wins a fraction of the episodes won by one that reads the simulator's latent state \citep{alaswad2026why}; and in markets, where evidence arrives late and partially, stronger backbones do not reliably produce stronger trading agents \citep{xie2025finben,li2024investorbench}. What these failures share is that the task required the agent to hold something between decisions, a belief about what is true, how certain it is, and what would change it, and the agent never formed it, never tested it, or revised it without acting on the revision.
+
+The field has responded along three lines that rarely cite one another. Memory research moved the state from the reasoning trace \citep{wei2022chain,yao2023react} into external stores that persist, reflect, and abstract experience \citep{park2023generative,shinn2023reflexion,luo2026storage}. Uncertainty research taught models to state confidence \citep{lin2022teaching,kadavath2022language} and extended it from single answers to agent trajectories \citep{lin2026uncertainty}. Post-training moved from rewarding the finished response \citep{ouyang2022training} to rewarding reasoning steps \citep{lightman2023lets,zheng2025prm} and then actions over several turns of interaction \citep{zhou2024archer,zhang2025landscape,zhang2026reasoning}. Each line supervises a different thing, what is stored, how confident the answer is, which action earns reward, and none of them supervises the belief itself.
+
+Explicit beliefs are older than the recent attention suggests: dialogue state tracking wrote one in 2021 \citep{lee2021dialogue}, agents wrote beliefs about tasks, opponents, and markets in 2024 \citep{kim2024qube,cross2024hypothetical,yu2024fincon}, and two 2025 systems learned to overwrite a written state by reinforcement \citep{zhou2025mem1,yu2025memagent}. Until recently the belief was credited, if at all, by the task outcome. In 2026 alone at least twelve systems gave it a learning signal or oracle of its own,\footnote{Belief-State Engine, Belief at Risk and its validation framework, BayesEvolve, CAPTURE, Agent-BRACE, the Bayesian linguistic forecaster, BOND, CBM, BCO, EvoSCM, and the belief-based world model; Section~\ref{sec:representation}.} and benchmarks began to score the belief rather than the outcome it led to \citep{xu2026should,deb2026stocktake,chao2026stale}, with disjoint formalisms and metrics and little mutual citation (timeline in Figure~\ref{fig:timeline}, appendix).
+
+No existing survey takes this object as its own: memory surveys organise by what is stored, reward and credit surveys stop at the action, uncertainty surveys score an output rather than a state, and evaluation surveys report no belief-level metric (Section~\ref{sec:related}, Table~\ref{tab:surveys}). This survey asks one question of every method: \emph{which object receives credit}. Figure~\ref{fig:taxonomy} gives the resulting taxonomy, and Figure~\ref{fig:loop} places the four answers on the observation--belief--action loop: the finished output, the sampled trajectory, the interaction (actions, tool calls, memory operations), or the belief written before the action and tested by evidence returned after it. It cuts across the neighbouring taxonomies rather than replacing them. We cover language-model agents acting over several steps under partial observability, from 2020 to September 2026, collected by a scripted protocol (Appendix~\ref{app:method}). Section~\ref{sec:formulation} grounds the belief state in POMDP belief and belief-revision theory; Sections~\ref{sec:representation}--\ref{sec:evaluation} organise the literature by representation, revision, credited object, evidence acquisition, and evaluation; Section~\ref{sec:discussion} compares the four levels, and Section~\ref{sec:challenges} states the open problems, chief among them that no published method obtains a signed signal for a written belief from the agent's own predictions. Finance is the running example because delayed, partial evidence is its normal condition; the taxonomy is stated without reference to any domain.
+
+\begin{figure}[t]
+\centering
+\resizebox{0.85\columnwidth}{!}{%
+\begin{tikzpicture}[node distance=5mm and 7mm, every node/.style={font=\small}]
+\tikzstyle{box}=[draw, rounded corners=2pt, minimum height=7mm, minimum width=17mm, align=center]
+\node[box] (obs) {Observation\\$o_t$};
+\node[box, right=of obs, fill=blue!8] (bel) {Belief state\\$\belief_t$};
+\node[box, right=of bel] (act) {Action\\$a_t$};
+\node[box, right=of act] (env) {Environment\\$z_{t+1}$};
+\draw[-{Latex}] (obs) -- (bel); \draw[-{Latex}] (bel) -- (act); \draw[-{Latex}] (act) -- (env);
+\draw[-{Latex}] (env.south) |- ++(0,-6mm) -| node[pos=0.25, below, font=\scriptsize] {returned evidence $o_{t+1}$} (obs.south);
+\node[anchor=south west, font=\tiny, text=gray] at ([yshift=1mm]act.north west) {output / trajectory / interaction credit};
+\node[anchor=south east, font=\tiny, text=blue!70!black] at ([yshift=1mm]bel.north east) {state-level credit (this survey)};
+\end{tikzpicture}}
+\caption{The observation--belief--action loop. Existing post-training credits the action, the trajectory that produced it, or the response text. State-level credit reaches the belief written before the action, using evidence returned after it.}
+\label{fig:loop}
+\end{figure}

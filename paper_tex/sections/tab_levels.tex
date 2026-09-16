@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}llccccc@{}}
+\toprule
+Level & Sign of the signal from & Env. & No oracle & Belief & Act gap & Maturity \\
+\midrule
+Output & humans, verifiers & \hbnone & \hbhalf & \hbnone & \hbnone & \hbfull \\
+Trajectory & verifier, PRM & \hbhalf & \hbhalf & \hbnone & \hbnone & \hbfull \\
+Interaction (actions) & task reward & \hbfull & \hbfull & \hbnone & \hbnone & \hbfull \\
+Interaction (memory ops) & task reward, teacher & \hbfull & \hbhalf & \hbhalf & \hbnone & \hbhalf \\
+State (oracle or teacher) & closed world, teacher, target & \hbnone & \hbnone & \hbfull & \hbfull & \hbhalf \\
+State (own prediction) & returned observation & \hbfull & \hbfull & \hbfull & \hbfull & \hbnone \\
+\bottomrule
+\end{tabular}}
+\caption{The four credit levels compared. \emph{Env.}: the sign of the signal comes from the environment; \emph{No oracle}: no external source of truth is needed; \emph{Belief}: the written belief receives the gradient; \emph{Act gap}: belief error and action error are separated; \emph{Maturity}: \hbfull\ many systems, \hbhalf\ a few, \hbnone\ none published.}
+\label{tab:levels}
+\end{table}

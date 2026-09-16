@@ -1,0 +1,20 @@
+\begin{figure}[t]
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tikzpicture}[font=\scriptsize,
+  op/.style={draw, rounded corners=2pt, fill=blue!8, minimum width=19mm, minimum height=7mm, align=center, font=\scriptsize\scshape},
+  fail/.style={draw=red!60!black, fill=red!6, rounded corners=1.5pt, align=left, font=\tiny, inner sep=2pt, text width=25mm}]
+\node[op] (c) {Construct};
+\node[op, right=14mm of c] (t) {Test\\(\op{Predict})};
+\node[op, right=14mm of t] (rv) {Revise};
+\node[op, right=14mm of rv] (a) {Act};
+\draw[-{Latex}] (c) -- (t); \draw[-{Latex}] (t) -- (rv); \draw[-{Latex}] (rv) -- (a);
+\draw[-{Latex}] (a.south) |- ++(0,-5mm) -| node[pos=0.25, below, font=\tiny] {returned evidence $o_{t+1}$, surprise} (c.south);
+\node[fail, above=3mm of c] (f3) {\textbf{failed isolation}\\ irrelevant input enters the belief (CBM, MemOps)};
+\node[fail, above=3mm of t] (f1) {\textbf{failed stay}\\ belief moves without evidence (BeliefShift, MEDLEY)};
+\node[fail, above=3mm of rv] (f2) {\textbf{failed update}\\ stale belief survives evidence (STALE, DeltaLogic)};
+\node[fail, above=3mm of a] (f4) {\textbf{failed act}\\ belief revised, action not (STOCKTAKE, Werewolf)};
+\end{tikzpicture}}
+\caption{Where the four failure modes of Section~\ref{sec:revision} occur on the construct--test--revise--act cycle. Only a testable belief lets returned evidence be routed to the operation that failed rather than to the action.}
+\label{fig:failures}
+\end{figure}

@@ -1,0 +1,138 @@
+{
+ "run_note": "Belief-state survey literature search. Source: OpenAlex works API (no key). Edit queries/filters here; never edit scripts for a rerun.",
+ "date_from": "2025-01-01",
+ "types": [
+  "article",
+  "preprint"
+ ],
+ "per_page": 50,
+ "queries": {
+  "S3_representation": [
+   "belief state language model agent",
+   "LLM agent world model planning",
+   "structured state representation LLM agent",
+   "LLM agent memory mechanism",
+   "language model latent state tracking long-horizon"
+  ],
+  "S4_revision": [
+   "belief revision large language model",
+   "prediction error surprise language model agent",
+   "self-reflection LLM agent belief update",
+   "uncertainty calibration LLM agent decision",
+   "stale belief long-horizon LLM agent",
+   "LLM agent knowledge conflict update context",
+   "hypothesis revision language model agent experiment"
+  ],
+  "S5_learning": [
+   "credit assignment multi-turn LLM reinforcement learning",
+   "agentic reinforcement learning language model",
+   "delayed reward LLM agent training",
+   "process reward model reasoning",
+   "on-policy distillation LLM"
+  ],
+  "S6_evidence": [
+   "agentic retrieval augmented generation uncertainty",
+   "tool selection routing uncertainty LLM",
+   "active information acquisition LLM agent",
+   "mixture of experts routing LLM decision",
+   "agentic RAG when to retrieve decision",
+   "adaptive retrieval uncertainty language model",
+   "LLM agent tool selection belief",
+   "information seeking LLM agent uncertainty reduction",
+   "reasoning-intensive retrieval agent"
+  ],
+  "S7_eval": [
+   "LLM agent evaluation long-horizon benchmark",
+   "partially observable benchmark LLM agent",
+   "financial trading LLM agent benchmark",
+   "LLM agent state consistency evaluation"
+  ],
+  "S3b_theory_of_mind": [
+   "theory of mind LLM agent belief tracking",
+   "opponent modeling LLM agent belief",
+   "LLM agent belief about other agents negotiation",
+   "recursive belief modeling language model"
+  ]
+ },
+ "screen": {
+  "must_any": [
+   "language model",
+   "llm",
+   "large language",
+   "foundation model",
+   "gpt",
+   "transformer agent"
+  ],
+  "must_any_note": "title+abstract must mention an LLM-related term (inclusion criterion I1)",
+  "exclude_any": [
+   "protein",
+   "medical imaging",
+   "radiology",
+   "speech recognition",
+   "autonomous driving",
+   "molecul",
+   "genom",
+   "chemistry",
+   "robot arm"
+  ],
+  "exclude_any_note": "off-domain applications (exclusion criterion E1)",
+  "topic_any": [
+   "belief",
+   "state",
+   "memory",
+   "world model",
+   "uncertain",
+   "calibrat",
+   "surprise",
+   "revis",
+   "credit assignment",
+   "reinforcement",
+   "reward",
+   "multi-turn",
+   "long-horizon",
+   "partially observ",
+   "pomdp",
+   "retriev",
+   "tool",
+   "routing",
+   "benchmark",
+   "evaluation",
+   "trading",
+   "financ"
+  ],
+  "topic_min": 2,
+  "topic_note": "at least topic_min topic terms present (inclusion criterion I2)",
+  "min_abstract_chars": 200,
+  "core_weights": {
+   "belief": 3,
+   "belief state": 4,
+   "belief revision": 4,
+   "world model": 2,
+   "partially observ": 3,
+   "pomdp": 3,
+   "stale": 3,
+   "surprise": 3,
+   "prediction error": 3,
+   "credit assignment": 3,
+   "long-horizon": 2,
+   "multi-turn": 1,
+   "delayed": 2,
+   "calibrat": 2,
+   "uncertainty": 1,
+   "state tracking": 3,
+   "latent state": 3,
+   "memory": 1,
+   "reinforcement learning": 1,
+   "agent": 1,
+   "trading": 1,
+   "financ": 1,
+   "retriev": 1,
+   "theory of mind": 3,
+   "opponent": 2,
+   "hypothesis": 2,
+   "knowledge conflict": 2
+  },
+  "core_weights_note": "relevance score = sum(core_weights present) + 0.5*topic terms + 1.0*distinct queries hit; used only for ranking, not inclusion"
+ },
+ "recent_year": 2026
+}
