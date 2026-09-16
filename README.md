@@ -236,6 +236,7 @@ python3 search.py && python3 search_openalex_arxiv.py && python3 screen.py
   title={From Memory to Belief: A Survey of State Maintenance and Belief Revision in LLM Decision Agents},
   author={Huang, Jimin and Wang, Yuyan and Peng, Xueqing and Ananiadou, Sophia and Tsujii, Jun'ichi},
   year={2026},
+  howpublished={\url{https://github.com/jiminHuang/belief-state-survey}},
   note={Preprint. Zenodo DOI: TBD}
 }
 ```
