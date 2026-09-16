@@ -1,8 +1,8 @@
 \begin{figure}[t]
 \centering
 \resizebox{\columnwidth}{!}{%
-\begin{tikzpicture}[font=\scriptsize, x=11mm, y=3.2mm]
-\foreach \c/\x in {calibration/1, accuracy/2, revision/3, belief--action/4, outcome/5} \node[align=center, font=\scriptsize\bfseries, rotate=0] at (\x,0.9) {\c};
+\begin{tikzpicture}[font=\scriptsize, x=11mm, y=2.7mm]
+\foreach \c/\x in {calibration/1, accuracy/2, revision/3, belief--act./4, outcome/5} \node[align=center, font=\tiny\bfseries, rotate=0] at (\x,0.9) {\c};
 \foreach \name/\ev/\y/\dots in {
   {UQ taxonomy \citep{lin2026uncertainty}}/A/-1/{1},
   {Agent-BRACE \citep{singh2026agent}}/A/-2/{1},
@@ -18,12 +18,19 @@
   {STOCKTAKE \citep{deb2026stocktake}}/A/-12/{2,4,5},
   {Werewolf audit \citep{gao2026auditing}}/A/-13/{4,5},
   {HERCULEAN \citep{herculean2026}}/A/-14/{5},
-  {FinBen / InvestorBench \citep{xie2025finben,li2024investorbench}}/P/-15/{5}}
+  {FinBen / InvestorBench \citep{xie2025finben,li2024investorbench}}/P/-15/{5},
+  {BayesBench \citep{samanta2026bayesbench}}/A/-16/{3,4},
+  {Martingale Score \citep{he2025martingale}}/P/-17/{3},
+  {Bayesian coherence \citep{imran2025are}}/P/-18/{3},
+  {Theory of Space \citep{zhang2026theory}}/A/-19/{2,3},
+  {HaluMem \citep{chen2025halumem}}/A/-20/{2,3},
+  {Memora \citep{uddin2026recall}}/P/-21/{3,5},
+  {Embodied Agent Interface \citep{li2024embodied}}/P/-22/{2,5}}
  {\node[anchor=east, font=\tiny] at (0.55,\y) {\name~{\color{gray}\ev}};
   \foreach \x in {1,...,5} \draw[gray!40] (\x,\y) circle (1.1pt);
   \foreach \x in \dots \fill (\x,\y) circle (1.6pt);}
 \draw[gray!60] (0.6,0.3) -- (5.5,0.3);
 \end{tikzpicture}}
-\caption{Which belief-level construct each evaluation paper reports. Filled dots mark a reported metric. \textsf{P} = peer-reviewed venue, \textsf{A} = arXiv preprint at the time of writing. No two papers report the same metric for the same construct, which is the fragmentation this section addresses.}
+\caption{Which belief-level construct each evaluation paper reports. Filled dots mark a reported metric. \textsf{P} = peer-reviewed venue, \textsf{A} = arXiv preprint at the time of writing. Only the Bayesian-coherence rows share a reference posterior; elsewhere no two papers report the same metric for the same construct, which is the fragmentation this section addresses.}
 \label{fig:metrics}
 \end{figure}

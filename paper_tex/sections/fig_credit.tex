@@ -18,6 +18,6 @@
 \draw[decorate, decoration={brace, amplitude=2pt, mirror}, thick, red!60!black] ([yshift=-11mm]b1.south west) -- ([yshift=-11mm]b2.south east) node[midway, below=2pt, font=\tiny, text=red!60!black] {\textbf{state}: reward the belief, signed by $o_{t+1}$};
 \draw[-{Latex}, red!60!black, thick] (o1.south) to[out=-90, in=-90, looseness=0.9] node[pos=0.5, below, font=\tiny, text=red!60!black] {surprise} ([xshift=2mm,yshift=-1mm]b2.south);
 \end{tikzpicture}}
-\caption{The credited object on one span of a trajectory. Output- and trajectory-level credit reaches text generated from the context; interaction-level credit reaches the action; state-level credit reaches the written belief, and its sign comes from the observation returned after the action.}
+\caption{The credited object on one span of a trajectory: output and trajectory credit reach generated text, interaction credit reaches the action, state credit reaches the written belief with a sign from the observation returned after the action.}
 \label{fig:credit}
 \end{figure}

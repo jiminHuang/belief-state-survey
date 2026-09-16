@@ -1,0 +1,56 @@
+arxiv_id,title
+2602.21447,Adversarial Intent is a Latent Variable: Stateful Trust Inference for Securing Multimodal Agentic RAG
+2407.01455,TimeToM: Temporal Space is the Key to Unlocking the Door of Large Language Models' Theory-of-Mind
+2510.05592,In-the-Flow Agentic System Optimization for Effective Planning and Tool Use
+2606.26806,"Memory Depth, Not Memory Access: Selective Parametric Consolidation for Long-Running Language Agents"
+2607.01661,"Diverse Evidence, Better Forecasts: Multi-Agent Deliberation Under Information Asymmetry"
+2509.25598,Hybrid Reward Normalization for Process-supervised Non-verifiable Agentic Tasks
+2603.12631,Joint Optimization of Multi-agent Memory System
+2609.02253,APEx: Distillation of Agent Procedural Experience for Adaptive Deep Research Question Answering
+2505.16282,ARPO:End-to-End Policy Optimization for GUI Agents with Experience Replay
+2604.03675,OASES: Outcome-Aligned Search-Evaluation Co-Training for Agentic Search
+2606.04421,Trivium: Temporal Regret as a First-Class Objective for Causal-Memory Controllers
+2605.04811,Tree-based Credit Assignment for Multi-Agent Memory System
+2608.16185,LENS: In-Context Search via Latent Evidence Exploration over Dynamic Raw Documents
+2605.25831,"Clarify, Abstain or Answer? Strategising in Conversation with Belief-Augmented Generation"
+2509.13313,ReSum: Unlocking Long-Horizon Search Intelligence via Context Summarization
+2404.13627,NegotiationToM: A Benchmark for Stress-testing Machine Theory of Mind on Negotiation Surrounding
+2603.04900,EvoTool: Self-Evolving Tool-Use Policy Optimization in LLM Agents via Blame-Aware Mutation and Diversity-Aware Selection
+2509.25299,ID-RAG: Identity Retrieval-Augmented Generation for Long-Horizon Persona Coherence in Generative Agents
+2605.09278,EquiMem: Calibrating Shared Memory in Multi-Agent Debate via Game-Theoretic Equilibrium
+2609.00103,Good Memory Has ECC: Evaluating the Memory of Vision-Language Models Beyond Accuracy
+2401.08743,MMToM-QA: Multimodal Theory of Mind Question Answering
+2508.09736,"Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory"
+2510.04542,Code World Models for General Game Playing
+2606.00593,SPADER: Step-wise Peer Advantage with Diversity-Aware Exploration Rewards for Multi-Answer Question Answering
+2606.29863,KbSD: Knowledge Boundary aware Self-Distillation for Behavioral Calibration in Agentic Search
+2608.29605,Hindsight Memory-PRM: Supervising Memory Management with Auditable Hindsight Credit
+2406.03442,Are language models rational? The case of coherence norms and belief revision
+2603.03293,SE-Search: Self-Evolving Search Agent via Memory and Dense Reward
+2509.18868,"Memory in Large Language Models: Mechanisms, Evaluation and Evolution"
+2605.09942,HAGE: Harnessing Agentic Memory via RL-Driven Weighted Graph Evolution
+2604.00131,Oblivion: Self-Adaptive Agentic Memory Control through Decay-Driven Activation
+2606.20724,When Web Agents Finish but Still Fail: Reproducible Triggers and Trace Diagnostics for Parallel Web Exploration
+2508.16846,BASIL: Bayesian Assessment of Sycophancy in LLMs
+2505.14069,Process vs. Outcome Reward: Which is Better for Agentic RAG Reinforcement Learning
+2405.15943,Transformers represent belief state geometry in their residual stream
+2402.18496,Language Models Represent Beliefs of Self and Others
+2606.10949,Recalling Too Well: Sycophancy Evaluation and Mitigation in Memory-Augmented Models
+2405.15383,Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search
+2512.22471,The Bayesian Geometry of Transformer Attention
+2512.15940,R4: Retrieval-Augmented Reasoning for Vision-Language Models in 4D Spatio-Temporal Space
+2403.02451,"Views Are My Own, But Also Yours: Benchmarking Theory of Mind using Common Ground"
+2512.24461,Align While Search: Belief-Guided Exploratory Inference for World-Grounded Embodied Agents
+2109.14723,BeliefBank: Adding Memory to a Pre-Trained Language Model for a Systematic Notion of Belief
+2503.02247,WMNav: Integrating Vision-Language Models into World Models for Object Goal Navigation
+2012.02757,Playing Text-Based Games with Common Sense
+2409.20163,MemSim: A Bayesian Simulator for Evaluating Memory of LLM-based Personal Assistants
+2505.13934,RLVR-World: Training World Models with Reinforcement Learning
+2510.11701,Demystifying Reinforcement Learning in Agentic Reasoning
+2502.13092,Text2World: Benchmarking Large Language Models for Symbolic World Model Generation
+2601.08510,STAGE: A Full-Screenplay Benchmark for Reasoning over Evolving Stories
+2307.02738,RecallM: An Adaptable Memory Mechanism with Temporal Understanding for Large Language Models
+2601.01522,Bayesian Orchestration of Multi-LLM Agents for Cost-Aware Sequential Decision-Making
+2608.08300,Mitigating Over-Personalization in LLMs via Structured Memory
+2504.02441,Cognitive Memory in Large Language Models
+2502.00640,CollabLLM: From Passive Responders to Active Collaborators

@@ -1,0 +1,11 @@
+{
+ "full_text_sample_rule": "score>=10 OR mentions belief OR linked_seeds>=3 OR (world model AND year>=2025 AND score>=7)",
+ "full_text_sample": 26,
+ "by_year": {
+  "2020": 1,
+  "2023": 1,
+  "2024": 3,
+  "2025": 10,
+  "2026": 11
+ }
+}

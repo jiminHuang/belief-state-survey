@@ -1,0 +1,30 @@
+{
+ "timestamp": "20260916_v3",
+ "round": 4,
+ "source": "semantic_scholar",
+ "seeds": 45,
+ "backward_refs_total": 2406,
+ "forward_cites_total": 441,
+ "candidates_unique_in_window": 1465,
+ "already_screened": 465,
+ "excluded_no_abstract": 91,
+ "excluded_I1_not_llm": 310,
+ "excluded_E1_offdomain": 10,
+ "excluded_I2_topic": 336,
+ "included": 253,
+ "requests": 5,
+ "included_by_year": {
+  "2026": 96,
+  "2025": 93,
+  "2024": 38,
+  "2023": 15,
+  "2020": 3,
+  "2022": 6,
+  "2021": 2
+ },
+ "included_by_origin": {
+  "backward+forward": 2,
+  "backward": 147,
+  "forward": 104
+ }
+}

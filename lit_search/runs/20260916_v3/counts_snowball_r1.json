@@ -1,0 +1,25 @@
+{
+ "timestamp": "20260916_v3",
+ "round": 1,
+ "seeds": 176,
+ "backward_refs_total": 129,
+ "backward_candidates_in_window": 33,
+ "forward_raw_hits": 5702,
+ "candidates_unique": 4169,
+ "already_screened_by_keyword_search": 60,
+ "excluded_no_abstract": 911,
+ "excluded_I1_not_llm": 959,
+ "excluded_E1_offdomain": 106,
+ "excluded_I2_topic": 1503,
+ "included": 630,
+ "requests": 211,
+ "included_by_year": {
+  "2023": 167,
+  "2025": 153,
+  "2026": 55,
+  "2024": 237,
+  "2020": 2,
+  "2022": 15,
+  "2021": 1
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "round": 2,
+ "batches": {
+  "snowball_r2_screen_b1.csv": {
+   "rows": 39,
+   "included_new": 28
+  },
+  "snowball_r2_screen_b2.csv": {
+   "rows": 39,
+   "included_new": 21
+  },
+  "snowball_r2_screen_b3.csv": {
+   "rows": 37,
+   "included_new": 9
+  }
+ },
+ "screened": 115,
+ "included": 58,
+ "duplicates_of_base": 1,
+ "peer_reviewed_included": 23,
+ "included_by_year": {
+  "2020": 1,
+  "2021": 1,
+  "2023": 2,
+  "2024": 9,
+  "2025": 20,
+  "2026": 25
+ },
+ "included_by_credited_object": {
+  "none": 26,
+  "trajectory": 9,
+  "state": 4,
+  "interaction (memory op)": 9,
+  "world-model loss": 3,
+  "interaction (action)": 4,
+  "output": 3
+ },
+ "included_by_role": {
+  "supporting": 34,
+  "background": 12,
+  "core": 5,
+  "benchmark": 7
+ },
+ "total_included_after_merge": 408,
+ "new_inclusion_rate_vs_seeds": 0.166
+}

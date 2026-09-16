@@ -1,0 +1,46 @@
+arxiv_id,title
+2602.09598,Learning from the Irrecoverable: Error-Localized Policy Optimization for Tool-Integrated LLM Reasoning
+2510.07974,Active Confusion Expression in Large Language Models: Leveraging World Models toward Better Social Reasoning
+2605.30880,PatchWorld: Gradient-Free Optimization of Executable World Models
+2608.28476,ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL
+2608.03137,Verifiable Memory: Learning Unified Memory Management with Local and Global Verifiers for Large Language Model Agents
+2606.09092,From Shortcuts to Reasoning: Robust Post-Training of Theory of Mind with Reinforcement Learning
+2601.06377,HiMem: Hierarchical Long-Term Memory for LLM Long-Horizon Agents
+2605.29341,WorldMemArena: Evaluating Multimodal Agent Memory Through Action-World Interaction
+2510.15414,MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs
+2604.06155,Toward Consistent World Models with Multi-Token Prediction and Latent Semantic Enhancement
+2505.12651,DIAMONDs: A Dataset for Dynamic Information And Mental modeling Of Numeric Discussions
+2607.05511,Light-Omni: Reflex over Reasoning in Agentic Video Understanding with Long-Term Memory
+2509.23738,GUI-Shepherd: Reliable Process Reward and Verification for Long-Sequence GUI Tasks
+2510.04678,Multi-Agent Tool-Integrated Policy Optimization
+2509.00559,Social World Models
+2402.03284,"Deal, or no deal (or who knows)? Forecasting Uncertainty in Conversations using Large Language Models"
+2607.16621,From Memory to Skills: Evidence-Grounded Co-Evolution Governance for Long-Horizon LLM Agents
+2502.21017,PersuasiveToM: A Benchmark for Evaluating Machine Theory of Mind in Persuasive Dialogues
+2408.12022,Understanding Epistemic Language with a Language-augmented Bayesian Theory of Mind
+2511.23055,MindPower: Enabling Theory-of-Mind Reasoning in VLM-based Embodied Agents
+2604.13822,UI-Copilot: Advancing Long-Horizon GUI Automation via Tool-Integrated Policy Optimization
+2411.12977,MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning
+2608.18682,RTPO: Reverse-Turn Policy Optimization for Stabilizing Agentic RL Training
+2507.16196,Do Large Language Models Have a Planning Theory of Mind? Evidence from MindGames: a Multi-Step Persuasion Task
+2604.02685,Finding Belief Geometries with Sparse Autoencoders
+2410.13648,SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs
+2511.22275,RecToM: A Benchmark for Evaluating Machine Theory of Mind in LLM-based Conversational Recommender Systems
+2608.26887,Planting a Latent Variable in Natural-Looking Text: a More Realistic Test of Belief States in LLMs and Their Link to Concept Geometry
+2506.23046,SoMi-ToM: Evaluating Multi-Perspective Theory of Mind in Embodied Social Interactions
+2505.20561,Beyond Markovian: Reflective Exploration via Bayes-Adaptive RL for LLM Reasoning
+2606.24597,Qwen-AgentWorld: Language World Models for General Agents
+2509.00074,Language and Experience: A Computational Model of Social Learning in Complex Tasks
+2606.16070,Mind-Studio: Executable World Models with Lookahead Evaluation for Partially Observable Games
+2609.15972,Mind2Dialogue: Training Human-Aware Language Models by Simulating User Mental States
+2204.13074,Towards Teachable Reasoning Systems: Using a Dynamic Memory of User Feedback for Continual System Improvement
+2605.15205,Does Theory of Mind Improvement Really Benefit Human-AI Interactions? Empirical Findings from Interactive Evaluations
+2608.00102,Can LLM Agents Price Competitively? A Dynamic Multi-Attribute Auction Benchmark for Agentic Commerce
+2505.23840,Measuring Sycophancy of Language Models in Multi-turn Dialogues
+2507.04607,PRIME: Large Language Model Personalization with Cognitive Dual-Memory and Personalized Thought Process
+2503.03340,EnigmaToM: Improve LLMs' Theory-of-Mind Reasoning Capabilities with Neural Knowledge Base of Entity States
+2606.01182,CA-BED: Conversation-Aware Bayesian Experimental Design
+2508.13743,Sycophancy under Pressure: Evaluating and Mitigating Sycophantic Bias via Adversarial Dialogues in Scientific QA
+2506.01301,Overcoming Multi-step Complexity in Multimodal Theory-of-Mind Reasoning: A Scalable Bayesian Planner
+2506.13641,EvolvTrip: Enhancing Literary Character Understanding with Temporal Theory-of-Mind Graphs
+2505.17348,DEL-ToM: Inference-Time Scaling for Theory-of-Mind Reasoning via Dynamic Epistemic Logic

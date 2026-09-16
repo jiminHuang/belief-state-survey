@@ -38,10 +38,37 @@ Full-text screened & 117 \\
 \end{table}
 
 \paragraph{Second and third runs.}
-The second run (34 queries, same sources and rules) returned 834 unique records, 338 after screening, of which 96 were published in 2026; only two of those had not already been read in the first run, which we take as evidence that the first run had saturated the keyword neighbourhood. The third run extended the window to 1~January 2020 with 100 results per query and returned 4{,}471 unique records, 3{,}999 after title deduplication and 2{,}079 after rule screening. Keyword ranking is dominated by generic high-citation papers before 2025, so the 2020--2025 foundations were enumerated as a curated list of 90 titles resolved through OpenAlex for venue and citation data (Table~\ref{tab:master_full}); 75 of them were read in full and 73 included.
+The second run (34 queries, same sources and rules) returned 834 unique records, 338 after screening, of which 96 were published in 2026; only two of those had not already been read in the first run, which we take as evidence that the first run had saturated the keyword neighbourhood. The third run extended the window to 1~January 2020 with 100 results per query and returned 4{,}471 unique records, 3{,}999 after title deduplication and 2{,}079 after rule screening. Keyword ranking is dominated by generic high-citation papers before 2025, so the 2020--2025 foundations were enumerated as a curated list of 90 titles resolved through OpenAlex for venue and citation data (Table~\ref{tab:masterfull}); 75 of them were read in full and 73 included.
+
+\paragraph{Citation-tree expansion.}
+Keyword search cannot reach papers that describe belief maintenance in other words, so the included set was expanded by snowballing over the citation graph. Each round took the papers newly included in the previous round as seeds, fetched their reference lists (backward) and the papers citing them (forward) from the Semantic Scholar Graph API, kept candidates published from 2020, removed everything already screened, and applied the same rule-based screen as the keyword runs. Because forward citation of recent preprints is dense, the rule-included candidates were sampled for full-text reading by a fixed rule (topic score $\geq 10$, or the word \emph{belief} in title or abstract, or linked to at least three seeds, or a world-model paper from 2025 with score $\geq 7$), and every sampled paper was read and coded with the same fields as the keyword runs. Round one was seeded by the 179 keyword-included papers and each later round by the papers the previous round added; the full-text sample shrank from 302 to 115, 83, and 26 across four rounds, and the expansion stopped after the round whose sample fell below thirty (Table~\ref{tab:snowball}).
+
+\begin{table}[h]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+Stage & R1 & R2 & R3 & R4 \\
+\midrule
+Seeds & 178 & 165 & 55 & 45 \\
+Backward references & 9{,}127 & 8{,}601 & 2{,}673 & 2{,}406 \\
+Forward citations & 9{,}999 & 9{,}999 & 1{,}403 & 441 \\
+Unique candidates (2020--) & 12{,}872 & 13{,}113 & 2{,}536 & 1{,}465 \\
+Already screened & 302 & 1{,}284 & 605 & 465 \\
+Excluded by rules & 8{,}448 & 7{,}401 & 1{,}300 & 747 \\
+Included after rule screening & 4{,}122 & 4{,}428 & 631 & 253 \\
+Sampled for full-text reading & 302 & 115 & 83 & 26 \\
+Included after reading & 171 & 58 & 47 & 7 \\
+\quad of which peer-reviewed & 79 & 23 & 22 & 2 \\
+\bottomrule
+\end{tabular}}
+\caption{Citation-tree expansion by round. Forward citations are capped at 9{,}999 per request batch by the API.}
+\label{tab:snowball}
+\end{table}
 
 \paragraph{Evidence level.}
-Each cited source is labelled P (peer-reviewed venue) or A (arXiv preprint at the time of writing) in the tables and in Figure~\ref{fig:metrics}. Of the 179 papers included after full-text reading, 47 are peer-reviewed and 132 are preprints; every number quoted in the text is the paper's own headline figure, taken from the abstract or the reported table, and none has been reproduced by us.
+Each cited source is labelled P (peer-reviewed venue) or A (arXiv preprint at the time of writing) in the tables and in Figure~\ref{fig:metrics}. Of the 462 papers included after full-text reading (179 from keyword search and 283 from citation-tree expansion), 173 are peer-reviewed and 289 are preprints; every number quoted in the text is the paper's own headline figure, taken from the abstract or the reported table, and none has been reproduced by us.
 
 \paragraph{Full-text screening.}
 Each paper read in full was recorded with the fields: who maintains the belief, credited object, revision signal, whether belief-level metrics are reported, survey section, and role. The record is the source of Tables~\ref{tab:representation}--\ref{tab:benchmarks} and Figure~\ref{fig:metrics}.

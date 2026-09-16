@@ -1,0 +1,31 @@
+{
+ "round": 4,
+ "batches": {
+  "snowball_r4_screen_b1.csv": {
+   "rows": 26,
+   "included_new": 7
+  }
+ },
+ "screened": 26,
+ "included": 7,
+ "duplicates_of_base": 0,
+ "peer_reviewed_included": 2,
+ "included_by_year": {
+  "2024": 1,
+  "2025": 2,
+  "2026": 4
+ },
+ "included_by_credited_object": {
+  "world-model loss": 3,
+  "state": 1,
+  "none": 2,
+  "trajectory": 1
+ },
+ "included_by_role": {
+  "core": 1,
+  "supporting": 4,
+  "background": 2
+ },
+ "total_included_after_merge": 462,
+ "new_inclusion_rate_vs_seeds": 0.015
+}

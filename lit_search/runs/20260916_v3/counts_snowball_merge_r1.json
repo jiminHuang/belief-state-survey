@@ -1,0 +1,67 @@
+{
+ "round": 1,
+ "batches": {
+  "snowball_screen_b1.csv": {
+   "rows": 38,
+   "included_new": 33
+  },
+  "snowball_screen_b2.csv": {
+   "rows": 38,
+   "included_new": 31
+  },
+  "snowball_screen_b3.csv": {
+   "rows": 38,
+   "included_new": 25
+  },
+  "snowball_screen_b4.csv": {
+   "rows": 38,
+   "included_new": 26
+  },
+  "snowball_screen_b5.csv": {
+   "rows": 38,
+   "included_new": 22
+  },
+  "snowball_screen_b6.csv": {
+   "rows": 38,
+   "included_new": 12
+  },
+  "snowball_screen_b7.csv": {
+   "rows": 38,
+   "included_new": 15
+  },
+  "snowball_screen_b8.csv": {
+   "rows": 36,
+   "included_new": 7
+  }
+ },
+ "screened": 302,
+ "included": 171,
+ "duplicates_of_base": 0,
+ "peer_reviewed_included": 79,
+ "included_by_year": {
+  "2020": 3,
+  "2021": 2,
+  "2022": 4,
+  "2023": 21,
+  "2024": 20,
+  "2025": 69,
+  "2026": 52
+ },
+ "included_by_credited_object": {
+  "state": 5,
+  "none": 83,
+  "interaction (action)": 30,
+  "trajectory": 20,
+  "output": 13,
+  "interaction (memory op)": 10,
+  "world-model loss": 10
+ },
+ "included_by_role": {
+  "core": 25,
+  "background": 35,
+  "supporting": 89,
+  "benchmark": 22
+ },
+ "total_included_after_merge": 350,
+ "new_inclusion_rate_vs_seeds": 0.955
+}

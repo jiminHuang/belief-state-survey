@@ -1,0 +1,35 @@
+seeds 178/179 refs 9127 cites 9999 candidates(in window) 12872 requests 1
+retry 4500 HTTP Error 429: 
+retry 5000 HTTP Error 429: 
+retry 7000 HTTP Error 429: 
+retry 10500 HTTP Error 429: 
+{
+ "timestamp": "20260916_v3",
+ "round": 1,
+ "source": "semantic_scholar",
+ "seeds": 178,
+ "backward_refs_total": 9127,
+ "forward_cites_total": 9999,
+ "candidates_unique_in_window": 12872,
+ "already_screened": 302,
+ "excluded_no_abstract": 1336,
+ "excluded_I1_not_llm": 3513,
+ "excluded_E1_offdomain": 222,
+ "excluded_I2_topic": 3377,
+ "included": 4122,
+ "requests": 31,
+ "included_by_year": {
+  "2025": 1002,
+  "2023": 221,
+  "2022": 68,
+  "2026": 2478,
+  "2024": 308,
+  "2020": 20,
+  "2021": 25
+ },
+ "included_by_origin": {
+  "backward": 1107,
+  "forward": 2960,
+  "backward+forward": 55
+ }
+}

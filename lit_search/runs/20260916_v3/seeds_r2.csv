@@ -1,0 +1,166 @@
+arxiv_id,title
+2510.16907,VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents
+2512.23722,Emergent World Beliefs: Exploring Transformers in Stochastic Games
+2510.14967,Information Gain-based Policy Optimization: A Simple and Effective Approach for Multi-Turn Search Agents
+2310.10701,Theory of Mind for Multi-Agent Collaboration via Large Language Models
+2505.11821,Reinforcing Multi-Turn Reasoning in LLM Agents via Fine-Grained Reward Structure and Credit Assignment
+2511.20937,ENACT: Evaluating Embodied Cognition with World Modeling of Egocentric Interaction
+2306.00924,Minding Language Models' (Lack of) Theory of Mind: A Plug-and-Play Multi-Character Belief Tracker
+2507.22281,CoEx - Co-evolving World-model and Exploration
+2205.12258,History Compression via Language Models in Reinforcement Learning
+2603.17244,Graph-Native Cognitive Memory for AI Agents: Formal Belief Revision Semantics for Versioned Memory Architectures
+2605.18565,MINTEval: Evaluating Memory under Multi-Target Interference in Long-Horizon Agent Systems
+2509.09265,Harnessing Uncertainty: Entropy-Modulated Policy Gradients for Long-Horizon LLM Agents
+2505.16421,WebAgent-R1: Training Web Agents via End-to-End Multi-Turn Reinforcement Learning
+2508.03680,Agent Lightning: Train ANY AI Agents with Reinforcement Learning
+2510.21618,DeepAgent: A General Reasoning Agent with Scalable Toolsets
+2405.19883,From Words to Actions: Unveiling the Theoretical Underpinnings of LLM-Driven Autonomous Systems
+2603.17831,RPMS: Enhancing LLM-Based Embodied Planning through Rule-Augmented Memory Synergy
+2607.03702,Agent Reinforcement Learning via Pivotal-Aware Self-Feedback Retry
+2604.18805,AI scientists produce results without reasoning scientifically
+2404.12358,From $r$ to $Q^*$: Your Language Model is Secretly a Q-Function
+2508.19828,Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning
+2512.12818,"Hindsight is 20/20: Building Agent Memory that Retains, Recalls, and Reflects"
+2509.14480,Process-Supervised Reinforcement Learning for Interactive Multimodal Tool-Use Agents
+2603.05484,Towards Multimodal Lifelong Understanding: A Dataset and Agentic Baseline
+2410.13232,Web Agents with World Models: Learning and Leveraging Environment Dynamics in Web Navigation
+2512.18832,From Word to World: Can Large Language Models be Implicit Text-based World Models?
+2601.03555,SCRIBE: Structured Mid-Level Supervision for Tool-Using Language Models
+2406.19764,Belief Revision: The Adaptability of Large Language Models Reasoning
+2512.17008,Turn-PPO: Turn-Level Advantage Estimation with PPO for Improved Multi-Turn RL in Agentic LLMs
+2601.10712,MatchTIR: Fine-Grained Supervision for Tool-Integrated Reasoning via Bipartite Matching
+2603.18683,HISR: Hindsight Information Modulated Segmental Process Rewards For Multi-turn Agentic Reinforcement Learning
+2505.19184,"When Two LLMs Debate, Both Think They'll Win"
+2606.26511,Temporal Validity in Retrieval Memory: Eliminating Stale-Fact Errors for AI Agents over Evolving Knowledge
+2601.17915,"Think Locally, Explain Globally: Graph-Guided LLM Investigations via Local Reasoning and Belief Propagation"
+2606.30850,BayesBench: Evaluating LLM Belief Trajectories Under Multi-Turn Evidence Accumulation
+2512.13043,GTR-Turbo: Merged Checkpoint is Secretly a Free Teacher for Agentic VLM Training
+2511.20857,Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory
+2310.16755,HI-TOM: A Benchmark for Evaluating Higher-Order Theory of Mind Reasoning in Large Language Models
+2602.22817,Hierarchy-of-Groups Policy Optimization for Long-Horizon Agentic Tasks
+2511.12159,CriticSearch: Fine-Grained Credit Assignment for Search Agents via a Retrospective Critic
+2602.05665,"Graph-based Agent Memory: Taxonomy, Techniques, and Applications"
+2509.21766,UltraHorizon: Benchmarking Agent Capabilities in Ultra Long-Horizon Scenarios
+2510.20022,SALT: Step-level Advantage Assignment for Long-horizon Agents via Trajectory Graph
+2602.03719,BranPO: Scalable Contrastive Branch Sampling for Long-Horizon Agentic Reinforcement Learning
+2606.12384,APPO: Agentic Procedural Policy Optimization
+2501.13956,Zep: A Temporal Knowledge Graph Architecture for Agent Memory
+2306.07863,Synapse: Trajectory-as-Exemplar Prompting with Memory for Computer Control
+2601.01885,Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents
+2406.19354,Fundamental Problems With Model Editing: How Should Rational Belief Revision Work in LLMs?
+2603.03303,HumanLM: Simulating Users with State Alignment Beats Response Imitation
+2603.00656,InfoPO: Information-Driven Policy Optimization for User-Centric Agents
+2606.12634,Keep Policy Gradient in Charge: Sibling-Guided Credit Distillation for Long-Horizon Tool-Use Agents
+2603.27343,WMF-AM: Probing LLM Working Memory via Depth-Parameterized Cumulative State Tracking
+2512.22716,Memento 2: Learning by Stateful Reflective Memory
+2512.18489,Large Language Models as Discounted Bayesian Filters
+2607.03748,Bridging Interleaved Multi-Modal Reasoning as a Unified Decision Process
+2604.04211,LOCARD: An Agentic Framework for Blockchain Forensics
+2307.13854,WebArena: A Realistic Web Environment for Building Autonomous Agents
+2505.20732,SPA-RL: Reinforcing LLM Agents via Stepwise Progress Attribution
+2605.06614,SkillOS: Learning Skill Curation for Self-Evolving Agents
+2512.05107,STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action Models
+2601.03905,Current Agents Fail to Leverage World Model as Tool for Foresight
+2603.12152,LifeSim: Long-Horizon User Life Simulator for Personalized Assistant Evaluation
+2603.21972,Demystifying Reinforcement Learning for Long-Horizon Tool-Using Agents: A Comprehensive Recipe
+2511.20718,Stabilizing Off-Policy Training for Long-Horizon LLM Agent via Turn-Level Importance Sampling and Clipping-Triggered Normalization
+2602.07672,Debugging code world models
+2605.00742,Position: agentic AI orchestration should be Bayes-consistent
+2605.17625,Episodic-Semantic Memory Architecture for Long-Horizon Scientific Agents
+2504.11536,ReTool: Reinforcement Learning for Strategic Tool Use in LLMs
+2512.13564,Memory in the Age of AI Agents
+2310.15421,FANToM: A Benchmark for Stress-testing Machine Theory of Mind in Interactions
+2311.10227,Think Twice: Perspective-Taking Improves Large Language Models' Theory-of-Mind Capabilities
+2408.12574,MuMA-ToM: Multi-modal Multi-Agent Theory of Mind
+2511.08325,AgentPRM: Process Reward Models for LLM Agents via Step-Wise Promise and Progress
+2511.03506,HaluMem: Evaluating Hallucinations in Memory Systems of Agents
+2505.14685,Language Models use Lookbacks to Track Beliefs
+2501.08838,ToMATO: Verbalizing the Mental States of Role-Playing LLMs for Benchmarking Theory of Mind
+2510.11892,R-WoM: Retrieval-augmented World Model For Computer-use Agents
+2601.05930,Can We Predict Before Executing Machine Learning Agents?
+2607.15660,ToolVerse: Unlocking Massive Environments and Long-Horizon Tasks for Agentic Reinforcement Learning
+2607.12480,TRACE: An Operational Reasoning Schema for Auditable Agentic Commitments
+2605.16416,CAVE: A Structured Credit Assignment Approach for Fragmented Visual Evidence Reasoning
+2307.02485,Building Cooperative Embodied Agents Modularly with Large Language Models
+2305.14763,Clever Hans or Neural Theory of Mind? Stress Testing Social Reasoning in Large Language Models
+2602.08234,SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning
+2301.12050,Do Embodied Agents Dream of Pixelated Sheep?: Embodied Decision Making using Language Guided World Modelling
+2505.15107,StepSearch: Igniting LLMs Search Ability via Step-Wise Proximal Policy Optimization
+2509.19199,Agentic Reinforcement Learning with Implicit Step Rewards
+2505.15182,ReflAct: World-Grounded Decision Making in LLM Agents via Goal-State Reflection
+2510.15047,Why Do LLM Agents Fail in Exploring New Environments? A World-Modeling Perspective
+2511.01805,Accumulating Context Changes the Beliefs of Language Models
+2407.06004,Perceptions to Beliefs: Exploring Precursory Inferences for Theory of Mind in Large Language Models
+2602.06130,Self-Improving World Modelling with Latent Actions
+2510.12264,T3: Reducing Belief Deviation in Reinforcement Learning for Active Reasoning
+2603.01813,SSMG-Nav: Enhancing Lifelong Object Navigation with Semantic Skeleton Memory Graph
+2509.23936,Do Language Models Update their Forecasts with New Information?
+2005.11401,Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
+2410.10813,LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory
+2504.13958,ToolRL: Reward is All Tool Learning Needs
+2601.20802,Reinforcement Learning via Self-Distillation
+2308.11339,ProAgent: Building Proactive Cooperative Agents with Large Language Models
+2402.09727,A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts
+2510.11967,Scaling Long-Horizon LLM Agent via Context-Folding
+2510.00615,ACON: Optimizing Context Compression for Long-horizon LLM Agents
+2312.05230,"Language Models, Agent Models, and World Models: The LAW for Machine Reasoning and Planning"
+2505.15117,An Empirical Study on Reinforcement Learning for Reasoning-Search Interleaved LLM Agents
+2207.01206,WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents
+2409.12917,Training Language Models to Self-Correct via Reinforcement Learning
+2407.18901,AppWorld: A Controllable World of Apps and People for Benchmarking Interactive Coding Agents
+2504.03160,DeepResearcher: Scaling Deep Research via Reinforcement Learning in Real-world Environments
+2406.11896,DigiRL: Training In-The-Wild Device-Control Agents with Autonomous Reinforcement Learning
+2505.04588,ZeroSearch: Incentivize the Search Capability of LLMs without Searching
+2408.09559,HiAgent: Hierarchical Working Memory Management for Solving Long-Horizon Agent Tasks with Large Language Model
+2502.15840,Vending-Bench: A Benchmark for Long-Term Coherence of Autonomous Agents
+2309.17382,"Reason for Future, Act for Now: A Principled Framework for Autonomous LLM Agents with Provable Sample Efficiency"
+2604.20006,From Recall to Forgetting: Benchmarking Long-Term Memory for Personalized Agents
+2602.11541,Budget-Constrained Agentic Large Language Models: Intention-Based Planning for Costly Tool Use
+2607.16204,Masked Diffusion Language Models are Strong and Steerable Text-Based World Models for Agentic RL
+2210.03629,ReAct: Synergizing Reasoning and Acting in Language Models
+2510.04618,Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models
+2509.25140,ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory
+2601.02553,SimpleMem: Efficient Lifelong Memory for LLM Agents
+2506.06326,Memory OS of AI Agent
+2507.21046,"A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence"
+2505.16067,How Memory Management Impacts LLM Agents: An Empirical Study of Experience-Following Behavior
+2402.15052,ToMBench: Benchmarking Theory of Mind in Large Language Models
+2505.11942,LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners
+2602.07055,Theory of Space: Can Foundation Models Construct Spatial Beliefs through Active Exploration?
+2602.09856,Code2World: A GUI World Model via Renderable Code Generation
+2602.14721,WebWorld: A Large-Scale World Model for Web Agent Training
+2506.00320,"Dyna-Think: Synergizing Reasoning, Acting, and World Model Simulation in AI Agents"
+2512.22336,Agent2World: Learning to Generate Symbolic World Models via Adaptive Multi-Agent Feedback
+2305.18290,Direct Preference Optimization: Your Language Model is Secretly a Reward Model
+2310.11511,"Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection"
+2305.14795,MQuAKE: Assessing Knowledge Editing in Language Models via Multi-Hop Questions
+2506.08292,From Debate to Equilibrium: Belief-Driven Multi-Agent LLM Reasoning via Bayesian Nash Equilibrium
+2507.17951,Are LLM Belief Updates Consistent with Bayes' Theorem?
+2410.07166,Embodied Agent Interface: Benchmarking LLMs for Embodied Decision Making
+2502.09597,Do LLMs Recognize Your Preferences? Evaluating Personalized Preference Following in LLMs
+2507.03724,MemOS: A Memory OS for AI System
+2506.21605,MemBench: Towards More Comprehensive Evaluation on the Memory of LLM-based Agents
+2410.14803,DistRL: An Asynchronous Distributed Reinforcement Learning Framework for On-Device Control Agents
+2305.14322,RET-LLM: Towards a General Read-Write Memory for Large Language Models
+2510.17281,MemoryBench: A Benchmark for Memory and Continual Learning in LLM Systems
+2603.05488,Reasoning Theater: Disentangling Model Beliefs from Chain-of-Thought
+2305.20050,Let's Verify Step by Step
+2112.09332,WebGPT: Browser-assisted question-answering with human feedback
+2310.13548,Towards Understanding Sycophancy in Language Models
+2312.08935,Math-Shepherd: Verify and Reinforce LLMs Step-by-step without Human Annotations
+2503.05592,R1-Searcher: Incentivizing the Search Capability in LLMs via Reinforcement Learning
+2603.28052,Meta-Harness: End-to-End Optimization of Model Harnesses
+2310.17722,Large Language Models as Generalizable Policies for Embodied Tasks
+2602.02474,MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents
+2504.07952,Dynamic Cheatsheet: Test-Time Learning with Adaptive Memory
+2403.12881,Agent-FLAN: Designing Data and Methods of Effective Agent Tuning for Large Language Models
+2002.09127,Learning Dynamic Belief Graphs to Generalize on Text-Based Games
+2508.17536,Debate or Vote: Which Yields Better Decisions in Multi-Agent Large Language Models?
+2407.11843,Preemptive Detection and Correction of Misaligned Actions in LLM Agents
+2402.04624,MEMORYLLM: Towards Self-Updatable Large Language Models
+2505.06120,LLMs Get Lost In Multi-Turn Conversation
+2206.11871,Offline RL for Natural Language Generation with Implicit Language Q Learning
+2111.13654,"Do Language Models Have Beliefs? Methods for Detecting, Updating, and Visualizing Model Beliefs"
+2603.03329,AutoHarness: improving LLM agents by automatically synthesizing a code harness
+2512.19682,GenEnv: Difficulty-Aligned Co-Evolution Between LLM Agents and Environment Simulators
+2512.02914,Martingale Score: An Unsupervised Metric for Bayesian Rationality in LLM Reasoning
