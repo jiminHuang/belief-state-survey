@@ -7,39 +7,39 @@ for tree={
   edge={-, gray!70}, l sep=3.2mm, s sep=0.3mm, fit=band,
   inner xsep=3pt, inner ysep=1.1pt
 }
-[{\textbf{Belief state} $\belief_t$ (\S\ref{sec:formulation})\\= state $\cdot$ transition $\cdot$ likelihood\\each: model-written, designer-fixed,\\learned, or absent; 462 papers}, fill=blue!10
+[{\textbf{Belief state} $\belief_t$ (\S\ref{sec:formulation})\\= state $\cdot$ transition $\cdot$ likelihood\\each: model-written, designer-fixed,\\learned, or absent}, fill=blue!10
   [{\S\ref{sec:representation} \textbf{State term}\\where it lives,\\who writes it}, fill=blue!6
-    [{Model-written, implicit: context (146; 60 P)}, [{CoT \citep{wei2022chain}, ReAct \citep{yao2023react}; drifts as context accumulates \citep{geng2025accumulating,laban2025lost}}]]
-    [{Model-written, designer-kept: store (109; 34 P)}, [{MemGPT \citep{packer2023memgpt}, Generative Agents \citep{park2023generative}, A-MEM \citep{xu2025amem}, Mem0 \citep{chhikara2025mem0};\\structured: Zep \citep{rasmussen2025zep}, AGM-revision graphs \citep{park2026graph}}]]
-    [{\ldots with a probability per claim (9; 3 P)}, [{BeliefMem \citep{liao2026belief}, D-MEM \citep{song2026d}, Nous \citep{singh2026when}}]]
-    [{Designer-fixed: external Bayesian filter (20; 7 P)}, [{Belief-State Engine \citep{chattopadhayay2026belief}, Belief at Risk \citep{dixon2026belief}, BayesEvolve \citep{wu2026bayesevolve},\\Align-While-Search \citep{bae2025align}, CA-BED \citep{arnould2026cabed}}]]
-    [{Model-written, explicit claim (55; 20 P)}, [{calibrated: DST \citep{lee2021dialogue}, Agent-BRACE \citep{singh2026agent}, BOND \citep{cui2026distilling}; goal-state: ReflAct \citep{kim2025reflact}, CoEx \citep{kim2025coex}}] [{testable: Hypothetical Minds \citep{cross2024hypothetical}, CBM \citep{xu2026should}, EvoSCM \citep{zhao2026evoscm}}]]
-    [{Learned: latent world model (51; 18 P)}, [{Dreamer \citep{hafner2023mastering}, RAP \citep{hao2023reasoning}, BB-WM \citep{kumar2026towards}, Qwen-AgentWorld \citep{zuo2026qwenagentworld};\\executable: PatchWorld \citep{bai2026patchworld}; written + parametric check: Hybrid-WM \citep{song2026agent}}]]
+    [{Model-written, implicit: context}, [{CoT \citep{wei2022chain}, ReAct \citep{yao2023react}; drifts as context accumulates \citep{geng2025accumulating,laban2025lost}}]]
+    [{Model-written, designer-kept: store}, [{MemGPT \citep{packer2023memgpt}, Generative Agents \citep{park2023generative}, A-MEM \citep{xu2025amem},\\Mem0 \citep{chhikara2025mem0}; structured: Zep \citep{rasmussen2025zep}, AGM-revision graphs \citep{park2026graph}}]]
+    [{\ldots with a probability per claim}, [{BeliefMem \citep{liao2026belief}, D-MEM \citep{song2026d}, Nous \citep{singh2026when}}]]
+    [{Designer-fixed: external Bayesian filter}, [{Belief-State Engine \citep{chattopadhayay2026belief}, Belief at Risk \citep{dixon2026belief},\\BayesEvolve \citep{wu2026bayesevolve}, Align-While-Search \citep{bae2025align}, CA-BED \citep{arnould2026cabed}}]]
+    [{Model-written, explicit claim}, [{calibrated: DST \citep{lee2021dialogue}, Agent-BRACE \citep{singh2026agent}, BOND \citep{cui2026distilling};\\goal-state: ReflAct \citep{kim2025reflact}, CoEx \citep{kim2025coex}}] [{testable: Hypothetical Minds \citep{cross2024hypothetical}, CBM \citep{xu2026should}, EvoSCM \citep{zhao2026evoscm}}]]
+    [{Learned: latent world model}, [{Dreamer \citep{hafner2023mastering}, RAP \citep{hao2023reasoning}, BB-WM \citep{kumar2026towards},\\Qwen-AgentWorld \citep{zuo2026qwenagentworld}; executable: PatchWorld \citep{bai2026patchworld};\\written + parametric check: Hybrid-WM \citep{song2026agent}}]]
   ]
   [{\S\ref{sec:revision} \textbf{Transition term}\\what triggers revision,\\how it fails}, fill=blue!6
-    [{Absent: base-model defaults}, [{sycophancy \citep{sharma2023towards,atwell2025basil}, exponential forgetting \citep{zhang2025large}, memory writes the misconception in \citep{bensal2026recalling}}]]
-    [{Triggered by}, [{contradiction: TOKI \citep{wang2026toki}; before commitment: SAVeR \citep{yuan2026verify}; surprise: D-MEM \citep{song2026d}, WorldEvolver \citep{zhang2026selfevolvingx}}]]
-    [{Failed stay / update}, [{BeliefShift \citep{myakala2026beliefshift}, MEDLEY-BENCH \citep{abtahi2026medleybench}; STALE \citep{chao2026stale}, DeltaLogic \citep{dhanda2026deltalogic}, DToM-Track \citep{nguyen2026dynamic}}]]
-    [{Failed isolation / act}, [{CBM \citep{xu2026should}, MemOps \citep{hao2026memops}; STOCKTAKE \citep{deb2026stocktake}, Werewolf audit \citep{gao2026auditing}, SimpleToM \citep{gu2024simpletom}}]]
+    [{Absent: base-model defaults}, [{sycophancy \citep{sharma2023towards,atwell2025basil}, exponential forgetting \citep{zhang2025large},\\memory writes the misconception in \citep{bensal2026recalling}}]]
+    [{Triggered by}, [{contradiction: TOKI \citep{wang2026toki}; before commitment: SAVeR \citep{yuan2026verify};\\surprise: D-MEM \citep{song2026d}, WorldEvolver \citep{zhang2026selfevolvingx}}]]
+    [{Failed stay / update}, [{BeliefShift \citep{myakala2026beliefshift}, MEDLEY-BENCH \citep{abtahi2026medleybench};\\STALE \citep{chao2026stale}, DeltaLogic \citep{dhanda2026deltalogic}, DToM-Track \citep{nguyen2026dynamic}}]]
+    [{Failed isolation / act}, [{CBM \citep{xu2026should}, MemOps \citep{hao2026memops};\\STOCKTAKE \citep{deb2026stocktake}, Werewolf audit \citep{gao2026auditing}, SimpleToM \citep{gu2024simpletom}}]]
   ]
   [{\S\ref{sec:learning}--\ref{sec:evaluation} \textbf{Likelihood term}\\who scores the belief,\\what the score yields}, fill=blue!6
     [{\S\ref{sec:learning} a gradient, by credited object}, fill=yellow!25
-      [{Output (54; 32 P)}, fill=yellow!10, [{RLHF \citep{ouyang2022training}, DPO \citep{rafailov2023direct}, Self-Refine \citep{madaan2023self}}]]
-      [{Trajectory (72; 23 P)}, fill=yellow!10, [{PRMs \citep{lightman2023lets}, GRPO \citep{shao2024deepseekmath}, LATS \citep{zhou2023language}, AgentRefine \citep{fu2025agentrefine}, T3 \citep{zou2025t3}}]]
-      [{Interaction (93; 32 P)}, fill=yellow!10, [{actions: ArCHer \citep{zhou2024archer}, RAGEN \citep{wang2025ragen}, GiGPO \citep{feng2025group}, AgentPRM \citep{xi2025agentprm}, IGPO \citep{wang2025information}; memory operations: MEM1 \citep{zhou2025mem1}, Memory-R1 \citep{yan2025memory}, VerMem \citep{sun2026verifiable}}]]
-      [{World-model loss (19; 7 P)}, fill=yellow!10, [{Dyna-Think \citep{yu2025dynathink}, SPA \citep{chen2025why}, RLVR-World \citep{wu2025rlvrworld}}]]
-      [{State (39; 10 P), likelihood from}, fill=yellow!10, [{a simulator or verifier: VAGEN \citep{wang2025vagen}, CBM \citep{xu2026should}; a teacher: BOND \citep{cui2026distilling}, DEL-ToM \citep{wu2025deltom};\\a calibration target: Agent-BRACE \citep{singh2026agent}; the agent's own observation: \emph{none in the corpus}}]]
+      [{Output}, fill=yellow!10, [{RLHF \citep{ouyang2022training}, DPO \citep{rafailov2023direct}, Self-Refine \citep{madaan2023self}}]]
+      [{Trajectory}, fill=yellow!10, [{PRMs \citep{lightman2023lets}, GRPO \citep{shao2024deepseekmath}, LATS \citep{zhou2023language},\\AgentRefine \citep{fu2025agentrefine}, T3 \citep{zou2025t3}}]]
+      [{Interaction}, fill=yellow!10, [{actions: ArCHer \citep{zhou2024archer}, RAGEN \citep{wang2025ragen}, GiGPO \citep{feng2025group}, AgentPRM \citep{xi2025agentprm}, IGPO \citep{wang2025information};\\memory operations: MEM1 \citep{zhou2025mem1}, Memory-R1 \citep{yan2025memory}, VerMem \citep{sun2026verifiable}}]]
+      [{World-model loss}, fill=yellow!10, [{Dyna-Think \citep{yu2025dynathink}, SPA \citep{chen2025why}, RLVR-World \citep{wu2025rlvrworld}}]]
+      [{State, likelihood from}, fill=yellow!10, [{a simulator or verifier: VAGEN \citep{wang2025vagen}, CBM \citep{xu2026should};\\a teacher: BOND \citep{cui2026distilling}, DEL-ToM \citep{wu2025deltom}; a calibration target: Agent-BRACE \citep{singh2026agent};\\the agent's own observation: \emph{none in the corpus}}]]
     ]
-    [{\S\ref{sec:evidence} the choice of what to observe}, [{BayesEvolve \citep{wu2026bayesevolve}, EvoSCM \citep{zhao2026evoscm}, Align-While-Search \citep{bae2025align}, CA-BED \citep{arnould2026cabed}, InfoPO \citep{kong2026infopo}}]]
+    [{\S\ref{sec:evidence} the choice of what to observe}, [{BayesEvolve \citep{wu2026bayesevolve}, EvoSCM \citep{zhao2026evoscm}, Align-While-Search \citep{bae2025align},\\CA-BED \citep{arnould2026cabed}, InfoPO \citep{kong2026infopo}}]]
     [{\S\ref{sec:evaluation} a metric, by construct}
       [{calibration (state term)}, [{TC-ECE \citep{lin2026uncertainty}, posterior entropy \citep{dixon2026belief}, FinBench \citep{ghosh2026finbench}}]]
-      [{accuracy, revision (transition term)}, [{BeliefTrack \citep{xu2026should}, STALE \citep{chao2026stale}, Theory of Space \citep{zhang2026theory}; HaluMem \citep{chen2025halumem}, Memora \citep{uddin2026recall}}]]
+      [{accuracy, revision (transition term)}, [{BeliefTrack \citep{xu2026should}, STALE \citep{chao2026stale}, Theory of Space \citep{zhang2026theory};\\HaluMem \citep{chen2025halumem}, Memora \citep{uddin2026recall}}]]
       [{Bayesian coherence (likelihood term)}, [{BayesBench \citep{samanta2026bayesbench}, Martingale Score \citep{he2025martingale}, coherence coefficient \citep{imran2025are}}]]
-      [{belief--action gap; outcome only}, [{STOCKTAKE \citep{deb2026stocktake}, Werewolf audit \citep{gao2026auditing}, Agent-ToM \citep{ahmed2026agenttom}; FinBen \citep{xie2025finben}, HERCULEAN \citep{herculean2026}}]]
+      [{belief--action gap; outcome only}, [{STOCKTAKE \citep{deb2026stocktake}, Werewolf audit \citep{gao2026auditing}, Agent-ToM \citep{ahmed2026agenttom};\\FinBen \citep{xie2025finben}, HERCULEAN \citep{herculean2026}}]]
     ]
   ]
 ]
 }}
-\caption{Taxonomy of the survey. The belief state is decomposed into the three terms of the filter update (Equation~\ref{eq:filter}); each branch asks where that term comes from, and the leaves give representative systems. Counts in parentheses are the included papers coded in each class and, after the semicolon, how many are peer-reviewed (Appendix~\ref{app:method}). The likelihood branch is where the gap lies: as a gradient (yellow) it reaches the written belief in 39 papers, and in none of them does it come from the agent's own observation. Table~\ref{tab:masterfull} in the appendix places every included paper.}
+\caption{Taxonomy: the belief state split into the three terms of Equation~\ref{eq:filter}, each branch by where the term comes from. The last yellow leaf is empty.}
 \label{fig:taxonomy}
 \end{figure*}
