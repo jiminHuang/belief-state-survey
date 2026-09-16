@@ -5,22 +5,22 @@
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lcccccl@{}}
 \toprule
-Locus and form & Written & Uncert. & Testable & Auditable & Belief & Example \\
+Locus and form & State & Uncert. & Trans. & Likelihood & Belief & Example \\
 \midrule
 \grpp{In the context}
-Trace as state & \hbhalf & \hbnone & \hbnone & \hbnone & \hbnone & ReAct \\
-Written claim, calibrated & \hbfull & \hbfull & \hbnone & \hbhalf & \hbhalf & Agent-BRACE, BOND \\
-Written claim, testable & \hbfull & \hbhalf & \hbfull & \hbhalf & \hbfull & CBM, EvoSCM \\
+Trace as state & M & \hbnone & M & --- & \hbnone & ReAct \\
+Written claim, calibrated & M & \hbfull & M & D (target) & \hbhalf & Agent-BRACE, BOND \\
+Written claim, testable & M & \hbhalf & M & D (oracle) & \hbfull & CBM, EvoSCM \\
 \grpp{In a store outside the model}
-Trace store & \hbnone & \hbnone & \hbnone & \hbhalf & \hbnone & MemGPT, A-MEM \\
-Claim store with probabilities & \hbnone & \hbfull & \hbnone & \hbhalf & \hbfull & Nous, BeliefMem \\
+Trace store & M & \hbnone & D & --- & \hbnone & MemGPT, A-MEM \\
+Claim store with probabilities & M & \hbfull & D & --- & \hbfull & Nous, BeliefMem \\
 \grpp{In an external estimator}
-Bayesian filter over fixed space & \hbnone & \hbfull & \hbfull & \hbfull & \hbfull & Belief-State Engine \\
+Bayesian filter over fixed space & D & \hbfull & D & D (closed form) & \hbfull & Belief-State Engine \\
 \grpp{In learned dynamics}
-Latent world model & \hbnone & \hbhalf & \hbfull & \hbnone & \hbhalf & Dreamer, BB-WM \\
-Written claim + parametric check & \hbfull & \hbfull & \hbfull & \hbhalf & \hbfull & Hybrid-WM \\
+Latent world model & L & \hbhalf & L & L (prediction error) & \hbhalf & Dreamer, BB-WM \\
+Written claim + parametric check & M & \hbfull & M & L (check) & \hbfull & Hybrid-WM \\
 \bottomrule
 \end{tabular}}
-\caption{Classes of the state term as locus--form pairs. \emph{Written}: the model writes and reads the belief; \emph{Uncert.}: it carries uncertainty; \emph{Testable}: it commits to a falsifiable prediction; \emph{Auditable}: it can be validated against a closed-form oracle; \emph{Belief}: meets conditions (i)--(iii) of Section~\ref{sec:formulation}. \hbfull\ yes, \hbhalf\ partly, \hbnone\ no.}
+\caption{Classes of the state term as locus--form pairs, with where each term of Equation~\ref{eq:filter} comes from: M written by the model, D fixed by the designer, L learned, --- absent. \emph{Uncert.}: the state carries uncertainty; \emph{Belief}: meets conditions (i)--(iii) of Section~\ref{sec:formulation}. \hbfull\ yes, \hbhalf\ partly, \hbnone\ no.}
 \label{tab:reprprops}
 \end{table}
