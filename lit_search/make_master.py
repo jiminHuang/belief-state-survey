@@ -23,12 +23,12 @@ for r in rows:
     ck = r["credited_object"].strip().lower()
     PC = [("none", "--"), ("n/a", "--"), ("step", "trajectory"), ("belief", "state"), ("state", "state"), ("outcome", "output"), ("output", "output"), ("action", "interaction"), ("interaction (memory", "memory op"), ("memory", "memory op"), ("interaction", "interaction"), ("trajectory", "trajectory"), ("world", "WM loss"), ("wm", "WM loss")]
     cred = next((v for k, v in PC if ck.startswith(k)), None) or CRED.get(ck, short(r["credited_object"], 14))
-    lines.append(f"{short(r['title_short'] or r['title'], 34)} \\citep{{{r['bibkey']}}} & {r['date'][:4]} & {who} & {cred} & {short(r['revision_signal'], 40)} & {metric(r['belief_level_metrics'])} & {r['evidence'].strip()[:1].upper()} \\\\")
+    lines.append(f"{short(r['title_short'] or r['title'], 34)} \\citep{{{r['bibkey']}}} & {r['date'][:4]} & {who} & {cred} & {short(r['revision_signal'], 40)} & {metric(r['belief_level_metrics'])} \\\\")
 N = 52
 chunks = [lines[i:i+N] for i in range(0, len(lines), N)]
 o = []
 for i, ch in enumerate(chunks):
-    o.append("\\begin{table*}[t]\n\\centering\\tiny\n\\setlength{\\tabcolsep}{2.5pt}\n\\resizebox{\\textwidth}{!}{%\n\\begin{tabular}{lcllllc}\n\\toprule\nSystem & Year & State kept by & Credited & Revision trigger & Metric & Ev. \\\\\n\\midrule\n" + "\n".join(ch) +
+    o.append("\\begin{table*}[t]\n\\centering\\tiny\n\\setlength{\\tabcolsep}{2.5pt}\n\\resizebox{\\textwidth}{!}{%\n\\begin{tabular}{lcllll}\n\\toprule\nSystem & Year & State kept by & Credited & Revision trigger & Metric \\\\\n\\midrule\n" + "\n".join(ch) +
              "\n\\bottomrule\n\\end{tabular}}\n\\caption{" + ("Every paper included after full-text reading, ordered by year and first author" if i == 0 else f"Master table, continued ({i+1}/{len(chunks)})") +
-             ". \\emph{Metric}: \\cmark\\ belief-level metric reported, \\pmark\\ proxy only. \\emph{Ev.}: P peer-reviewed, A preprint.}\n\\label{tab:masterfull" + ("" if i == 0 else str(i+1)) + "}\n\\end{table*}\n")
+             ". \\emph{Metric}: \\cmark\\ belief-level metric reported, \\pmark\\ proxy only.}\n\\label{tab:masterfull" + ("" if i == 0 else str(i+1)) + "}\n\\end{table*}\n")
 open(out, "w").write("\n".join(o)); print(len(lines), "rows in", len(chunks), "tables;", len(missing), "without bib entry:", missing[:10], file=sys.stderr)

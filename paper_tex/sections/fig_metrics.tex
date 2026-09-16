@@ -3,34 +3,34 @@
 \resizebox{\columnwidth}{!}{%
 \begin{tikzpicture}[font=\scriptsize, x=11mm, y=2.45mm]
 \foreach \c/\x in {calibration/1, accuracy/2, revision/3, belief--act./4, outcome/5} \node[align=center, font=\tiny\bfseries, rotate=0] at (\x,0.9) {\c};
-\foreach \name/\ev/\y/\dots in {
-  {UQ taxonomy \citep{lin2026uncertainty}}/A/-1/{1},
-  {Agent-BRACE \citep{singh2026agent}}/A/-2/{1},
-  {Belief-State Engine \citep{chattopadhayay2026belief}}/A/-3/{1,4},
-  {Belief at Risk \citep{dixon2026belief}}/A/-4/{1},
-  {FinBench \citep{ghosh2026finbench}}/A/-5/{1,5},
-  {BeliefTrack \citep{xu2026should}}/A/-6/{2,3},
-  {DeltaLogic \citep{dhanda2026deltalogic}}/A/-7/{2,3},
-  {DToM-Track \citep{nguyen2026dynamic}}/A/-8/{2,3},
-  {BeliefShift \citep{myakala2026beliefshift}}/A/-9/{3},
-  {STALE \citep{chao2026stale}}/A/-10/{3,4},
-  {MemOps \citep{hao2026memops}}/A/-11/{3},
-  {STOCKTAKE \citep{deb2026stocktake}}/A/-12/{2,4,5},
-  {Werewolf audit \citep{gao2026auditing}}/A/-13/{4,5},
-  {HERCULEAN \citep{herculean2026}}/A/-14/{5},
-  {FinBen / InvestorBench \citep{xie2025finben,li2024investorbench}}/P/-15/{5},
-  {BayesBench \citep{samanta2026bayesbench}}/A/-16/{3,4},
-  {Martingale Score \citep{he2025martingale}}/P/-17/{3},
-  {Bayesian coherence \citep{imran2025are}}/P/-18/{3},
-  {Theory of Space \citep{zhang2026theory}}/A/-19/{2,3},
-  {HaluMem \citep{chen2025halumem}}/A/-20/{2,3},
-  {Memora \citep{uddin2026recall}}/P/-21/{3,5},
-  {Embodied Agent Interface \citep{li2024embodied}}/P/-22/{2,5}}
- {\node[anchor=east, font=\tiny] at (0.55,\y) {\name~{\color{gray}\ev}};
+\foreach \name/\y/\dots in {
+  {UQ taxonomy \citep{lin2026uncertainty}}/-1/{1},
+  {Agent-BRACE \citep{singh2026agent}}/-2/{1},
+  {Belief-State Engine \citep{chattopadhayay2026belief}}/-3/{1,4},
+  {Belief at Risk \citep{dixon2026belief}}/-4/{1},
+  {FinBench \citep{ghosh2026finbench}}/-5/{1,5},
+  {BeliefTrack \citep{xu2026should}}/-6/{2,3},
+  {DeltaLogic \citep{dhanda2026deltalogic}}/-7/{2,3},
+  {DToM-Track \citep{nguyen2026dynamic}}/-8/{2,3},
+  {BeliefShift \citep{myakala2026beliefshift}}/-9/{3},
+  {STALE \citep{chao2026stale}}/-10/{3,4},
+  {MemOps \citep{hao2026memops}}/-11/{3},
+  {STOCKTAKE \citep{deb2026stocktake}}/-12/{2,4,5},
+  {Werewolf audit \citep{gao2026auditing}}/-13/{4,5},
+  {HERCULEAN \citep{herculean2026}}/-14/{5},
+  {FinBen / InvestorBench \citep{xie2025finben,li2024investorbench}}/-15/{5},
+  {BayesBench \citep{samanta2026bayesbench}}/-16/{3,4},
+  {Martingale Score \citep{he2025martingale}}/-17/{3},
+  {Bayesian coherence \citep{imran2025are}}/-18/{3},
+  {Theory of Space \citep{zhang2026theory}}/-19/{2,3},
+  {HaluMem \citep{chen2025halumem}}/-20/{2,3},
+  {Memora \citep{uddin2026recall}}/-21/{3,5},
+  {Embodied Agent Interface \citep{li2024embodied}}/-22/{2,5}}
+ {\node[anchor=east, font=\tiny] at (0.55,\y) {\name};
   \foreach \x in {1,...,5} \draw[gray!40] (\x,\y) circle (1.1pt);
   \foreach \x in \dots \fill (\x,\y) circle (1.6pt);}
 \draw[gray!60] (0.6,0.3) -- (5.5,0.3);
 \end{tikzpicture}}
-\caption{Belief-level constructs reported by each evaluation paper (\textsf{P} peer-reviewed, \textsf{A} preprint). Only the Bayesian-coherence rows share a reference posterior.}
+\caption{Belief-level constructs reported by each evaluation paper. Only the Bayesian-coherence rows share a reference posterior.}
 \label{fig:metrics}
 \end{figure}
