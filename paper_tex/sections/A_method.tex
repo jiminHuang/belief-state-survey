@@ -67,25 +67,28 @@ Included after reading & 171 & 58 & 47 & 7 \\
 \label{tab:snowball}
 \end{table}
 
+\paragraph{Fifth round, targeted.}
+After the four rounds above, a reader pointed us to a method the protocol had not reached (ReBel; \citealp{tang2026rewarding}), posted after most of our seeds and cited by almost no one yet. We treated it as a seed for a fifth, targeted round: the Semantic Scholar batch endpoint was rate-limited throughout, so we used ReBel's own reference list (46 entries), an OpenAlex search on belief-consistency and belief-level supervision (85 candidates), and a Hugging Face Papers search on nine related phrases (743 candidates, 211 after the rule screen and deduplication). Full-text screening added 23 papers (3 peer-reviewed), of which four score a belief or prediction against the agent's own observations; every paper whose signal source mattered to a claim was re-read in full. One of the 23 (PABU) had passed the rule screen in the third keyword run but was never sampled, which is the protocol's own miss. The additions are marked R5 in the released record and in Table~\ref{tab:years}.
+
 \paragraph{Year distribution.}
 Table~\ref{tab:years} gives the included papers by year, source, and whether peer-reviewed. The share that is peer-reviewed falls with recency, from four in five before 2025 to about one in nine for 2026, which is the ordinary lag of review rather than a property of the field.
 
 \begin{table}[h]
 \centering\footnotesize
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{lrrrrrrr}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrrrrrrr@{}}
 \toprule
-Year & Keyword & R1 & R2 & R3 & R4 & Total & Peer-rev. \\
+Year & Keyword & R1 & R2 & R3 & R4 & R5 & Total & Peer-rev. \\
 \midrule
-2020 & 1 & 3 & 1 & 0 & 0 & 5 & 4 \\
-2021 & 2 & 2 & 1 & 0 & 0 & 5 & 3 \\
-2022 & 9 & 4 & 0 & 1 & 0 & 14 & 13 \\
-2023 & 27 & 21 & 2 & 0 & 0 & 50 & 41 \\
-2024 & 16 & 20 & 9 & 4 & 1 & 50 & 40 \\
-2025 & 18 & 69 & 20 & 20 & 2 & 129 & 49 \\
-2026 & 106 & 52 & 25 & 22 & 4 & 209 & 23 \\
+2020 & 1 & 3 & 1 & 0 & 0 & 0 & 5 & 4 \\
+2021 & 2 & 2 & 1 & 0 & 0 & 0 & 5 & 3 \\
+2022 & 9 & 4 & 0 & 1 & 0 & 0 & 14 & 13 \\
+2023 & 27 & 21 & 2 & 0 & 0 & 1 & 51 & 41 \\
+2024 & 16 & 20 & 9 & 4 & 1 & 1 & 51 & 40 \\
+2025 & 18 & 69 & 20 & 20 & 2 & 5 & 134 & 50 \\
+2026 & 106 & 52 & 25 & 22 & 4 & 16 & 225 & 25 \\
 \midrule
-Total & 179 & 171 & 58 & 47 & 7 & 462 & 173 \\
+Total & 179 & 171 & 58 & 47 & 7 & 23 & 485 & 176 \\
 \bottomrule
 \end{tabular}
 \caption{Included papers by publication year and by the run that found them (keyword search or citation-tree round).}
@@ -93,12 +96,12 @@ Total & 179 & 171 & 58 & 47 & 7 & 462 & 173 \\
 \end{table}
 
 \paragraph{Evidence level.}
-Of the 462 papers included after full-text reading (179 from keyword search and 283 from citation-tree expansion), 173 are peer-reviewed and 289 are preprints; every number quoted in the text is the paper's own headline figure, taken from the abstract or the reported table, and none has been reproduced by us.
+Of the 485 papers included after full-text reading (179 from keyword search, 283 from citation-tree expansion, and 23 from the targeted fifth round), 176 are peer-reviewed and 309 are preprints; every number quoted in the text is the paper's own headline figure, taken from the abstract or the reported table, and none has been reproduced by us.
 
 \paragraph{Full-text screening.}
 A paper passed full-text screening if it (a) concerns a language-model agent or a component used by one, and (b) constructs, revises, tests, learns, or evaluates an explicit state carried between decisions, or documents a failure of such a state; benchmarks and surveys that do (b) were kept and coded as such. Each paper read in full was recorded with the fields: who maintains the belief (source of the state term), credited object, revision signal (source of the transition and likelihood terms), whether belief-level metrics are reported, survey section, and role. The record is the source of Figure~\ref{fig:taxonomy}, Tables~\ref{tab:representation}--\ref{tab:benchmarks}, and Figure~\ref{fig:metrics}. Coding was done by the authors; an independent re-coding of a subset is planned and not yet available.
 
 \paragraph{Peer-reviewed subset.}
-Because 289 of the 462 papers are preprints, Table~\ref{tab:sensitivity} recomputes the counts behind each insight box on the 173 peer-reviewed papers alone.
+Because 309 of the 485 papers are preprints, Table~\ref{tab:sensitivity} recomputes the counts behind each insight box on the 176 peer-reviewed papers alone.
 
 \input{tab_sensitivity}

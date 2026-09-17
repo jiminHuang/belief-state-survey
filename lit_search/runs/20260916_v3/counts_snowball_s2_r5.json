@@ -1,0 +1,22 @@
+{
+ "timestamp": "20260916_v3",
+ "round": 5,
+ "source": "semantic_scholar",
+ "seeds": 1,
+ "backward_refs_total": 45,
+ "forward_cites_total": 1,
+ "candidates_unique_in_window": 41,
+ "already_screened": 28,
+ "excluded_no_abstract": 1,
+ "excluded_I1_not_llm": 5,
+ "excluded_E1_offdomain": 1,
+ "excluded_I2_topic": 4,
+ "included": 2,
+ "requests": 5,
+ "included_by_year": {
+  "2025": 2
+ },
+ "included_by_origin": {
+  "backward": 2
+ }
+}

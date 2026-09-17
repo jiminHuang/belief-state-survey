@@ -74,6 +74,7 @@ System & Year & State kept by & Credited & Revision trigger & Metric \\
 \midrule
 Reflexion \citep{shinn2023reflexion} & 2023 & ext. memory & trajectory & verbal self-reflection after episode fa\ldots &  \\
 CoALA \citep{sumers2023cognitive} & 2023 & ext. memory & -- & conceptual: learning actions update mem\ldots &  \\
+Interactive planning POMDP \citep{sun2023interactive} & 2023 & context & -- & none &  \\
 LLaRP \citep{szot2023large} & 2023 & context & trajectory & none (egocentric observations in contex\ldots &  \\
 Voyager \citep{wang2023voyager} & 2023 & ext. memory & trajectory & environment execution feedback, errors,\ldots &  \\
 DEPS \citep{wang2023describe} & 2023 & context & trajectory & descriptor of execution outcome; self-e\ldots &  \\
@@ -95,6 +96,7 @@ RecurrentGPT \citep{zhou2023recurrentgpt} & 2023 & written & output & LLM rewrit
 LATS \citep{zhou2023language} & 2023 & ext. memory & trajectory & MCTS backup of LM-valued rewards + self\ldots &  \\
 WebArena \citep{zhou2023webarena} & 2023 & context & -- & none & \pmark \\
 DigiRL \citep{bai2024digirl} & 2024 & context & interaction & doubly-robust step-level advantage mixi\ldots &  \\
+Latent state estimation for UI ag\ldots \citep{bishop2024latent} & 2024 & written & -- & none &  \\
 WMA Web Agent \citep{chae2024web} & 2024 & world model & WM loss & predicted next-observation as free-form\ldots & \pmark \\
 NegotiationToM \citep{chan2024negotiationtom} & 2024 & -- & -- & none & \cmark \\
 ToMBench \citep{chen2024tombench} & 2024 & -- & -- & none & \pmark \\
@@ -122,11 +124,9 @@ Agent Q \citep{putta2024agent} & 2024 & ext. memory & trajectory & MCTS with AI 
 WebRL \citep{qi2024webrl} & 2024 & -- & output & outcome-supervised reward model; self-g\ldots &  \\
 r to Q* \citep{rafailov2024q} & 2024 & -- & output & none (token-level implicit reward) &  \\
 Belief state geometry \citep{shai2024transformers} & 2024 & context & -- & implicit Bayesian belief updating over\ldots & \cmark \\
-MuMA-ToM \citep{shi2024mumatom} & 2024 & world model & -- & Bayesian inverse multi-agent planning o\ldots & \cmark \\
-FortUne Dial \citep{sicilia2024deal} & 2024 & context & output & fine-tuning (supervised and off-policy\ldots & \cmark \\
 \bottomrule
 \end{tabular}}
-\caption{Master table, continued (2/9). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
+\caption{Master table, continued (2/10). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
 \label{tab:masterfull2}
 \end{table*}
 
@@ -138,6 +138,8 @@ FortUne Dial \citep{sicilia2024deal} & 2024 & context & output & fine-tuning (su
 \toprule
 System & Year & State kept by & Credited & Revision trigger & Metric \\
 \midrule
+MuMA-ToM \citep{shi2024mumatom} & 2024 & world model & -- & Bayesian inverse multi-agent planning o\ldots & \cmark \\
+FortUne Dial \citep{sicilia2024deal} & 2024 & context & output & fine-tuning (supervised and off-policy\ldots & \cmark \\
 Common-ToM \citep{soubki2024views} & 2024 & written & -- & explicit belief representation supplied\ldots & \pmark \\
 self-verification limits \citep{stechly2024self} & 2024 & context & -- & self-critique vs sound external verifie\ldots &  \\
 AppWorld \citep{trivedi2024appworld} & 2024 & context & -- & none (environment; state-based unit tes\ldots & \pmark \\
@@ -159,6 +161,7 @@ ArCHer \citep{zhou2024archer} & 2024 & -- & interaction & hierarchical RL: utter
 Reflect-RL \citep{zhou2024reflectrl} & 2024 & written & interaction & frozen reflection model produces natura\ldots &  \\
 Beliefs of self and others \citep{zhu2024language} & 2024 & context & -- & none (probing and activation interventi\ldots & \cmark \\
 Bayesian geometry of attention \citep{aggarwal2025bayesian} & 2025 & context & -- & implicit posterior update via FFN in HM\ldots & \cmark \\
+Markovian Thinker \citep{aghajohari2025markovian} & 2025 & written & output & none &  \\
 MemoryBench \citep{ai2025memorybench} & 2025 & ext. memory & -- & accumulated simulated user feedback dur\ldots & \pmark \\
 BASIL \citep{atwell2025basil} & 2025 & context & output & user pushback vs evidence; Bayesian-con\ldots & \cmark \\
 Vending-Bench \citep{backlund2025vendingbench} & 2025 & ext. memory & -- & none (evaluation only; agent has scratc\ldots & \pmark \\
@@ -187,12 +190,9 @@ Martingale Score \citep{he2025martingale} & 2025 & context & -- & new evidence a
 Measuring Sycophancy of Language\ldots \citep{hong2025measuring} & 2025 & context & -- & sustained user pressure across turns & \pmark \\
 MemoryAgentBench \citep{hu2025evaluating} & 2025 & -- & -- & incremental multi-turn information inje\ldots & \cmark \\
 Memory in the Age of AI Agents \citep{hu2025memory} & 2025 & ext. memory & -- & memory formation, evolution and retriev\ldots &  \\
-Agent2World \citep{hu2025agent2world} & 2025 & world model & trajectory & testing-team unit tests and simulation-\ldots & \pmark \\
-Text2World \citep{hu2025text2world} & 2025 & world model & output & none (one-shot world-model generation,\ldots & \pmark \\
-Bayesian Coherence Coefficient \citep{imran2025are} & 2025 & context & -- & in-context evidence pieces presented wi\ldots & \cmark \\
 \bottomrule
 \end{tabular}}
-\caption{Master table, continued (3/9). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
+\caption{Master table, continued (3/10). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
 \label{tab:masterfull3}
 \end{table*}
 
@@ -204,6 +204,9 @@ Bayesian Coherence Coefficient \citep{imran2025are} & 2025 & context & -- & in-c
 \toprule
 System & Year & State kept by & Credited & Revision trigger & Metric \\
 \midrule
+Agent2World \citep{hu2025agent2world} & 2025 & world model & trajectory & testing-team unit tests and simulation-\ldots & \pmark \\
+Text2World \citep{hu2025text2world} & 2025 & world model & output & none (one-shot world-model generation,\ldots & \pmark \\
+Bayesian Coherence Coefficient \citep{imran2025are} & 2025 & context & -- & in-context evidence pieces presented wi\ldots & \cmark \\
 Search-R1 \citep{jin2025searchr1} & 2025 & context & output & retrieved documents interleaved with re\ldots &  \\
 SearchRLStudy \citep{jin2025empirical} & 2025 & context & trajectory & outcome reward plus format reward; inte\ldots &  \\
 Emergent World Beliefs \citep{kamel2025emergent} & 2025 & world model & -- & none (probing of pretrained activations) & \cmark \\
@@ -222,6 +225,7 @@ SORL \citep{li2025stabilizing} & 2025 & context & interaction & turn-level impor
 MemOS \citep{li2025memos} & 2025 & ext. memory & -- & memory lifecycle scheduling: MemCubes w\ldots &  \\
 AgentFlow \citep{li2025inflow} & 2025 & ext. memory & trajectory & verifier output appended to evolving me\ldots &  \\
 RecToM \citep{li2025rectom} & 2025 & -- & -- & questions require tracking evolving int\ldots & \pmark \\
+ABBEL \citep{lidayan2025abbel} & 2025 & written & state & belief grading: ground-truth grader or\ldots & \pmark \\
 iStar \citep{liu2025agentic} & 2025 & context & interaction & implicit PRM trained by trajectory-leve\ldots &  \\
 M3-Agent \citep{long2025seeing} & 2025 & ext. memory & trajectory & streaming visual/auditory input continu\ldots & \pmark \\
 ARPO \citep{lu2025arpo} & 2025 & context & trajectory & none &  \\
@@ -230,16 +234,19 @@ UltraHorizon \citep{luo2025ultrahorizon} & 2025 & context & -- & none & \pmark \
 R-WoM \citep{mei2025rwom} & 2025 & world model & -- & retrieved tutorial knowledge grounds si\ldots & \pmark \\
 MATPO \citep{mo2025multiagent} & 2025 & -- & trajectory & credit assigned across planner and work\ldots &  \\
 MindGames \citep{moore2025planning} & 2025 & -- & -- & agent must ask about the interlocutor's\ldots & \pmark \\
+LLaMAR \citep{nayak2025llamar} & 2025 & context & -- & none &  \\
 WMNav \citep{nie2025wmnav} & 2025 & world model & -- & discrepancy between world-model plan an\ldots & \pmark \\
 ReasoningBank \citep{ouyang2025reasoningbank} & 2025 & ext. memory & -- & self-judged success/failure of each tas\ldots & \pmark \\
 ID-RAG \citep{platnick2025idrag} & 2025 & ext. memory & -- & unclear (identity KG queried each decis\ldots & \pmark \\
 Lookbacks belief tracking \citep{prakash2025language} & 2025 & context & -- & visibility lookback updates observing c\ldots & \pmark \\
 LLM Debate Overconfidence \citep{prasad2025debate} & 2025 & context & -- & new opponent arguments each round (shou\ldots & \cmark \\
 ToolRL \citep{qian2025toolrl} & 2025 & context & output & reward on tool-call format and correctn\ldots &  \\
+Bayesian teaching \citep{qiu2025bayesian} & 2025 & written & state & distillation of a normative Bayesian mo\ldots & \cmark \\
 Zep / Graphiti \citep{rasmussen2025zep} & 2025 & ext. memory & -- & temporally-aware KG edge invalidation w\ldots & \pmark \\
 Cognitive Memory survey \citep{shan2025cognitive} & 2025 & ext. memory & -- & none (survey; covers updating, conflict\ldots &  \\
 TTI (Thinking vs Doing) \citep{shen2025thinking} & 2025 & context & trajectory & additional environment observations fro\ldots &  \\
 ToMATO \citep{shinoda2025tomato} & 2025 & context & -- & information asymmetry between role-play\ldots & \cmark \\
+WMAct \citep{shu2025thinking} & 2025 & context & output & none (outcome reward) &  \\
 R4 \citep{sohn2025r4} & 2025 & world model & -- & continuous 4D database construction fro\ldots &  \\
 R1-Searcher \citep{song2025r1searcher} & 2025 & context & trajectory & none (search results appended to contex\ldots &  \\
 ContextFolding \citep{sun2025scaling} & 2025 & written & memory op & agent branches into a sub-trajectory an\ldots &  \\
@@ -249,16 +256,9 @@ TARL \citep{tan2025process} & 2025 & context & interaction & LLM-judge turn-leve
 MemBench \citep{tan2025membench} & 2025 & ext. memory & -- & none (evaluation only) & \pmark \\
 LLM cooperative game simulation \citep{tao2025large} & 2025 & ext. filter & -- & Bayesian belief updating plus noisy rep\ldots & \pmark \\
 NextLat belief-state latents \citep{teoh2025next} & 2025 & world model & WM loss & auxiliary next-latent prediction loss;\ldots & \pmark \\
-RAGEN / StarPO \citep{wang2025ragen} & 2025 & context & trajectory & environment reward; reasoning-aware rew\ldots &  \\
-VAGEN \citep{wang2025vagen} & 2025 & written & state & world-modeling reward on turn-level sta\ldots & \pmark \\
-IGPO \citep{wang2025information} & 2025 & context & interaction & turn-level information gain: marginal i\ldots & \pmark \\
-ENACT \citep{wang2025enact} & 2025 & world model & -- & none (evaluation only) & \pmark \\
-EMPG \citep{wang2025harnessing} & 2025 & context & interaction & step-wise policy entropy modulates grad\ldots & \pmark \\
-Memento 2 stateful reflective mem\ldots \citep{wang2025memento} & 2025 & ext. memory & memory op & memory write = policy evaluation, read\ldots &  \\
-SPA-RL \citep{wang2025sparl} & 2025 & -- & interaction & none &  \\
 \bottomrule
 \end{tabular}}
-\caption{Master table, continued (4/9). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
+\caption{Master table, continued (4/10). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
 \label{tab:masterfull4}
 \end{table*}
 
@@ -270,6 +270,13 @@ SPA-RL \citep{wang2025sparl} & 2025 & -- & interaction & none &  \\
 \toprule
 System & Year & State kept by & Credited & Revision trigger & Metric \\
 \midrule
+RAGEN / StarPO \citep{wang2025ragen} & 2025 & context & trajectory & environment reward; reasoning-aware rew\ldots &  \\
+VAGEN \citep{wang2025vagen} & 2025 & written & state & world-modeling reward on turn-level sta\ldots & \pmark \\
+IGPO \citep{wang2025information} & 2025 & context & interaction & turn-level information gain: marginal i\ldots & \pmark \\
+ENACT \citep{wang2025enact} & 2025 & world model & -- & none (evaluation only) & \pmark \\
+EMPG \citep{wang2025harnessing} & 2025 & context & interaction & step-wise policy entropy modulates grad\ldots & \pmark \\
+Memento 2 stateful reflective mem\ldots \citep{wang2025memento} & 2025 & ext. memory & memory op & memory write = policy evaluation, read\ldots &  \\
+SPA-RL \citep{wang2025sparl} & 2025 & -- & interaction & none &  \\
 StepSearch \citep{wang2025stepsearch} & 2025 & context & interaction & per-step information gain and redundanc\ldots &  \\
 Fine-Grained Reward Credit \citep{wei2025reinforcing} & 2025 & context & interaction & per-turn environment rewards in turn-le\ldots &  \\
 WebAgent-R1 \citep{wei2025webagent} & 2025 & context & trajectory & none (binary task-success reward only) &  \\
@@ -315,16 +322,9 @@ Memento \citep{zhou2025memento} & 2025 & ext. memory & interaction & environment
 SWEET-RL \citep{zhou2025sweetrl} & 2025 & -- & interaction & step-level critic reward using training\ldots &  \\
 Social World Models (S3AP) \citep{zhou2025social} & 2025 & written & -- & structured state/action/mental-state re\ldots & \pmark \\
 T3 \citep{zou2025t3} & 2025 & prob. memory & trajectory & truth-anchored potential -log b(s*) sta\ldots & \cmark \\
-The Horizon Gap (survey) \citep{chen2026horizon} & 2026 & -- & -- & n/a &  \\
-Credit Assignment in RL for LLMs\ldots \citep{zhang2026reasoning} & 2026 & -- & trajectory & n/a &  \\
-From Storage to Experience (memor\ldots \citep{luo2026storage} & 2026 & ext. memory & -- & reflection &  \\
-LLM Agents for Forecasting (surve\ldots \citep{xu2026llm} & 2026 & -- & -- & n/a &  \\
-UQ for LLM Agents taxonomy \citep{lin2026uncertainty} & 2026 & -- & -- & n/a & \cmark \\
-Belief-State Engine \citep{chattopadhayay2026belief} & 2026 & ext. filter & -- & Bayesian posterior & \cmark \\
-Belief at Risk \citep{dixon2026belief} & 2026 & ext. filter & -- & Bayesian posterior over regimes & \cmark \\
 \bottomrule
 \end{tabular}}
-\caption{Master table, continued (5/9). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
+\caption{Master table, continued (5/10). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
 \label{tab:masterfull5}
 \end{table*}
 
@@ -336,6 +336,13 @@ Belief at Risk \citep{dixon2026belief} & 2026 & ext. filter & -- & Bayesian post
 \toprule
 System & Year & State kept by & Credited & Revision trigger & Metric \\
 \midrule
+The Horizon Gap (survey) \citep{chen2026horizon} & 2026 & -- & -- & n/a &  \\
+Credit Assignment in RL for LLMs\ldots \citep{zhang2026reasoning} & 2026 & -- & trajectory & n/a &  \\
+From Storage to Experience (memor\ldots \citep{luo2026storage} & 2026 & ext. memory & -- & reflection &  \\
+LLM Agents for Forecasting (surve\ldots \citep{xu2026llm} & 2026 & -- & -- & n/a &  \\
+UQ for LLM Agents taxonomy \citep{lin2026uncertainty} & 2026 & -- & -- & n/a & \cmark \\
+Belief-State Engine \citep{chattopadhayay2026belief} & 2026 & ext. filter & -- & Bayesian posterior & \cmark \\
+Belief at Risk \citep{dixon2026belief} & 2026 & ext. filter & -- & Bayesian posterior over regimes & \cmark \\
 POMDP validation framework \citep{dixon2026model} & 2026 & ext. filter & -- & Bayesian & \cmark \\
 Bayesian Linguistic Forecaster \citep{murphy2026agentic} & 2026 & written & -- & sequential update in tool loop & \cmark \\
 Agent-BRACE \citep{singh2026agent} & 2026 & written & state & verbalized certainty & \cmark \\
@@ -377,20 +384,13 @@ TRACE \citep{chang2026trace} & 2026 & written & -- & append-only revision when w
 Trivium \citep{chang2026trivium} & 2026 & world model & WM loss & budgeted probes and continued posterior\ldots & \cmark \\
 BCO: belief-calibrated scaffold o\ldots \citep{chen2026beliefcalibrated} & 2026 & written & state & evaluation of new candidate scaffolds (\ldots & \cmark \\
 MM-Lifelong / ReMA \citep{chen2026multimodal} & 2026 & ext. memory & -- & dynamic memory management iteratively u\ldots & \pmark \\
+Closing the Feedback Loop \citep{cui2026closing} & 2026 & ext. memory & -- & realised returns interpreted by an LLM\ldots &  \\
 MDLM text world models \citep{deshpande2026masked} & 2026 & world model & WM loss & world model conditions on state anchors\ldots & \pmark \\
 DeltaLogic minimal-edit revision \citep{dhanda2026deltalogic} & 2026 & context & output & minimal premise edit & \cmark \\
 HIPIF \citep{diao2026hipif} & 2026 & written & trajectory & subgoal completion (history folding) +\ldots &  \\
-SGCD sibling-guided credit \citep{ding2026keep} & 2026 & -- & output & none &  \\
-APEx \citep{ding2026apex} & 2026 & ext. memory & memory op & reward-guided distillation of trajector\ldots &  \\
-Governance-aware POMDP for AI del\ldots \citep{dixon2026adaptive} & 2026 & ext. filter & -- & Bayesian update on evidence quality &  \\
-Mind-Studio \citep{dong2026mindstudio} & 2026 & world model & -- & entropy-selected state-action-next-stat\ldots & \cmark \\
-LifeSim \citep{duan2026lifesim} & 2026 & context & -- & user simulator driven by BDI model; ass\ldots & \pmark \\
-KbSD \citep{feng2026kbsd} & 2026 & context & output & none & \pmark \\
-MedExAgent \citep{gao2026medexagent} & 2026 & context & output & none (composite outcome reward: accurac\ldots &  \\
-Auditing belief-conditioned Werew\ldots \citep{gao2026auditing} & 2026 & ext. memory & state & logged per-turn belief updates & \cmark \\
 \bottomrule
 \end{tabular}}
-\caption{Master table, continued (6/9). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
+\caption{Master table, continued (6/10). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
 \label{tab:masterfull6}
 \end{table*}
 
@@ -402,6 +402,15 @@ Auditing belief-conditioned Werew\ldots \citep{gao2026auditing} & 2026 & ext. me
 \toprule
 System & Year & State kept by & Credited & Revision trigger & Metric \\
 \midrule
+SGCD sibling-guided credit \citep{ding2026keep} & 2026 & -- & output & none &  \\
+APEx \citep{ding2026apex} & 2026 & ext. memory & memory op & reward-guided distillation of trajector\ldots &  \\
+Governance-aware POMDP for AI del\ldots \citep{dixon2026adaptive} & 2026 & ext. filter & -- & Bayesian update on evidence quality &  \\
+Mind-Studio \citep{dong2026mindstudio} & 2026 & world model & -- & entropy-selected state-action-next-stat\ldots & \cmark \\
+LifeSim \citep{duan2026lifesim} & 2026 & context & -- & user simulator driven by BDI model; ass\ldots & \pmark \\
+KbSD \citep{feng2026kbsd} & 2026 & context & output & none & \pmark \\
+MedExAgent \citep{gao2026medexagent} & 2026 & context & output & none (composite outcome reward: accurac\ldots &  \\
+Auditing belief-conditioned Werew\ldots \citep{gao2026auditing} & 2026 & ext. memory & state & logged per-turn belief updates & \cmark \\
+CubeBench \citep{gao2026cubebench} & 2026 & -- & -- & n/a (benchmark) & \pmark \\
 Cyclic subtask graphs \citep{gharzeddine2026complete} & 2026 & written & -- & state-analysis-and-routing agent applie\ldots &  \\
 FinBench calibration benchmark \citep{ghosh2026finbench} & 2026 & -- & output & none &  \\
 CHAL: council of hierarchical age\ldots \citep{giovannelli2026chal} & 2026 & written & state & gradient-informed revision on thesis st\ldots &  \\
@@ -422,11 +431,14 @@ MATTRL test-time multi-agent RL \citep{hu2026collaborative} & 2026 & ext. memory
 BRAID \citep{hu2026bridging} & 2026 & -- & interaction & none &  \\
 SDPO \citep{hubotter2026reinforcement} & 2026 & context & output & textual environment feedback (errors, j\ldots &  \\
 ToMAgent lookahead ToM \citep{hwang2025infusing} & 2026 & written & state & dialogue lookahead rollouts score (ment\ldots & \pmark \\
+MARBO \citep{hwang2026marbo} & 2026 & written & state & cross-entropy against ground-truth role\ldots & \pmark \\
+Persuasion Propagation \citep{jeong2026persuasion} & 2026 & context & -- & none & \pmark \\
 Planted latent variable \citep{jerpelea2026latent} & 2026 & context & -- & Bayesian posterior over the planted lat\ldots & \cmark \\
 EoG belief propagation \citep{jha2026think} & 2026 & ext. filter & -- & new evidence labelled by the LLM (cause\ldots & \pmark \\
 Hindsight Memory-PRM \citep{jia2026hindsight} & 2026 & ext. memory & memory op & hindsight audit trail (retrieval hits,\ldots & \pmark \\
 SCRIBE \citep{jiang2026scribe} & 2026 & context & interaction & skill-prototype rubric reward on subgoa\ldots &  \\
 HAGE \citep{jiang2026hage} & 2026 & ext. memory & memory op & RL on downstream task jointly updates e\ldots &  \\
+PABU \citep{jiang2026pabu} & 2026 & written & state & SFT on LLM-synthesised progress and ret\ldots &  \\
 SuS strategy-aware surprise \citep{kashirskiy2026sus} & 2026 & context & output & surprise residual (pre-post prediction\ldots &  \\
 InfoPO \citep{kong2026infopo} & 2026 & context & interaction & information-gain reward: credit to turn\ldots & \pmark \\
 Hindsight \citep{latimer2026hindsight} & 2026 & ext. memory & -- & retain/reflect operations; opinions car\ldots & \pmark \\
@@ -442,21 +454,9 @@ ELPO \citep{liang2026irrecoverable} & 2026 & -- & interaction & first irrecovera
 TCPO turn-level credit \citep{liao2026tcpo} & 2026 & context & interaction & verifier score-to-credit conversion; hi\ldots &  \\
 SkillC \citep{lin2026skillc} & 2026 & context & trajectory & skill-vs-no-skill reward gap &  \\
 MADE: belief-driven dual-agent de\ldots \citep{liu2026made} & 2026 & ext. memory & interaction & execution failure -\textgreater{} root-cause invalid\ldots &  \\
-PiCA pivot-based credit \citep{liu2026pica} & 2026 & context & trajectory & pivot-step potential-based shaping &  \\
-SHADOW \citep{liu2026shadow} & 2026 & context & interaction & dynamics-aware state grouping and local\ldots &  \\
-INTENT \citep{liu2026budgetconstrained} & 2026 & world model & -- & inference-time: intention-aware hierarc\ldots & \pmark \\
-SimpleMem \citep{liu2026simplemem} & 2026 & ext. memory & -- & online semantic synthesis merges relate\ldots & \pmark \\
-WorldMemArena \citep{liu2026worldmemarena} & 2026 & ext. memory & -- & gold memory updates and distractors ann\ldots & \cmark \\
-PRISM \citep{liu2026prism} & 2026 & written & -- & new observations and VLM semantic reaso\ldots &  \\
-AutoHarness \citep{lou2026autoharness} & 2026 & ext. filter & -- & environment feedback (illegal-move erro\ldots & \pmark \\
-HISR \citep{lu2026hisr} & 2026 & context & interaction & segment-level process reward modulated\ldots &  \\
-UI-Copilot \citep{lu2026uicopilot} & 2026 & ext. memory & interaction & memory decoupling separates persistent\ldots &  \\
-Graph of States \citep{luo2026graph} & 2026 & ext. memory & -- & symbolic check (causal graph constraint\ldots &  \\
-ReflectiChain world-model supply\ldots \citep{luo2026topology} & 2026 & world model & trajectory & latent trajectory rehearsal; reflection\ldots &  \\
-ReflectiChain \citep{luo2026reflectichain} & 2026 & world model & -- & retrospective reflection over the execu\ldots & \cmark \\
 \bottomrule
 \end{tabular}}
-\caption{Master table, continued (7/9). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
+\caption{Master table, continued (7/10). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
 \label{tab:masterfull7}
 \end{table*}
 
@@ -468,11 +468,29 @@ ReflectiChain \citep{luo2026reflectichain} & 2026 & world model & -- & retrospec
 \toprule
 System & Year & State kept by & Credited & Revision trigger & Metric \\
 \midrule
+PiCA pivot-based credit \citep{liu2026pica} & 2026 & context & trajectory & pivot-step potential-based shaping &  \\
+SHADOW \citep{liu2026shadow} & 2026 & context & interaction & dynamics-aware state grouping and local\ldots &  \\
+INTENT \citep{liu2026budgetconstrained} & 2026 & world model & -- & inference-time: intention-aware hierarc\ldots & \pmark \\
+SimpleMem \citep{liu2026simplemem} & 2026 & ext. memory & -- & online semantic synthesis merges relate\ldots & \pmark \\
+WorldMemArena \citep{liu2026worldmemarena} & 2026 & ext. memory & -- & gold memory updates and distractors ann\ldots & \cmark \\
+PRISM \citep{liu2026prism} & 2026 & written & -- & new observations and VLM semantic reaso\ldots &  \\
+MMPO \citep{liu2026metacognitive} & 2026 & written & state & belief-entropy proxy (own answer entrop\ldots &  \\
+AutoHarness \citep{lou2026autoharness} & 2026 & ext. filter & -- & environment feedback (illegal-move erro\ldots & \pmark \\
+HISR \citep{lu2026hisr} & 2026 & context & interaction & segment-level process reward modulated\ldots &  \\
+UI-Copilot \citep{lu2026uicopilot} & 2026 & ext. memory & interaction & memory decoupling separates persistent\ldots &  \\
+PaW \citep{lu2026policy} & 2026 & world model & WM loss & clipped-MAE auxiliary loss on next-obse\ldots & \pmark \\
+Graph of States \citep{luo2026graph} & 2026 & ext. memory & -- & symbolic check (causal graph constraint\ldots &  \\
+ReflectiChain world-model supply\ldots \citep{luo2026topology} & 2026 & world model & trajectory & latent trajectory rehearsal; reflection\ldots &  \\
+ReflectiChain \citep{luo2026reflectichain} & 2026 & world model & -- & retrospective reflection over the execu\ldots & \cmark \\
 PUMA user-state modeling \citep{luo2026know} & 2026 & prob. memory & WM loss & new user utterance updates variational\ldots & \cmark \\
 ProPlay \citep{ma2026proplay} & 2026 & world model & trajectory & post-episode graph refinement from envi\ldots &  \\
+Fine-Mem \citep{ma2026finemem} & 2026 & ext. memory & memory op & fine-grained feedback alignment on memo\ldots &  \\
+LongHorizon-Harness \citep{ma2026longhorizon} & 2026 & ext. memory & -- & none &  \\
 CoMAM \citep{mao2026joint} & 2026 & ext. memory & memory op & none &  \\
 TreeMem \citep{mao2026treebased} & 2026 & ext. memory & memory op & none &  \\
+Physics of long-horizon planning \citep{men2026physics} & 2026 & world model & WM loss & simulator ground-truth state transition\ldots & \pmark \\
 EquiMem \citep{meng2026equimem} & 2026 & ext. memory & -- & each memory update scored against equil\ldots & \pmark \\
+PCCC / CVT-RL \citep{meng2026policy} & 2026 & written & state & verifier-estimated prefix-observable la\ldots & \cmark \\
 Episodic-Semantic Memory \citep{milosevic2026episodic} & 2026 & ext. memory & memory op & consolidation of episodic window into s\ldots & \pmark \\
 MT-GRPO Iterative Reward Calibrat\ldots \citep{modecrua2026multiturn} & 2026 & context & interaction & none (per-turn reward calibrated from r\ldots &  \\
 DToM-Track: dynamic ToM as tempor\ldots \citep{nguyen2026dynamic} & 2026 & context & -- & none & \cmark \\
@@ -502,27 +520,9 @@ Nous: when belief-based memory he\ldots \citep{singh2026when} & 2026 & prob. mem
 MMA-RAG\textasciicircum{}T \citep{singh2026adversarial} & 2026 & written & -- & new observations at each pipeline check\ldots & \pmark \\
 Pinductor: LLM-prior POMDP world\ldots \citep{six2026learning} & 2026 & world model & state & belief-based likelihood score of candid\ldots &  \\
 Parallel WebBench \citep{sogani2026when} & 2026 & context & trajectory & GRPO on task outcome; trace diagnostics\ldots & \pmark \\
-Hybrid-WM \citep{song2026agent} & 2026 & world model & state & consistency gate: disagreement between\ldots & \cmark \\
-WM-SAR \citep{song2026repair} & 2026 & world model & trajectory & spectral error amplification &  \\
-Semantic Bayesian World Models \citep{soru2026semantic} & 2026 & ext. filter & state & Bayesian conditioning on observations;\ldots &  \\
-CMI \citep{srivastava2026causal} & 2026 & ext. memory & state & counterfactual answer-score intervention &  \\
-External affective state dynamics \citep{subaharan2026controlling} & 2026 & ext. memory & -- & exponential smoothing or momentum updat\ldots &  \\
-VerMem \citep{sun2026verifiable} & 2026 & ext. memory & memory op & local verifier scores each memory trans\ldots & \pmark \\
-HCAPO hindsight critic \citep{tan2026hindsight} & 2026 & context & trajectory & post-hoc LLM critic refinement &  \\
-MSCE \citep{tang2026memory} & 2026 & ext. memory & trajectory & reflection-weighted value backfilling p\ldots & \pmark \\
-STAGE \citep{tian2026stage} & 2026 & written & state & new scene evidence triggers recursive u\ldots & \cmark \\
-Memora \citep{uddin2026recall} & 2026 & ext. memory & -- & user-stated add/update/delete of prefer\ldots & \cmark \\
-CAPO: critic-guided action-aligne\ldots \citep{wang2026capo} & 2026 & context & interaction & none (critic value at action boundary) &  \\
-SLEA-RL: step-level experience au\ldots \citep{wang2026slearl} & 2026 & ext. memory & trajectory & observation change triggers step-level\ldots &  \\
-G2PO \citep{wang2026groupgraph} & 2026 & context & trajectory & globally standardized TD error over sta\ldots &  \\
-Self-Guide internal reward co-evo\ldots \citep{wang2026coevolution} & 2026 & written & trajectory & self-generated guidance as internal rew\ldots &  \\
-TAMTRL \citep{wang2026tamtrl} & 2026 & written & trajectory & teacher likelihood of memory update &  \\
-T2PO \citep{wang2026t2po} & 2026 & context & interaction & token-level entropy/confidence plateau &  \\
-CrEST \citep{wang2026teach} & 2026 & context & interaction & verified turn reward with self-teacher\ldots &  \\
-MINDGAMES live arena \citep{wang2026mindgames} & 2026 & -- & -- & n/a &  \\
 \bottomrule
 \end{tabular}}
-\caption{Master table, continued (8/9). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
+\caption{Master table, continued (8/10). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
 \label{tab:masterfull8}
 \end{table*}
 
@@ -534,9 +534,29 @@ MINDGAMES live arena \citep{wang2026mindgames} & 2026 & -- & -- & n/a &  \\
 \toprule
 System & Year & State kept by & Credited & Revision trigger & Metric \\
 \midrule
+Hybrid-WM \citep{song2026agent} & 2026 & world model & state & consistency gate: disagreement between\ldots & \cmark \\
+WM-SAR \citep{song2026repair} & 2026 & world model & trajectory & spectral error amplification &  \\
+Semantic Bayesian World Models \citep{soru2026semantic} & 2026 & ext. filter & state & Bayesian conditioning on observations;\ldots &  \\
+CMI \citep{srivastava2026causal} & 2026 & ext. memory & state & counterfactual answer-score intervention &  \\
+External affective state dynamics \citep{subaharan2026controlling} & 2026 & ext. memory & -- & exponential smoothing or momentum updat\ldots &  \\
+VerMem \citep{sun2026verifiable} & 2026 & ext. memory & memory op & local verifier scores each memory trans\ldots & \pmark \\
+HCAPO hindsight critic \citep{tan2026hindsight} & 2026 & context & trajectory & post-hoc LLM critic refinement &  \\
+MSCE \citep{tang2026memory} & 2026 & ext. memory & trajectory & reflection-weighted value backfilling p\ldots & \pmark \\
+ReBel \citep{tang2026rewarding} & 2026 & written & state & belief-consistency reward: each predica\ldots & \pmark \\
+STAGE \citep{tian2026stage} & 2026 & written & state & new scene evidence triggers recursive u\ldots & \cmark \\
+Memora \citep{uddin2026recall} & 2026 & ext. memory & -- & user-stated add/update/delete of prefer\ldots & \cmark \\
+CAPO: critic-guided action-aligne\ldots \citep{wang2026capo} & 2026 & context & interaction & none (critic value at action boundary) &  \\
+SLEA-RL: step-level experience au\ldots \citep{wang2026slearl} & 2026 & ext. memory & trajectory & observation change triggers step-level\ldots &  \\
+G2PO \citep{wang2026groupgraph} & 2026 & context & trajectory & globally standardized TD error over sta\ldots &  \\
+Self-Guide internal reward co-evo\ldots \citep{wang2026coevolution} & 2026 & written & trajectory & self-generated guidance as internal rew\ldots &  \\
+TAMTRL \citep{wang2026tamtrl} & 2026 & written & trajectory & teacher likelihood of memory update &  \\
+T2PO \citep{wang2026t2po} & 2026 & context & interaction & token-level entropy/confidence plateau &  \\
+CrEST \citep{wang2026teach} & 2026 & context & interaction & verified turn reward with self-teacher\ldots &  \\
+MINDGAMES live arena \citep{wang2026mindgames} & 2026 & -- & -- & n/a &  \\
 APPO \citep{wang2026appo} & 2026 & -- & output & none &  \\
 LENS \citep{wang2026lens} & 2026 & prob. memory & -- & LLM relevance-oracle verdicts update a\ldots & \pmark \\
 Mind2Dialogue \citep{wang2026mind2dialogue} & 2026 & written & output & simulator updates a shared evolving use\ldots & \pmark \\
+Dark Room \citep{wang2026dark} & 2026 & written & state & rule-verified next-observation predicti\ldots & \pmark \\
 Agentic Reasoning survey \citep{wei2026agentic} & 2026 & -- & -- & n/a &  \\
 BayesEvolve: explicit belief for\ldots \citep{wu2026bayesevolve} & 2026 & ext. filter & state & posterior refit after each evaluated ca\ldots & \cmark \\
 HumanLM state alignment \citep{wu2026humanlm} & 2026 & written & state & RL aligns generated natural-language la\ldots & \pmark \\
@@ -559,17 +579,34 @@ EvoTool \citep{yang2026evotool} & 2026 & context & interaction & none &  \\
 world models as intermediary \citep{yang2026world} & 2026 & world model & WM loss & none (position paper) &  \\
 AgeMem \citep{yu2026agentic} & 2026 & ext. memory & memory op & agent-initiated store/retrieve/update/s\ldots & \pmark \\
 LOCARD structured belief state \citep{yu2026locard} & 2026 & written & -- & strategic core flips a boolean SOP-mile\ldots &  \\
+InfiAgent \citep{yu2026infiagent} & 2026 & written & -- & none &  \\
 SAVeR: self-audited verified reas\ldots \citep{yuan2026verify} & 2026 & context & state & adversarial audit locating logical/evid\ldots &  \\
 RPMS \citep{yuan2026rpms} & 2026 & written & -- & lightweight belief state gates memory a\ldots & \pmark \\
+Critic Experience Bank \citep{zeng2026critic} & 2026 & ext. memory & -- & hindsight LLM majority vote conditioned\ldots & \cmark \\
 MICA: intertemporal credit for em\ldots \citep{zhang2026mica} & 2026 & ext. memory & interaction & none (potential over structured user st\ldots &  \\
 Q-Evolve \citep{zhang2026selfevolving} & 2026 & context & trajectory & advantage from in-distribution IQL crit\ldots &  \\
 Internalizing the Future \citep{zhang2026internalizing} & 2026 & written & trajectory & foresight-conditioned RL calibrating pl\ldots &  \\
+\bottomrule
+\end{tabular}}
+\caption{Master table, continued (9/10). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
+\label{tab:masterfull9}
+\end{table*}
+
+\begin{table*}[t]
+\centering\tiny
+\setlength{\tabcolsep}{2.5pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcllll}
+\toprule
+System & Year & State kept by & Credited & Revision trigger & Metric \\
+\midrule
 RetailBench long-horizon retail P\ldots \citep{zhang2026retailbenchx} & 2026 & context & -- & none &  \\
 WorldEvolver \citep{zhang2026selfevolvingx} & 2026 & world model & state & prediction-observation mismatch &  \\
 Theory of Space \citep{zhang2026theory} & 2026 & written & -- & new partial observations during active\ldots & \cmark \\
 MemSkill \citep{zhang2026memskill} & 2026 & ext. memory & memory op & controller selects extract/consolidate/\ldots & \pmark \\
 OASES \citep{zhang2026oases} & 2026 & context & state & none &  \\
 HiMem \citep{zhang2026himem} & 2026 & ext. memory & -- & conflict detected between retrieved not\ldots & \pmark \\
+StarWM \citep{zhang2026world} & 2026 & world model & WM loss & offline next-observation prediction fro\ldots & \pmark \\
 AEM adaptive entropy modulation \citep{zhao2026aem} & 2026 & context & trajectory & response-level surprisal x advantage &  \\
 EvoSCM causal belief revision \citep{zhao2026evoscm} & 2026 & written & state & prediction-observation discrepancy dist\ldots & \cmark \\
 BranPO \citep{zhao2026branpo} & 2026 & -- & interaction & none &  \\
@@ -582,6 +619,6 @@ ToolVerse \citep{zhou2026toolverse} & 2026 & context & interaction & turn-aware 
 Qwen-AgentWorld \citep{zuo2026qwenagentworld} & 2026 & world model & WM loss & next-state prediction reasoning trained\ldots & \cmark \\
 \bottomrule
 \end{tabular}}
-\caption{Master table, continued (9/9). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
-\label{tab:masterfull9}
+\caption{Master table, continued (10/10). \emph{Metric}: \cmark\ belief-level metric reported, \pmark\ proxy only.}
+\label{tab:masterfull10}
 \end{table*}

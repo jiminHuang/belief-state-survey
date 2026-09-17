@@ -6,7 +6,7 @@
 Table~\ref{tab:levels} compares the credit levels by where their likelihood comes from; three observations follow.
 
 \paragraph{The likelihood is the scarce term.}
-Table~\ref{tab:learningmain} shows the state level taking its likelihood, in every case in the corpus, from a source the environment does not supply. State credit needs a signed score for a claim, and without an oracle that score can only come from the agent's own prediction settled against the next observation. That row is empty.
+Table~\ref{tab:learningmain} shows the state level taking its likelihood from a source the environment does not supply in every case but two: ReBel settles a predicate belief against the next observation, ABBEL reconstructs the previous one. Both beliefs are binary, both results are isolated, and the negative result beside them shows a dense environment-signed reward is unstable under group normalisation. That row is no longer empty; it is thin.
 
 \paragraph{Auditability and expressiveness pull apart.}
 Filters are validated in closed form but cannot introduce a factor they were not given, written beliefs can name a new factor but are rarely testable, and world models are testable but mute; hybrids that write the belief and check it parametrically are the convergence point \citep{song2026agent,zhang2026selfevolvingx,kumar2026towards}.

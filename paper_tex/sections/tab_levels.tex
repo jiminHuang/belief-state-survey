@@ -12,9 +12,9 @@ Trajectory & verifier, PRM & \hbhalf & \hbhalf & \hbnone & \hbnone & \hbfull \\
 Interaction (actions) & task reward & \hbfull & \hbfull & \hbnone & \hbnone & \hbfull \\
 Interaction (memory ops) & task reward, teacher & \hbfull & \hbhalf & \hbhalf & \hbnone & \hbhalf \\
 State (oracle or teacher) & closed world, teacher, target & \hbnone & \hbnone & \hbfull & \hbfull & \hbhalf \\
-State (own prediction) & returned observation & \hbfull & \hbfull & \hbfull & \hbfull & \hbnone \\
+State (own observation) & returned observation & \hbfull & \hbfull & \hbfull & \hbhalf & \hbhalf \\
 \bottomrule
 \end{tabular}}
-\caption{The credit levels compared by where their likelihood comes from. \emph{Env.}: the likelihood comes from the environment; \emph{No oracle}: no external source of truth is needed; \emph{Belief}: the written belief receives the gradient; \emph{Act gap}: belief error and action error are separated; \emph{Maturity}: \hbfull\ many systems, \hbhalf\ a few, \hbnone\ none in corpus.}
+\caption{The credit levels compared by where their likelihood comes from. \emph{Env.}: the likelihood comes from the environment; \emph{No oracle}: no external source of truth is needed; \emph{Belief}: the written belief receives the gradient; \emph{Act gap}: belief error and action error are separated; \emph{Maturity}: \hbfull\ many systems, \hbhalf\ a few, \hbnone\ none.}
 \label{tab:levels}
 \end{table}

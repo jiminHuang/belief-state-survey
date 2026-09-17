@@ -1,8 +1,8 @@
 \section{Open Problems}
 \label{sec:challenges}
 
-\paragraph{A likelihood from the agent's own observations.}
-State-level methods take their likelihood from an external source of truth; surprise-triggered mechanisms (Section~\ref{sec:revision}) need none but attach the error to a memory entry rather than to the written claim. Combining the two, so that the agent's own matured predictions score its written belief, is the most direct open problem this survey identifies.
+\paragraph{A calibrated belief with an environment-signed likelihood.}
+ReBel signs a written belief with the next observation, but a binary one; Agent-BRACE carries certainty, but signed by a calibration target; surprise-triggered mechanisms (Section~\ref{sec:revision}) route nothing to the claim. A belief that carries uncertainty, is scored by the agent's own matured predictions, and receives the error at the claim that made it, without the collapse dense prediction rewards show under group normalisation, is the most direct open problem this survey identifies.
 
 \paragraph{Latent beliefs without ground truth.}
 Historical data has no oracle, closed world, or annotation; filter-recovered latents and representation drift are candidate substitutes, unvalidated against each other \citep{dixon2026belief,xue2026representation}; a benchmark pairing a controlled environment with a replay of the same instrument would settle whether belief-level gains transfer.

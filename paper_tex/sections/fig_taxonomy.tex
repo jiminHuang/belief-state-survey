@@ -28,7 +28,7 @@ for tree={
       [{Trajectory}, fill=yellow!10, [{PRMs \citep{lightman2023lets}, GRPO \citep{shao2024deepseekmath}, LATS \citep{zhou2023language},\\AgentRefine \citep{fu2025agentrefine}, T3 \citep{zou2025t3}}]]
       [{Interaction}, fill=yellow!10, [{actions: ArCHer \citep{zhou2024archer}, RAGEN \citep{wang2025ragen}, GiGPO \citep{feng2025group}, AgentPRM \citep{xi2025agentprm}, IGPO \citep{wang2025information};\\memory operations: MEM1 \citep{zhou2025mem1}, Memory-R1 \citep{yan2025memory}, VerMem \citep{sun2026verifiable}}]]
       [{World-model loss}, fill=yellow!10, [{Dyna-Think \citep{yu2025dynathink}, SPA \citep{chen2025why}, RLVR-World \citep{wu2025rlvrworld}}]]
-      [{State, likelihood from}, fill=yellow!10, [{a simulator or verifier: VAGEN \citep{wang2025vagen}, CBM \citep{xu2026should};\\a teacher: BOND \citep{cui2026distilling}, DEL-ToM \citep{wu2025deltom}; a calibration target: Agent-BRACE \citep{singh2026agent};\\the agent's own observation: \emph{none in the corpus}}]]
+      [{State, likelihood from}, fill=yellow!10, [{a simulator or verifier: VAGEN \citep{wang2025vagen}, CBM \citep{xu2026should};\\a teacher: BOND \citep{cui2026distilling}, DEL-ToM \citep{wu2025deltom}; a calibration target: Agent-BRACE \citep{singh2026agent};\\the agent's own next observation: ReBel \citep{tang2026rewarding}; reconstruction of past observations: ABBEL \citep{lidayan2025abbel}}]]
     ]
     [{\S\ref{sec:evidence} the choice of what to observe}, [{BayesEvolve \citep{wu2026bayesevolve}, EvoSCM \citep{zhao2026evoscm}, Align-While-Search \citep{bae2025align},\\CA-BED \citep{arnould2026cabed}, InfoPO \citep{kong2026infopo}}]]
     [{\S\ref{sec:evaluation} a metric, by construct}
@@ -40,6 +40,6 @@ for tree={
   ]
 ]
 }}
-\caption{Taxonomy: the belief state split into the three terms of Equation~\ref{eq:filter}, each branch by where the term comes from. The last yellow leaf is empty.}
+\caption{Taxonomy: the belief state split into the three terms of Equation~\ref{eq:filter}, each branch by where the term comes from. The last yellow leaf holds two systems, both without uncertainty.}
 \label{fig:taxonomy}
 \end{figure*}
