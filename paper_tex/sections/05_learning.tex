@@ -14,7 +14,7 @@ Supervised fine-tuning and preference optimisation credit the completed response
 \subsection{Interaction}
 \label{sec:learn:inter}
 
-Agentic reinforcement learning credits actions over several turns \citep{zhou2024archer,wang2025ragen,zhou2025sweetrl,feng2025group}, and the open question is how to make that credit denser without making it wrong \citep{peng2026hiper,wang2026groupgraph,ren2026iapo,liao2026tcpo,liu2026pica,li2026vict}. The nearest this level comes to the state is a group that credits the write to a memory, from a rewritten case bank to an RL-trained overwrite of a fixed written state \citep{zhou2025memento,zhou2025mem1,yu2025memagent,yan2025memory,sun2026verifiable,yan2026memoryr2}. These credit the \emph{operation}, so a well-executed update to a wrong claim is still rewarded.
+Agentic reinforcement learning credits actions over several turns \citep{zhou2024archer,wang2025ragen,zhou2025sweetrl,feng2025group}, and the open question is how to make that credit denser without making it wrong, by hierarchical advantages, counterfactual estimators, potential-based shaping, or verifier-structured credit \citep{peng2026hiper,wang2026capo,diao2026hipif,wang2026groupgraph,ren2026iapo,liao2026tcpo,liu2026pica,li2026vict}; denser is not free \citep{modecrua2026multiturn,pu2026explore}. The nearest this level comes to the state is a group that credits the write to a memory, from a rewritten case bank to an RL-trained overwrite of a fixed written state \citep{zhou2025memento,zhou2025mem1,yu2025memagent,yan2025memory,sun2026verifiable,yan2026memoryr2}. These credit the \emph{operation}, so a well-executed update to a wrong claim is still rewarded.
 
 \subsection{State}
 \label{sec:learn:state}
