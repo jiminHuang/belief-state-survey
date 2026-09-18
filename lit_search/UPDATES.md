@@ -1,0 +1,1 @@
+- **2026-09** — initial release with the survey preprint: 485 papers (2020 to September 2026), five keyword and citation-tree rounds plus a targeted round around belief-level self-supervision (ReBel, ABBEL, PaW, Dark Room).
