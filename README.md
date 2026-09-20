@@ -673,6 +673,6 @@ Missing a paper? Open an issue or a pull request with the arXiv link and one lin
   author={Huang, Jimin and Wang, Yuyan and Peng, Xueqing and Ananiadou, Sophia and Tsujii, Jun'ichi},
   year={2026},
   howpublished={\url{https://github.com/jiminHuang/belief-state-survey}},
-  note={Preprint. Zenodo DOI: TBD}
+  note={Preprint on SSRN; DOI to be added}
 }
 ```
