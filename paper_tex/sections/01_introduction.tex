@@ -7,27 +7,36 @@ Language-model agents now act over horizons of hours or months, and the failures
 
 \begin{figure}[t]
 \centering
-\resizebox{0.92\columnwidth}{!}{%
-\begin{tikzpicture}[font=\scriptsize, node distance=5mm and 4.5mm,
-  box/.style={fill=black!9, minimum height=7mm, minimum width=15.5mm, align=center, inner sep=1pt},
-  st/.style={box, fill=cState, text=white}, lk/.style={box, fill=cLik, text=white}, tr/.style={box, fill=cTrans, text=white},
-  fl/.style={font=\tiny\itshape, text=black!60, inner sep=0.5pt},
-  arr/.style={natarr}]
-\node[box] (mem) {Memory\\[-2pt]{\tiny what happened}};
-\node[st, right=of mem] (bel) {Belief $\belief_t$\\[-2pt]{\tiny a hypothesis}};
-\node[lk, right=of bel] (pred) {Prediction\\[-2pt]{\tiny $\hat o_{t+1}$}};
-\node[lk, right=of pred] (obs) {Observation\\[-2pt]{\tiny $o_{t+1}$}};
-\node[lk, below=of obs] (test) {Test\\[-2pt]{\tiny $p(o_{t+1}\mid z')$}};
-\node[tr, below=of pred] (rev) {Revision\\[-2pt]{\tiny $p(z'\mid z,a_t)$}};
-\node[box, below=of bel] (act) {Action $a_t$\\[-2pt]{\tiny conditioned on $\belief_t$}};
-\draw[arr] (mem) -- (bel); \draw[arr] (bel) -- (pred); \draw[arr] (pred) -- (obs);
-\path (mem.south east) -- node[fl, below=0.3mm, align=center] {failed\\isolation} (bel.south west);
-\draw[arr] (obs) -- node[fl, left=2pt, align=right] {failed\\stay} (test); \draw[arr] (test) -- (rev); \draw[arr] (rev) -- (act);
-\draw[arr] (act.west) -| node[pos=0.3, below, font=\tiny] {experience} (mem.south);
-\node[fl, above=0pt of rev] {failed update};
-\node[fl, above=0pt of act] {failed act};
+\resizebox{0.95\columnwidth}{!}{%
+\begin{tikzpicture}[font=\scriptsize, node distance=6mm and 4.5mm,
+  box/.style={fill=black!8, minimum height=7.5mm, minimum width=15mm, align=center, inner sep=1pt},
+  st/.style={box, fill=cState!20}, lk/.style={box, fill=cLik!22}, tr/.style={box, fill=cTrans!22},
+  chip/.style={font=\tiny\bfseries, text=white, inner xsep=2pt, inner ysep=1pt, minimum height=2.6mm},
+  fm/.style={circle, fill=black!65, text=white, font=\tiny\bfseries, inner sep=0.6pt, minimum size=3.1mm},
+  arr/.style={-{Stealth[length=1.4mm,width=1.1mm]}, line width=0.5pt, draw=black!75}]
+\node[box] (mem) {Memory\\[-1pt]{\tiny what happened}};
+\node[st, right=of mem] (bel) {Belief $\belief_t$\\[-1pt]{\tiny a hypothesis}};
+\node[lk, right=of bel] (pred) {Prediction\\[-1pt]{\tiny $\hat o_{t+1}$}};
+\node[box, below=of mem] (act) {Action $a_t$\\[-1pt]{\tiny conditioned on $\belief_t$}};
+\node[tr, below=of bel] (rev) {Revision\\[-1pt]{\tiny $p(z'\mid z,a_t)$}};
+\node[lk, below=of pred] (test) {Test\\[-1pt]{\tiny $p(o_{t+1}\mid z')$}};
+\node[lk, anchor=west] at ($(pred.east)!0.5!(test.east)+(4mm,0)$) (obs) {Observation\\[-1pt]{\tiny $o_{t+1}$}};
+\begin{scope}[on background layer]
+  \node[fill=cLik!7, inner sep=2.2mm, fit=(pred)(test)(obs)] (lkpanel) {};
+\end{scope}
+\node[chip, fill=cLik, anchor=south west] at ([xshift=1mm,yshift=-0.2mm]lkpanel.north west) {likelihood};
+\node[chip, fill=cState] at (bel.north) {state};
+\node[chip, fill=cTrans] at (rev.south) {transition};
+\draw[arr] (mem) -- (bel); \draw[arr] (bel) -- (pred);
+\draw[arr] (pred.east) -| (obs.north); \draw[arr] (obs.south) |- (test.east);
+\draw[arr] (test) -- (rev); \draw[arr] (rev) -- (act);
+\draw[arr] (act) -- node[left, font=\tiny, text=black!70] {experience} (mem);
+\node[fm] at ($(mem.east)!0.5!(bel.west)+(0,2.6mm)$) {1};
+\node[fm] at ([xshift=1.8mm,yshift=-0.6mm]obs.south east) {2};
+\node[fm] at ($(test.west)!0.5!(rev.east)+(0,2.6mm)$) {3};
+\node[fm] at ($(rev.west)!0.5!(act.east)+(0,2.6mm)$) {4};
 \end{tikzpicture}}
-\caption{\textbf{From memory to belief.} A memory records what happened; a belief is a hypothesis that prediction, observation, and test expose to evidence. Colours mark the terms of Equation~\ref{eq:filter} ({\setlength{\fboxsep}{1pt}\colorbox{cState}{\textcolor{white}{state}}}, {\setlength{\fboxsep}{1pt}\colorbox{cLik}{\textcolor{white}{likelihood}}}, {\setlength{\fboxsep}{1pt}\colorbox{cTrans}{\textcolor{white}{transition}}}); italics, the failure modes of Section~\ref{sec:revision}.}
+\caption{\textbf{From memory to belief.} A memory records what happened; a belief is a hypothesis that prediction, observation, and test expose to evidence. Tints mark the terms of Equation~\ref{eq:filter}; numbers mark the failure modes of Section~\ref{sec:revision}: 1 isolation, 2 stay, 3 update, 4 act.}
 \label{fig:loop}
 \end{figure}
 

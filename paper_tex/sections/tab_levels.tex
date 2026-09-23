@@ -2,7 +2,7 @@
 \nattab
 \caption{\textbf{Credit levels compared by where their likelihood comes from.}}
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{@{}lllccccc@{}}
+\begin{tabular}{@{}lllT{cLik}T{cLik}T{cState}T{cTrans}T{black!70}@{}}
 \toprule
 \textbf{Level} & & \textbf{Likelihood from} & \textbf{Env.} & \textbf{No oracle} & \textbf{Belief} & \textbf{Act gap} & \textbf{Maturity} \\
 \midrule
@@ -14,6 +14,6 @@ State & oracle or teacher & closed world, teacher, target & \hbnone & \hbnone & 
 & \textbf{own observation} & \textbf{returned observation} & \hbfull & \hbfull & \hbfull & \hbhalf & \hbhalf \\
 \bottomrule
 \end{tabular}}
-\tabnote{Env., the likelihood comes from the environment; No oracle, no external source of truth is needed; Belief, the written belief receives the gradient; Act gap, belief and action error are separated; Maturity, \hbfull\ many systems, \hbhalf\ a few, \hbnone\ none.}
+\tabnote{Env., the likelihood comes from the environment; No oracle, no external source of truth is needed; Belief, the written belief receives the gradient; Act gap, belief and action error are separated; Maturity, solid many systems, tint a few, grey none. Otherwise solid, yes; tint, partly; grey, no.}
 \label{tab:levels}
 \end{table}

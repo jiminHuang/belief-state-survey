@@ -2,7 +2,7 @@
 \nattab
 \caption{\textbf{Classes of the state term and where each term comes from.}}
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{@{}llcccccl@{}}
+\begin{tabular}{@{}llcT{cState}cc T{cState}l@{}}
 \toprule
 \textbf{Locus} & \textbf{Form} & \textbf{State} & \textbf{Uncert.} & \textbf{Trans.} & \textbf{Likelihood} & \textbf{Belief} & \textbf{Example} \\
 \midrule
@@ -16,6 +16,6 @@ Learned & latent world model & L & \hbhalf & L & L (prediction error) & \hbhalf 
 & written claim + parametric check & M & \hbfull & M & L (check) & \hbfull & Hybrid-WM \\
 \bottomrule
 \end{tabular}}
-\tabnote{Locus: in the context, in a store outside the model, in an external estimator, or in learned dynamics. M, written by the model; D, fixed by the designer; L, learned; ---, absent (terms of Equation~\ref{eq:filter}). Uncert., the state carries uncertainty; Belief, meets conditions (i)--(iii) of Section~\ref{sec:formulation}. \hbfull\ yes; \hbhalf\ partly; \hbnone\ no.}
+\tabnote{Locus: in the context, in a store outside the model, in an external estimator, or in learned dynamics. M, written by the model; D, fixed by the designer; L, learned; ---, absent (terms of Equation~\ref{eq:filter}). Uncert., the state carries uncertainty; Belief, meets conditions (i)--(iii) of Section~\ref{sec:formulation}. Solid, yes; tint, partly; grey, no.}
 \label{tab:reprprops}
 \end{table}

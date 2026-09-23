@@ -18,7 +18,7 @@
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{forest}
-\usetikzlibrary{arrows.meta,positioning,shapes.misc,decorations.pathreplacing}
+\usetikzlibrary{arrows.meta,positioning,shapes.misc,decorations.pathreplacing,fit,backgrounds,calc}
 
 % ---- macros ----
 \newcommand{\op}[1]{\textsc{#1}}                 % operation names: \op{Predict}
@@ -33,10 +33,12 @@
 \usepackage{colortbl}
 \usepackage[most]{tcolorbox}
 \newcommand{\insight}[2]{\begin{tcolorbox}[colback=cState!7,colframe=cState!7,boxrule=0pt,arc=0pt,left=4pt,right=4pt,top=2pt,bottom=2pt,boxsep=0pt,before skip=3pt,after skip=3pt]\footnotesize\textbf{Insight #1.}~#2\end{tcolorbox}}
-% Harvey balls
-\DeclareRobustCommand{\hbfull}{\tikz[baseline=-0.6ex]{\draw[line width=0.4pt,fill=black] (0,0) circle (0.72ex);}}
-\DeclareRobustCommand{\hbhalf}{\tikz[baseline=-0.6ex]{\draw[line width=0.4pt] (0,0) circle (0.72ex); \fill (0,0) -- (90:0.72ex) arc (90:270:0.72ex) -- cycle;}}
-\DeclareRobustCommand{\hbnone}{\tikz[baseline=-0.6ex]{\draw[line width=0.4pt] (0,0) circle (0.72ex);}}
+% Rating tiles (replace Harvey balls): solid = yes/central, tint = partial, pale grey = absent; colour set per column by the T{colour} column type
+\colorlet{tilec}{black!70}
+\DeclareRobustCommand{\hbfull}{\tikz[baseline=-0.55ex]{\fill[tilec] (-0.8ex,-0.8ex) rectangle (0.8ex,0.8ex);}}
+\DeclareRobustCommand{\hbhalf}{\tikz[baseline=-0.55ex]{\fill[tilec!35] (-0.8ex,-0.8ex) rectangle (0.8ex,0.8ex);}}
+\DeclareRobustCommand{\hbnone}{\tikz[baseline=-0.55ex]{\fill[black!8] (-0.8ex,-0.8ex) rectangle (0.8ex,0.8ex);}}
+\newcolumntype{T}[1]{>{\colorlet{tilec}{#1}}c}
 \newcommand{\grp}[1]{\multicolumn{6}{@{}l@{}}{\textit{#1}}\\}
 \newcommand{\grpp}[1]{\multicolumn{7}{@{}l@{}}{\textit{#1}}\\}
 \usepackage{pifont}

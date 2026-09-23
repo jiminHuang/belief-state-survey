@@ -2,9 +2,9 @@
 \centering
 \resizebox{0.8\textwidth}{!}{%
 \begin{tikzpicture}[font=\scriptsize,
-  llm/.style={fill=black!9, minimum width=13mm, minimum height=6mm, align=center},
-  bel/.style={fill=cState, text=white, minimum width=13mm, minimum height=6mm, align=center},
-  ext/.style={fill=cAux!35, minimum width=13mm, minimum height=6mm, align=center},
+  llm/.style={fill=black!8, minimum width=13mm, minimum height=6mm, align=center},
+  bel/.style={fill=cState!22, minimum width=13mm, minimum height=6mm, align=center},
+  ext/.style={fill=cAux!25, minimum width=13mm, minimum height=6mm, align=center},
   env/.style={draw=black!50, dashed, line width=0.4pt, minimum width=13mm, minimum height=6mm, align=center},
   ttl/.style={font=\scriptsize, align=center},
   arr/.style={natarr}]
@@ -71,6 +71,6 @@
 \node[font=\tiny, text=black!55] at (0.7,-1.85) {revise only on disagreement};
 \end{scope}
 \end{tikzpicture}}
-\caption{\textbf{Who maintains the belief.} Navy marks a belief the model writes and can reason about; light blue marks an external estimator. Only c, d (when testable), e and f commit to a prediction that later evidence can falsify.}
+\caption{\textbf{Who maintains the belief.} Blue-grey marks a belief the model writes and can reason about; light blue marks an external estimator. Only c, d (when testable), e and f commit to a prediction that later evidence can falsify.}
 \label{fig:repr}
 \end{figure*}
