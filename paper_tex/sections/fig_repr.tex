@@ -2,12 +2,12 @@
 \centering
 \resizebox{0.8\textwidth}{!}{%
 \begin{tikzpicture}[font=\scriptsize,
-  llm/.style={draw, rounded corners=2pt, fill=gray!12, minimum width=13mm, minimum height=6mm, align=center},
-  bel/.style={draw, rounded corners=2pt, fill=yellow!20, minimum width=13mm, minimum height=6mm, align=center},
-  ext/.style={draw, rounded corners=2pt, fill=blue!10, minimum width=13mm, minimum height=6mm, align=center},
-  env/.style={draw, dashed, rounded corners=2pt, minimum width=13mm, minimum height=6mm, align=center},
+  llm/.style={draw=black!45, line width=0.4pt, rounded corners=1.2pt, fill=black!5, minimum width=13mm, minimum height=6mm, align=center},
+  bel/.style={draw=cState, line width=0.4pt, rounded corners=1.2pt, fill=cState!16, minimum width=13mm, minimum height=6mm, align=center},
+  ext/.style={draw=cAux!80!black, line width=0.4pt, rounded corners=1.2pt, fill=cAux!15, minimum width=13mm, minimum height=6mm, align=center},
+  env/.style={draw=black!50, dashed, line width=0.4pt, rounded corners=1.2pt, minimum width=13mm, minimum height=6mm, align=center},
   ttl/.style={font=\scriptsize\bfseries, align=center},
-  arr/.style={-{Latex}, thick}]
+  arr/.style={natarr}]
 % panel 1: context as state
 \begin{scope}[shift={(0,0)}]
 \node[ttl] at (0,1.3) {(a) context as state};
@@ -15,7 +15,7 @@
 \node[llm] (m) at (0,0) {LLM\\trace};
 \node[env] (a) at (1.6,0) {$a_t$};
 \draw[arr] (o)--(m); \draw[arr] (m)--(a);
-\node[font=\tiny, text=gray] at (0,-0.75) {belief implicit, untested};
+\node[font=\tiny, text=black!55] at (0,-0.75) {belief implicit, untested};
 \end{scope}
 % panel 2: external / probabilistic memory
 \begin{scope}[shift={(4.6,0)}]
@@ -25,7 +25,7 @@
 \node[env] (a) at (1.6,0) {$a_t$};
 \node[ext] (s) at (0,-1.0) {store\\(\emph{traces}, $p$)};
 \draw[arr] (o)--(m); \draw[arr] (m)--(a); \draw[arr,<->] (m)--(s);
-\node[font=\tiny, text=gray] at (0,-1.75) {recalled, not believed};
+\node[font=\tiny, text=black!55] at (0,-1.75) {recalled, not believed};
 \end{scope}
 % panel 3: external Bayesian filter
 \begin{scope}[shift={(9.2,0)}]
@@ -36,7 +36,7 @@
 \node[env] (a) at (3.0,0) {$a_t$};
 \draw[arr] (o)--(f); \draw[arr] (f)--(m); \draw[arr] (m)--(a);
 \draw[arr] (m.north) to[bend right=40] node[above, font=\tiny] {likelihood} (f.north);
-\node[font=\tiny, text=gray] at (0.7,-0.75) {auditable; fixed hypothesis space};
+\node[font=\tiny, text=black!55] at (0.7,-0.75) {auditable; fixed hypothesis space};
 \end{scope}
 % panel 4: model-written
 \begin{scope}[shift={(0,-3.4)}]
@@ -46,7 +46,7 @@
 \node[bel] (b) at (1.6,0) {written\\$\belief_t$};
 \node[env] (a) at (3.0,0) {$a_t$};
 \draw[arr] (o)--(m); \draw[arr] (m)--(b); \draw[arr] (b)--(a);
-\node[font=\tiny, text=gray] at (0.7,-0.75) {calibrated $\subset$ testable (\op{Predict})};
+\node[font=\tiny, text=black!55] at (0.7,-0.75) {calibrated $\subset$ testable (\op{Predict})};
 \end{scope}
 % panel 5: world model
 \begin{scope}[shift={(4.6,-3.4)}]
@@ -57,7 +57,7 @@
 \node[env] (a) at (3.0,0) {$a_t$};
 \draw[arr] (o)--(w); \draw[arr] (w)--(m); \draw[arr] (m)--(a);
 \draw[arr] (w.south) to[bend right=40] node[below, font=\tiny] {predict $\hat o_{t+1}$} (m.south);
-\node[font=\tiny, text=gray] at (0.7,-1.35) {testable, not in language};
+\node[font=\tiny, text=black!55] at (0.7,-1.35) {testable, not in language};
 \end{scope}
 % panel 6: hybrid check
 \begin{scope}[shift={(9.2,-3.4)}]
@@ -68,9 +68,9 @@
 \node[env] (a) at (3.0,0) {$a_t$};
 \node[ext] (w) at (1.6,-1.1) {consistency\\gate};
 \draw[arr] (o)--(m); \draw[arr] (m)--(b); \draw[arr] (b)--(a); \draw[arr,<->] (b)--(w);
-\node[font=\tiny, text=gray] at (0.7,-1.85) {revise only on disagreement};
+\node[font=\tiny, text=black!55] at (0.7,-1.85) {revise only on disagreement};
 \end{scope}
 \end{tikzpicture}}
-\caption{Who maintains the belief. Yellow marks a belief the model writes and can reason about; blue marks an external estimator. Only (c), (d)-testable, (e), and (f) commit to a prediction that later evidence can falsify.}
+\caption{Who maintains the belief. Navy marks a belief the model writes and can reason about; light blue marks an external estimator. Only (c), (d)-testable, (e), and (f) commit to a prediction that later evidence can falsify.}
 \label{fig:repr}
 \end{figure*}

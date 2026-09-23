@@ -3,17 +3,17 @@
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[x=2.0cm, y=0.85cm, font=\scriptsize,
   lane/.style={font=\scriptsize\bfseries, anchor=east},
-  pt/.style={circle, fill=gray!60, inner sep=1.4pt},
-  ptS/.style={circle, fill=red!70!black, inner sep=1.7pt},
+  pt/.style={circle, fill=black!45, inner sep=1.4pt},
+  ptS/.style={circle, fill=cLik, inner sep=1.7pt},
   lbl/.style={font=\tiny, anchor=west, inner sep=1pt},
-  lblS/.style={font=\tiny, anchor=west, inner sep=1pt, text=red!60!black}]
+  lblS/.style={font=\tiny, anchor=west, inner sep=1pt, text=cLik!85!black}]
 \foreach \yr/\x in {2020/0, 2021/1, 2022/2, 2023/3, 2024/4, 2025/5, 2026/6} {
   \node[font=\scriptsize\bfseries] at (\x,0.55) {\yr};
-  \draw[gray!30] (\x,0.3) -- (\x,-4.8); }
-\fill[yellow!15] (-0.1,-4.75) rectangle (7.2,-3.5);
+  \draw[black!15] (\x,0.3) -- (\x,-4.8); }
+\fill[cState!6] (-0.1,-4.75) rectangle (7.2,-3.5);
 \foreach \name/\y in {{\textbf{output}: response credited}/-1, {\textbf{trajectory}: steps credited}/-2, {\textbf{interaction}: actions, memory ops}/-3, {\textbf{state}: written belief}/-4}
   \node[lane] at (-0.15,\y) {\name};
-\foreach \y in {-1,-2,-3,-4} \draw[gray!50] (-0.1,\y) -- (7.2,\y);
+\foreach \y in {-1,-2,-3,-4} \draw[black!30] (-0.1,\y) -- (7.2,\y);
 % output lane
 \node[pt] at (2.1,-1) {}; \node[lbl] at (2.15,-0.74) {CoT, InstructGPT};
 \node[pt] at (2.6,-1) {}; \node[lbl] at (2.65,-1.26) {Self-Consistency};
@@ -43,12 +43,12 @@
 \node[ptS] at (6.3,-4) {}; \node[lblS] at (6.35,-3.72) {EvoSCM, BCO, BB-WM};
 \node[ptS] at (6.55,-4) {}; \node[lblS] at (6.6,-4.56) {ReBel, ABBEL (own observations)};
 % legend
-\node[draw, rounded corners=2pt, fill=blue!6, align=left, font=\tiny, anchor=north west, inner sep=3pt, text width=16.2cm] at (-3.2,-5.0) {%
+\node[draw, rounded corners=2pt, fill=black!3, align=left, font=\tiny, anchor=north west, inner sep=3pt, text width=16.2cm] at (-3.2,-5.0) {%
 \textbf{Axes of the taxonomy.}\quad
 \S\ref{sec:representation} who maintains the belief: context $\cdot$ external memory $\cdot$ probabilistic memory $\cdot$ external filter $\cdot$ written $\cdot$ world model.\quad
 \S\ref{sec:revision} failure mode: stay $\cdot$ update $\cdot$ isolation $\cdot$ act.\quad
 \S\ref{sec:learning} credited object: one lane each.\quad
-{\color{red!60!black}$\bullet$} belief trained against evidence (2026).};
+{\color{cLik}$\bullet$} belief trained against evidence (2026).};
 \end{tikzpicture}}
 \caption{Where credit has gone, 2020--2026. Lanes are credited objects; Table~\ref{tab:master} lists every screened system. Written beliefs exist from dialogue state tracking onward, but until 2026 they are credited by task outcome or not trained at all; the red points are the first to give the belief its own learning signal.}
 \label{fig:timeline}

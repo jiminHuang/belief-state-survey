@@ -33,14 +33,25 @@
 \usepackage{makecell}
 \usepackage{colortbl}
 \usepackage[most]{tcolorbox}
-\newcommand{\insight}[2]{\begin{tcolorbox}[colback=blue!4,colframe=blue!45!black,boxrule=0.35pt,arc=1.5pt,left=4pt,right=4pt,top=2pt,bottom=2pt,boxsep=0pt,before skip=3pt,after skip=3pt]\footnotesize\textbf{Insight #1.}~#2\end{tcolorbox}}
+\newcommand{\insight}[2]{\begin{tcolorbox}[colback=cState!4,colframe=cState!80!black,boxrule=0.35pt,arc=1.5pt,left=4pt,right=4pt,top=2pt,bottom=2pt,boxsep=0pt,before skip=3pt,after skip=3pt]\footnotesize\textbf{Insight #1.}~#2\end{tcolorbox}}
 % Harvey balls
 \DeclareRobustCommand{\hbfull}{\tikz[baseline=-0.6ex]{\draw[line width=0.4pt,fill=black] (0,0) circle (0.72ex);}}
 \DeclareRobustCommand{\hbhalf}{\tikz[baseline=-0.6ex]{\draw[line width=0.4pt] (0,0) circle (0.72ex); \fill (0,0) -- (90:0.72ex) arc (90:270:0.72ex) -- cycle;}}
 \DeclareRobustCommand{\hbnone}{\tikz[baseline=-0.6ex]{\draw[line width=0.4pt] (0,0) circle (0.72ex);}}
-\newcommand{\grp}[1]{\rowcolor{gray!12}\multicolumn{6}{@{}l@{}}{\textsc{#1}}\\}
-\newcommand{\grpp}[1]{\rowcolor{gray!12}\multicolumn{7}{@{}l@{}}{\textsc{#1}}\\}
+\newcommand{\grp}[1]{\rowcolor{black!5}\multicolumn{6}{@{}l@{}}{\textsc{#1}}\\}
+\newcommand{\grpp}[1]{\rowcolor{black!5}\multicolumn{7}{@{}l@{}}{\textsc{#1}}\\}
 \usepackage{pifont}
+% ---- figure and table style: sans-serif labels, NPG palette, thin rules ----
+\usepackage[scaled=0.9]{helvet}
+\usepackage{etoolbox}
+\definecolor{cState}{HTML}{3C5488}   % state term
+\definecolor{cTrans}{HTML}{00A087}   % transition term
+\definecolor{cLik}{HTML}{E64B35}     % likelihood term
+\definecolor{cAux}{HTML}{4DBBD5}     % external estimators
+\AtBeginEnvironment{tabular}{\sffamily}
+\tikzset{every picture/.append style={execute at begin picture=\sffamily},
+  natarr/.style={-{Stealth[length=1.5mm,width=1.2mm]}, line width=0.55pt, draw=black!70}}
+\setlength{\heavyrulewidth}{0.6pt}\setlength{\lightrulewidth}{0.3pt}\setlength{\cmidrulewidth}{0.3pt}
 \usepackage{url}
 \newcommand{\artifacturl}{\footnote{\url{https://github.com/jiminHuang/belief-state-survey}}}
 

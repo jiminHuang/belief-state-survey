@@ -9,10 +9,10 @@ Language-model agents now act over horizons of hours or months, and the failures
 \centering
 \resizebox{0.92\columnwidth}{!}{%
 \begin{tikzpicture}[font=\scriptsize, node distance=5mm and 4.5mm,
-  box/.style={draw, rounded corners=2pt, minimum height=7mm, minimum width=15.5mm, align=center, inner sep=1pt},
-  st/.style={box, fill=blue!12}, lk/.style={box, fill=yellow!30}, tr/.style={box, fill=green!14},
-  fl/.style={font=\tiny\itshape, text=red!60!black, inner sep=0.5pt},
-  arr/.style={-{Latex}, thick}]
+  box/.style={draw=black!45, line width=0.4pt, fill=black!3, rounded corners=1.2pt, minimum height=7mm, minimum width=15.5mm, align=center, inner sep=1pt},
+  st/.style={box, draw=cState, fill=cState!14}, lk/.style={box, draw=cLik, fill=cLik!12}, tr/.style={box, draw=cTrans, fill=cTrans!14},
+  fl/.style={font=\tiny\itshape, text=black!60, inner sep=0.5pt},
+  arr/.style={natarr}]
 \node[box] (mem) {Memory\\[-2pt]{\tiny what happened}};
 \node[st, right=of mem] (bel) {Belief $\belief_t$\\[-2pt]{\tiny a hypothesis}};
 \node[lk, right=of bel] (pred) {Prediction\\[-2pt]{\tiny $\hat o_{t+1}$}};
@@ -27,7 +27,7 @@ Language-model agents now act over horizons of hours or months, and the failures
 \node[fl, above=0pt of rev] {failed update};
 \node[fl, above=0pt of act] {failed act};
 \end{tikzpicture}}
-\caption{From memory to belief: a memory records what happened; a belief is a hypothesis that prediction, observation, and test expose to evidence. Colours mark the terms of Equation~\ref{eq:filter} ({\setlength{\fboxsep}{1pt}\colorbox{blue!12}{state}}, {\setlength{\fboxsep}{1pt}\colorbox{yellow!30}{likelihood}}, {\setlength{\fboxsep}{1pt}\colorbox{green!14}{transition}}); red, the failure modes of Section~\ref{sec:revision}.}
+\caption{From memory to belief: a memory records what happened; a belief is a hypothesis that prediction, observation, and test expose to evidence. Colours mark the terms of Equation~\ref{eq:filter} ({\setlength{\fboxsep}{1pt}\colorbox{cState!14}{state}}, {\setlength{\fboxsep}{1pt}\colorbox{cLik!12}{likelihood}}, {\setlength{\fboxsep}{1pt}\colorbox{cTrans!14}{transition}}); italics, the failure modes of Section~\ref{sec:revision}.}
 \label{fig:loop}
 \end{figure}
 

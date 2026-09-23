@@ -27,9 +27,10 @@
   {Memora \citep{uddin2026recall}}/-21/{3,5},
   {Embodied Agent Interface \citep{li2024embodied}}/-22/{2,5}}
  {\node[anchor=east, font=\tiny] at (0.55,\y) {\name};
-  \foreach \x in {1,...,5} \draw[gray!40] (\x,\y) circle (1.1pt);
-  \foreach \x in \dots \fill (\x,\y) circle (1.6pt);}
-\draw[gray!60] (0.6,0.3) -- (5.5,0.3);
+  \foreach \x in {1,...,5} \draw[black!20, line width=0.3pt] (\x,\y) circle (1.1pt);
+  \foreach \x in \dots \fill[cState] (\x,\y) circle (1.7pt);}
+\draw[black!50, line width=0.4pt] (0.6,0.3) -- (5.5,0.3);
+\fill[cLik, opacity=0.10] (0.6,-15.5) rectangle (5.5,-18.5);
 \end{tikzpicture}}
 \caption{Belief-level constructs reported by each evaluation paper. Only the Bayesian-coherence rows share a reference posterior.}
 \label{fig:metrics}
