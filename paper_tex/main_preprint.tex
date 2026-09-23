@@ -38,8 +38,8 @@
 \DeclareRobustCommand{\hbfull}{\tikz[baseline=-0.6ex]{\draw[line width=0.4pt,fill=black] (0,0) circle (0.72ex);}}
 \DeclareRobustCommand{\hbhalf}{\tikz[baseline=-0.6ex]{\draw[line width=0.4pt] (0,0) circle (0.72ex); \fill (0,0) -- (90:0.72ex) arc (90:270:0.72ex) -- cycle;}}
 \DeclareRobustCommand{\hbnone}{\tikz[baseline=-0.6ex]{\draw[line width=0.4pt] (0,0) circle (0.72ex);}}
-\newcommand{\grp}[1]{\rowcolor{black!5}\multicolumn{6}{@{}l@{}}{\textsc{#1}}\\}
-\newcommand{\grpp}[1]{\rowcolor{black!5}\multicolumn{7}{@{}l@{}}{\textsc{#1}}\\}
+\newcommand{\grp}[1]{\multicolumn{6}{@{}l@{}}{\textit{#1}}\\}
+\newcommand{\grpp}[1]{\multicolumn{7}{@{}l@{}}{\textit{#1}}\\}
 \usepackage{pifont}
 % ---- figure and table style: sans-serif labels, NPG palette, thin rules ----
 \usepackage[scaled=0.9]{helvet}
@@ -52,6 +52,12 @@
 \tikzset{every picture/.append style={execute at begin picture=\sffamily},
   natarr/.style={-{Stealth[length=1.5mm,width=1.2mm]}, line width=0.55pt, draw=black!70}}
 \setlength{\heavyrulewidth}{0.6pt}\setlength{\lightrulewidth}{0.3pt}\setlength{\cmidrulewidth}{0.3pt}
+% Nature-style captions: "Fig. 1 | Title." (bold label), table titles above, notes below the table
+\DeclareCaptionLabelSeparator{natbar}{\ \textbar\ }
+\captionsetup{labelfont=bf, labelsep=natbar}
+\captionsetup[figure]{name=Fig.}
+\captionsetup[table]{position=top, skip=3pt, justification=raggedright, singlelinecheck=false}
+\newcommand{\tabnote}[1]{\par\vspace{2pt}{\raggedright\sffamily\fontsize{7pt}{8.4pt}\selectfont #1\par}}
 \usepackage{url}
 \newcommand{\artifacturl}{\footnote{\url{https://github.com/jiminHuang/belief-state-survey}}}
 

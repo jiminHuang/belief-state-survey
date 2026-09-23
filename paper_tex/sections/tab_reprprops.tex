@@ -2,10 +2,11 @@
 \centering\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.0}
+\caption{\textbf{Classes of the state term and where each term comes from.}}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lcccccl@{}}
 \toprule
-Locus and form & State & Uncert. & Trans. & Likelihood & Belief & Example \\
+\textbf{Locus and form} & \textbf{State} & \textbf{Uncert.} & \textbf{Trans.} & \textbf{Likelihood} & \textbf{Belief} & \textbf{Example} \\
 \midrule
 \grpp{In the context}
 Trace as state & M & \hbnone & M & --- & \hbnone & ReAct \\
@@ -21,6 +22,6 @@ Latent world model & L & \hbhalf & L & L (prediction error) & \hbhalf & Dreamer,
 Written claim + parametric check & M & \hbfull & M & L (check) & \hbfull & Hybrid-WM \\
 \bottomrule
 \end{tabular}}
-\caption{Classes of the state term as locus--form pairs, with where each term of Equation~\ref{eq:filter} comes from: M written by the model, D fixed by the designer, L learned, --- absent. \emph{Uncert.}: the state carries uncertainty; \emph{Belief}: meets conditions (i)--(iii) of Section~\ref{sec:formulation}. \hbfull\ yes, \hbhalf\ partly, \hbnone\ no.}
+\tabnote{M, written by the model; D, fixed by the designer; L, learned; ---, absent (terms of Equation~\ref{eq:filter}). Uncert., the state carries uncertainty; Belief, meets conditions (i)--(iii) of Section~\ref{sec:formulation}. \hbfull\ yes; \hbhalf\ partly; \hbnone\ no.}
 \label{tab:reprprops}
 \end{table}

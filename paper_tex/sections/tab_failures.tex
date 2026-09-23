@@ -2,10 +2,11 @@
 \centering\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.0}
+\caption{\textbf{Four failure modes of belief revision.}}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}l>{\raggedright\arraybackslash}p{1.75cm}>{\raggedright\arraybackslash}p{1.55cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.75cm}@{}}
 \toprule
-Failure mode & Definition & Term at fault & Measured by & Headline result \\
+\textbf{Failure mode} & \textbf{Definition} & \textbf{Term at fault} & \textbf{Measured by} & \textbf{Headline result} \\
 \midrule
 Failed stay & belief moves without evidence & likelihood absent: update unweighted & BeliefShift, MEDLEY-BENCH & consensus sensitivity from near 0 to large across 35 models \\
 Failed update & belief survives contradicting evidence & transition without update & DeltaLogic, DToM-Track, STALE & 66.7\% on a conclusion, 46.7\% on whether an edit changes it \\
@@ -13,6 +14,6 @@ Failed isolation & irrelevant input enters the belief & state term contaminated 
 Failed act & belief revised, action unchanged & policy not conditioned on $\belief_t$ & STOCKTAKE, Werewolf audit & 34--43\% of correctly diagnosed weeks end in the wrong action \\
 \bottomrule
 \end{tabular}}
-\caption{Four failure modes of belief revision, the term of Equation~\ref{eq:filter} each corresponds to, the benchmarks that isolate each, and their headline results \citep{xu2026should,chao2026stale,myakala2026beliefshift,abtahi2026medleybench,dhanda2026deltalogic,nguyen2026dynamic,hao2026memops,deb2026stocktake,gao2026auditing}.}
+\tabnote{For each mode: the term of Equation~\ref{eq:filter} at fault, the benchmarks that isolate it and their headline results \citep{xu2026should,chao2026stale,myakala2026beliefshift,abtahi2026medleybench,dhanda2026deltalogic,nguyen2026dynamic,hao2026memops,deb2026stocktake,gao2026auditing}.}
 \label{tab:failures}
 \end{table}

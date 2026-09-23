@@ -2,24 +2,25 @@
 \centering\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.0}
+\caption{\textbf{Learning signals by credited object and source of the likelihood.}}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}llll@{}}
 \toprule
-Level & Credited object & Likelihood from & Representative \\
+\textbf{Level} & \textbf{Credited object} & \textbf{Likelihood from} & \textbf{Representative} \\
 \midrule
 Output & finished response & human preference & RLHF, DPO \\
 Trajectory & sampled steps & verifier, PRM & PRMs, GRPO, LATS \\
 Interaction & actions, tool calls & task reward & ArCHer, RAGEN, HiPER \\
-Interaction & memory operations & task reward, verifier & MEM1, Memory-R1, VerMem \\
+& memory operations & task reward, verifier & MEM1, Memory-R1, VerMem \\
 State & written belief & symbolic verifier & CBM \\
-State & claim + certainty & calibration target & Agent-BRACE \\
-State & posterior over claims & Bayesian teacher & BOND, DEL-ToM \\
-State & state prediction & simulator state & VAGEN, Dyna-Think, SPA \\
-State & belief over answers & known answer & T3, IGPO, InfoPO \\
-State & written belief & \emph{own next observation} & ReBel \\
-State & written belief & \emph{own past observations} & ABBEL \\
+& claim + certainty & calibration target & Agent-BRACE \\
+& posterior over claims & Bayesian teacher & BOND, DEL-ToM \\
+& state prediction & simulator state & VAGEN, Dyna-Think, SPA \\
+& belief over answers & known answer & T3, IGPO, InfoPO \\
+& written belief & \emph{own next observation} & ReBel \\
+& written belief & \emph{own past observations} & ABBEL \\
 \bottomrule
 \end{tabular}}
-\caption{Learning signals on two axes: the object that receives the gradient and where the likelihood that signs it comes from (Section~\ref{sec:learning}); the full version with granularity and evidence level is Table~\ref{tab:learning} in the appendix.}
+\tabnote{The object that receives the gradient and where the likelihood that signs it comes from (Section~\ref{sec:learning}). Table~\ref{tab:learning} in the appendix adds granularity and evidence level.}
 \label{tab:learningmain}
 \end{table}

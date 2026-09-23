@@ -5,10 +5,11 @@
 \centering\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.0}
+\caption{\textbf{Evidence-acquisition decisions by what they are conditioned on.}}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{2.0cm}@{}}
 \toprule
-Acquisition conditioned on & Systems & Belief object \\
+\textbf{Acquisition conditioned on} & \textbf{Systems} & \textbf{Belief object} \\
 \midrule
 task-level POMDP & CGDP \citep{kausik2026context}, MedExAgent \citep{gao2026medexagent} & searcher, patient state \\
 uncertainty of an explicit belief & BayesEvolve \citep{wu2026bayesevolve}, EvoSCM \citep{zhao2026evoscm}, Align-While-Search \citep{bae2025align}, CA-BED \citep{arnould2026cabed} & hypothesis, causal, configuration posteriors \\
@@ -17,7 +18,6 @@ information gain as reward & PiCA \citep{liu2026pica}, TIPS \citep{xie2026tips} 
 written testable belief & \emph{none in corpus} & --- \\
 \bottomrule
 \end{tabular}}
-\caption{Evidence-acquisition decisions by what they are conditioned on.}
 \label{tab:evidence}
 \end{table}
 

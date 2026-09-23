@@ -14,10 +14,13 @@
 \node[tok, fill=black!6, right=1.5mm of o1] (nx) {$\cdots$};
 % credit brackets
 \draw[decorate, decoration={brace, amplitude=2pt}, line width=0.5pt] ([yshift=4mm]b1.north west) -- ([yshift=4mm]a1.north east) node[midway, above=2pt, font=\tiny] {\textbf{output / trajectory}: reward the response or every step};
-\draw[decorate, decoration={brace, amplitude=2pt, mirror}, line width=0.5pt] ([yshift=-4mm]a1.south west) -- ([yshift=-4mm]a1.south east) node[midway, below=2pt, font=\tiny] {\textbf{interaction}: reward the action};
-\draw[decorate, decoration={brace, amplitude=2pt, mirror}, line width=0.5pt, cLik] ([yshift=-11mm]b1.south west) -- ([yshift=-11mm]b2.south east) node[midway, below=2pt, font=\tiny, text=cLik] {\textbf{state}: reward the belief, signed by $o_{t+1}$};
-\draw[-{Stealth[length=1.5mm,width=1.2mm]}, cLik, line width=0.6pt] (o1.south) to[out=-90, in=-90, looseness=0.9] node[pos=0.5, below, font=\tiny, text=cLik] {surprise} ([xshift=2mm,yshift=-1mm]b2.south);
+\draw[decorate, decoration={brace, amplitude=2pt, mirror}, line width=0.5pt] ([yshift=-2mm]a1.south west) -- ([yshift=-2mm]a1.south east);
+\node[anchor=north east, font=\tiny, inner sep=1pt] at ([yshift=-3.6mm]a1.south east) {\textbf{interaction}: reward the action};
+% surprise: the returned observation signs the belief (routed below the strip)
+\draw[-{Stealth[length=1.5mm,width=1.2mm]}, cLik, line width=0.6pt, rounded corners=2pt] (o1.south) -- ++(0,-8.5mm) -| node[pos=0.25, below=1pt, font=\tiny, text=cLik] {surprise} ([yshift=-0.5mm]b2.south);
+\draw[decorate, decoration={brace, amplitude=2pt, mirror}, line width=0.5pt, cLik] ([yshift=-12.5mm]b1.south west) -- ([yshift=-12.5mm]b2.south east);
+\node[anchor=north west, font=\tiny, text=cLik, inner sep=1pt] at ([yshift=-14.3mm]b1.south west) {\textbf{state}: reward the belief, signed by $o_{t+1}$};
 \end{tikzpicture}}
-\caption{The credited object on one span of a trajectory; state credit reaches the written belief, signed by the observation returned after the action.}
+\caption{\textbf{The credited object on one span of a trajectory.} State credit reaches the written belief, signed by the observation returned after the action.}
 \label{fig:credit}
 \end{figure}

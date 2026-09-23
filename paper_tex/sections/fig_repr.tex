@@ -6,11 +6,11 @@
   bel/.style={draw=cState, line width=0.4pt, rounded corners=1.2pt, fill=cState!16, minimum width=13mm, minimum height=6mm, align=center},
   ext/.style={draw=cAux!80!black, line width=0.4pt, rounded corners=1.2pt, fill=cAux!15, minimum width=13mm, minimum height=6mm, align=center},
   env/.style={draw=black!50, dashed, line width=0.4pt, rounded corners=1.2pt, minimum width=13mm, minimum height=6mm, align=center},
-  ttl/.style={font=\scriptsize\bfseries, align=center},
+  ttl/.style={font=\scriptsize, align=center},
   arr/.style={natarr}]
 % panel 1: context as state
 \begin{scope}[shift={(0,0)}]
-\node[ttl] at (0,1.3) {(a) context as state};
+\node[ttl] at (0,1.3) {\textbf{a}\enspace Context as state};
 \node[env] (o) at (-1.6,0) {$o_t$};
 \node[llm] (m) at (0,0) {LLM\\trace};
 \node[env] (a) at (1.6,0) {$a_t$};
@@ -19,7 +19,7 @@
 \end{scope}
 % panel 2: external / probabilistic memory
 \begin{scope}[shift={(4.6,0)}]
-\node[ttl] at (0,1.3) {(b) external memory};
+\node[ttl] at (0,1.3) {\textbf{b}\enspace External memory};
 \node[env] (o) at (-1.6,0) {$o_t$};
 \node[llm] (m) at (0,0) {LLM};
 \node[env] (a) at (1.6,0) {$a_t$};
@@ -29,7 +29,7 @@
 \end{scope}
 % panel 3: external Bayesian filter
 \begin{scope}[shift={(9.2,0)}]
-\node[ttl] at (0,1.3) {(c) external Bayesian filter};
+\node[ttl] at (0,1.3) {\textbf{c}\enspace External Bayesian filter};
 \node[env] (o) at (-1.6,0) {$o_t$};
 \node[ext] (f) at (0,0) {filter\\$p(z_t\mid H_t)$};
 \node[llm] (m) at (1.6,0) {LLM};
@@ -40,7 +40,7 @@
 \end{scope}
 % panel 4: model-written
 \begin{scope}[shift={(0,-3.4)}]
-\node[ttl] at (0.4,1.3) {(d) model-written belief};
+\node[ttl] at (0.4,1.3) {\textbf{d}\enspace Model-written belief};
 \node[env] (o) at (-1.6,0) {$o_t$};
 \node[llm] (m) at (0,0) {LLM};
 \node[bel] (b) at (1.6,0) {written\\$\belief_t$};
@@ -50,7 +50,7 @@
 \end{scope}
 % panel 5: world model
 \begin{scope}[shift={(4.6,-3.4)}]
-\node[ttl] at (0.4,1.3) {(e) learned world-model belief};
+\node[ttl] at (0.4,1.3) {\textbf{e}\enspace Learned world-model belief};
 \node[env] (o) at (-1.6,0) {$o_t$};
 \node[ext] (w) at (0,0) {world\\model $h_t$};
 \node[llm] (m) at (1.6,0) {LLM};
@@ -61,7 +61,7 @@
 \end{scope}
 % panel 6: hybrid check
 \begin{scope}[shift={(9.2,-3.4)}]
-\node[ttl] at (0.7,1.3) {(f) written belief with parametric check};
+\node[ttl] at (0.7,1.3) {\textbf{f}\enspace Written belief with parametric check};
 \node[env] (o) at (-1.6,0) {$o_t$};
 \node[llm] (m) at (0,0) {LLM};
 \node[bel] (b) at (1.6,0) {written\\$\belief_t$};
@@ -71,6 +71,6 @@
 \node[font=\tiny, text=black!55] at (0.7,-1.85) {revise only on disagreement};
 \end{scope}
 \end{tikzpicture}}
-\caption{Who maintains the belief. Navy marks a belief the model writes and can reason about; light blue marks an external estimator. Only (c), (d)-testable, (e), and (f) commit to a prediction that later evidence can falsify.}
+\caption{\textbf{Who maintains the belief.} Navy marks a belief the model writes and can reason about; light blue marks an external estimator. Only c, d (when testable), e and f commit to a prediction that later evidence can falsify.}
 \label{fig:repr}
 \end{figure*}
