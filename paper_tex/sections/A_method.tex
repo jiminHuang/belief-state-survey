@@ -13,27 +13,27 @@ Source A queried OpenAlex across all venues with publication date from 1~January
 Records were deduplicated by identifier and then by normalised title, so that a preprint and its journal version count once. Rule-based screening on title and abstract applied one inclusion criterion for an LLM-related term (I1), one exclusion criterion for off-domain applications (E1), and one inclusion criterion requiring at least two topic terms from a fixed list (I2). Records without an abstract of at least 200 characters were excluded. Included records were ranked by a relevance score used only for ordering the manual full-text screen, never for inclusion.
 
 \begin{table}[h]
-\centering\small
+\nattab\small
+\caption{\textbf{Paper-collection counts for run \texttt{20260915\_v1}.}}
 \begin{tabular}{lr}
 \toprule
-Stage & Count \\
+\textbf{Stage} & \textbf{Count} \\
 \midrule
-Queries & 23 \\
-Source A raw hits / unique & 1{,}150 / 715 \\
-Source B raw hits / unique & 1{,}150 / 1{,}008 \\
-Merged unique (identifier) & 1{,}685 \\
-After title-level deduplication & 1{,}460 \\
-Excluded: no or short abstract & 45 \\
-Excluded I1: no LLM term & 160 \\
-Excluded E1: off-domain & 35 \\
-Excluded I2: fewer than two topic terms & 357 \\
-Included after rule screening & 863 \\
-\quad of which published in 2026 & 656 \\
-Full-text screened & 117 \\
+Queries & 23 \\ \rr
+Source A raw hits / unique & 1{,}150 / 715 \\ \rr
+Source B raw hits / unique & 1{,}150 / 1{,}008 \\ \rr
+Merged unique (identifier) & 1{,}685 \\ \rr
+After title-level deduplication & 1{,}460 \\ \rr
+Excluded: no or short abstract & 45 \\ \rr
+Excluded I1: no LLM term & 160 \\ \rr
+Excluded E1: off-domain & 35 \\ \rr
+Excluded I2: fewer than two topic terms & 357 \\ \rr
+Included after rule screening & 863 \\ \rr
+\quad of which published in 2026 & 656 \\ \rr
+Full-text screened & 117 \\ \rr
 \quad of which included after reading & 106 \\
 \bottomrule
 \end{tabular}
-\caption{Paper-collection counts for run \texttt{20260915\_v1}.}
 \label{tab:counts}
 \end{table}
 
@@ -44,54 +44,58 @@ The second run (34 queries, same sources and rules) returned 834 unique records,
 Keyword search cannot reach papers that describe belief maintenance in other words, so the included set was expanded by snowballing over the citation graph. Each round took the papers newly included in the previous round as seeds, fetched their reference lists (backward) and the papers citing them (forward) from the Semantic Scholar Graph API, kept candidates published from 2020, removed everything already screened, and applied the same rule-based screen as the keyword runs. Because forward citation of recent preprints is dense, the rule-included candidates were sampled for full-text reading by a fixed rule (topic score $\geq 10$, or the word \emph{belief} in title or abstract, or linked to at least three seeds, or a world-model paper from 2025 with score $\geq 7$), and every sampled paper was read and coded with the same fields as the keyword runs. Round one was seeded by the 179 keyword-included papers and each later round by the papers the previous round added; the full-text sample shrank from 302 to 115, 83, and 26 across four rounds, and the expansion stopped after the round whose sample fell below thirty, the stopping rule fixed in advance (Table~\ref{tab:snowball}).
 
 \begin{table}[h]
-\centering\footnotesize
+\nattab\footnotesize
 \setlength{\tabcolsep}{3pt}
+\caption{\textbf{Citation-tree expansion by round.}}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{lrrrr}
 \toprule
-Stage & R1 & R2 & R3 & R4 \\
+\textbf{Stage} & \textbf{R1} & \textbf{R2} & \textbf{R3} & \textbf{R4} \\
 \midrule
-Seeds & 178 & 165 & 55 & 45 \\
-Backward references & 9{,}127 & 8{,}601 & 2{,}673 & 2{,}406 \\
-Forward citations & 9{,}999 & 9{,}999 & 1{,}403 & 441 \\
-Unique candidates (2020--) & 12{,}872 & 13{,}113 & 2{,}536 & 1{,}465 \\
-Already screened & 302 & 1{,}284 & 605 & 465 \\
-Excluded by rules & 8{,}448 & 7{,}401 & 1{,}300 & 747 \\
-Included after rule screening & 4{,}122 & 4{,}428 & 631 & 253 \\
-Sampled for full-text reading & 302 & 115 & 83 & 26 \\
-Included after reading & 171 & 58 & 47 & 7 \\
+Seeds & 178 & 165 & 55 & 45 \\ \rr
+Backward references & 9{,}127 & 8{,}601 & 2{,}673 & 2{,}406 \\ \rr
+Forward citations & 9{,}999 & 9{,}999 & 1{,}403 & 441 \\ \rr
+Unique candidates (2020--) & 12{,}872 & 13{,}113 & 2{,}536 & 1{,}465 \\ \rr
+Already screened & 302 & 1{,}284 & 605 & 465 \\ \rr
+Excluded by rules & 8{,}448 & 7{,}401 & 1{,}300 & 747 \\ \rr
+Included after rule screening & 4{,}122 & 4{,}428 & 631 & 253 \\ \rr
+Sampled for full-text reading & 302 & 115 & 83 & 26 \\ \rr
+Included after reading & 171 & 58 & 47 & 7 \\ \rr
 \quad of which peer-reviewed & 79 & 23 & 22 & 2 \\
 \bottomrule
 \end{tabular}}
-\caption{Citation-tree expansion by round. Forward citations are capped at 9{,}999 per request batch by the API.}
+\tabnote{Forward citations are capped at 9{,}999 per request batch by the API.}
 \label{tab:snowball}
 \end{table}
 
 \paragraph{Fifth round, targeted.}
 After the four rounds above, a reader pointed us to a method the protocol had not reached (ReBel; \citealp{tang2026rewarding}), posted after most of our seeds and cited by almost no one yet. We treated it as a seed for a fifth, targeted round: the Semantic Scholar batch endpoint was rate-limited throughout, so we used ReBel's own reference list (46 entries), an OpenAlex search on belief-consistency and belief-level supervision (85 candidates), and a Hugging Face Papers search on nine related phrases (743 candidates, 211 after the rule screen and deduplication). Full-text screening added 23 papers (3 peer-reviewed), of which four score a belief or prediction against the agent's own observations; every paper whose signal source mattered to a claim was re-read in full. One of the 23 (PABU) had passed the rule screen in the third keyword run but was never sampled, which is the protocol's own miss. The additions are marked R5 in the released record and in Table~\ref{tab:years}.
 
+\paragraph{Late additions.}
+Four papers cited in the text were added after the protocol closed and are not in the counts below: two posted after the cutoff, Jev-Mem and REFLEX \citep{jiang2026jevmem,wu2026reflex}, and two the protocol did not reach, FLAG-TRADER and Conv-FinRe \citep{xiong2025flagtrader,wang2026convfinre}. They are marked as late additions in the released record.
+
 \paragraph{Year distribution.}
 Table~\ref{tab:years} gives the included papers by year, source, and whether peer-reviewed. The share that is peer-reviewed falls with recency, from four in five before 2025 to about one in nine for 2026, which is the ordinary lag of review rather than a property of the field.
 
 \begin{table}[h]
-\centering\footnotesize
+\nattab\footnotesize
 \setlength{\tabcolsep}{3pt}
+\caption{\textbf{Included papers by publication year and by the run that found them (keyword search or citation-tree round).}}
 \begin{tabular}{@{}lrrrrrrrr@{}}
 \toprule
-Year & Keyword & R1 & R2 & R3 & R4 & R5 & Total & Peer-rev. \\
+\textbf{Year} & \textbf{Keyword} & \textbf{R1} & \textbf{R2} & \textbf{R3} & \textbf{R4} & \textbf{R5} & \textbf{Total} & \textbf{Peer-rev.} \\
 \midrule
-2020 & 1 & 3 & 1 & 0 & 0 & 0 & 5 & 4 \\
-2021 & 2 & 2 & 1 & 0 & 0 & 0 & 5 & 3 \\
-2022 & 9 & 4 & 0 & 1 & 0 & 0 & 14 & 13 \\
-2023 & 27 & 21 & 2 & 0 & 0 & 1 & 51 & 41 \\
-2024 & 16 & 20 & 9 & 4 & 1 & 1 & 51 & 40 \\
-2025 & 18 & 69 & 20 & 20 & 2 & 5 & 134 & 50 \\
+2020 & 1 & 3 & 1 & 0 & 0 & 0 & 5 & 4 \\ \rr
+2021 & 2 & 2 & 1 & 0 & 0 & 0 & 5 & 3 \\ \rr
+2022 & 9 & 4 & 0 & 1 & 0 & 0 & 14 & 13 \\ \rr
+2023 & 27 & 21 & 2 & 0 & 0 & 1 & 51 & 41 \\ \rr
+2024 & 16 & 20 & 9 & 4 & 1 & 1 & 51 & 40 \\ \rr
+2025 & 18 & 69 & 20 & 20 & 2 & 5 & 134 & 50 \\ \rr
 2026 & 106 & 52 & 25 & 22 & 4 & 16 & 225 & 25 \\
 \midrule
 Total & 179 & 171 & 58 & 47 & 7 & 23 & 485 & 176 \\
 \bottomrule
 \end{tabular}
-\caption{Included papers by publication year and by the run that found them (keyword search or citation-tree round).}
 \label{tab:years}
 \end{table}
 
