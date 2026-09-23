@@ -1,19 +1,17 @@
 \begin{table}[t]
-\centering\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.0}
+\nattab
 \caption{\textbf{Credit levels compared by where their likelihood comes from.}}
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{@{}llccccc@{}}
+\begin{tabular}{@{}lllccccc@{}}
 \toprule
-\textbf{Level} & \textbf{Likelihood from} & \textbf{Env.} & \textbf{No oracle} & \textbf{Belief} & \textbf{Act gap} & \textbf{Maturity} \\
+\textbf{Level} & & \textbf{Likelihood from} & \textbf{Env.} & \textbf{No oracle} & \textbf{Belief} & \textbf{Act gap} & \textbf{Maturity} \\
 \midrule
-Output & humans, verifiers & \hbnone & \hbhalf & \hbnone & \hbnone & \hbfull \\
-Trajectory & verifier, PRM & \hbhalf & \hbhalf & \hbnone & \hbnone & \hbfull \\
-Interaction (actions) & task reward & \hbfull & \hbfull & \hbnone & \hbnone & \hbfull \\
-Interaction (memory ops) & task reward, teacher & \hbfull & \hbhalf & \hbhalf & \hbnone & \hbhalf \\
-State (oracle or teacher) & closed world, teacher, target & \hbnone & \hbnone & \hbfull & \hbfull & \hbhalf \\
-State (own observation) & returned observation & \hbfull & \hbfull & \hbfull & \hbhalf & \hbhalf \\
+Output & & humans, verifiers & \hbnone & \hbhalf & \hbnone & \hbnone & \hbfull \\ \rr
+Trajectory & & verifier, PRM & \hbhalf & \hbhalf & \hbnone & \hbnone & \hbfull \\ \rr
+Interaction & actions & task reward & \hbfull & \hbfull & \hbnone & \hbnone & \hbfull \\ \rrin{2-8}
+& memory ops & task reward, teacher & \hbfull & \hbhalf & \hbhalf & \hbnone & \hbhalf \\ \rr
+State & oracle or teacher & closed world, teacher, target & \hbnone & \hbnone & \hbfull & \hbfull & \hbhalf \\ \rrin{2-8}
+& \textbf{own observation} & \textbf{returned observation} & \hbfull & \hbfull & \hbfull & \hbhalf & \hbhalf \\
 \bottomrule
 \end{tabular}}
 \tabnote{Env., the likelihood comes from the environment; No oracle, no external source of truth is needed; Belief, the written belief receives the gradient; Act gap, belief and action error are separated; Maturity, \hbfull\ many systems, \hbhalf\ a few, \hbnone\ none.}

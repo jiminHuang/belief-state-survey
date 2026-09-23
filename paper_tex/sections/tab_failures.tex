@@ -1,16 +1,14 @@
 \begin{table}[t]
-\centering\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.0}
+\nattab
 \caption{\textbf{Four failure modes of belief revision.}}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}l>{\raggedright\arraybackslash}p{1.75cm}>{\raggedright\arraybackslash}p{1.55cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.75cm}@{}}
 \toprule
 \textbf{Failure mode} & \textbf{Definition} & \textbf{Term at fault} & \textbf{Measured by} & \textbf{Headline result} \\
 \midrule
-Failed stay & belief moves without evidence & likelihood absent: update unweighted & BeliefShift, MEDLEY-BENCH & consensus sensitivity from near 0 to large across 35 models \\
-Failed update & belief survives contradicting evidence & transition without update & DeltaLogic, DToM-Track, STALE & 66.7\% on a conclusion, 46.7\% on whether an edit changes it \\
-Failed isolation & irrelevant input enters the belief & state term contaminated & BeliefTrack, MemOps & belief-state reward cuts failures by 71\% \\
+Failed stay & belief moves without evidence & likelihood absent: update unweighted & BeliefShift, MEDLEY-BENCH & consensus sensitivity from near 0 to large across 35 models \\ \rr
+Failed update & belief survives contradicting evidence & transition without update & DeltaLogic, DToM-Track, STALE & 66.7\% on a conclusion, 46.7\% on whether an edit changes it \\ \rr
+Failed isolation & irrelevant input enters the belief & state term contaminated & BeliefTrack, MemOps & belief-state reward cuts failures by 71\% \\ \rr
 Failed act & belief revised, action unchanged & policy not conditioned on $\belief_t$ & STOCKTAKE, Werewolf audit & 34--43\% of correctly diagnosed weeks end in the wrong action \\
 \bottomrule
 \end{tabular}}

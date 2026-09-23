@@ -9,8 +9,8 @@ Language-model agents now act over horizons of hours or months, and the failures
 \centering
 \resizebox{0.92\columnwidth}{!}{%
 \begin{tikzpicture}[font=\scriptsize, node distance=5mm and 4.5mm,
-  box/.style={draw=black!45, line width=0.4pt, fill=black!3, rounded corners=1.2pt, minimum height=7mm, minimum width=15.5mm, align=center, inner sep=1pt},
-  st/.style={box, draw=cState, fill=cState!14}, lk/.style={box, draw=cLik, fill=cLik!12}, tr/.style={box, draw=cTrans, fill=cTrans!14},
+  box/.style={fill=black!9, minimum height=7mm, minimum width=15.5mm, align=center, inner sep=1pt},
+  st/.style={box, fill=cState, text=white}, lk/.style={box, fill=cLik, text=white}, tr/.style={box, fill=cTrans, text=white},
   fl/.style={font=\tiny\itshape, text=black!60, inner sep=0.5pt},
   arr/.style={natarr}]
 \node[box] (mem) {Memory\\[-2pt]{\tiny what happened}};
@@ -22,12 +22,12 @@ Language-model agents now act over horizons of hours or months, and the failures
 \node[box, below=of bel] (act) {Action $a_t$\\[-2pt]{\tiny conditioned on $\belief_t$}};
 \draw[arr] (mem) -- (bel); \draw[arr] (bel) -- (pred); \draw[arr] (pred) -- (obs);
 \path (mem.south east) -- node[fl, below=0.3mm, align=center] {failed\\isolation} (bel.south west);
-\draw[arr] (obs) -- node[fl, left=0.5pt, align=right] {failed\\stay} (test); \draw[arr] (test) -- (rev); \draw[arr] (rev) -- (act);
+\draw[arr] (obs) -- node[fl, left=2pt, align=right] {failed\\stay} (test); \draw[arr] (test) -- (rev); \draw[arr] (rev) -- (act);
 \draw[arr] (act.west) -| node[pos=0.3, below, font=\tiny] {experience} (mem.south);
 \node[fl, above=0pt of rev] {failed update};
 \node[fl, above=0pt of act] {failed act};
 \end{tikzpicture}}
-\caption{\textbf{From memory to belief.} A memory records what happened; a belief is a hypothesis that prediction, observation, and test expose to evidence. Colours mark the terms of Equation~\ref{eq:filter} ({\setlength{\fboxsep}{1pt}\colorbox{cState!14}{state}}, {\setlength{\fboxsep}{1pt}\colorbox{cLik!12}{likelihood}}, {\setlength{\fboxsep}{1pt}\colorbox{cTrans!14}{transition}}); italics, the failure modes of Section~\ref{sec:revision}.}
+\caption{\textbf{From memory to belief.} A memory records what happened; a belief is a hypothesis that prediction, observation, and test expose to evidence. Colours mark the terms of Equation~\ref{eq:filter} ({\setlength{\fboxsep}{1pt}\colorbox{cState}{\textcolor{white}{state}}}, {\setlength{\fboxsep}{1pt}\colorbox{cLik}{\textcolor{white}{likelihood}}}, {\setlength{\fboxsep}{1pt}\colorbox{cTrans}{\textcolor{white}{transition}}}); italics, the failure modes of Section~\ref{sec:revision}.}
 \label{fig:loop}
 \end{figure}
 

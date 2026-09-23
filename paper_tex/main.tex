@@ -32,7 +32,7 @@
 \usepackage{makecell}
 \usepackage{colortbl}
 \usepackage[most]{tcolorbox}
-\newcommand{\insight}[2]{\begin{tcolorbox}[colback=cState!4,colframe=cState!80!black,boxrule=0.35pt,arc=1.5pt,left=4pt,right=4pt,top=2pt,bottom=2pt,boxsep=0pt,before skip=3pt,after skip=3pt]\footnotesize\textbf{Insight #1.}~#2\end{tcolorbox}}
+\newcommand{\insight}[2]{\begin{tcolorbox}[colback=cState!7,colframe=cState!7,boxrule=0pt,arc=0pt,left=4pt,right=4pt,top=2pt,bottom=2pt,boxsep=0pt,before skip=3pt,after skip=3pt]\footnotesize\textbf{Insight #1.}~#2\end{tcolorbox}}
 % Harvey balls
 \DeclareRobustCommand{\hbfull}{\tikz[baseline=-0.6ex]{\draw[line width=0.4pt,fill=black] (0,0) circle (0.72ex);}}
 \DeclareRobustCommand{\hbhalf}{\tikz[baseline=-0.6ex]{\draw[line width=0.4pt] (0,0) circle (0.72ex); \fill (0,0) -- (90:0.72ex) arc (90:270:0.72ex) -- cycle;}}
@@ -50,13 +50,17 @@
 \AtBeginEnvironment{tabular}{\sffamily}
 \tikzset{every picture/.append style={execute at begin picture=\sffamily},
   natarr/.style={-{Stealth[length=1.5mm,width=1.2mm]}, line width=0.55pt, draw=black!70}}
-\setlength{\heavyrulewidth}{0.6pt}\setlength{\lightrulewidth}{0.3pt}\setlength{\cmidrulewidth}{0.3pt}
+\setlength{\heavyrulewidth}{0.45pt}\setlength{\lightrulewidth}{0.45pt}\setlength{\cmidrulewidth}{0.3pt}
+% Nature tables: hairline under every row; full width between groups, from column 2 inside a group
+\newcommand{\rr}{\arrayrulecolor{black!35}\hline\arrayrulecolor{black}}
+\newcommand{\rrin}[1]{\arrayrulecolor{black!35}\cline{#1}\arrayrulecolor{black}}
+\newcommand{\nattab}{\centering\scriptsize\setlength{\tabcolsep}{3pt}\setlength{\arrayrulewidth}{0.25pt}\renewcommand{\arraystretch}{1.12}}
 % Nature-style captions: "Fig. 1 | Title." (bold label), table titles above, notes below the table
 \DeclareCaptionLabelSeparator{natbar}{\ \textbar\ }
-\captionsetup{labelfont=bf, labelsep=natbar}
+\captionsetup{labelfont={bf,sf}, textfont=sf, labelsep=natbar}
 \captionsetup[figure]{name=Fig.}
 \captionsetup[table]{position=top, skip=3pt, justification=raggedright, singlelinecheck=false}
-\newcommand{\tabnote}[1]{\par\vspace{2pt}{\raggedright\sffamily\fontsize{7pt}{8.4pt}\selectfont #1\par}}
+\newcommand{\tabnote}[1]{\par\vspace{2pt}{\raggedright\sffamily\fontsize{7pt}{8.4pt}\selectfont #1\par}\vspace{2pt}{\color{black}\hrule height 0.45pt}}
 \providecommand{\artifacturl}{}          % preprint defines the repository footnote; empty in the review version
 
 \title{From Memory to Belief: A Survey of State Maintenance and Belief Revision in LLM Decision Agents}

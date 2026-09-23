@@ -2,19 +2,17 @@
 \label{sec:evidence}
 
 \begin{table}[t]
-\centering\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.0}
+\nattab
 \caption{\textbf{Evidence-acquisition decisions by what they are conditioned on.}}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{2.0cm}@{}}
 \toprule
 \textbf{Acquisition conditioned on} & \textbf{Systems} & \textbf{Belief object} \\
 \midrule
-task-level POMDP & CGDP \citep{kausik2026context}, MedExAgent \citep{gao2026medexagent} & searcher, patient state \\
-uncertainty of an explicit belief & BayesEvolve \citep{wu2026bayesevolve}, EvoSCM \citep{zhao2026evoscm}, Align-While-Search \citep{bae2025align}, CA-BED \citep{arnould2026cabed} & hypothesis, causal, configuration posteriors \\
-belief over own resources & Bayesian-Agent \citep{wu2026bayesian}, REDEREF \citep{hosseini2026trainingfree}, CMI \citep{srivastava2026causal} & skill, delegate, memory reliability \\
-information gain as reward & PiCA \citep{liu2026pica}, TIPS \citep{xie2026tips} & implicit \\
+task-level POMDP & CGDP \citep{kausik2026context}, MedExAgent \citep{gao2026medexagent} & searcher, patient state \\ \rr
+uncertainty of an explicit belief & BayesEvolve \citep{wu2026bayesevolve}, EvoSCM \citep{zhao2026evoscm}, Align-While-Search \citep{bae2025align}, CA-BED \citep{arnould2026cabed} & hypothesis, causal, configuration posteriors \\ \rr
+belief over own resources & Bayesian-Agent \citep{wu2026bayesian}, REDEREF \citep{hosseini2026trainingfree}, CMI \citep{srivastava2026causal} & skill, delegate, memory reliability \\ \rr
+information gain as reward & PiCA \citep{liu2026pica}, TIPS \citep{xie2026tips} & implicit \\ \rr
 written testable belief & \emph{none in corpus} & --- \\
 \bottomrule
 \end{tabular}}

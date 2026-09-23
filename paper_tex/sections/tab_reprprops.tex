@@ -1,27 +1,21 @@
 \begin{table}[t]
-\centering\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.0}
+\nattab
 \caption{\textbf{Classes of the state term and where each term comes from.}}
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{@{}lcccccl@{}}
+\begin{tabular}{@{}llcccccl@{}}
 \toprule
-\textbf{Locus and form} & \textbf{State} & \textbf{Uncert.} & \textbf{Trans.} & \textbf{Likelihood} & \textbf{Belief} & \textbf{Example} \\
+\textbf{Locus} & \textbf{Form} & \textbf{State} & \textbf{Uncert.} & \textbf{Trans.} & \textbf{Likelihood} & \textbf{Belief} & \textbf{Example} \\
 \midrule
-\grpp{In the context}
-Trace as state & M & \hbnone & M & --- & \hbnone & ReAct \\
-Written claim, calibrated & M & \hbfull & M & D (target) & \hbhalf & Agent-BRACE, BOND \\
-Written claim, testable & M & \hbhalf & M & D (oracle) & \hbfull & CBM, EvoSCM \\
-\grpp{In a store outside the model}
-Trace store & M & \hbnone & D & --- & \hbnone & MemGPT, A-MEM \\
-Claim store with probabilities & M & \hbfull & D & D (update rule) & \hbhalf & Nous, BeliefMem \\
-\grpp{In an external estimator}
-Bayesian filter over fixed space & D & \hbfull & D & D (closed form) & \hbfull & Belief-State Engine \\
-\grpp{In learned dynamics}
-Latent world model & L & \hbhalf & L & L (prediction error) & \hbhalf & Dreamer, BB-WM \\
-Written claim + parametric check & M & \hbfull & M & L (check) & \hbfull & Hybrid-WM \\
+Context & trace as state & M & \hbnone & M & --- & \hbnone & ReAct \\ \rrin{2-8}
+& written claim, calibrated & M & \hbfull & M & D (target) & \hbhalf & Agent-BRACE, BOND \\ \rrin{2-8}
+& written claim, testable & M & \hbhalf & M & D (oracle) & \hbfull & CBM, EvoSCM \\ \rr
+Store & trace store & M & \hbnone & D & --- & \hbnone & MemGPT, A-MEM \\ \rrin{2-8}
+& claims with probabilities & M & \hbfull & D & D (update rule) & \hbhalf & Nous, BeliefMem \\ \rr
+Estimator & Bayesian filter, fixed space & D & \hbfull & D & D (closed form) & \hbfull & Belief-State Engine \\ \rr
+Learned & latent world model & L & \hbhalf & L & L (prediction error) & \hbhalf & Dreamer, BB-WM \\ \rrin{2-8}
+& written claim + parametric check & M & \hbfull & M & L (check) & \hbfull & Hybrid-WM \\
 \bottomrule
 \end{tabular}}
-\tabnote{M, written by the model; D, fixed by the designer; L, learned; ---, absent (terms of Equation~\ref{eq:filter}). Uncert., the state carries uncertainty; Belief, meets conditions (i)--(iii) of Section~\ref{sec:formulation}. \hbfull\ yes; \hbhalf\ partly; \hbnone\ no.}
+\tabnote{Locus: in the context, in a store outside the model, in an external estimator, or in learned dynamics. M, written by the model; D, fixed by the designer; L, learned; ---, absent (terms of Equation~\ref{eq:filter}). Uncert., the state carries uncertainty; Belief, meets conditions (i)--(iii) of Section~\ref{sec:formulation}. \hbfull\ yes; \hbhalf\ partly; \hbnone\ no.}
 \label{tab:reprprops}
 \end{table}

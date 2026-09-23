@@ -1,35 +1,29 @@
 \begin{table}[t]
-\centering\scriptsize
-\setlength{\tabcolsep}{2.2pt}
-\renewcommand{\arraystretch}{1.0}
+\nattab
 \caption{\textbf{Which term of the belief each neighbouring survey supplies.}}
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{@{}llc@{\hspace{4pt}}c@{\hspace{4pt}}c@{\hspace{4pt}}c@{}}
+\begin{tabular}{@{}lllc@{\hspace{4pt}}c@{\hspace{4pt}}c@{\hspace{4pt}}c@{}}
 \toprule
-\textbf{Survey} & \textbf{Organising axis} & \textbf{S} & \textbf{T} & \textbf{L} & \textbf{E} \\
+& \textbf{Survey} & \textbf{Organising axis} & \textbf{S} & \textbf{T} & \textbf{L} & \textbf{E} \\
 \midrule
-\grp{Memory}
-\citet{zhang2024memory} & design, evaluation, use & \hbfull & \hbhalf & \hbnone & \hbnone \\
-\citet{hu2025memory} & factual / experiential / working & \hbfull & \hbhalf & \hbnone & \hbhalf \\
-\citet{luo2026storage} & storage\,$\to$\,reflection\,$\to$\,experience & \hbfull & \hbhalf & \hbnone & \hbnone \\
-\grp{Rewards and credit}
-\citet{wu2025rewards} & reward model $\times$ stage & \hbnone & \hbhalf & \hbhalf & \hbnone \\
-\citet{zheng2025prm} & data $\to$ PRM $\to$ use & \hbnone & \hbhalf & \hbhalf & \hbnone \\
-\citet{zhang2025landscape} & capability $\times$ application & \hbhalf & \hbhalf & \hbhalf & \hbnone \\
-\citet{zhang2026reasoning} & granularity $\times$ method & \hbnone & \hbhalf & \hbhalf & \hbnone \\
-\grp{Uncertainty}
-\citet{xia2025uncertainty} & four estimation avenues & \hbhalf & \hbnone & \hbnone & \hbhalf \\
-\citet{lin2026uncertainty} & what / how / where & \hbhalf & \hbnone & \hbnone & \hbfull \\
-\grp{Evaluation, horizon, domain}
-\citet{yehudai2025survey} & capability $\times$ domain & \hbnone & \hbnone & \hbnone & \hbhalf \\
-\citet{gao2025survey} & what / when / how to evolve & \hbnone & \hbhalf & \hbhalf & \hbnone \\
-\citet{chen2026horizon} & lifecycle $\times$ horizon carrier & \hbhalf & \hbhalf & \hbnone & \hbnone \\
-\citet{xu2026llm} & forecasting architecture & \hbhalf & \hbnone & \hbnone & \hbhalf \\
-\citet{dong2025finance} & financial function & \hbnone & \hbnone & \hbnone & \hbnone \\
+Memory & \citet{zhang2024memory} & design, evaluation, use & \hbfull & \hbhalf & \hbnone & \hbnone \\ \rrin{2-7}
+& \citet{hu2025memory} & factual / experiential / working & \hbfull & \hbhalf & \hbnone & \hbhalf \\ \rrin{2-7}
+& \citet{luo2026storage} & storage\,$\to$\,reflection\,$\to$\,experience & \hbfull & \hbhalf & \hbnone & \hbnone \\ \rr
+Reward & \citet{wu2025rewards} & reward model $\times$ stage & \hbnone & \hbhalf & \hbhalf & \hbnone \\ \rrin{2-7}
+& \citet{zheng2025prm} & data $\to$ PRM $\to$ use & \hbnone & \hbhalf & \hbhalf & \hbnone \\ \rrin{2-7}
+& \citet{zhang2025landscape} & capability $\times$ application & \hbhalf & \hbhalf & \hbhalf & \hbnone \\ \rrin{2-7}
+& \citet{zhang2026reasoning} & granularity $\times$ method & \hbnone & \hbhalf & \hbhalf & \hbnone \\ \rr
+Uncertainty & \citet{xia2025uncertainty} & four estimation avenues & \hbhalf & \hbnone & \hbnone & \hbhalf \\ \rrin{2-7}
+& \citet{lin2026uncertainty} & what / how / where & \hbhalf & \hbnone & \hbnone & \hbfull \\ \rr
+Evaluation & \citet{yehudai2025survey} & capability $\times$ domain & \hbnone & \hbnone & \hbnone & \hbhalf \\ \rrin{2-7}
+& \citet{gao2025survey} & what / when / how to evolve & \hbnone & \hbhalf & \hbhalf & \hbnone \\ \rrin{2-7}
+& \citet{chen2026horizon} & lifecycle $\times$ horizon carrier & \hbhalf & \hbhalf & \hbnone & \hbnone \\ \rrin{2-7}
+& \citet{xu2026llm} & forecasting architecture & \hbhalf & \hbnone & \hbnone & \hbhalf \\ \rrin{2-7}
+& \citet{dong2025finance} & financial function & \hbnone & \hbnone & \hbnone & \hbnone \\
 \midrule
-\textbf{This survey} & \textbf{state $\cdot$ transition $\cdot$ likelihood} & \hbfull & \hbfull & \hbfull & \hbfull \\
+& \textbf{This survey} & \textbf{state $\cdot$ transition $\cdot$ likelihood} & \hbfull & \hbfull & \hbfull & \hbfull \\
 \bottomrule
 \end{tabular}}
-\tabnote{S, the state term and its persistence; T, the transition term, how the state is revised; L, a likelihood that reaches the belief as a learning signal; E, belief-level evaluation. \hbfull\ central; \hbhalf\ present; \hbnone\ absent.}
+\tabnote{Evaluation includes horizon, self-evolution, forecasting and finance surveys. S, the state term and its persistence; T, the transition term, how the state is revised; L, a likelihood that reaches the belief as a learning signal; E, belief-level evaluation. \hbfull\ central; \hbhalf\ present; \hbnone\ absent.}
 \label{tab:surveys}
 \end{table}
