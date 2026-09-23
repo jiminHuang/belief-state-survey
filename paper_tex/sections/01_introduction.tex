@@ -20,10 +20,10 @@ Language-model agents now act over horizons of hours or months, and the failures
 \node[lk, below=of obs] (test) {Test\\[-2pt]{\tiny $p(o_{t+1}\mid z')$}};
 \node[tr, below=of pred] (rev) {Revision\\[-2pt]{\tiny $p(z'\mid z,a_t)$}};
 \node[box, below=of bel] (act) {Action $a_t$\\[-2pt]{\tiny conditioned on $\belief_t$}};
-\draw[arr] (mem) -- node[fl, above] {failed isolation} (bel); \draw[arr] (bel) -- (pred); \draw[arr] (pred) -- (obs);
-\draw[arr] (obs) -- (test); \draw[arr] (test) -- (rev); \draw[arr] (rev) -- (act);
+\draw[arr] (mem) -- (bel); \draw[arr] (bel) -- (pred); \draw[arr] (pred) -- (obs);
+\path (mem.south east) -- node[fl, below=0.3mm, align=center] {failed\\isolation} (bel.south west);
+\draw[arr] (obs) -- node[fl, left=0.5pt, align=right] {failed\\stay} (test); \draw[arr] (test) -- (rev); \draw[arr] (rev) -- (act);
 \draw[arr] (act.west) -| node[pos=0.3, below, font=\tiny] {experience} (mem.south);
-\node[fl, above=0pt of test] {failed stay};
 \node[fl, above=0pt of rev] {failed update};
 \node[fl, above=0pt of act] {failed act};
 \end{tikzpicture}}
