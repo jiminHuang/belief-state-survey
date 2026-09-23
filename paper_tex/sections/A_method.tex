@@ -71,8 +71,8 @@ Included after reading & 171 & 58 & 47 & 7 \\ \rr
 \paragraph{Fifth round, targeted.}
 After the four rounds above, a reader pointed us to a method the protocol had not reached (ReBel; \citealp{tang2026rewarding}), posted after most of our seeds and cited by almost no one yet. We treated it as a seed for a fifth, targeted round: the Semantic Scholar batch endpoint was rate-limited throughout, so we used ReBel's own reference list (46 entries), an OpenAlex search on belief-consistency and belief-level supervision (85 candidates), and a Hugging Face Papers search on nine related phrases (743 candidates, 211 after the rule screen and deduplication). Full-text screening added 23 papers (3 peer-reviewed), of which four score a belief or prediction against the agent's own observations; every paper whose signal source mattered to a claim was re-read in full. One of the 23 (PABU) had passed the rule screen in the third keyword run but was never sampled, which is the protocol's own miss. The additions are marked R5 in the released record and in Table~\ref{tab:years}.
 
-\paragraph{Late additions.}
-Four papers cited in the text were added after the protocol closed and are not in the counts below: two posted after the cutoff, Jev-Mem and REFLEX \citep{jiang2026jevmem,wu2026reflex}, and two the protocol did not reach, FLAG-TRADER and Conv-FinRe \citep{xiong2025flagtrader,wang2026convfinre}. They are marked as late additions in the released record.
+\paragraph{Sixth round.}
+A final targeted round added four papers identified by the authors and readers after the fifth round: two posted after the search cutoff, Jev-Mem and REFLEX \citep{jiang2026jevmem,wu2026reflex}, and two the keyword and citation searches did not reach, FLAG-TRADER and Conv-FinRe \citep{xiong2025flagtrader,wang2026convfinre}. They were read in full, coded with the same fields, and are counted in the totals, the sensitivity analysis, and the master table (column R6 of Table~\ref{tab:years}).
 
 \paragraph{Year distribution.}
 Table~\ref{tab:years} gives the included papers by year, source, and whether peer-reviewed. The share that is peer-reviewed falls with recency, from four in five before 2025 to about one in nine for 2026, which is the ordinary lag of review rather than a property of the field.
@@ -81,31 +81,32 @@ Table~\ref{tab:years} gives the included papers by year, source, and whether pee
 \nattab\footnotesize
 \setlength{\tabcolsep}{3pt}
 \caption{\textbf{Included papers by publication year and by the run that found them (keyword search or citation-tree round).}}
-\begin{tabular}{@{}lrrrrrrrr@{}}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}lrrrrrrrrr@{}}
 \toprule
-\textbf{Year} & \textbf{Keyword} & \textbf{R1} & \textbf{R2} & \textbf{R3} & \textbf{R4} & \textbf{R5} & \textbf{Total} & \textbf{Peer-rev.} \\
+\textbf{Year} & \textbf{Keyword} & \textbf{R1} & \textbf{R2} & \textbf{R3} & \textbf{R4} & \textbf{R5} & \textbf{R6} & \textbf{Total} & \textbf{Peer-rev.} \\
 \midrule
-2020 & 1 & 3 & 1 & 0 & 0 & 0 & 5 & 4 \\ \rr
-2021 & 2 & 2 & 1 & 0 & 0 & 0 & 5 & 3 \\ \rr
-2022 & 9 & 4 & 0 & 1 & 0 & 0 & 14 & 13 \\ \rr
-2023 & 27 & 21 & 2 & 0 & 0 & 1 & 51 & 41 \\ \rr
-2024 & 16 & 20 & 9 & 4 & 1 & 1 & 51 & 40 \\ \rr
-2025 & 18 & 69 & 20 & 20 & 2 & 5 & 134 & 50 \\ \rr
-2026 & 106 & 52 & 25 & 22 & 4 & 16 & 225 & 25 \\
+2020 & 1 & 3 & 1 & 0 & 0 & 0 & 0 & 5 & 4 \\ \rr
+2021 & 2 & 2 & 1 & 0 & 0 & 0 & 0 & 5 & 3 \\ \rr
+2022 & 9 & 4 & 0 & 1 & 0 & 0 & 0 & 14 & 13 \\ \rr
+2023 & 27 & 21 & 2 & 0 & 0 & 1 & 0 & 51 & 41 \\ \rr
+2024 & 16 & 20 & 9 & 4 & 1 & 1 & 0 & 51 & 40 \\ \rr
+2025 & 18 & 69 & 20 & 20 & 2 & 5 & 1 & 135 & 51 \\ \rr
+2026 & 106 & 52 & 25 & 22 & 4 & 16 & 3 & 228 & 26 \\
 \midrule
-Total & 179 & 171 & 58 & 47 & 7 & 23 & 485 & 176 \\
+Total & 179 & 171 & 58 & 47 & 7 & 23 & 4 & 489 & 178 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \label{tab:years}
 \end{table}
 
 \paragraph{Evidence level.}
-Of the 485 papers included after full-text reading (179 from keyword search, 283 from citation-tree expansion, and 23 from the targeted fifth round), 176 are peer-reviewed and 309 are preprints; every number quoted in the text is the paper's own headline figure, taken from the abstract or the reported table, and none has been reproduced by us.
+Of the 489 papers included after full-text reading (179 from keyword search, 283 from citation-tree expansion, 23 from the targeted fifth round, and 4 from the sixth), 178 are peer-reviewed and 311 are preprints; every number quoted in the text is the paper's own headline figure, taken from the abstract or the reported table, and none has been reproduced by us.
 
 \paragraph{Full-text screening.}
 A paper passed full-text screening if it (a) concerns a language-model agent or a component used by one, and (b) constructs, revises, tests, learns, or evaluates an explicit state carried between decisions, or documents a failure of such a state; benchmarks and surveys that do (b) were kept and coded as such. Each paper read in full was recorded with the fields: who maintains the belief (source of the state term), credited object, revision signal (source of the transition and likelihood terms), whether belief-level metrics are reported, survey section, and role. The record is the source of Fig.~\ref{fig:taxonomy}, Tables~\ref{tab:representation}--\ref{tab:benchmarks}, and Fig.~\ref{fig:metrics}. Screening and coding were carried out with large-language-model agents: each sampled paper was read and coded against these fields under the fixed codebook above, and every paper whose coding supports a claim in the text was re-read in full. The authors defined the framework, the inclusion criteria, and the codebook, and are responsible for the record; it has not been re-coded by a second annotator.
 
 \paragraph{Peer-reviewed subset.}
-Because 309 of the 485 papers are preprints, Table~\ref{tab:sensitivity} recomputes the counts behind each insight box on the 176 peer-reviewed papers alone.
+Because 311 of the 489 papers are preprints, Table~\ref{tab:sensitivity} recomputes the counts behind each insight box on the 178 peer-reviewed papers alone.
 
 \input{tab_sensitivity}

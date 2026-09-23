@@ -1,6 +1,6 @@
 # Awesome Belief-State LLM Agents
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) ![papers](https://img.shields.io/badge/papers-485-blue) ![updated](https://img.shields.io/badge/updated-monthly-brightgreen)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) ![papers](https://img.shields.io/badge/papers-489-blue) ![updated](https://img.shields.io/badge/updated-monthly-brightgreen)
 
 A curated, monthly-updated list of papers on how language-model agents **construct, revise, and test what they believe** between decisions. It is the living companion of the survey
 
@@ -76,6 +76,7 @@ Where the belief lives and who writes it: context, external stores, probabilisti
 
 **2026**
 
+- **Jev-Mem** — [Jev-Mem: System-One-Controlled Agentic Memory for Efficient AI Agents](https://arxiv.org/abs/2609.23986) (2026)  `state: store`
 - **Belief-State Engine** — [Belief-State Engine: Augmenting LLMs for Principled Planning Under Partial Observability](https://arxiv.org/abs/2609.10036) (2026)  `state: external filter`
 - [Semantic Bayesian World Models](https://arxiv.org/abs/2609.03834) (2026)  `state: external filter` `credit: state`
 - **CAPTURE: preference drift vs memory poisoning** — [CAPTURE: Disentangling Preference Drift from Memory Poisoning in Personalized LLM Agents](https://arxiv.org/abs/2609.02265) (2026)  `state: world model` `credit: state`
@@ -450,6 +451,7 @@ Who scores what the agent produced, and which object the gradient reaches: outpu
 - **EMPG** — [Harnessing Uncertainty: Entropy-Modulated Policy Gradients for Long-Horizon LLM Agents](https://arxiv.org/abs/2509.09265) (2025)  `state: context` `credit: interaction`
 - **Memory-R1** — [Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](https://arxiv.org/abs/2508.19828) (2025, ACL 2025)  `state: store` `credit: memory op`
 - **Agent Lightning** — [Agent Lightning: Train ANY AI Agents with Reinforcement Learning](https://arxiv.org/abs/2508.03680) (2025)  `state: context` `credit: interaction`
+- **FLAG-TRADER** — [FLAG-TRADER: Fusion LLM-Agent with Gradient-based Reinforcement Learning for Financial Trading](https://arxiv.org/abs/2502.11433) (2025, Findings of ACL 2025)  `state: context` `credit: interaction`
 - **ARPO** — [Agentic Reinforced Policy Optimization](https://arxiv.org/abs/2507.19849) (2025)  `state: context` `credit: trajectory`
 - **ECON** — [From Debate to Equilibrium: Belief-Driven Multi-Agent LLM Reasoning via Bayesian Nash Equilibrium](https://arxiv.org/abs/2506.08292) (2025, International Conference on Machine Learning)  `state: external filter` `credit: trajectory`
 - **TTI (Thinking vs Doing)** — [Thinking vs. Doing: Agents that Reason by Scaling Test-Time Interaction](https://arxiv.org/abs/2506.07976) (2025)  `state: context` `credit: trajectory`
@@ -519,6 +521,7 @@ Systems whose belief decides what to observe next.
 
 **2026**
 
+- **REFLEX (Jev)** — [REFLEX with Jev for Efficient Selective Control in LLM Agents](https://arxiv.org/abs/2609.26532) (2026)  `state: context`
 - **LENS** — [LENS: In-Context Search via Latent Evidence Exploration over Dynamic Raw Documents](https://arxiv.org/abs/2608.16185) (2026)  `state: probabilistic store`
 - **EnvACE world rehearsal** — [EnvACE: Internalizing Environment Dynamics via World Rehearsal for Agentic Reinforcement Learning](https://arxiv.org/abs/2608.06197) (2026)  `state: world model` `credit: trajectory`
 - **KbSD** — [KbSD: Knowledge Boundary aware Self-Distillation for Behavioral Calibration in Agentic Search](https://arxiv.org/abs/2606.29863) (2026)  `state: context` `credit: output`
@@ -567,6 +570,7 @@ Belief-level evaluation and benchmarks: calibration, accuracy and revision, memo
 - **Business Arena marketplace benchmark** — [Business Arena: Benchmarking LLM Agents in a Realistic Marketplace](https://arxiv.org/abs/2608.08621) (2026)  `credit: interaction`
 - **Can LLM Agents Price Competitively? A Dynamic Multi-Attribut** — [Can LLM Agents Price Competitively? A Dynamic Multi-Attribute Auction Benchmark for Agentic Commerce](https://arxiv.org/abs/2608.00102) (2026)  `state: context`
 - **Critic Experience Bank** — [Critic Experience Bank: Self-Evolving Step-Level Confidence Estimation for LLM Agents](https://arxiv.org/abs/2607.12397) (2026)  `state: store`
+- **Conv-FinRe** — Conv-FinRe: A Conversational and Longitudinal Benchmark for Utility-Grounded Financial Recommendation (2026, SIGIR 2026)
 - **BayesBench** — [BayesBench: Evaluating LLM Belief Trajectories Under Multi-Turn Evidence Accumulation](https://arxiv.org/abs/2606.30850) (2026)  `state: context`
 - **FinBench calibration benchmark** — [FinBench: Time-Gated Calibration and Uncertainty Benchmarking for Agentic Financial Forecasting](https://arxiv.org/abs/2607.16229) (2026)  `credit: output`
 - **POMDP validation framework** — [Model Validation of Agentic AI Systems: A POMDP-Based Framework for Belief-State, Forecast, and Policy Validation](https://arxiv.org/abs/2606.17383) (2026)  `state: external filter`
@@ -651,7 +655,7 @@ Belief-level evaluation and benchmarks: calibration, accuracy and revision, memo
 
 ## How the list is maintained
 
-The list is generated from a screening record, not edited by hand: `lit_search/runs/20260916_v3/manual_screen_all_v*.csv` (485 included papers, 176 peer-reviewed) holds one row per paper with who maintains the belief, the credited object, the revision signal, whether a belief-level metric is reported, and notes. Each month `lit_search/monthly_update.py` runs the keyword queries on OpenAlex and a phrase search on Hugging Face Papers for the new month, applies the same rule screen, and removes everything already seen; the survivors are read in full, coded, merged with `merge_update.py`, and this README is regenerated with `make_readme.py`. The procedure is in [`UPDATE.md`](UPDATE.md); the search protocol behind the survey is in Appendix A of the paper.
+The list is generated from a screening record, not edited by hand: `lit_search/runs/20260916_v3/manual_screen_all_v*.csv` (489 included papers, 178 peer-reviewed) holds one row per paper with who maintains the belief, the credited object, the revision signal, whether a belief-level metric is reported, and notes. Each month `lit_search/monthly_update.py` runs the keyword queries on OpenAlex and a phrase search on Hugging Face Papers for the new month, applies the same rule screen, and removes everything already seen; the survivors are read in full, coded, merged with `merge_update.py`, and this README is regenerated with `make_readme.py`. The procedure is in [`UPDATE.md`](UPDATE.md); the search protocol behind the survey is in Appendix A of the paper.
 
 ```bash
 cd lit_search

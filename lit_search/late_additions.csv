@@ -1,5 +1,5 @@
 bibkey,title,date,source,reason,cited_in,counted
-jiang2026jevmem,Jev-Mem: System-One-Controlled Agentic Memory for Efficient AI Agents,2026-09-21,arXiv 2609.23986,posted after the 15 Sep 2026 cutoff; state term (memory store),Sec. 4.1,no
-wu2026reflex,REFLEX with Jev for Efficient Selective Control in LLM Agents,2026-09-22,arXiv 2609.26532,posted after the cutoff; confidence-gated delegation (belief over own resources),Sec. 7 and Table 5,no
-xiong2025flagtrader,FLAG-TRADER: Fusion LLM-Agent with Gradient-based Reinforcement Learning for Financial Trading,2025-07,Findings of ACL 2025,not reached by the protocol; interaction-level credit,Sec. 6.2,no
-wang2026convfinre,Conv-FinRe: A Conversational and Longitudinal Benchmark for Utility-Grounded Financial Recommendation,2026-07,SIGIR 2026,not reached by the protocol; controlled latent (investor risk preference),Sec. 8,no
+jiang2026jevmem,Jev-Mem: System-One-Controlled Agentic Memory for Efficient AI Agents,2026-09-21,arXiv 2609.23986,posted after the 15 Sep 2026 cutoff; state term (memory store),Sec. 4.1,yes (R6)
+wu2026reflex,REFLEX with Jev for Efficient Selective Control in LLM Agents,2026-09-22,arXiv 2609.26532,posted after the cutoff; confidence-gated delegation (belief over own resources),Sec. 7 and Table 5,yes (R6)
+xiong2025flagtrader,FLAG-TRADER: Fusion LLM-Agent with Gradient-based Reinforcement Learning for Financial Trading,2025-07,Findings of ACL 2025,not reached by the protocol; interaction-level credit,Sec. 6.2,yes (R6)
+wang2026convfinre,Conv-FinRe: A Conversational and Longitudinal Benchmark for Utility-Grounded Financial Recommendation,2026-07,SIGIR 2026,not reached by the protocol; controlled latent (investor risk preference),Sec. 8,yes (R6)
