@@ -1,26 +1,8 @@
 \section{The Likelihood Term as a Choice of Evidence}
 \label{sec:evidence}
 
-\begin{table}[t]
-\nattab
-\caption{\textbf{Evidence-acquisition decisions by what they are conditioned on.}}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{2.0cm}@{}}
-\toprule
-\textbf{Acquisition conditioned on} & \textbf{Systems} & \textbf{Belief object} \\
-\midrule
-task-level POMDP & CGDP \citep{kausik2026context}, MedExAgent \citep{gao2026medexagent} & searcher, patient state \\ \rr
-uncertainty of an explicit belief & BayesEvolve \citep{wu2026bayesevolve}, EvoSCM \citep{zhao2026evoscm}, Align-While-Search \citep{bae2025align}, CA-BED \citep{arnould2026cabed} & hypothesis, causal, configuration posteriors \\ \rr
-belief over own resources & Bayesian-Agent \citep{wu2026bayesian}, REDEREF \citep{hosseini2026trainingfree}, CMI \citep{srivastava2026causal}, REFLEX \citep{wu2026reflex} & skill, delegate, memory reliability \\ \rr
-information gain as reward & PiCA \citep{liu2026pica}, TIPS \citep{xie2026tips} & implicit \\ \rr
-written testable belief & \emph{none in corpus} & --- \\
-\bottomrule
-\end{tabular}}
-\label{tab:evidence}
-\end{table}
-
 A testable belief tells the agent what evidence would change it, which turns retrieval, tool use, and routing into decisions (Table~\ref{tab:evidence}); expected information gain needs the likelihood term, so the systems that choose evidence by belief are those that carry one. Search and diagnosis have been framed as POMDPs whose actions include what to observe next \citep{kausik2026context,gao2026medexagent}, and two finance simulators show why it matters: failing agents spend 62\% of their observation budget re-reading internal state \citep{han2026can,zhang2026retailbenchx}.
 
-Agentic retrieval let the model decide when to retrieve \citep{gao2024rag}; recent systems condition that decision on measured uncertainty about the task \citep{wu2026bayesevolve,zhao2026evoscm,xu2026nesyfs,yan2026denoiseflow,bae2025align,arnould2026cabed}, make information gain the training signal itself \citep{liu2026pica,xie2026tips}, or keep a belief over the agent's own skills, delegates, or memories \citep{wu2026bayesian,hosseini2026trainingfree,srivastava2026causal,wu2026reflex}. 
+Agentic retrieval let the model decide when to retrieve \citep{gao2024rag}; recent systems condition that decision on measured uncertainty about the task \citep{wu2026bayesevolve,zhao2026evoscm,xu2026nesyfs,yan2026denoiseflow,bae2025align,arnould2026cabed,wang2026gavel}, make information gain the training signal itself \citep{liu2026pica,xie2026tips}, or keep a belief over the agent's own skills, delegates, or memories \citep{wu2026bayesian,hosseini2026trainingfree,srivastava2026causal,wu2026reflex}. 
 
 \insight{4}{\textbf{Acquisition is a belief problem.} Agents lose by re-reading what they know rather than seeking what would change it. A testable belief names that evidence, so evidence acquisition will move from a fixed retrieval stage to a consequence of the belief.}

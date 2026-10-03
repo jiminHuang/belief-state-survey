@@ -4,7 +4,7 @@
 \input{fig_credit}
 \input{tab_learning_main}
 
-A learning signal is a likelihood that has become a gradient. Only three in five included papers give the belief any such signal; for the rest it is built and revised at inference time. Where existing surveys organise post-training by reward source and density \citep{wu2025rewards,zhang2026reasoning,zheng2025prm}, we separate two axes that are usually run together (Fig.~\ref{fig:credit}, Table~\ref{tab:learningmain}): the \emph{credited object}, the quantity that receives the gradient, and the \emph{source of the likelihood}, whatever signs it (humans, a verifier, the task reward, a teacher, a simulator, or the agent's own later observation). A method is at the \emph{state level} if the credited object is a claim about the environment, whatever the source; the source then decides whether the sign exists outside a simulator.
+A learning signal is a likelihood that has become a gradient. Fewer than three in five included papers give the belief any such signal; for the rest it is built and revised at inference time. Where existing surveys organise post-training by reward source and density \citep{wu2025rewards,zhang2026reasoning,zheng2025prm}, we separate two axes that are usually run together (Fig.~\ref{fig:credit}, Table~\ref{tab:learningmain}): the \emph{credited object}, the quantity that receives the gradient, and the \emph{source of the likelihood}, whatever signs it (humans, a verifier, the task reward, a teacher, a simulator, or the agent's own later observation). A method is at the \emph{state level} if the credited object is a claim about the environment, whatever the source; the source then decides whether the sign exists outside a simulator.
 
 \subsection{Output and Trajectory}
 \label{sec:learn:traj}
@@ -19,6 +19,24 @@ Agentic reinforcement learning credits actions over several turns \citep{zhou202
 \subsection{State}
 \label{sec:learn:state}
 
-Until 2026 every such method took its test from outside the environment. CBM trains with belief-state rewards from symbolic verification and cuts belief-management failures by about 71\% \citep{xu2026should}, Agent-BRACE trains belief model and policy jointly with verbalised certainty as the belief's output \citep{singh2026agent}, and BOND distils a Bayesian teacher's posterior into an 8B student \citep{cui2026distilling}. VAGEN rewards a written state prediction against the simulator's state \citep{wang2025vagen}, T3 truncates rollouts by a belief deviation anchored to the true hypothesis \citep{zou2025t3}, IGPO and InfoPO reward a turn by the belief update it causes toward the known answer \citep{wang2025information,kong2026infopo}, Dyna-Think, SPA, and RLVR-World train state prediction as a loss or verifiable reward \citep{yu2025dynathink,chen2025why,wu2025rlvrworld}, and DEL-ToM scores each belief-update step with a process belief model \citep{wu2025deltom}. Each needs the answer or the latent state at training time. Three systems now take it from the agent's own observations: ReBel rewards each predicate of a written belief that the next observation supports, with the gradient reaching the belief \citep{tang2026rewarding}; ABBEL grades a natural-language belief by how well the prior observation can be reconstructed from it \citep{lidayan2025abbel}; PaW adds a next-observation loss on the policy \citep{lu2026policy}. None carries uncertainty, and the dense form is fragile: the same reward through group-normalised advantages collapses every run, and as an auxiliary loss it is matched by shuffled targets \citep{wang2026dark}.
+Until 2026 every such method took its test from outside the environment. CBM trains with belief-state rewards from symbolic verification and cuts belief-management failures by about 71\% \citep{xu2026should}, Agent-BRACE trains belief model and policy jointly with verbalised certainty as the belief's output \citep{singh2026agent}, and BOND distils a Bayesian teacher's posterior into an 8B student \citep{cui2026distilling}. VAGEN rewards a written state prediction against the simulator's state \citep{wang2025vagen}, T3 truncates rollouts by a belief deviation anchored to the true hypothesis \citep{zou2025t3}, IGPO and InfoPO reward a turn by the belief update it causes toward the known answer \citep{wang2025information,kong2026infopo}, Dyna-Think, SPA, and RLVR-World train state prediction as a loss or verifiable reward \citep{yu2025dynathink,chen2025why,wu2025rlvrworld}, DEL-ToM scores each belief-update step with a process belief model \citep{wu2025deltom}, and CORE and GAVEL train a probabilistic belief against gold slots or held-out placements \citep{zhang2026toward,wang2026gavel}. Each needs the answer or the latent state at training time. Three systems now take it from the agent's own observations: ReBel rewards each predicate of a written belief that the next observation supports, with the gradient reaching the belief \citep{tang2026rewarding}; ABBEL grades a natural-language belief by how well the prior observation can be reconstructed from it \citep{lidayan2025abbel}; PaW adds a next-observation loss on the policy \citep{lu2026policy}. None carries uncertainty, and the dense form is fragile: the same reward through group-normalised advantages collapses every run, and as an auxiliary loss it is matched by shuffled targets \citep{wang2026dark}.
+
+\begin{table}[t]
+\nattab
+\caption{\textbf{Evidence-acquisition decisions by what they are conditioned on.}}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{2.0cm}@{}}
+\toprule
+\textbf{Acquisition conditioned on} & \textbf{Systems} & \textbf{Belief object} \\
+\midrule
+task-level POMDP & CGDP \citep{kausik2026context}, MedExAgent \citep{gao2026medexagent} & searcher, patient state \\ \rr
+uncertainty of an explicit belief & BayesEvolve \citep{wu2026bayesevolve}, EvoSCM \citep{zhao2026evoscm}, Align-While-Search \citep{bae2025align}, CA-BED \citep{arnould2026cabed} & hypothesis, causal, configuration posteriors \\ \rr
+belief over own resources & Bayesian-Agent \citep{wu2026bayesian}, REDEREF \citep{hosseini2026trainingfree}, CMI \citep{srivastava2026causal}, REFLEX \citep{wu2026reflex} & skill, delegate, memory reliability \\ \rr
+information gain as reward & PiCA \citep{liu2026pica}, TIPS \citep{xie2026tips} & implicit \\ \rr
+written testable belief & \emph{none in corpus} & --- \\
+\bottomrule
+\end{tabular}}
+\label{tab:evidence}
+\end{table}
 
 \insight{3}{\textbf{Credit has reached the belief, not yet its uncertainty.} The first systems now score a written belief against the agent's own observations, but the belief they score is binary, the dense form of that reward collapses under group normalisation, and none connects the score to revision or action. The open combination is an environment-signed likelihood on a calibrated state.}

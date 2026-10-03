@@ -10,12 +10,12 @@ The state term is placed by two attributes rather than by method family: its \em
 
 The most common design has no representation at all: the reasoning trace is the state \citep{wei2022chain,yao2023react}, the belief implicit and its uncertainty unstated.
 
-Memory-augmented agents moved the state into a store retrieved into context \citep{packer2023memgpt,park2023generative,zhong2024memorybank,xu2025amem,luo2026storage,jiang2026jevmem}. Two limits matter for belief: the stored unit is a trace rather than a claim with a probability, and an update is an operation on the store rather than on a hypothesis, so answer accuracy hides failures in the update and forget operations themselves \citep{hao2026memops}. Structured stores narrow the first limit with schemas, graphs, bitemporal transitions, or AGM revision semantics \citep{luo2026graph,xu2026governed,park2026graph}; probabilistic stores narrow the second by attaching a number to each claim \citep{liao2026belief,song2026d,yang2026belief}.
+Memory-augmented agents moved the state into a store retrieved into context \citep{packer2023memgpt,park2023generative,zhong2024memorybank,xu2025amem,luo2026storage,jiang2026jevmem}. Two limits matter for belief: the stored unit is a trace rather than a claim with a probability, and an update is an operation on the store rather than on a hypothesis, so answer accuracy hides failures in the update and forget operations themselves \citep{hao2026memops}. Structured stores narrow the first limit with schemas, graphs, bitemporal transitions, or AGM revision semantics \citep{luo2026graph,xu2026governed,park2026graph}; probabilistic stores narrow the second by attaching a number to each claim \citep{liao2026belief,song2026d,yang2026belief,zhang2026toward}.
 
 \subsection{External Bayesian Filters}
 \label{sec:repr:filter}
 
-A different line takes the belief out of the model. The model maps evidence to a likelihood over a fixed set of latent regimes, hypotheses, or user states, and an explicit filter maintains the posterior, whose entropy and drift can then be reported as model risk \citep{chattopadhayay2026belief,dixon2026belief,wu2026bayesevolve,soru2026semantic}. These beliefs are validated against a closed-form oracle and auditable by construction; the price is a hypothesis space fixed in advance.
+A different line takes the belief out of the model. The model maps evidence to a likelihood over a fixed set of latent regimes, hypotheses, or user states, and an explicit filter maintains the posterior, whose entropy and drift can then be reported as model risk \citep{chattopadhayay2026belief,dixon2026belief,wu2026bayesevolve,soru2026semantic,akbar2026bayesian,azran2026bridging,ansell2026clueing}. These beliefs are validated against a closed-form oracle and auditable by construction; the price is a hypothesis space fixed in advance.
 
 \subsection{Model-Written Beliefs}
 \label{sec:repr:written}
@@ -24,6 +24,7 @@ The third line keeps the belief in context but gives it structure the model writ
 
 Condition (iii) separates them: a written belief is testable only if it names a future observation with a horizon, so that the returned observation yields a signed error. Most written beliefs are calibrated but not testable, stating confidence without naming what would falsify it; Hypothetical Minds, CBM, EvoSCM, and ReBel \citep{tang2026rewarding} do.
 
+\input{tab_failures}
 \subsection{Learned World Models}
 \label{sec:repr:wm}
 
