@@ -1,6 +1,6 @@
 # Awesome Belief-State LLM Agents
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) ![papers](https://img.shields.io/badge/papers-489-blue) ![updated](https://img.shields.io/badge/updated-monthly-brightgreen)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) ![papers](https://img.shields.io/badge/papers-518-blue) ![updated](https://img.shields.io/badge/updated-monthly-brightgreen)
 
 A curated, monthly-updated list of papers on how language-model agents **construct, revise, and test what they believe** between decisions. It is the living companion of the survey
 
@@ -52,12 +52,15 @@ Neighbouring surveys, each of which supplies one term of the belief (memory: sta
 
 - [Uncertainty Quantification for LLM Agents: A Taxonomy, an Evaluation Protocol, and an Empirical Study](https://arxiv.org/abs/2609.07395) (2026)
 - Survey on Evaluation of LLM-based Agents (2026)
+- **Theory of Agent (ToA)** — Theory of Agent: The Science of Internalization and Externalization for LLM-Based Agents (2026)
 - **The Horizon Gap (survey)** — [The Horizon Gap: Planning, Memory, Execution, Training, and Evaluation for Long-Horizon LLM Agents](https://arxiv.org/abs/2608.06663) (2026)
 - **Text World Models (review)** — [Bridging the Agent-World Gap: Text World Models for LLM-based Agents](https://arxiv.org/abs/2606.09032) (2026)  `state: world model`
+- **Proactive Service Agents survey** — [Proactive Service Agents: A Unified Decision Framework, Methods, and Evaluation](https://arxiv.org/abs/2609.03727) (2026)
 - **LLM Agents for Forecasting (survey)** — [LLM-based Agents for Forecasting and Prediction: Methods, Training, Evaluation, and Applications](https://arxiv.org/abs/2608.23058) (2026)
 - **Graph-based agent memory survey** — [Graph-based Agent Memory: Taxonomy, Techniques, and Applications](https://arxiv.org/abs/2602.05665) (2026)  `state: store`
 - **From Storage to Experience (memory survey)** — [From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](https://arxiv.org/abs/2605.06716) (2026)  `state: store`
 - **Credit Assignment in RL for LLMs (survey)** — [From Reasoning to Agentic: Credit Assignment in Reinforcement Learning for Large Language Models](https://arxiv.org/abs/2604.09459) (2026)  `credit: trajectory`
+- **CPS statistical control survey** — [Complex Problem Solving in Large Language Models: A Statistical Control Survey and Diagnostic Framework](https://arxiv.org/abs/2609.20973) (2026)
 - **Agentic Reasoning survey** — [Agentic Reasoning for Large Language Models](https://arxiv.org/abs/2601.12538) (2026)
 - Sailing by the Stars: A Survey on Reward Models and Learning Strategies for Learning from Rewards (2025)
 - Memory in the Age of AI Agents (2025)
@@ -76,13 +79,33 @@ Where the belief lives and who writes it: context, external stores, probabilisti
 
 **2026**
 
+- **Simple mechanism interfaces** — [Engineering Simplicity: Simple Mechanism Interfaces Steer LLM Agents](https://arxiv.org/abs/2609.36365) (2026)  `state: context`
+- **Forecast-Dojo** — [Forecast-Dojo: Replayable Environments for Benchmarking and Training LLM Forecasting Agents](https://arxiv.org/abs/2609.28876) (2026)  `state: written` `credit: trajectory`
+- **META** — [Agent Memory with Episodic Retrieval for Financial Decision-Making](https://arxiv.org/abs/2609.28771) (2026, AACL-IJCNLP 2026 Findings)  `state: store`
+- **AEWM / EditAct** — [Agent-Editing World Model: Rethinking World Modeling for LLM Agents](https://arxiv.org/abs/2609.28416) (2026)  `state: world model` `credit: interaction`
+- **Truth stance layer (expressed doubt + revision store)** — [Truth for Believable AI: Expressed Doubt, Provenance, and Belief Revision as an Engineerable Stance](https://arxiv.org/abs/2609.26035) (2026)  `state: probabilistic store`
+- **ReAdapt** — [When LLM Agents Fail to Read the Room: ReAdapt for Relational Social Reasoning](https://arxiv.org/abs/2609.25284) (2026)  `state: written`
+- **Few-shot in-context world representations** — [Few-Shot Demonstrations Elicit the Use of In-Context World Representations in LLMs](https://arxiv.org/abs/2609.24352) (2026)  `state: context`
 - **Jev-Mem** — [Jev-Mem: System-One-Controlled Agentic Memory for Efficient AI Agents](https://arxiv.org/abs/2609.23986) (2026)  `state: store`
+- **LLM explainer over Active Inference agent** — [Triggers and Diagnostics for LLM-Based Interpretability Failures in Active Inference Agents](https://arxiv.org/abs/2609.23215) (2026)  `state: external filter`
+- **Bayesian Chronicle Agents (BCA)** — [Bayesian Belief Layer for Controllable Opinion Dynamics in LLM Agents](https://arxiv.org/abs/2609.21997) (2026)  `state: external filter`
+- **ENIGMA** — Executable Epistemic Contracts in Deterministic Agent Simulation: The ENIGMA Architecture (2026)  `state: probabilistic store`
+- **CoLearn** — [CoLearn: An Agentic Tutor that Learns its Learner in a Human--AI Co-Learning Loop](https://arxiv.org/abs/2609.21154) (2026)  `state: probabilistic store`
+- **GAVEL** — [GAVEL: Graph World Models for Verified and Efficient Long-Horizon LLM Task Planning](https://arxiv.org/abs/2609.19315) (2026)  `state: external filter` `credit: state`
+- **Infinite-Parameter LLM** — [Infinite-Parameter LLMs: Generating and Adapting Weights from Live Data](https://arxiv.org/abs/2609.18842) (2026)  `state: external filter` `credit: state`
+- **Clue possibility matrix** — [Clueing up LLMs with Tool-Augmented Deductive Reasoning](https://arxiv.org/abs/2609.18736) (2026)  `state: external filter`
+- **RoVLaP** — [Bridging Learned Visual Perception and Symbolic Belief-Space Planning via Probabilistic Grounding](https://arxiv.org/abs/2609.16884) (2026, NeuS 2026)  `state: external filter`
+- **CORE (+PERSIST)** — [Toward Robust Personalized Alignment for LLMs: Mitigating Persona Drift in Multi-Turn Dialogue](https://arxiv.org/abs/2609.12373) (2026, Findings of EMNLP 2026)  `state: probabilistic store` `credit: state`
+- **Rank-Bounded Memory** — Rank-Bounded Memory: Self-Poisoning and Attribution Laundering in LLM Agents (2026)  `state: store`
 - **Belief-State Engine** — [Belief-State Engine: Augmenting LLMs for Principled Planning Under Partial Observability](https://arxiv.org/abs/2609.10036) (2026)  `state: external filter`
+- **AeroBelief** — [Dual-Layer Semantic-Spatial Belief Mapping for Aerial Object Goal Navigation](https://arxiv.org/abs/2609.08164) (2026)  `state: probabilistic store`
+- **MoM / P-Mem** — [MoM: Memory of Memory](https://arxiv.org/abs/2609.25054) (2026)  `state: written`
 - [Semantic Bayesian World Models](https://arxiv.org/abs/2609.03834) (2026)  `state: external filter` `credit: state`
 - **CAPTURE: preference drift vs memory poisoning** — [CAPTURE: Disentangling Preference Drift from Memory Poisoning in Personalized LLM Agents](https://arxiv.org/abs/2609.02265) (2026)  `state: world model` `credit: state`
 - **APEx** — [APEx: Distillation of Agent Procedural Experience for Adaptive Deep Research Question Answering](https://arxiv.org/abs/2609.02253) (2026)  `state: store` `credit: memory op`
 - **BCO: belief-calibrated scaffold optimization** — [Belief-Calibrated Optimization: An Explicit World Model for Agentic Optimization](https://arxiv.org/abs/2609.01861) (2026)  `state: written` `credit: state`
 - **EvoSCM causal belief revision** — [EvoSCM: Scientific Belief Revision Through Causal Model Evolution and Experimentation](https://arxiv.org/abs/2609.01526) (2026)  `state: written` `credit: state`
+- **AC1 self-model loop replication** — A Controlled Replication of a Self-Model Loop for Language-Model Agents: Controls, Confounds, and Finite-Horizon Path Dependence (2026)  `state: external filter`
 - **Belief-Based World Model** — [Towards a Belief-Based World Model for LLM Agents](https://arxiv.org/abs/2609.00455) (2026)  `state: world model`
 - **Planted latent variable** — [Planting a Latent Variable in Natural-Looking Text: a More Realistic Test of Belief States in LLMs and Their Link to Concept Geometry](https://arxiv.org/abs/2608.26887) (2026)  `state: context`
 - **GPM: governed persistent memory** — [Governed Persistent Memory: Source-Bound State Semantics and Fail-Closed Release for Long-Horizon Agents](https://arxiv.org/abs/2608.12476) (2026)  `state: store`
@@ -522,6 +545,7 @@ Systems whose belief decides what to observe next.
 **2026**
 
 - **REFLEX (Jev)** — [REFLEX with Jev for Efficient Selective Control in LLM Agents](https://arxiv.org/abs/2609.26532) (2026)  `state: context`
+- **FinalityBench** — [FinalityBench: An Effect-Level Benchmark for Agent Decisions Under Delayed and Conflicting Financial Finality](https://arxiv.org/abs/2609.04706) (2026)  `state: context`
 - **LENS** — [LENS: In-Context Search via Latent Evidence Exploration over Dynamic Raw Documents](https://arxiv.org/abs/2608.16185) (2026)  `state: probabilistic store`
 - **EnvACE world rehearsal** — [EnvACE: Internalizing Environment Dynamics via World Rehearsal for Agentic Reinforcement Learning](https://arxiv.org/abs/2608.06197) (2026)  `state: world model` `credit: trajectory`
 - **KbSD** — [KbSD: Knowledge Boundary aware Self-Distillation for Behavioral Calibration in Agentic Search](https://arxiv.org/abs/2606.29863) (2026)  `state: context` `credit: output`
@@ -566,6 +590,11 @@ Belief-level evaluation and benchmarks: calibration, accuracy and revision, memo
 
 **2026**
 
+- **EnterpriseBench** — [EnterpriseBench: Benchmarking LLM Agents on Enterprise-Level Strategic Reasoning and Decision-Making](https://arxiv.org/abs/2609.37658) (2026)  `state: context`
+- **memory-bench construction** — Constructing a Benchmark When Every Component Is a Language Model (2026)  `state: store`
+- **Regent Chess replication** — [Replication Without Persistence in Hosted LLMs: Measurement Sensitivity in Action-Time Belief Evaluation](https://arxiv.org/abs/2609.22478) (2026)  `state: written`
+- **REE diagnostic for ICL in games** — [Recursive Reasoning or Statistical Extrapolation? In-Context Learning in Multi-Agent Interdependent Decision-Making](https://arxiv.org/abs/2609.18591) (2026)  `state: context`
+- **Werewolf accusation belief-shift** — [Do LLMs Trust the Accuser or the Accusation? Measuring Belief Shifts in Werewolf](https://arxiv.org/abs/2609.12446) (2026)  `state: written`
 - **ECCBench** — [Good Memory Has ECC: Evaluating the Memory of Vision-Language Models Beyond Accuracy](https://arxiv.org/abs/2609.00103) (2026)
 - **Business Arena marketplace benchmark** — [Business Arena: Benchmarking LLM Agents in a Realistic Marketplace](https://arxiv.org/abs/2608.08621) (2026)  `credit: interaction`
 - **Can LLM Agents Price Competitively? A Dynamic Multi-Attribut** — [Can LLM Agents Price Competitively? A Dynamic Multi-Attribute Auction Benchmark for Agentic Commerce](https://arxiv.org/abs/2608.00102) (2026)  `state: context`
@@ -651,11 +680,12 @@ Belief-level evaluation and benchmarks: calibration, accuracy and revision, memo
 
 ## Updates
 
+- **2026-09 (monthly update)** — 29 papers added from the September 2026 window (434 rule-screened candidates, 47 read in full; papers already in the survey corpus skipped). Belief-credited additions: CORE (probabilistic persona belief, PPO reward scores it against gold slot values), GAVEL and Infinite-Parameter LLMs (known answer). Also MoM/P-Mem, Forecast-Dojo, Bayesian Chronicle Agents, Rank-Bounded Memory and others. No survey claim affected.
 - **2026-09** — initial release with the survey preprint: 485 papers (2020 to September 2026), five keyword and citation-tree rounds plus a targeted round around belief-level self-supervision (ReBel, ABBEL, PaW, Dark Room).
 
 ## How the list is maintained
 
-The list is generated from a screening record, not edited by hand: `lit_search/runs/20260916_v3/manual_screen_all_v*.csv` (489 included papers, 178 peer-reviewed) holds one row per paper with who maintains the belief, the credited object, the revision signal, whether a belief-level metric is reported, and notes. Each month `lit_search/monthly_update.py` runs the keyword queries on OpenAlex and a phrase search on Hugging Face Papers for the new month, applies the same rule screen, and removes everything already seen; the survivors are read in full, coded, merged with `merge_update.py`, and this README is regenerated with `make_readme.py`. The procedure is in [`UPDATE.md`](UPDATE.md); the search protocol behind the survey is in Appendix A of the paper.
+The list is generated from a screening record, not edited by hand: `lit_search/runs/20260916_v3/manual_screen_all_v*.csv` (518 included papers, 181 peer-reviewed) holds one row per paper with who maintains the belief, the credited object, the revision signal, whether a belief-level metric is reported, and notes. Each month `lit_search/monthly_update.py` runs the keyword queries on OpenAlex and a phrase search on Hugging Face Papers for the new month, applies the same rule screen, and removes everything already seen; the survivors are read in full, coded, merged with `merge_update.py`, and this README is regenerated with `make_readme.py`. The procedure is in [`UPDATE.md`](UPDATE.md); the search protocol behind the survey is in Appendix A of the paper.
 
 ```bash
 cd lit_search

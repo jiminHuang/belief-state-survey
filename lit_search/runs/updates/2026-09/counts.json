@@ -1,0 +1,13 @@
+{
+ "month": "2026-09",
+ "openalex_hits": 1673,
+ "hf_hits": 41,
+ "unique": 1051,
+ "already_screened": 91,
+ "no_abstract": 58,
+ "I1_not_llm": 246,
+ "E1_offdomain": 19,
+ "I2_topic": 203,
+ "candidates": 434,
+ "to_read": 47
+}
