@@ -39,6 +39,7 @@
 \DeclareRobustCommand{\hbhalf}{\tikz[baseline=-0.55ex]{\fill[tilec!35] (-0.8ex,-0.8ex) rectangle (0.8ex,0.8ex);}}
 \DeclareRobustCommand{\hbnone}{\tikz[baseline=-0.55ex]{\fill[black!8] (-0.8ex,-0.8ex) rectangle (0.8ex,0.8ex);}}
 \newcolumntype{T}[1]{>{\colorlet{tilec}{#1}}c}
+\newcolumntype{W}[2]{>{\raggedright\arraybackslash}p{#1}}   % review width, preprint width
 \newcolumntype{Y}[1]{>{\raggedright\arraybackslash}p{#1}}   % wraps in the review version
 \newcommand{\hd}[2]{\shortstack{#1\\#2}}
 \newcommand{\rh}[1]{\rotatebox{90}{#1}}   % narrow headers over mark columns
@@ -56,15 +57,16 @@
 \definecolor{cLik}{HTML}{E64B35}     % likelihood term
 \definecolor{cAux}{HTML}{4DBBD5}     % external estimators
 \newif\ifnature\naturefalse    % ARR review version: ACL fonts and sizes in tables and figures
+\newcommand{\eqfilterlab}{\label{eq:filter}}
 \newcommand{\appx}{\ifnature\else{} in the appendix\fi}
-\newcommand{\figscript}{\ifnature\scriptsize\else\footnotesize\fi}
-\newcommand{\figtiny}{\ifnature\tiny\else\footnotesize\fi}
+\newcommand{\figscript}{\scriptsize}
+\newcommand{\figtiny}{\scriptsize}
 \tikzset{natarr/.style={-{Stealth[length=1.5mm,width=1.2mm]}, line width=0.55pt, draw=black!70}}
 \setlength{\heavyrulewidth}{0.45pt}\setlength{\lightrulewidth}{0.45pt}\setlength{\cmidrulewidth}{0.3pt}
 % Nature tables: hairline under every row; full width between groups, from column 2 inside a group
 \newcommand{\rr}{\arrayrulecolor{black!35}\hline\arrayrulecolor{black}}
 \newcommand{\rrin}[1]{\arrayrulecolor{black!35}\cline{#1}\arrayrulecolor{black}}
-\newcommand{\nattab}[1][]{\centering\footnotesize\setlength{\tabcolsep}{4pt}\setlength{\arrayrulewidth}{0.25pt}}   % size argument used only in the preprint
+\newcommand{\nattab}[1][]{\centering\scriptsize\setlength{\tabcolsep}{3pt}\setlength{\arrayrulewidth}{0.25pt}}   % size argument used only in the preprint
 \newcommand{\tabfit}[2][\columnwidth]{\begin{adjustbox}{max width=#1}#2\end{adjustbox}}   % shrink only if wider than the column
 % ACL default captions, placed below figures and tables
 \newcommand{\tcap}[1]{\gdef\pendingcap{#1}}
@@ -104,6 +106,7 @@ This survey covers work indexed by OpenAlex and arXiv from January 2020 to 30 Se
 \bibliography{custom,recent2026,foundations,snowball,snowball_r2,snowball_r3,snowball_r4,snowball_misc,snowball_r5,late_additions,update_2026_09}
 
 \appendix
+\input{X_full}
 \input{A_method}
 \input{B_tables}
 \input{C_taxonomy}

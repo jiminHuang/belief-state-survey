@@ -40,6 +40,7 @@
 \DeclareRobustCommand{\hbhalf}{\tikz[baseline=-0.55ex]{\fill[tilec!35] (-0.8ex,-0.8ex) rectangle (0.8ex,0.8ex);}}
 \DeclareRobustCommand{\hbnone}{\tikz[baseline=-0.55ex]{\fill[black!8] (-0.8ex,-0.8ex) rectangle (0.8ex,0.8ex);}}
 \newcolumntype{T}[1]{>{\colorlet{tilec}{#1}}c}
+\newcolumntype{W}[2]{>{\raggedright\arraybackslash}p{#2}}
 \newcolumntype{Y}[1]{l}
 \newcommand{\hd}[2]{#1 #2}
 \newcommand{\rh}[1]{#1}
@@ -56,6 +57,7 @@
 \definecolor{cLik}{HTML}{E64B35}     % likelihood term
 \definecolor{cAux}{HTML}{4DBBD5}     % external estimators
 \newif\ifnature\naturetrue    % preprint: Nature-style tables and figures
+\newcommand{\eqfilterlab}{\label{eq:filter}}
 \newcommand{\appx}{\ifnature\else{} in the appendix\fi}
 \newcommand{\figscript}{\ifnature\scriptsize\else\footnotesize\fi}
 \newcommand{\figtiny}{\ifnature\tiny\else\footnotesize\fi}

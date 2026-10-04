@@ -7,6 +7,8 @@ Language-model agents now act over horizons of hours or months, and the failures
 
 \begin{figure}[t]
 \centering
+\ifnature\else\let\figscript\footnotesize\let\figtiny\footnotesize\fi
+\ifnature\tikzset{chipN/.style={}, chipS/.style={}}\else\tikzset{chipN/.style={anchor=south, yshift=-0.2mm}, chipS/.style={anchor=north, yshift=0.2mm}}\fi
 \resizebox{\ifnature0.86\fi\columnwidth}{!}{%
 \begin{tikzpicture}[font=\figscript, node distance=6mm and 4.5mm,
   box/.style={fill=black!8, minimum height=7.5mm, minimum width=15mm, align=center, inner sep=1pt},
@@ -25,8 +27,8 @@ Language-model agents now act over horizons of hours or months, and the failures
   \node[fill=cLik!7, inner sep=2.2mm, fit=(pred)(test)(obs)] (lkpanel) {};
 \end{scope}
 \node[chip, fill=cLik, anchor=south west] at ([xshift=1mm,yshift=-0.2mm]lkpanel.north west) {test};
-\node[chip, fill=cState] at (bel.north) {belief state};
-\node[chip, fill=cTrans] at (rev.south) {revision};
+\node[chip, fill=cState, chipN] at (bel.north) {belief state};
+\node[chip, fill=cTrans, chipS] at (rev.south) {revision};
 \draw[arr] (mem) -- (bel); \draw[arr] (bel) -- (pred);
 \draw[arr] (pred.east) -| (obs.north); \draw[arr] (obs.south) |- (test.east);
 \draw[arr] (test) -- (rev); \draw[arr] (rev) -- (act);
@@ -36,7 +38,7 @@ Language-model agents now act over horizons of hours or months, and the failures
 \node[fm] at ($(test.west)!0.5!(rev.east)+(0,2.6mm)$) {3};
 \node[fm] at ($(rev.west)!0.5!(act.east)+(0,2.6mm)$) {4};
 \end{tikzpicture}}
-\caption{\textbf{From memory to testable belief.} A memory records what happened, whereas a belief is a hypothesis that prediction, observation, and test expose to evidence. Tints mark the three parts. Any evidence-based check can serve as the test, and the formulas give one realisation, the Bayes filter of Eq.~\ref{eq:filter}. Numbers mark the failure modes of Section~\ref{sec:revision} (1 isolation, 2 stay, 3 update, 4 act).}
+\caption{\textbf{From memory to testable belief.} Tints mark the three parts. Any evidence-based check can serve as the test, and the formulas give its Bayes-filter form (Eq.~\ref{eq:filter}). Numbers mark the failure modes of Section~\ref{sec:revision}.}
 \label{fig:loop}
 \end{figure}
 

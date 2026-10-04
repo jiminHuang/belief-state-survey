@@ -1,5 +1,6 @@
 \begin{figure}[t]
 \centering
+\ifnature\else\let\figscript\footnotesize\let\figtiny\footnotesize\fi
 \resizebox{\columnwidth}{!}{%
 \ifnature\def\mx{11mm}\def\my{2.3mm}\else\def\mx{5.6mm}\def\my{3.4mm}\fi
 \begin{tikzpicture}[font=\figscript, x=\mx, y=\my]
