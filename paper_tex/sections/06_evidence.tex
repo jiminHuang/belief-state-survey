@@ -1,7 +1,7 @@
-\section{The Likelihood Term as a Choice of Evidence}
+\section{The Test as a Choice of Evidence}
 \label{sec:evidence}
 
-A testable belief tells the agent what evidence would change it, which turns retrieval, tool use, and routing into decisions (Table~\ref{tab:evidence}); expected information gain needs the likelihood term, so the systems that choose evidence by belief are those that carry one. Search and diagnosis have been framed as POMDPs whose actions include what to observe next \citep{kausik2026context,gao2026medexagent}, and two finance simulators show why it matters: failing agents spend 62\% of their observation budget re-reading internal state \citep{han2026can,zhang2026retailbenchx}.
+A testable belief tells the agent what evidence would change it, which turns retrieval, tool use, and routing into decisions (Table~\ref{tab:evidence}); expected information gain needs a probabilistic test, so the systems that choose evidence by belief are those that carry one. Search and diagnosis have been framed as POMDPs whose actions include what to observe next \citep{kausik2026context,gao2026medexagent}, and two finance simulators show why it matters: failing agents spend 62\% of their observation budget re-reading internal state \citep{han2026can,zhang2026retailbenchx}.
 
 Agentic retrieval let the model decide when to retrieve \citep{gao2024rag}; recent systems condition that decision on measured uncertainty about the task \citep{wu2026bayesevolve,zhao2026evoscm,xu2026nesyfs,yan2026denoiseflow,bae2025align,arnould2026cabed,wang2026gavel}, make information gain the training signal itself \citep{liu2026pica,xie2026tips}, or keep a belief over the agent's own skills, delegates, or memories \citep{wu2026bayesian,hosseini2026trainingfree,srivastava2026causal,wu2026reflex}. 
 

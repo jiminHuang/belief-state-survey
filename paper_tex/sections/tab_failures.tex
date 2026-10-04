@@ -4,14 +4,14 @@
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}l>{\raggedright\arraybackslash}p{1.75cm}>{\raggedright\arraybackslash}p{1.55cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.75cm}@{}}
 \toprule
-\textbf{Failure mode} & \textbf{Definition} & \textbf{Term at fault} & \textbf{Measured by} & \textbf{Headline result} \\
+\textbf{Failure mode} & \textbf{Definition} & \textbf{Part at fault} & \textbf{Measured by} & \textbf{Headline result} \\
 \midrule
-Failed stay & belief moves without evidence & likelihood absent: update unweighted & BeliefShift, MEDLEY-BENCH & consensus sensitivity from near 0 to large across 35 models \\ \rr
-Failed update & belief survives contradicting evidence & transition without update & DeltaLogic, DToM-Track, STALE & 66.7\% on a conclusion, 46.7\% on whether an edit changes it \\ \rr
-Failed isolation & irrelevant input enters the belief & state term contaminated & BeliefTrack, MemOps & belief-state reward cuts failures by 71\% \\ \rr
+Failed stay & belief moves without evidence & test absent: update unweighted & BeliefShift, MEDLEY-BENCH & consensus sensitivity from near 0 to large across 35 models \\ \rr
+Failed update & belief survives contradicting evidence & carried forward, not updated & DeltaLogic, DToM-Track, STALE & 66.7\% on a conclusion, 46.7\% on whether an edit changes it \\ \rr
+Failed isolation & irrelevant input enters the belief & belief state contaminated & BeliefTrack, MemOps & belief-state reward cuts failures by 71\% \\ \rr
 Failed act & belief revised, action unchanged & policy not conditioned on $\belief_t$ & STOCKTAKE, Werewolf audit & 34--43\% of correctly diagnosed weeks end in the wrong action \\
 \bottomrule
 \end{tabular}}
-\tabnote{For each mode: the term of Equation~\ref{eq:filter} at fault, the benchmarks that isolate it and their headline results \citep{xu2026should,chao2026stale,myakala2026beliefshift,abtahi2026medleybench,dhanda2026deltalogic,nguyen2026dynamic,hao2026memops,deb2026stocktake,gao2026auditing}.}
+\tabnote{For each mode: the part at fault, the benchmarks that isolate it and their headline results \citep{xu2026should,chao2026stale,myakala2026beliefshift,abtahi2026medleybench,dhanda2026deltalogic,nguyen2026dynamic,hao2026memops,deb2026stocktake,gao2026auditing}.}
 \label{tab:failures}
 \end{table}

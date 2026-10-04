@@ -35,7 +35,7 @@
 \node[llm] (m) at (1.6,0) {LLM};
 \node[env] (a) at (3.0,0) {$a_t$};
 \draw[arr] (o)--(f); \draw[arr] (f)--(m); \draw[arr] (m)--(a);
-\draw[arr] (m.north) to[bend right=40] node[above, font=\tiny] {likelihood} (f.north);
+\draw[arr] (m.north) to[bend right=40] node[above, font=\tiny] {test} (f.north);
 \node[font=\tiny, text=black!55] at (0.7,-0.75) {auditable; fixed hypothesis space};
 \end{scope}
 % panel 4: model-written

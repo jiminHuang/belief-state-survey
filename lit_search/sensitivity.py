@@ -12,7 +12,7 @@ def cred(r, k): return r["credited_object"].strip().lower().startswith(k)
 def metric_yes(r): return r["belief_level_metrics"].strip().lower().startswith("yes")
 def own_obs(r): return cred(r, "state") and any(w in (r["revision_signal"] + " " + r["note"]).lower() for w in ["own observation", "own prediction", "next observation", "self-supervised likelihood"])
 items = [
- ("1", "Structure is not testability", "state term written / filter / world model", [cnt(lambda r: who(r,"written")), cnt(lambda r: who(r,"ext. filter") or who(r,"external bayes") or who(r,"external poster") or who(r,"pomdp")), cnt(lambda r: who(r,"world") or who(r,"learned"))]),
+ ("1", "Structure is not testability", "belief state written / filter / world model", [cnt(lambda r: who(r,"written")), cnt(lambda r: who(r,"ext. filter") or who(r,"external bayes") or who(r,"external poster") or who(r,"pomdp")), cnt(lambda r: who(r,"world") or who(r,"learned"))]),
  ("2", "Revision is triggered, not routed", "revision papers (\\S\\ref{sec:revision})", [cnt(lambda r: sec(r,"4"))]),
  ("3", "Credit has been getting denser, not deeper", "credited: interaction / state / state by own obs.", [cnt(lambda r: cred(r,"interaction")), cnt(lambda r: cred(r,"state")), cnt(own_obs)]),
  ("4", "Acquisition is a belief problem", "acquisition papers (\\S\\ref{sec:evidence})", [cnt(lambda r: sec(r,"6"))]),

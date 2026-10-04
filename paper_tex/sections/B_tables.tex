@@ -5,11 +5,11 @@
 
 \begin{table*}[t]
 \nattab\footnotesize
-\caption{\textbf{The state term by who maintains it, with the transition and likelihood terms each system carries.}}
+\caption{\textbf{The belief state by who maintains it, with the revision and test each system carries.}}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{llcccccl}
 \toprule
-\textbf{Class} & \textbf{Method} & \textbf{State written by model} & \textbf{Append-only} & \textbf{Uncertainty} & \textbf{Likelihood (\op{Test})} & \textbf{Transition (\op{Revise})} & \textbf{Domain} \\
+\textbf{Class} & \textbf{Method} & \textbf{State written by model} & \textbf{Append-only} & \textbf{Uncertainty} & \textbf{Test (\op{Test})} & \textbf{Revision (\op{Revise})} & \textbf{Domain} \\
 \midrule
 Context as state & ReAct \citep{yao2023react} & \cmark & \cmark & \xmark & \xmark & \xmark & general \\ \rr
 External memory & MemGPT \citep{packer2023memgpt} & \xmark & \xmark & \xmark & \xmark & store update & dialogue \\ \rr

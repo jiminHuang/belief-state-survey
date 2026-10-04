@@ -1,9 +1,9 @@
-\section{The Likelihood Term as a Metric: Evaluating Belief Apart from Outcome}
+\section{The Test as a Metric: Evaluating Belief Apart from Outcome}
 \label{sec:evaluation}
 
 \input{fig_metrics}
 
-A correct answer can follow from a correct belief, a wrong belief that did not matter, or a belief revised too late, and outcome metrics cannot separate the three, which is why stronger backbones do not yield stronger trading agents \citep{xie2025finben,li2024investorbench}. Earlier agent benchmarks score task success or recall \citep{shridhar2020alfworld,liu2023agentbench,yao2024taubench}; recent work added belief-level metrics, each defining its own; each measures one term from outside (calibration the state, accuracy and revision the transition, Bayesian coherence the likelihood, the belief--action gap whether the policy uses any). Fig.~\ref{fig:metrics} aligns them by construct; Table~\ref{tab:benchmarks} in the appendix catalogues the benchmarks.
+A correct answer can follow from a correct belief, a wrong belief that did not matter, or a belief revised too late, and outcome metrics cannot separate the three, which is why stronger backbones do not yield stronger trading agents \citep{xie2025finben,li2024investorbench}. Earlier agent benchmarks score task success or recall \citep{shridhar2020alfworld,liu2023agentbench,yao2024taubench}; recent work added belief-level metrics, each defining its own; each measures one part from outside (calibration the belief state, accuracy the revision, Bayesian coherence the test, the belief--action gap whether the policy uses any). Fig.~\ref{fig:metrics} aligns them by construct; Table~\ref{tab:benchmarks} in the appendix catalogues the benchmarks.
 
 \subsection{Constructs}
 \label{sec:eval:constructs}
