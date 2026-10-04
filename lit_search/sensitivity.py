@@ -10,7 +10,7 @@ def cnt(pred): return len([r for r in rows if pred(r)]), len([r for r in P if pr
 def who(r, k): return r["who_maintains_belief"].strip().lower().startswith(k)
 def cred(r, k): return r["credited_object"].strip().lower().startswith(k)
 def metric_yes(r): return r["belief_level_metrics"].strip().lower().startswith("yes")
-def own_obs(r): return cred(r, "state") and any(w in (r["revision_signal"] + " " + r["note"]).lower() for w in ["own observation", "own prediction", "next observation", "self-supervised likelihood"])
+def own_obs(r): return r.get("own_obs_test", "") == "yes"  # language-model agents only; see apply_review.py
 items = [
  ("1", "Structure is not testability", "belief state written / filter / world model", [cnt(lambda r: who(r,"written")), cnt(lambda r: who(r,"ext. filter") or who(r,"external bayes") or who(r,"external poster") or who(r,"pomdp")), cnt(lambda r: who(r,"world") or who(r,"learned"))]),
  ("2", "Revision is triggered, not routed", "revision papers (\\S\\ref{sec:revision})", [cnt(lambda r: sec(r,"4"))]),

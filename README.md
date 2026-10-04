@@ -1,6 +1,6 @@
 # Awesome Belief-State LLM Agents
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) ![papers](https://img.shields.io/badge/papers-518-blue) ![updated](https://img.shields.io/badge/updated-monthly-brightgreen)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) ![papers](https://img.shields.io/badge/papers-517-blue) ![updated](https://img.shields.io/badge/updated-monthly-brightgreen)
 
 A curated, monthly-updated list of papers on how language-model agents **construct, revise, and test what they believe** between decisions. It is the living companion of the survey
 
@@ -51,6 +51,7 @@ Systems whose training signal reaches the belief itself, by where that signal co
 Neighbouring surveys, each of which supplies one term of the belief (memory: state; uncertainty: confidence on the state; rewards and credit: transition and signal; world models: learned transition and likelihood).
 
 - [Uncertainty Quantification for LLM Agents: A Taxonomy, an Evaluation Protocol, and an Empirical Study](https://arxiv.org/abs/2609.07395) (2026)
+- [From Reasoning to Agentic: Credit Assignment in Reinforcement Learning for Large Language Models](https://arxiv.org/abs/2604.09459) (2026)
 - Survey on Evaluation of LLM-based Agents (2026)
 - **Theory of Agent (ToA)** — Theory of Agent: The Science of Internalization and Externalization for LLM-Based Agents (2026)
 - **The Horizon Gap (survey)** — [The Horizon Gap: Planning, Memory, Execution, Training, and Evaluation for Long-Horizon LLM Agents](https://arxiv.org/abs/2608.06663) (2026)
@@ -59,7 +60,6 @@ Neighbouring surveys, each of which supplies one term of the belief (memory: sta
 - **LLM Agents for Forecasting (survey)** — [LLM-based Agents for Forecasting and Prediction: Methods, Training, Evaluation, and Applications](https://arxiv.org/abs/2608.23058) (2026)
 - **Graph-based agent memory survey** — [Graph-based Agent Memory: Taxonomy, Techniques, and Applications](https://arxiv.org/abs/2602.05665) (2026)  `state: store`
 - **From Storage to Experience (memory survey)** — [From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](https://arxiv.org/abs/2605.06716) (2026)  `state: store`
-- **Credit Assignment in RL for LLMs (survey)** — [From Reasoning to Agentic: Credit Assignment in Reinforcement Learning for Large Language Models](https://arxiv.org/abs/2604.09459) (2026)  `credit: trajectory`
 - **CPS statistical control survey** — [Complex Problem Solving in Large Language Models: A Statistical Control Survey and Diagnostic Framework](https://arxiv.org/abs/2609.20973) (2026)
 - **Agentic Reasoning survey** — [Agentic Reasoning for Large Language Models](https://arxiv.org/abs/2601.12538) (2026)
 - Sailing by the Stars: A Survey on Reward Models and Learning Strategies for Learning from Rewards (2025)
@@ -220,7 +220,7 @@ Where the belief lives and who writes it: context, external stores, probabilisti
 - **WMA Web Agent** — [Web Agents with World Models: Learning and Leveraging Environment Dynamics in Web Navigation](https://arxiv.org/abs/2410.13232) (2024, ICLR 2025)  `state: world model` `credit: world-model loss`
 - [Agent Workflow Memory](https://arxiv.org/abs/2409.07429) (2024)  `state: store`
 - **LaBToM** — [Understanding Epistemic Language with a Language-augmented Bayesian Theory of Mind](https://arxiv.org/abs/2408.12022) (2024, TACL 2024)  `state: external filter`
-- **HiAgent** — [HiAgent: Hierarchical Working Memory Management for Solving Long-Horizon Agent Tasks with Large Language Model](https://arxiv.org/abs/2408.09559) (2024, Annual Meeting of the Association for Computational Linguistics)  `state: written`
+- **HiAgent** — [HiAgent: Hierarchical Working Memory Management for Solving Long-Horizon Agent Tasks with Large Language Model](https://arxiv.org/abs/2408.09559) (2024, Annual Meeting of the Association for Computational Linguistics)  `state: store`
 - **Hypothetical Minds** — [Hypothetical Minds: Scaffolding Theory of Mind for Multi-Agent Tasks with Large Language Models](https://arxiv.org/abs/2407.07086) (2024)  `state: written` `credit: state`
 - **FinCon** — [FinCon: A Synthesized LLM Multi-Agent System with Conceptual Verbal Reinforcement for Enhanced Financial Decision Making](https://arxiv.org/abs/2407.06567) (2024, NeurIPS 2024)  `state: store` `credit: state`
 - **PercepToM** — [Perceptions to Beliefs: Exploring Precursory Inferences for Theory of Mind in Large Language Models](https://arxiv.org/abs/2407.06004) (2024, EMNLP 2024)  `state: written`
@@ -268,7 +268,7 @@ Where the belief lives and who writes it: context, external stores, probabilisti
 
 **2021**
 
-- **Do LMs have beliefs** — [Do Language Models Have Beliefs? Methods for Detecting, Updating, and Visualizing Model Beliefs](https://arxiv.org/abs/2111.13654) (2021)  `credit: state`
+- **Do LMs have beliefs** — [Do Language Models Have Beliefs? Methods for Detecting, Updating, and Visualizing Model Beliefs](https://arxiv.org/abs/2111.13654) (2021)  `state: context` `credit: state`
 
 **2020**
 
@@ -544,7 +544,7 @@ Systems whose belief decides what to observe next.
 
 **2026**
 
-- **REFLEX (Jev)** — [REFLEX with Jev for Efficient Selective Control in LLM Agents](https://arxiv.org/abs/2609.26532) (2026)  `state: context`
+- **REFLEX** — [REFLEX with Jev for Efficient Selective Control in LLM Agents](https://arxiv.org/abs/2609.26532) (2026)  `state: context`
 - **FinalityBench** — [FinalityBench: An Effect-Level Benchmark for Agent Decisions Under Delayed and Conflicting Financial Finality](https://arxiv.org/abs/2609.04706) (2026)  `state: context`
 - **LENS** — [LENS: In-Context Search via Latent Evidence Exploration over Dynamic Raw Documents](https://arxiv.org/abs/2608.16185) (2026)  `state: probabilistic store`
 - **EnvACE world rehearsal** — [EnvACE: Internalizing Environment Dynamics via World Rehearsal for Agentic Reinforcement Learning](https://arxiv.org/abs/2608.06197) (2026)  `state: world model` `credit: trajectory`
@@ -685,7 +685,7 @@ Belief-level evaluation and benchmarks: calibration, accuracy and revision, memo
 
 ## How the list is maintained
 
-The list is generated from a screening record, not edited by hand: `lit_search/runs/20260916_v3/manual_screen_all_v*.csv` (518 included papers, 181 peer-reviewed) holds one row per paper with who maintains the belief, the credited object, the revision signal, whether a belief-level metric is reported, and notes. Each month `lit_search/monthly_update.py` runs the keyword queries on OpenAlex and a phrase search on Hugging Face Papers for the new month, applies the same rule screen, and removes everything already seen; the survivors are read in full, coded, merged with `merge_update.py`, and this README is regenerated with `make_readme.py`. The procedure is in [`UPDATE.md`](UPDATE.md); the search protocol behind the survey is in Appendix A of the paper.
+The list is generated from a screening record, not edited by hand: `lit_search/runs/20260916_v3/manual_screen_all_v*.csv` (517 included papers, 181 peer-reviewed) holds one row per paper with who maintains the belief, the credited object, the revision signal, whether a belief-level metric is reported, and notes. Each month `lit_search/monthly_update.py` runs the keyword queries on OpenAlex and a phrase search on Hugging Face Papers for the new month, applies the same rule screen, and removes everything already seen; the survivors are read in full, coded, merged with `merge_update.py`, and this README is regenerated with `make_readme.py`. The procedure is in [`UPDATE.md`](UPDATE.md); the search protocol behind the survey is in Appendix A of the paper.
 
 ```bash
 cd lit_search
