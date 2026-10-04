@@ -4,7 +4,7 @@
 
 A curated, monthly-updated list of papers on how language-model agents **construct, revise, and test what they believe** between decisions. It is the living companion of the survey
 
-> **From Memory to Belief: A Survey of State Maintenance and Belief Revision in LLM Decision Agents**  
+> **From Memory to Testable Belief: A Survey of LLM Agents**  
 > Jimin Huang, Yuyan Wang, Xueqing Peng, Sophia Ananiadou, Jun'ichi Tsujii. Preprint, 2026. [[PDF]](paper.pdf)
 
 A belief has three parts: a **state** (what is believed and how firmly), a **transition** (how it is carried across an action and revised), and a **likelihood** (how the next observation scores it). Every paper is placed by which of the three it supplies and where each comes from: written by the model, fixed by the designer, learned, or absent. Memory research gave agents a state, revision and post-training gave them a transition, and the likelihood is still mostly supplied from outside.
@@ -703,7 +703,7 @@ Missing a paper? Open an issue or a pull request with the arXiv link and one lin
 
 ```bibtex
 @misc{huang2026frommemory,
-  title={From Memory to Belief: A Survey of State Maintenance and Belief Revision in LLM Decision Agents},
+  title={From Memory to Testable Belief: A Survey of LLM Agents},
   author={Huang, Jimin and Wang, Yuyan and Peng, Xueqing and Ananiadou, Sophia and Tsujii, Jun'ichi},
   year={2026},
   howpublished={\url{https://github.com/jiminHuang/belief-state-survey}},
