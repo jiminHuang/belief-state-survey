@@ -10,12 +10,14 @@ Language-model agents now act over horizons of hours or months, and the failures
 \ifnature\else\let\figscript\footnotesize\let\figtiny\footnotesize\fi
 \ifnature\tikzset{chipN/.style={}, chipS/.style={}}\else\tikzset{chipN/.style={anchor=south, yshift=-0.2mm}, chipS/.style={anchor=north, yshift=0.2mm}}\fi
 \resizebox{\ifnature0.86\fi\columnwidth}{!}{%
-\begin{tikzpicture}[font=\figscript, node distance=6mm and 4.5mm,
+\ifnature\def\loopnd{6mm and 4.5mm}\else\def\loopnd{6.5mm and 7.5mm}\fi
+\begin{tikzpicture}[font=\figscript, node distance=\loopnd,
   box/.style={fill=black!8, minimum height=7.5mm, minimum width=15mm, align=center, inner sep=1pt},
   st/.style={box, fill=cState!20}, lk/.style={box, fill=cLik!22}, tr/.style={box, fill=cTrans!22},
   chip/.style={font=\figtiny\bfseries, text=white, inner xsep=2pt, inner ysep=1pt, minimum height=2.6mm},
   fm/.style={circle, fill=black!65, text=white, font=\figtiny\bfseries, inner sep=0.6pt, minimum size=3.1mm},
   arr/.style={-{Stealth[length=1.4mm,width=1.1mm]}, line width=0.5pt, draw=black!75}]
+\ifnature\else\tikzset{fm/.append style={font=\scriptsize\bfseries, minimum size=2.7mm, inner sep=0.2pt}}\fi
 \node[box] (mem) {Memory\\[-1pt]{\figtiny what happened}};
 \node[st, right=of mem] (bel) {Belief $\belief_t$\\[-1pt]{\figtiny a hypothesis}};
 \node[lk, right=of bel] (pred) {Prediction\\[-1pt]{\figtiny $\hat o_{t+1}$}};
@@ -26,9 +28,13 @@ Language-model agents now act over horizons of hours or months, and the failures
 \begin{scope}[on background layer]
   \node[fill=cLik!7, inner sep=2.2mm, fit=(pred)(test)(obs)] (lkpanel) {};
 \end{scope}
+\ifnature
 \node[chip, fill=cLik, anchor=south west] at ([xshift=1mm,yshift=-0.2mm]lkpanel.north west) {test};
 \node[chip, fill=cState, chipN] at (bel.north) {belief state};
 \node[chip, fill=cTrans, chipS] at (rev.south) {revision};
+\else
+\node[anchor=north, inner sep=0pt, font=\figtiny, text=black!70] at ([yshift=-3mm]$(act.south west)!0.5!(lkpanel.south east)$) {\tikz\fill[cState!45] (0,0) rectangle (2mm,2mm); belief state\quad \tikz\fill[cTrans!45] (0,0) rectangle (2mm,2mm); revision\quad \tikz\fill[cLik!45] (0,0) rectangle (2mm,2mm); test};
+\fi
 \draw[arr] (mem) -- (bel); \draw[arr] (bel) -- (pred);
 \draw[arr] (pred.east) -| (obs.north); \draw[arr] (obs.south) |- (test.east);
 \draw[arr] (test) -- (rev); \draw[arr] (rev) -- (act);

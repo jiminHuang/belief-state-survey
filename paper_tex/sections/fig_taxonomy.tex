@@ -42,49 +42,41 @@ for tree={
 ]
 }}
 \else
-\tabfit[\textwidth]{\Forest{
+\tabfit[\textwidth]{\begin{forest}
+forked edges,
 for tree={
   grow'=east, parent anchor=east, child anchor=west, anchor=west,
-  if level=0{text width=1.55cm}{if level=1{text width=1.85cm}{if level=2{text width=2.75cm}{text width=8.55cm}}},
-  font=\scriptsize, node options={align=left}, fill=black!4,
-  edge={-, black!40, line width=0.35pt}, l sep=2mm, s sep=0.3mm, fit=band,
-  inner xsep=2pt, inner ysep=0.8pt
+  font=\scriptsize, node options={align=left}, inner xsep=2.5pt, inner ysep=0.9pt, minimum height=3.5mm,
+  edge={black!35, line width=0.4pt}, l sep=2.6mm, s sep=0.25mm, fork sep=1.3mm,
+  if level=0{text width=1.05cm}{if level=1{text width=1.6cm}{if level=2{text width=2.55cm}{text width=9.15cm}}}
 },
-[{\textbf{Testable belief}\\(\S\ref*{sec:formulation}) a hypothesis, not a record, three parts, each model-written, designer-fixed, learned, or absent}, fill=black!14
-  [{\S\ref*{sec:representation} \textbf{Belief state}\\where it lives, who writes it}, fill=cState, text=white, for descendants={fill=cState!9, text=black}
-    [{Model-written, in context} [{CoT, ReAct, drifting as context accumulates}]]
-    [{Model-written, kept in a store} [{MemGPT, Generative Agents, A-MEM, Mem0, Zep, AGM-revision graphs}]]
-    [{\ldots{} with a probability} [{BeliefMem, D-MEM, Nous}]]
-    [{Designer-fixed filter} [{Belief-State Engine, Belief at Risk, BayesEvolve, Align-While-Search, CA-BED}]]
-    [{Model-written claim} [{calibrated (DST, Agent-BRACE, BOND), goal-state (ReflAct, CoEx), testable (Hypothetical Minds, CBM, EvoSCM)}]]
-    [{Learned world model} [{Dreamer, RAP, BB-WM, Qwen-AgentWorld, executable (PatchWorld), written with a parametric check (Hybrid-WM)}]]
+[{\textbf{Testable}\\\textbf{belief}\\(\S\ref*{sec:formulation})}, fill=black!12
+  [{\S\ref*{sec:representation} \textbf{Belief state}\\where it lives}, fill=cState, text=white
+    [{\mbox{In} \mbox{context}}, fill=cState!13 [{\mbox{CoT,} \mbox{ReAct,} \mbox{drifting} \mbox{as} \mbox{context} \mbox{accumulates}}, fill=cState!6]]
+    [{\mbox{In} \mbox{a} \mbox{store}}, fill=cState!13 [{\mbox{MemGPT,} \mbox{Generative} \mbox{Agents,} \mbox{A-MEM,} \mbox{Mem0,} \mbox{Zep,} \mbox{AGM-revision} \mbox{graphs}}, fill=cState!6]]
+    [{\mbox{Store} \mbox{with} \mbox{probabilities}}, fill=cState!13 [{\mbox{BeliefMem,} \mbox{D-MEM,} \mbox{Nous}}, fill=cState!6]]
+    [{\mbox{Designer-fixed} \mbox{filter}}, fill=cState!13 [{\mbox{Belief-State} \mbox{Engine,} \mbox{Belief} \mbox{at} \mbox{Risk,} \mbox{BayesEvolve,} \mbox{Align-While-Search,} \mbox{CA-BED}}, fill=cState!6]]
+    [{\mbox{Model-written} \mbox{claim}}, fill=cState!13 [{\mbox{calibrated} \mbox{(DST,} \mbox{Agent-BRACE,} \mbox{BOND),} \mbox{goal} \mbox{(ReflAct),} \mbox{testable} \mbox{(CBM,} \mbox{EvoSCM)}}, fill=cState!6]]
+    [{\mbox{Learned} \mbox{world} \mbox{model}}, fill=cState!13 [{\mbox{Dreamer,} \mbox{RAP,} \mbox{BB-WM,} \mbox{Qwen-AgentWorld,} \mbox{PatchWorld,} \mbox{Hybrid-WM}}, fill=cState!6]]
   ]
-  [{\S\ref*{sec:revision} \textbf{Revision}\\what triggers it, how it fails}, fill=cTrans, text=white, for descendants={fill=cTrans!9, text=black}
-    [{Absent (defaults)} [{sycophancy, exponential forgetting, misconceptions written into memory}]]
-    [{Triggered by} [{contradiction (TOKI), the moment before commitment (SAVeR), surprise (D-MEM, WorldEvolver)}]]
-    [{Failed stay or update} [{BeliefShift, MEDLEY-BENCH, STALE, DeltaLogic, DToM-Track}]]
-    [{Failed isolation or act} [{CBM, MemOps, STOCKTAKE, Werewolf audit, SimpleToM}]]
+  [{\S\ref*{sec:revision} \textbf{Revision}\\what triggers it}, fill=cTrans, text=white
+    [{\mbox{Absent} \mbox{(defaults)}}, fill=cTrans!13 [{\mbox{sycophancy,} \mbox{exponential} \mbox{forgetting,} \mbox{misconceptions} \mbox{written} \mbox{into} \mbox{memory}}, fill=cTrans!6]]
+    [{\mbox{Triggered}}, fill=cTrans!13 [{\mbox{contradiction} \mbox{(TOKI),} \mbox{pre-commitment} \mbox{(SAVeR),} \mbox{surprise} \mbox{(D-MEM,} \mbox{WorldEvolver)}}, fill=cTrans!6]]
+    [{\mbox{Failed} \mbox{stay} \mbox{or} \mbox{update}}, fill=cTrans!13 [{\mbox{BeliefShift,} \mbox{MEDLEY-BENCH,} \mbox{STALE,} \mbox{DeltaLogic,} \mbox{DToM-Track}}, fill=cTrans!6]]
+    [{\mbox{Failed} \mbox{isolation} \mbox{or} \mbox{act}}, fill=cTrans!13 [{\mbox{CBM,} \mbox{MemOps,} \mbox{STOCKTAKE,} \mbox{Werewolf} \mbox{audit,} \mbox{SimpleToM}}, fill=cTrans!6]]
   ]
-  [{\S\ref*{sec:learning}--\ref*{sec:evaluation} \textbf{Test}\\who scores the belief, what the score yields}, fill=cLik, text=white, for descendants={fill=cLik!8, text=black}
-    [{\S\ref*{sec:learning} a gradient, by what is credited}
-      [{\textbf{Output}\enspace RLHF, DPO, Self-Refine}]
-      [{\textbf{Trajectory}\enspace PRMs, GRPO, LATS, AgentRefine, T3}]
-      [{\textbf{Interaction}\enspace actions (ArCHer, RAGEN, GiGPO, AgentPRM, IGPO), memory operations (MEM1, Memory-R1, VerMem)}]
-      [{\textbf{World-model loss}\enspace Dyna-Think, SPA, RLVR-World}]
-      [{\textbf{State, test from outside}\enspace a simulator or verifier (VAGEN, CBM), a teacher (BOND, DEL-ToM), a calibration target (Agent-BRACE)}, fill=cLik!20]
-      [{\textbf{State, test from own observations}\enspace the next observation (ReBel), past observations (ABBEL)}, fill=cLik!38]
-    ]
-    [{\S\ref*{sec:evidence} what to observe} [{BayesEvolve, EvoSCM, Align-While-Search, CA-BED, InfoPO}]]
-    [{\S\ref*{sec:evaluation} a metric, by construct}
-      [{\textbf{Calibration (belief state)}\enspace TC-ECE, posterior entropy, FinBench}]
-      [{\textbf{Accuracy (revision)}\enspace BeliefTrack, STALE, Theory of Space, HaluMem, Memora}]
-      [{\textbf{Bayesian coherence (test)}\enspace BayesBench, Martingale Score, coherence coefficient}]
-      [{\textbf{Belief--action gap, outcome only}\enspace STOCKTAKE, Werewolf audit, Agent-ToM, FinBen, HERCULEAN}]
-    ]
+  [{\S\ref*{sec:learning}--\ref*{sec:evaluation} \textbf{Test}\\who scores it}, fill=cLik, text=white
+    [{\mbox{\S\ref*{sec:learning}} \mbox{output,} \mbox{trajectory}}, fill=cLik!13 [{\mbox{RLHF,} \mbox{DPO,} \mbox{Self-Refine,} \mbox{PRMs,} \mbox{GRPO,} \mbox{LATS,} \mbox{AgentRefine,} \mbox{T3}}, fill=cLik!6]]
+    [{\mbox{\S\ref*{sec:learning}} \mbox{interaction}}, fill=cLik!13 [{\mbox{actions} \mbox{(ArCHer,} \mbox{RAGEN,} \mbox{GiGPO,} \mbox{IGPO),} \mbox{memory} \mbox{(MEM1,} \mbox{Memory-R1,} \mbox{VerMem)}}, fill=cLik!6]]
+    [{\mbox{\S\ref*{sec:learning}} \mbox{world-model} \mbox{loss}}, fill=cLik!13 [{\mbox{Dyna-Think,} \mbox{SPA,} \mbox{RLVR-World}}, fill=cLik!6]]
+    [{\mbox{\S\ref*{sec:learning}} \mbox{state,} \mbox{outside} \mbox{test}}, fill=cLik!13 [{\mbox{verifier} \mbox{(VAGEN,} \mbox{CBM),} \mbox{teacher} \mbox{(BOND,} \mbox{DEL-ToM),} \mbox{calibration} \mbox{(Agent-BRACE)}}, fill=cLik!6]]
+    [{\textbf{\mbox{\S\ref*{sec:learning}} \mbox{own} \mbox{observations}}}, fill=cLik!32 [{\mbox{next} \mbox{observation} \mbox{(ReBel),} \mbox{past} \mbox{observations} \mbox{(ABBEL)}}, fill=cLik!24]]
+    [{\mbox{\S\ref*{sec:evidence}} \mbox{what} \mbox{to} \mbox{observe}}, fill=cLik!13 [{\mbox{BayesEvolve,} \mbox{EvoSCM,} \mbox{Align-While-Search,} \mbox{CA-BED,} \mbox{InfoPO}}, fill=cLik!6]]
+    [{\mbox{\S\ref*{sec:evaluation}} \mbox{metric,} \mbox{by} \mbox{construct}}, fill=cLik!13 [{\mbox{calibration} \mbox{(TC-ECE,} \mbox{FinBench),} \mbox{accuracy} \mbox{(BeliefTrack,} \mbox{STALE,} \mbox{HaluMem),} \mbox{coherence} \mbox{(BayesBench,} \mbox{Martingale} \mbox{Score),} \mbox{belief--action} \mbox{gap} \mbox{(STOCKTAKE,} \mbox{Werewolf} \mbox{audit)}}, fill=cLik!6]]
   ]
 ]
-}}
+\end{forest}}
 \fi
-\caption{\textbf{Taxonomy of belief-state work.} Work is split by the three parts of a testable belief, each branch by where the part comes from. The highlighted leaf holds two systems, both without uncertainty.\ifnature\else{} Table~\ref{tab:master} gives the reference for every system named.\fi}
+\caption{\textbf{Taxonomy of belief-state work.} \ifnature Work is split by the three parts of a testable belief, each branch by where the part comes from. The highlighted leaf holds two systems, both without uncertainty.\else Each branch sorts work by where a part of the testable belief comes from. The highlighted leaf holds two systems, both without uncertainty (references in Table~\ref{tab:master}).\fi}
 \label{fig:taxonomy}
 \end{figure*}
