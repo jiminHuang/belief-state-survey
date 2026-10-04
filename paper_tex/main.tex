@@ -32,7 +32,7 @@
 \usepackage{makecell}
 \usepackage{colortbl}
 \usepackage[most]{tcolorbox}
-\newcommand{\insight}[2]{\begin{tcolorbox}[colback=cState!7,colframe=cState!7,boxrule=0pt,arc=0pt,left=4pt,right=4pt,top=2pt,bottom=2pt,boxsep=0pt,before skip=3pt,after skip=3pt]\footnotesize\textbf{Insight #1.}~#2\end{tcolorbox}}
+\newcommand{\insight}[2]{\begin{tcolorbox}[colback=cState!7,colframe=cState!7,boxrule=0pt,arc=0pt,left=4pt,right=4pt,top=2pt,bottom=2pt,boxsep=0pt,before skip=3pt,after skip=3pt]\textbf{Insight #1.}~#2\end{tcolorbox}}
 % Rating tiles (replace Harvey balls): solid = yes/central, tint = partial, pale grey = absent; colour set per column by the T{colour} column type
 \colorlet{tilec}{black!70}
 \DeclareRobustCommand{\hbfull}{\tikz[baseline=-0.55ex]{\fill[tilec] (-0.8ex,-0.8ex) rectangle (0.8ex,0.8ex);}}
@@ -58,10 +58,7 @@
 \newcommand{\rrin}[1]{\arrayrulecolor{black!35}\cline{#1}\arrayrulecolor{black}}
 \newcommand{\nattab}{\centering\scriptsize\setlength{\tabcolsep}{3pt}\setlength{\arrayrulewidth}{0.25pt}\renewcommand{\arraystretch}{1.12}}
 % Nature-style captions: "Fig. 1 | Title." (bold label), table titles above, notes below the table
-\DeclareCaptionLabelSeparator{natbar}{\ \textbar\ }
-\captionsetup{labelfont={bf,sf}, textfont=sf, labelsep=natbar}
-\captionsetup[figure]{name=Fig.}
-\captionsetup[table]{position=top, skip=3pt, justification=raggedright, singlelinecheck=false}
+\captionsetup[table]{position=top}   % ACL default caption style in the review version; table captions sit above their tables
 \newcommand{\tabnote}[1]{\par\vspace{2pt}{\raggedright\sffamily\fontsize{7pt}{8.4pt}\selectfont #1\par}\vspace{2pt}{\color{black}\hrule height 0.45pt}}
 \providecommand{\artifacturl}{}          % preprint defines the repository footnote; empty in the review version
 
@@ -73,7 +70,7 @@
 \maketitle
 
 \begin{abstract}
-Language-model agents now act over many steps, and the failures reported from such settings are failures of state rather than of reasoning. The agent loses track of what it has learned, keeps acting on contradicted evidence, or revises what it believes without changing what it does. What an agent must hold between decisions is not a memory of what happened but a testable belief, a hypothesis that later evidence can test and revise, with three parts, a state that says what is believed and how firmly, a revision that carries it across an action, and a test that scores it against the next observation. This survey takes the belief state as its object and sorts the literature by which of the three parts a system has and where each comes from, whether written by the model, fixed by the designer, learned, or absent. Memory and uncertainty research gave the agent a belief state, and revision mechanisms and post-training taught it to revise. The test, the part that lets the agent's own observations correct what it believes, is supplied from outside wherever it exists. We follow the three parts through construction, revision, and testing, align belief-level evaluation by construct, and identify the gap the alignment exposes. The first systems to score a written belief against the agent's own observations do so with a binary belief, in isolation, and without a framework that connects representation, testability, revision, credit, and belief--action consistency.
+Language-model agents now act over many steps, and their failures are failures of state rather than of reasoning. They lose track of what they have learned, keep acting on contradicted evidence, or revise a belief without changing what they do. What an agent must hold between decisions is not a memory of what happened but a testable belief, a hypothesis that later evidence can test and revise. It has three parts, a state that says what is believed and how firmly, a revision that carries it across an action, and a test that scores it against the next observation. This survey sorts 518 papers by which parts a system has and where each comes from. Memory and uncertainty research supplied the state and post-training the revision, but the test, which lets the agent's own observations correct its belief, is still supplied from outside. Aligning belief-level evaluation by construct exposes the gap. The first systems to test a written belief against the agent's own observations use a binary belief, work in isolation, and lack a framework that connects representation, testability, revision, credit, and belief--action consistency.
 \end{abstract}
 
 \input{01_introduction}
