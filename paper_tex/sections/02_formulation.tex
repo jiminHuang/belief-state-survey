@@ -2,12 +2,10 @@
 \label{sec:formulation}
 
 \ifnature\input{formulation_full}\else
-A belief $\belief_t$ is a hypothesis about the environment that the agent carries between decisions. It yields a prediction, evidence $o_{t+1}$ returns, a \emph{test relation} supports or falsifies the hypothesis, and a revision produces $\belief_{t+1}$ for the next action (Fig.~\ref{fig:loop}). The test may be a symbolic verifier, a consistency check, or a comparison with an external record. Its most principled realisation is the Bayes filter of a partially observed decision process \citep{astrom1965optimal,kaelbling1998planning}, which, with hidden state $z_t$ and history $\hist_t$, carries $\belief_t = p(z_t \mid \hist_t)$ forward as
+A belief $\belief_t$ is a hypothesis about the environment that the agent carries between decisions. It yields a prediction, evidence $o_{t+1}$ returns, a \emph{test} supports or falsifies it, and a revision produces $\belief_{t+1}$ (Fig.~\ref{fig:loop}). The test may be a verifier, a consistency check, or a comparison with a record, and its principled form is the Bayes filter \citep{astrom1965optimal,thrun2005probabilistic}, which carries $\belief_t = p(z_t \mid \hist_t)$ over hidden state $z_t$ given history $\hist_t$ forward as
 \begin{equation}
-\belief_{t+1}(z') \propto p(o_{t+1} \mid z') \textstyle\sum_{z} p(z' \mid z, a_t)\, \belief_t(z)
+\belief_{t+1}(z') \propto p(o_{t+1} \mid z') \textstyle\sum_{z} p(z' \mid z, a_t)\, \belief_t(z),
 \eqfilterlab
 \end{equation}
-\citep{thrun2005probabilistic}. Its factors are the three parts the review follows, the \emph{belief state} $\belief_t$, the \emph{revision} $p(z' \mid z, a_t)$, and the \emph{test} $p(o_{t+1} \mid z')$.
-
-We call such an object a \emph{belief state} only if (i) it is a claim about the environment carried between decisions, (ii) it carries, or admits, uncertainty, and (iii) it is \emph{testable}, committing to a prediction that a returned observation can support or falsify. A trace memory fails (i) and (ii), a store with a probability per item fails (iii), and a world model meets (iii) but seldom (i). We place every system by which of the three parts it has and where each comes from, whether written by the model, fixed by the designer, learned from data, or absent (Appendix~\ref{app:full} gives the full formulation).
+with the belief state $\belief_t$, the revision $p(z' \mid z, a_t)$, and the test $p(o_{t+1} \mid z')$ as its factors. We call such an object a \emph{belief state} only if (i) it is a claim about the environment carried between decisions, (ii) it carries or admits uncertainty, and (iii) it is \emph{testable}, committing to a prediction that a returned observation can support or falsify (Appendix~\ref{app:full}).
 \fi

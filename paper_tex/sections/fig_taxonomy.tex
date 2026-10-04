@@ -46,37 +46,37 @@ for tree={
 forked edges,
 for tree={
   grow'=east, parent anchor=east, child anchor=west, anchor=west,
-  font=\scriptsize, node options={align=left}, inner xsep=2.5pt, inner ysep=0.9pt, minimum height=3.5mm,
-  edge={black!35, line width=0.4pt}, l sep=2.6mm, s sep=0.25mm, fork sep=1.3mm,
-  if level=0{text width=1.05cm}{if level=1{text width=1.6cm}{if level=2{text width=2.55cm}{text width=9.15cm}}}
+  font=\footnotesize, node options={align=left}, inner xsep=2.5pt, inner ysep=1pt, minimum height=4mm,
+  edge={black!35, line width=0.4pt}, l sep=2.6mm, s sep=0.3mm, fork sep=1.3mm,
+  if level=0{text width=1.25cm}{if level=1{text width=2.25cm}{if level=2{text width=2.95cm}{text width=8.2cm}}}
 },
 [{\textbf{Testable}\\\textbf{belief}\\(\S\ref*{sec:formulation})}, fill=black!12
   [{\S\ref*{sec:representation} \textbf{Belief state}\\where it lives}, fill=cState, text=white
     [{\mbox{In} \mbox{context}}, fill=cState!13 [{\mbox{CoT,} \mbox{ReAct,} \mbox{drifting} \mbox{as} \mbox{context} \mbox{accumulates}}, fill=cState!6]]
-    [{\mbox{In} \mbox{a} \mbox{store}}, fill=cState!13 [{\mbox{MemGPT,} \mbox{Generative} \mbox{Agents,} \mbox{A-MEM,} \mbox{Mem0,} \mbox{Zep,} \mbox{AGM-revision} \mbox{graphs}}, fill=cState!6]]
-    [{\mbox{Store} \mbox{with} \mbox{probabilities}}, fill=cState!13 [{\mbox{BeliefMem,} \mbox{D-MEM,} \mbox{Nous}}, fill=cState!6]]
-    [{\mbox{Designer-fixed} \mbox{filter}}, fill=cState!13 [{\mbox{Belief-State} \mbox{Engine,} \mbox{Belief} \mbox{at} \mbox{Risk,} \mbox{BayesEvolve,} \mbox{Align-While-Search,} \mbox{CA-BED}}, fill=cState!6]]
-    [{\mbox{Model-written} \mbox{claim}}, fill=cState!13 [{\mbox{calibrated} \mbox{(DST,} \mbox{Agent-BRACE,} \mbox{BOND),} \mbox{goal} \mbox{(ReflAct),} \mbox{testable} \mbox{(CBM,} \mbox{EvoSCM)}}, fill=cState!6]]
-    [{\mbox{Learned} \mbox{world} \mbox{model}}, fill=cState!13 [{\mbox{Dreamer,} \mbox{RAP,} \mbox{BB-WM,} \mbox{Qwen-AgentWorld,} \mbox{PatchWorld,} \mbox{Hybrid-WM}}, fill=cState!6]]
+    [{\mbox{In} \mbox{a} \mbox{store}}, fill=cState!13 [{\mbox{MemGPT,} \mbox{Generative} \mbox{Agents,} \mbox{A-MEM,} \mbox{Mem0,} \mbox{Zep}}, fill=cState!6]]
+    [{\mbox{Probabilistic} \mbox{store}}, fill=cState!13 [{\mbox{BeliefMem,} \mbox{D-MEM,} \mbox{Nous}}, fill=cState!6]]
+    [{\mbox{Designer-fixed} \mbox{filter}}, fill=cState!13 [{\mbox{Belief-State} \mbox{Engine,} \mbox{BayesEvolve,} \mbox{CA-BED}}, fill=cState!6]]
+    [{\mbox{Model-written} \mbox{claim}}, fill=cState!13 [{\mbox{calibrated} \mbox{(Agent-BRACE,} \mbox{BOND),} \mbox{testable} \mbox{(CBM,} \mbox{EvoSCM)}}, fill=cState!6]]
+    [{\mbox{Learned} \mbox{world} \mbox{model}}, fill=cState!13 [{\mbox{Dreamer,} \mbox{RAP,} \mbox{BB-WM,} \mbox{Hybrid-WM}}, fill=cState!6]]
   ]
   [{\S\ref*{sec:revision} \textbf{Revision}\\what triggers it}, fill=cTrans, text=white
-    [{\mbox{Absent} \mbox{(defaults)}}, fill=cTrans!13 [{\mbox{sycophancy,} \mbox{exponential} \mbox{forgetting,} \mbox{misconceptions} \mbox{written} \mbox{into} \mbox{memory}}, fill=cTrans!6]]
-    [{\mbox{Triggered}}, fill=cTrans!13 [{\mbox{contradiction} \mbox{(TOKI),} \mbox{pre-commitment} \mbox{(SAVeR),} \mbox{surprise} \mbox{(D-MEM,} \mbox{WorldEvolver)}}, fill=cTrans!6]]
-    [{\mbox{Failed} \mbox{stay} \mbox{or} \mbox{update}}, fill=cTrans!13 [{\mbox{BeliefShift,} \mbox{MEDLEY-BENCH,} \mbox{STALE,} \mbox{DeltaLogic,} \mbox{DToM-Track}}, fill=cTrans!6]]
-    [{\mbox{Failed} \mbox{isolation} \mbox{or} \mbox{act}}, fill=cTrans!13 [{\mbox{CBM,} \mbox{MemOps,} \mbox{STOCKTAKE,} \mbox{Werewolf} \mbox{audit,} \mbox{SimpleToM}}, fill=cTrans!6]]
+    [{\mbox{Absent} \mbox{(defaults)}}, fill=cTrans!13 [{\mbox{sycophancy,} \mbox{exponential} \mbox{forgetting}}, fill=cTrans!6]]
+    [{\mbox{Triggered}}, fill=cTrans!13 [{\mbox{contradiction} \mbox{(TOKI),} \mbox{self-audit} \mbox{(SAVeR),} \mbox{surprise} \mbox{(D-MEM)}}, fill=cTrans!6]]
+    [{\mbox{Failed} \mbox{stay,} \mbox{update}}, fill=cTrans!13 [{\mbox{BeliefShift,} \mbox{STALE,} \mbox{DeltaLogic,} \mbox{DToM-Track}}, fill=cTrans!6]]
+    [{\mbox{Failed} \mbox{isolation,} \mbox{act}}, fill=cTrans!13 [{\mbox{CBM,} \mbox{MemOps,} \mbox{STOCKTAKE,} \mbox{Werewolf} \mbox{audit}}, fill=cTrans!6]]
   ]
   [{\S\ref*{sec:learning}--\ref*{sec:evaluation} \textbf{Test}\\who scores it}, fill=cLik, text=white
-    [{\mbox{\S\ref*{sec:learning}} \mbox{output,} \mbox{trajectory}}, fill=cLik!13 [{\mbox{RLHF,} \mbox{DPO,} \mbox{Self-Refine,} \mbox{PRMs,} \mbox{GRPO,} \mbox{LATS,} \mbox{AgentRefine,} \mbox{T3}}, fill=cLik!6]]
-    [{\mbox{\S\ref*{sec:learning}} \mbox{interaction}}, fill=cLik!13 [{\mbox{actions} \mbox{(ArCHer,} \mbox{RAGEN,} \mbox{GiGPO,} \mbox{IGPO),} \mbox{memory} \mbox{(MEM1,} \mbox{Memory-R1,} \mbox{VerMem)}}, fill=cLik!6]]
+    [{\mbox{\S\ref*{sec:learning}} \mbox{output,} \mbox{trajectory}}, fill=cLik!13 [{\mbox{RLHF,} \mbox{DPO,} \mbox{PRMs,} \mbox{GRPO,} \mbox{LATS}}, fill=cLik!6]]
+    [{\mbox{\S\ref*{sec:learning}} \mbox{interaction}}, fill=cLik!13 [{\mbox{ArCHer,} \mbox{RAGEN,} \mbox{GiGPO,} \mbox{MEM1,} \mbox{Memory-R1}}, fill=cLik!6]]
     [{\mbox{\S\ref*{sec:learning}} \mbox{world-model} \mbox{loss}}, fill=cLik!13 [{\mbox{Dyna-Think,} \mbox{SPA,} \mbox{RLVR-World}}, fill=cLik!6]]
-    [{\mbox{\S\ref*{sec:learning}} \mbox{state,} \mbox{outside} \mbox{test}}, fill=cLik!13 [{\mbox{verifier} \mbox{(VAGEN,} \mbox{CBM),} \mbox{teacher} \mbox{(BOND,} \mbox{DEL-ToM),} \mbox{calibration} \mbox{(Agent-BRACE)}}, fill=cLik!6]]
-    [{\textbf{\mbox{\S\ref*{sec:learning}} \mbox{own} \mbox{observations}}}, fill=cLik!32 [{\mbox{next} \mbox{observation} \mbox{(ReBel),} \mbox{past} \mbox{observations} \mbox{(ABBEL)}}, fill=cLik!24]]
-    [{\mbox{\S\ref*{sec:evidence}} \mbox{what} \mbox{to} \mbox{observe}}, fill=cLik!13 [{\mbox{BayesEvolve,} \mbox{EvoSCM,} \mbox{Align-While-Search,} \mbox{CA-BED,} \mbox{InfoPO}}, fill=cLik!6]]
-    [{\mbox{\S\ref*{sec:evaluation}} \mbox{metric,} \mbox{by} \mbox{construct}}, fill=cLik!13 [{\mbox{calibration} \mbox{(TC-ECE,} \mbox{FinBench),} \mbox{accuracy} \mbox{(BeliefTrack,} \mbox{STALE,} \mbox{HaluMem),} \mbox{coherence} \mbox{(BayesBench,} \mbox{Martingale} \mbox{Score),} \mbox{belief--action} \mbox{gap} \mbox{(STOCKTAKE,} \mbox{Werewolf} \mbox{audit)}}, fill=cLik!6]]
+    [{\mbox{\S\ref*{sec:learning}} \mbox{outside} \mbox{test}}, fill=cLik!13 [{\mbox{VAGEN,} \mbox{CBM,} \mbox{BOND,} \mbox{DEL-ToM,} \mbox{Agent-BRACE}}, fill=cLik!6]]
+    [{\textbf{\mbox{\S\ref*{sec:learning}} \mbox{own} \mbox{observations}}}, fill=cLik!32 [{\mbox{ReBel} \mbox{(next} \mbox{observation),} \mbox{ABBEL} \mbox{(past} \mbox{observations)}}, fill=cLik!24]]
+    [{\mbox{\S\ref*{sec:evidence}} \mbox{what} \mbox{to} \mbox{observe}}, fill=cLik!13 [{\mbox{BayesEvolve,} \mbox{EvoSCM,} \mbox{Align-While-Search,} \mbox{InfoPO}}, fill=cLik!6]]
+    [{\mbox{\S\ref*{sec:evaluation}} \mbox{metric}}, fill=cLik!13 [{\mbox{TC-ECE,} \mbox{BeliefTrack,} \mbox{STALE,} \mbox{BayesBench,} \mbox{STOCKTAKE}}, fill=cLik!6]]
   ]
 ]
 \end{forest}}
 \fi
-\caption{\textbf{Taxonomy of belief-state work.} \ifnature Work is split by the three parts of a testable belief, each branch by where the part comes from. The highlighted leaf holds two systems, both without uncertainty.\else Each branch sorts work by where a part of the testable belief comes from. The highlighted leaf holds two systems, both without uncertainty (references in Table~\ref{tab:master}).\fi}
+\caption{\textbf{Taxonomy of belief-state work.} \ifnature Work is split by the three parts of a testable belief, each branch by where the part comes from. The highlighted leaf holds two systems, both without uncertainty.\else Each branch sorts work by where a part of the testable belief comes from. The highlighted leaf holds two systems, both without uncertainty. Leaves list representative systems, and Table~\ref{tab:master} gives all of them.\fi}
 \label{fig:taxonomy}
 \end{figure*}

@@ -7,7 +7,7 @@
 \nattab[\footnotesize]
 \tcap{\textbf{The belief state by who maintains it, with the revision and test each system carries.}}
 \tabfit[\textwidth]{%
-\begin{tabular}{Y{2.5cm}Y{4.4cm}cccccY{3.4cm}}
+\begin{tabular}{Y{2.4cm}Y{4.0cm}cccccY{3.1cm}}
 \toprule
 \textbf{Class} & \textbf{Method} & \textbf{\rh{State written by model}} & \textbf{\rh{Append-only}} & \textbf{\rh{Uncertainty}} & \textbf{\rh{Test (\op{Test})}} & \textbf{\rh{Revision (\op{Revise})}} & \textbf{Domain} \\
 \midrule
@@ -63,7 +63,7 @@ Werewolf audit \citep{gao2026auditing} & & \cmark & & \cmark & external belief l
 
 \input{tab_master}
 
-\input{tab_master_full}
+\ifnature\input{tab_master_full}\else\input{tab_master_full_arr}\fi
 
 \ifnature\else
 \section{Evaluation Constructs in Detail}

@@ -60,14 +60,14 @@
 \newif\ifnature\naturefalse    % ARR review version: ACL fonts and sizes in tables and figures
 \newcommand{\eqfilterlab}{\label{eq:filter}}
 \newcommand{\appx}{\ifnature\else{} in the appendix\fi}
-\newcommand{\figscript}{\scriptsize}
-\newcommand{\figtiny}{\scriptsize}
+\newcommand{\figscript}{\footnotesize}
+\newcommand{\figtiny}{\footnotesize}
 \tikzset{natarr/.style={-{Stealth[length=1.5mm,width=1.2mm]}, line width=0.55pt, draw=black!70}}
 \setlength{\heavyrulewidth}{0.45pt}\setlength{\lightrulewidth}{0.45pt}\setlength{\cmidrulewidth}{0.3pt}
 % Nature tables: hairline under every row; full width between groups, from column 2 inside a group
 \newcommand{\rr}{\arrayrulecolor{black!35}\hline\arrayrulecolor{black}}
 \newcommand{\rrin}[1]{\arrayrulecolor{black!35}\cline{#1}\arrayrulecolor{black}}
-\newcommand{\nattab}[1][]{\centering\scriptsize\setlength{\tabcolsep}{3pt}\setlength{\arrayrulewidth}{0.25pt}}   % size argument used only in the preprint
+\newcommand{\nattab}[1][]{\centering\footnotesize\setlength{\tabcolsep}{4pt}\setlength{\arrayrulewidth}{0.25pt}}   % size argument used only in the preprint
 \newcommand{\tabfit}[2][\columnwidth]{\begin{adjustbox}{max width=#1}#2\end{adjustbox}}   % shrink only if wider than the column
 % ACL default captions, placed below figures and tables
 \newcommand{\tcap}[1]{\gdef\pendingcap{#1}}

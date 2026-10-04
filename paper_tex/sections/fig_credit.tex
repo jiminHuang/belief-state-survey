@@ -1,6 +1,7 @@
 \begin{figure}[t]
 \centering
-\resizebox{\ifnature0.88\fi\columnwidth}{!}{%
+\ifnature\def\credw{0.88\columnwidth}\else\def\credw{\columnwidth}\tikzset{tok/.append style={minimum width=8mm}}\fi
+\tabfit[\credw]{%
 \begin{tikzpicture}[font=\figscript,
   tok/.style={minimum width=9mm, fill=black!8, minimum height=6mm, align=center, font=\figtiny},
   lvl/.style={font=\figtiny, anchor=east}]
@@ -13,7 +14,7 @@
 \node[tok, draw=black!50, dashed, line width=0.4pt, right=1.5mm of a1] (o1) {$o_{t+1}$};
 \node[tok, fill=black!9, right=1.5mm of o1] (nx) {$\cdots$};
 % credit brackets
-\draw[decorate, decoration={brace, amplitude=2pt}, line width=0.5pt] ([yshift=4mm]b1.north west) -- ([yshift=4mm]a1.north east) node[midway, above=2pt, font=\figtiny] {\textbf{output / trajectory}: reward the response or every step};
+\draw[decorate, decoration={brace, amplitude=2pt}, line width=0.5pt] ([yshift=4mm]b1.north west) -- ([yshift=4mm]a1.north east) node[midway, above=2pt, font=\figtiny] {\textbf{output / trajectory}: \ifnature reward the response or every step\else reward the response or steps\fi};
 \draw[decorate, decoration={brace, amplitude=2pt, mirror}, line width=0.5pt] ([yshift=-2mm]a1.south west) -- ([yshift=-2mm]a1.south east);
 \node[anchor=north east, font=\figtiny, inner sep=1pt] at ([yshift=-3.6mm]a1.south east) {\textbf{interaction}: reward the action};
 % surprise: the returned observation signs the belief (routed below the strip)

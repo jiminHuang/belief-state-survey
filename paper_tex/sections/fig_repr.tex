@@ -1,6 +1,7 @@
 \begin{figure*}[t]
 \centering
 \ifnature\else\let\figscript\footnotesize\let\figtiny\footnotesize\fi
+\ifnature
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[font=\figscript,
   llm/.style={fill=black!8, minimum width=13mm, minimum height=6mm, align=center},
@@ -81,6 +82,88 @@
 \node[note] at (0,-1.27) {revise only on disagreement};
 \end{scope}
 \end{tikzpicture}}
+\else
+\tabfit[\textwidth]{%
+\begin{tikzpicture}[font=\footnotesize,
+  llm/.style={fill=black!8, minimum width=11mm, minimum height=6mm, align=center},
+  bel/.style={fill=cState!22, minimum width=11mm, minimum height=6mm, align=center},
+  ext/.style={fill=cAux!25, minimum width=11mm, minimum height=6mm, align=center},
+  env/.style={draw=black!50, dashed, line width=0.4pt, minimum width=6.5mm, minimum height=6mm, align=center},
+  ttl/.style={font=\figscript, anchor=west, inner sep=0pt},
+  note/.style={font=\figtiny, text=black!60},
+  panel/.style={fill=black!2.5, draw=black!22, line width=0.4pt, rounded corners=2pt},
+  arr/.style={natarr}]
+% each panel: frame (-2.95,-1.52)--(2.95,1.35); title top left; main row at y=0.15; note at y=-1.27
+% panel a: context as state
+\begin{scope}[shift={(0,0)}]
+\draw[panel] (-2.6,-1.62) rectangle (2.6,1.4);
+\node[ttl] at (-2.47,1.13) {\textbf{a}\enspace Context as state};
+\node[env] (o) at (-2.12,0.15) {$o_t$};
+\node[llm] (m) at (0,0.15) {LLM\\trace};
+\node[env] (a) at (2.12,0.15) {$a_t$};
+\draw[arr] (o)--(m); \draw[arr] (m)--(a);
+\node[note] at (0,-1.36) {belief implicit, untested};
+\end{scope}
+% panel b: external / probabilistic memory
+\begin{scope}[shift={(5.4,0)}]
+\draw[panel] (-2.6,-1.62) rectangle (2.6,1.4);
+\node[ttl] at (-2.47,1.13) {\textbf{b}\enspace External memory};
+\node[env] (o) at (-2.12,0.15) {$o_t$};
+\node[llm] (m) at (0,0.15) {LLM};
+\node[env] (a) at (2.12,0.15) {$a_t$};
+\node[ext] (s) at (0,-0.74) {store (\emph{traces}, $p$)};
+\draw[arr] (o)--(m); \draw[arr] (m)--(a); \draw[arr,<->] (m)--(s);
+\node[note] at (0,-1.36) {recalled, not believed};
+\end{scope}
+% panel c: external Bayesian filter
+\begin{scope}[shift={(10.8,0)}]
+\draw[panel] (-2.6,-1.62) rectangle (2.6,1.4);
+\node[ttl] at (-2.47,1.13) {\textbf{c}\enspace External Bayesian filter};
+\node[env] (o) at (-2.12,0.15) {$o_t$};
+\node[ext] (f) at (-0.72,0.15) {filter\\$p(z_t\mid H_t)$};
+\node[llm] (m) at (0.92,0.15) {LLM};
+\node[env] (a) at (2.12,0.15) {$a_t$};
+\draw[arr] (o)--(f); \draw[arr] (f)--(m); \draw[arr] (m)--(a);
+\draw[arr] (m.south) to[bend left=45] node[below, font=\figtiny] {test} (f.south);
+\node[note] at (0,-1.36) {auditable, fixed hypothesis space};
+\end{scope}
+% panel d: model-written belief
+\begin{scope}[shift={(0,-3.4)}]
+\draw[panel] (-2.6,-1.62) rectangle (2.6,1.4);
+\node[ttl] at (-2.47,1.13) {\textbf{d}\enspace Model-written belief};
+\node[env] (o) at (-2.12,0.15) {$o_t$};
+\node[llm] (m) at (-0.72,0.15) {LLM};
+\node[bel] (b) at (0.92,0.15) {written\\$\belief_t$};
+\node[env] (a) at (2.12,0.15) {$a_t$};
+\draw[arr] (o)--(m); \draw[arr] (m)--(b); \draw[arr] (b)--(a);
+\node[note] at (0,-1.36) {calibrated $\subset$ testable (\op{Predict})};
+\end{scope}
+% panel e: learned world model
+\begin{scope}[shift={(5.4,-3.4)}]
+\draw[panel] (-2.6,-1.62) rectangle (2.6,1.4);
+\node[ttl] at (-2.47,1.13) {\textbf{e}\enspace Learned world-model belief};
+\node[env] (o) at (-2.12,0.15) {$o_t$};
+\node[ext] (w) at (-0.72,0.15) {world\\model $h_t$};
+\node[llm] (m) at (0.92,0.15) {LLM};
+\node[env] (a) at (2.12,0.15) {$a_t$};
+\draw[arr] (o)--(w); \draw[arr] (w)--(m); \draw[arr] (m)--(a);
+\draw[arr] (w.south) to[bend right=45] node[below, font=\figtiny] {predict $\hat o_{t+1}$} (m.south);
+\node[note] at (0,-1.36) {testable, not in language};
+\end{scope}
+% panel f: written belief with parametric check
+\begin{scope}[shift={(10.8,-3.4)}]
+\draw[panel] (-2.6,-1.62) rectangle (2.6,1.4);
+\node[ttl] at (-2.47,1.13) {\textbf{f}\enspace Written belief, parametric check};
+\node[env] (o) at (-2.12,0.15) {$o_t$};
+\node[llm] (m) at (-0.72,0.15) {LLM};
+\node[bel] (b) at (0.92,0.15) {written\\$\belief_t$};
+\node[env] (a) at (2.12,0.15) {$a_t$};
+\node[ext] (w) at (0.92,-0.76) {consistency gate};
+\draw[arr] (o)--(m); \draw[arr] (m)--(b); \draw[arr] (b)--(a); \draw[arr,<->] (b)--(w);
+\node[note] at (0,-1.36) {revise only on disagreement};
+\end{scope}
+\end{tikzpicture}}
+\fi
 \caption{\textbf{Who maintains the belief.} Blue-grey marks a belief the model writes and can reason about, light blue an external estimator. Only c, d (when testable), e and f commit to a prediction that later evidence can falsify.}
 \label{fig:repr}
 \end{figure*}

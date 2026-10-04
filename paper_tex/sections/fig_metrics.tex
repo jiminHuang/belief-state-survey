@@ -1,6 +1,7 @@
 \begin{figure}[t]
 \centering
 \ifnature\else\let\figscript\footnotesize\let\figtiny\footnotesize\fi
+\ifnature
 \resizebox{\columnwidth}{!}{%
 \ifnature\def\mx{11mm}\def\my{2.3mm}\else\def\mx{5.6mm}\def\my{3.4mm}\fi
 \begin{tikzpicture}[font=\figscript, x=\mx, y=\my]
@@ -38,6 +39,45 @@
 \draw[black!50, line width=0.4pt] (0.6,0.3) -- (5.5,0.3);
 \fill[cLik, opacity=0.10] (0.6,-15.5) rectangle (5.5,-18.5);
 \end{tikzpicture}}
-\caption{\textbf{Belief-level constructs reported by each evaluation paper.} Only the Bayesian-coherence rows (shaded) share a reference posterior.}
+\else
+
+\ifnature\def\mx{11mm}\def\my{2.3mm}\else\def\mx{5.6mm}\def\my{3.4mm}\fi
+\begin{tikzpicture}[font=\footnotesize, x=5.4mm, y=3.55mm]
+\ifnature
+\foreach \c/\x in {calibration/1, accuracy/2, revision/3, belief--act./4, outcome/5} \node[align=center, font=\figtiny\bfseries, rotate=0] at (\x,0.9) {\c};
+\else
+\foreach \c/\x in {calibration/1, accuracy/2, revision/3, belief--act./4, outcome/5} \node[anchor=west, font=\footnotesize\bfseries, rotate=90, inner sep=1pt] at (\x,0.6) {\c};
+\fi
+\foreach \name/\y/\dots in {
+  {Forecast-Dojo}/-1/{1,3,5},
+  {Agent-BRACE}/-2/{1},
+  {Belief-State Engine}/-3/{1,4},
+  {Belief at Risk}/-4/{1},
+  {FinBench}/-5/{1,5},
+  {BeliefTrack}/-6/{2,3},
+  {DeltaLogic}/-7/{2,3},
+  {DToM-Track}/-8/{2,3},
+  {BeliefShift}/-9/{3},
+  {STALE}/-10/{3,4},
+  {MemOps}/-11/{3},
+  {STOCKTAKE}/-12/{2,4,5},
+  {Werewolf audit}/-13/{4,5},
+  {HERCULEAN}/-14/{5},
+  {FinBen / InvestorBench}/-15/{5},
+  {BayesBench}/-16/{3,4},
+  {Martingale Score}/-17/{3},
+  {Bayesian coherence}/-18/{3},
+  {Theory of Space}/-19/{2,3},
+  {HaluMem}/-20/{2,3},
+  {Memora}/-21/{3,5},
+  {Embodied Agent Interface}/-22/{2,5}}
+ {\node[anchor=east, font=\footnotesize] at (0.55,\y) {\name};
+  \foreach \x in {1,...,5} \draw[black!20, line width=0.3pt] (\x,\y) circle (1.1pt);
+  \foreach \x in \dots \fill[cState] (\x,\y) circle (1.7pt);}
+\draw[black!50, line width=0.4pt] (0.6,0.3) -- (5.5,0.3);
+\fill[cLik, opacity=0.10] (0.6,-15.5) rectangle (5.5,-18.5);
+\end{tikzpicture}
+\fi
+\caption{\textbf{Belief-level constructs reported by each evaluation paper.} Only the Bayesian-coherence rows (shaded) share a reference posterior.\ifnature\else{} Table~\ref{tab:benchmarks} gives the references.\fi}
 \label{fig:metrics}
 \end{figure}
