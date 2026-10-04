@@ -1,9 +1,9 @@
 \begin{figure}[t]
 \centering
-\resizebox{0.88\columnwidth}{!}{%
-\begin{tikzpicture}[font=\scriptsize,
-  tok/.style={minimum width=9mm, fill=black!8, minimum height=6mm, align=center, font=\tiny},
-  lvl/.style={font=\tiny, anchor=east}]
+\resizebox{\ifnature0.88\fi\columnwidth}{!}{%
+\begin{tikzpicture}[font=\figscript,
+  tok/.style={minimum width=9mm, fill=black!8, minimum height=6mm, align=center, font=\figtiny},
+  lvl/.style={font=\figtiny, anchor=east}]
 % one span of a trajectory: b_t (written belief) then a_t (action), then o_{t+1}
 \node[tok, fill=cState!22] (b1) at (0,0) {belief\\$\belief_t$};
 \node[tok, fill=cState!22, right=0.4mm of b1] (b2) {\op{Predict}};
@@ -13,13 +13,13 @@
 \node[tok, draw=black!50, dashed, line width=0.4pt, right=1.5mm of a1] (o1) {$o_{t+1}$};
 \node[tok, fill=black!9, right=1.5mm of o1] (nx) {$\cdots$};
 % credit brackets
-\draw[decorate, decoration={brace, amplitude=2pt}, line width=0.5pt] ([yshift=4mm]b1.north west) -- ([yshift=4mm]a1.north east) node[midway, above=2pt, font=\tiny] {\textbf{output / trajectory}: reward the response or every step};
+\draw[decorate, decoration={brace, amplitude=2pt}, line width=0.5pt] ([yshift=4mm]b1.north west) -- ([yshift=4mm]a1.north east) node[midway, above=2pt, font=\figtiny] {\textbf{output / trajectory}: reward the response or every step};
 \draw[decorate, decoration={brace, amplitude=2pt, mirror}, line width=0.5pt] ([yshift=-2mm]a1.south west) -- ([yshift=-2mm]a1.south east);
-\node[anchor=north east, font=\tiny, inner sep=1pt] at ([yshift=-3.6mm]a1.south east) {\textbf{interaction}: reward the action};
+\node[anchor=north east, font=\figtiny, inner sep=1pt] at ([yshift=-3.6mm]a1.south east) {\textbf{interaction}: reward the action};
 % surprise: the returned observation signs the belief (routed below the strip)
-\draw[-{Stealth[length=1.5mm,width=1.2mm]}, cLik, line width=0.6pt, rounded corners=2pt] (o1.south) -- ++(0,-8.5mm) -| node[pos=0.25, below=1pt, font=\tiny, text=cLik] {surprise} ([yshift=-0.5mm]b2.south);
+\draw[-{Stealth[length=1.5mm,width=1.2mm]}, cLik, line width=0.6pt, rounded corners=2pt] (o1.south) -- ++(0,-8.5mm) -| node[pos=0.25, below=1pt, font=\figtiny, text=cLik] {surprise} ([yshift=-0.5mm]b2.south);
 \draw[decorate, decoration={brace, amplitude=2pt, mirror}, line width=0.5pt, cLik] ([yshift=-12.5mm]b1.south west) -- ([yshift=-12.5mm]b2.south east);
-\node[anchor=north west, font=\tiny, text=cLik, inner sep=1pt] at ([yshift=-14.3mm]b1.south west) {\textbf{state}: reward the belief, signed by $o_{t+1}$};
+\node[anchor=north west, font=\figtiny, text=cLik, inner sep=1pt] at ([yshift=-14.3mm]b1.south west) {\textbf{state}: reward the belief, signed by $o_{t+1}$};
 \end{tikzpicture}}
 \caption{\textbf{The credited object on one span of a trajectory.} State credit reaches the written belief, signed by the observation returned after the action.}
 \label{fig:credit}

@@ -1,13 +1,13 @@
 \begin{figure*}[t]
 \centering
 \resizebox{\textwidth}{!}{%
-\begin{tikzpicture}[font=\scriptsize,
+\begin{tikzpicture}[font=\figscript,
   llm/.style={fill=black!8, minimum width=13mm, minimum height=6mm, align=center},
   bel/.style={fill=cState!22, minimum width=13mm, minimum height=6mm, align=center},
   ext/.style={fill=cAux!25, minimum width=13mm, minimum height=6mm, align=center},
   env/.style={draw=black!50, dashed, line width=0.4pt, minimum width=10mm, minimum height=6mm, align=center},
-  ttl/.style={font=\scriptsize, anchor=west, inner sep=0pt},
-  note/.style={font=\tiny, text=black!60},
+  ttl/.style={font=\figscript, anchor=west, inner sep=0pt},
+  note/.style={font=\figtiny, text=black!60},
   panel/.style={fill=black!2.5, draw=black!22, line width=0.4pt, rounded corners=2pt},
   arr/.style={natarr}]
 % each panel: frame (-2.95,-1.52)--(2.95,1.35); title top left; main row at y=0.15; note at y=-1.27
@@ -41,7 +41,7 @@
 \node[llm] (m) at (0.75,0.15) {LLM};
 \node[env] (a) at (2.25,0.15) {$a_t$};
 \draw[arr] (o)--(f); \draw[arr] (f)--(m); \draw[arr] (m)--(a);
-\draw[arr] (m.south) to[bend left=45] node[below, font=\tiny] {test} (f.south);
+\draw[arr] (m.south) to[bend left=45] node[below, font=\figtiny] {test} (f.south);
 \node[note] at (0,-1.27) {auditable, fixed hypothesis space};
 \end{scope}
 % panel d: model-written belief
@@ -64,7 +64,7 @@
 \node[llm] (m) at (0.75,0.15) {LLM};
 \node[env] (a) at (2.25,0.15) {$a_t$};
 \draw[arr] (o)--(w); \draw[arr] (w)--(m); \draw[arr] (m)--(a);
-\draw[arr] (w.south) to[bend right=45] node[below, font=\tiny] {predict $\hat o_{t+1}$} (m.south);
+\draw[arr] (w.south) to[bend right=45] node[below, font=\figtiny] {predict $\hat o_{t+1}$} (m.south);
 \node[note] at (0,-1.27) {testable, not in language};
 \end{scope}
 % panel f: written belief with parametric check

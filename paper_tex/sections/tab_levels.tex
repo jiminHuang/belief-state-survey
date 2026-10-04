@@ -1,10 +1,11 @@
 \begin{table}[t]
 \nattab
-\caption{\textbf{Credit levels compared by where their test comes from.}}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{@{}lllT{cLik}T{cLik}T{cState}T{cTrans}T{black!70}@{}}
+\setlength{\tabcolsep}{3pt}
+\tcap{\textbf{Credit levels compared by where their test comes from.}}
+\tabfit{%
+\begin{tabular}{@{}lY{1.45cm}Y{2.1cm}T{cLik}T{cLik}T{cState}T{cTrans}T{black!70}@{}}
 \toprule
-\textbf{Level} & & \textbf{Test from} & \textbf{Env.} & \textbf{No oracle} & \textbf{Belief} & \textbf{Act gap} & \textbf{Maturity} \\
+\textbf{Level} & & \textbf{Test from} & \textbf{\rh{Env.}} & \textbf{\rh{No oracle}} & \textbf{\rh{Belief}} & \textbf{\rh{Act gap}} & \textbf{\rh{Maturity}} \\
 \midrule
 Output & & humans, verifiers & \hbnone & \hbhalf & \hbnone & \hbnone & \hbfull \\ \rr
 Trajectory & & verifier, PRM & \hbhalf & \hbhalf & \hbnone & \hbnone & \hbfull \\ \rr
@@ -15,5 +16,6 @@ State & oracle or teacher & closed world, teacher, target & \hbnone & \hbnone & 
 \bottomrule
 \end{tabular}}
 \tabnote{Env., the test comes from the environment; No oracle, no external source of truth is needed; Belief, the written belief receives the gradient; Act gap, belief and action error are separated; Maturity, solid many systems, tint a few, grey none. Otherwise solid, yes; tint, partly; grey, no.}
+\bcap
 \label{tab:levels}
 \end{table}

@@ -1,8 +1,8 @@
 \begin{table*}[t]
-\nattab\footnotesize
-\caption{\textbf{Learning signals by credited object, with the source of the test that signs them.}}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lllllcc}
+\nattab[\footnotesize]
+\tcap{\textbf{Learning signals by credited object, with the source of the test that signs them.}}
+\tabfit[\textwidth]{%
+\begin{tabular}{lY{4.6cm}Y{2.3cm}Y{2.2cm}Y{1.7cm}Y{1.3cm}Y{1.1cm}}
 \toprule
 \textbf{Level} & \textbf{Representative methods} & \textbf{Test from} & \textbf{Granularity} & \textbf{Signed by returned $o_{t+1}$} & \textbf{Delayed evidence} & \textbf{Partial obs.} \\
 \midrule
@@ -20,5 +20,6 @@ State & CBM \citep{xu2026should} & symbolic belief reward & belief state & close
  & PaW \citep{lu2026policy} & own next observation & prediction on the policy & \cmark & \xmark & \cmark \\
 \bottomrule
 \end{tabular}}
+\bcap
 \label{tab:learning}
 \end{table*}

@@ -1,31 +1,37 @@
-\begin{table}[t]
+\begin{table}[!t]
 \nattab
-\caption{\textbf{Which part of the belief each neighbouring survey supplies.}}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{@{}lllT{cState}@{\hspace{4pt}}T{cTrans}@{\hspace{4pt}}T{cLik}@{\hspace{4pt}}T{black!70}@{}}
+\tcap{\textbf{Which part of the belief each neighbouring survey supplies.}}
+\tabfit{%
+\begin{tabular}{@{}l>{\raggedright\arraybackslash}p{2.9cm}T{cState}@{\hspace{3pt}}T{cTrans}@{\hspace{3pt}}T{cLik}@{\hspace{3pt}}T{black!70}@{}}
 \toprule
-& \textbf{Survey} & \textbf{Organising axis} & \textbf{S} & \textbf{R} & \textbf{T} & \textbf{E} \\
+\textbf{Survey} & \textbf{Organising axis} & \textbf{S} & \textbf{R} & \textbf{T} & \textbf{E} \\
 \midrule
-Memory & \citet{zhang2024memory} & design, evaluation, use & \hbfull & \hbhalf & \hbnone & \hbnone \\ \rrin{2-7}
-& \citet{hu2025memory} & factual / experiential / working & \hbfull & \hbhalf & \hbnone & \hbhalf \\ \rrin{2-7}
-& \citet{luo2026storage} & storage\,$\to$\,reflection\,$\to$\,experience & \hbfull & \hbhalf & \hbnone & \hbnone \\ \rr
-Reward & \citet{wu2025rewards} & reward model $\times$ stage & \hbnone & \hbhalf & \hbhalf & \hbnone \\ \rrin{2-7}
-& \citet{zheng2025prm} & data $\to$ PRM $\to$ use & \hbnone & \hbhalf & \hbhalf & \hbnone \\ \rrin{2-7}
-& \citet{zhang2025landscape} & capability $\times$ application & \hbhalf & \hbhalf & \hbhalf & \hbnone \\ \rrin{2-7}
-& \citet{zhang2026reasoning} & granularity $\times$ method & \hbnone & \hbhalf & \hbhalf & \hbnone \\ \rr
-Uncertainty & \citet{xia2025uncertainty} & four estimation avenues & \hbhalf & \hbnone & \hbnone & \hbhalf \\ \rrin{2-7}
-& \citet{lin2026uncertainty} & what / how / where & \hbhalf & \hbnone & \hbnone & \hbfull \\ \rr
-Evaluation & \citet{yehudai2025survey} & capability $\times$ domain & \hbnone & \hbnone & \hbnone & \hbhalf \\ \rrin{2-7}
-& \citet{gao2025survey} & what / when / how to evolve & \hbnone & \hbhalf & \hbhalf & \hbnone \\ \rrin{2-7}
-& \citet{chen2026horizon} & lifecycle $\times$ horizon carrier & \hbhalf & \hbhalf & \hbnone & \hbnone \\ \rrin{2-7}
-& \citet{xu2026llm} & forecasting architecture & \hbhalf & \hbnone & \hbnone & \hbhalf \\ \rrin{2-7}
-& \citet{dong2025finance} & financial function & \hbnone & \hbnone & \hbnone & \hbnone \\ \rr
-Belief & \citet{cai2026complex} & control-loop components & \hbfull & \hbfull & \hbhalf & \hbnone \\ \rrin{2-7}
-& \citet{tang2026proactive} & decision pipeline $\times$ policy & \hbfull & \hbfull & \hbhalf & \hbhalf \\
+\multicolumn{6}{@{}l}{\textit{Memory}} \\
+\citet{zhang2024memory} & design, evaluation, use & \hbfull & \hbhalf & \hbnone & \hbnone \\ \rr
+\citet{hu2025memory} & factual / experiential / working & \hbfull & \hbhalf & \hbnone & \hbhalf \\ \rr
+\citet{luo2026storage} & storage $\to$ reflection $\to$ experience & \hbfull & \hbhalf & \hbnone & \hbnone \\ \rr
+\multicolumn{6}{@{}l}{\textit{Reward}} \\
+\citet{wu2025rewards} & reward model $\times$ stage & \hbnone & \hbhalf & \hbhalf & \hbnone \\ \rr
+\citet{zheng2025prm} & data $\to$ PRM $\to$ use & \hbnone & \hbhalf & \hbhalf & \hbnone \\ \rr
+\citet{zhang2025landscape} & capability $\times$ application & \hbhalf & \hbhalf & \hbhalf & \hbnone \\ \rr
+\citet{zhang2026reasoning} & granularity $\times$ method & \hbnone & \hbhalf & \hbhalf & \hbnone \\ \rr
+\multicolumn{6}{@{}l}{\textit{Uncertainty}} \\
+\citet{xia2025uncertainty} & four estimation avenues & \hbhalf & \hbnone & \hbnone & \hbhalf \\ \rr
+\citet{lin2026uncertainty} & what / how / where & \hbhalf & \hbnone & \hbnone & \hbfull \\ \rr
+\multicolumn{6}{@{}l}{\textit{Evaluation}} \\
+\citet{yehudai2025survey} & capability $\times$ domain & \hbnone & \hbnone & \hbnone & \hbhalf \\ \rr
+\citet{gao2025survey} & what / when / how to evolve & \hbnone & \hbhalf & \hbhalf & \hbnone \\ \rr
+\citet{chen2026horizon} & lifecycle $\times$ horizon carrier & \hbhalf & \hbhalf & \hbnone & \hbnone \\ \rr
+\citet{xu2026llm} & forecasting architecture & \hbhalf & \hbnone & \hbnone & \hbhalf \\ \rr
+\citet{dong2025finance} & financial function & \hbnone & \hbnone & \hbnone & \hbnone \\ \rr
+\multicolumn{6}{@{}l}{\textit{Belief}} \\
+\citet{cai2026complex} & control-loop components & \hbfull & \hbfull & \hbhalf & \hbnone \\ \rr
+\citet{tang2026proactive} & decision pipeline $\times$ policy & \hbfull & \hbfull & \hbhalf & \hbhalf \\
 \midrule
-& \textbf{This survey} & \textbf{belief state $\cdot$ revision $\cdot$ test} & \hbfull & \hbfull & \hbfull & \hbfull \\
+\textbf{This survey} & \textbf{belief state $\cdot$ revision $\cdot$ test} & \hbfull & \hbfull & \hbfull & \hbfull \\
 \bottomrule
 \end{tabular}}
 \tabnote{Evaluation includes horizon, self-evolution, forecasting and finance surveys, and Belief those that formalise a Bayes-filter belief for one setting. S, the belief state and its persistence; R, revision, how the state is revised; T, a test that reaches the belief as a learning signal; E, belief-level evaluation. Solid, central; tint, present; grey, absent.}
+\bcap
 \label{tab:surveys}
 \end{table}

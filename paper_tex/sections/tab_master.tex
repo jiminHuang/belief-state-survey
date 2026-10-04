@@ -1,8 +1,8 @@
 \begin{table*}[t]
-\nattab\tiny
+\nattab[\tiny]
 \setlength{\tabcolsep}{2.5pt}
-\caption{\textbf{Systems with an explicit belief mechanism, by year.}}
-\resizebox{\textwidth}{!}{%
+\tcap{\textbf{Systems with an explicit belief mechanism, by year.}}
+\tabfit[\textwidth]{%
 \begin{tabular}{lcllll}
 \toprule
 \textbf{System} & \textbf{Year} & \textbf{State kept by} & \textbf{Credited} & \textbf{Revision trigger} & \textbf{Metric} \\
@@ -28,7 +28,7 @@ Self-Guide internal\ldots \citep{wang2026coevolution} & 2026 & written & traject
 ReflectiChain\ldots \citep{luo2026topology} & 2026 & world model & trajectory & latent trajectory rehearsal\ldots &  \\
 \bottomrule
 \end{tabular}
-\hfill
+\tabsplit
 \begin{tabular}{lcllll}
 \toprule
 \textbf{System} & \textbf{Year} & \textbf{State kept by} & \textbf{Credited} & \textbf{Revision trigger} & \textbf{Metric} \\
@@ -62,5 +62,6 @@ MoM / P-Mem \citep{qin2026mom} & 2026 & written & none & typed write-time operat
 \bottomrule
 \end{tabular}}
 \tabnote{State kept by: who maintains the belief (Section~\ref{sec:representation}); Credited: the object that receives the learning signal under the criterion of Section~\ref{sec:learning}, \emph{none} if the belief is not trained; Metric: \cmark\ reports a belief-level quantity, $\circ$ a proxy.}
+\bcap
 \label{tab:master}
 \end{table*}

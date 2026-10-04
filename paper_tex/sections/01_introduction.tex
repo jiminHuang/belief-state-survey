@@ -1,26 +1,26 @@
 \section{Introduction}
 \label{sec:intro}
 \input{tab_surveys}
-\input{fig_taxonomy}
+\ifnature\input{fig_taxonomy}\fi
 
 Language-model agents now act over horizons of hours or months, and the failures reported from these settings are failures of state, not of reasoning. A model that solves a problem in one pass loses much of its accuracy when the same information arrives over several turns \citep{laban2025lost}, an agent given only observations wins a fraction of the episodes won by one that reads the simulator's latent state \citep{alaswad2026why}, and in markets stronger backbones do not reliably produce stronger trading agents \citep{xie2025finben,li2024investorbench}. What these failures share is that the task required the agent to hold something between decisions, a belief about what is true, how certain it is, and what would change it, and the agent never formed it, never tested it, or revised it without acting on the revision.
 
 \begin{figure}[t]
 \centering
-\resizebox{0.86\columnwidth}{!}{%
-\begin{tikzpicture}[font=\scriptsize, node distance=6mm and 4.5mm,
+\resizebox{\ifnature0.86\fi\columnwidth}{!}{%
+\begin{tikzpicture}[font=\figscript, node distance=6mm and 4.5mm,
   box/.style={fill=black!8, minimum height=7.5mm, minimum width=15mm, align=center, inner sep=1pt},
   st/.style={box, fill=cState!20}, lk/.style={box, fill=cLik!22}, tr/.style={box, fill=cTrans!22},
-  chip/.style={font=\tiny\bfseries, text=white, inner xsep=2pt, inner ysep=1pt, minimum height=2.6mm},
-  fm/.style={circle, fill=black!65, text=white, font=\tiny\bfseries, inner sep=0.6pt, minimum size=3.1mm},
+  chip/.style={font=\figtiny\bfseries, text=white, inner xsep=2pt, inner ysep=1pt, minimum height=2.6mm},
+  fm/.style={circle, fill=black!65, text=white, font=\figtiny\bfseries, inner sep=0.6pt, minimum size=3.1mm},
   arr/.style={-{Stealth[length=1.4mm,width=1.1mm]}, line width=0.5pt, draw=black!75}]
-\node[box] (mem) {Memory\\[-1pt]{\tiny what happened}};
-\node[st, right=of mem] (bel) {Belief $\belief_t$\\[-1pt]{\tiny a hypothesis}};
-\node[lk, right=of bel] (pred) {Prediction\\[-1pt]{\tiny $\hat o_{t+1}$}};
-\node[box, below=of mem] (act) {Action $a_t$\\[-1pt]{\tiny conditioned on $\belief_t$}};
-\node[tr, below=of bel] (rev) {Revision\\[-1pt]{\tiny $p(z'\mid z,a_t)$}};
-\node[lk, below=of pred] (test) {Test\\[-1pt]{\tiny $p(o_{t+1}\mid z')$}};
-\node[lk, anchor=west] at ($(pred.east)!0.5!(test.east)+(4mm,0)$) (obs) {Observation\\[-1pt]{\tiny $o_{t+1}$}};
+\node[box] (mem) {Memory\\[-1pt]{\figtiny what happened}};
+\node[st, right=of mem] (bel) {Belief $\belief_t$\\[-1pt]{\figtiny a hypothesis}};
+\node[lk, right=of bel] (pred) {Prediction\\[-1pt]{\figtiny $\hat o_{t+1}$}};
+\node[box, below=of mem] (act) {Action $a_t$\\[-1pt]{\figtiny conditioned on $\belief_t$}};
+\node[tr, below=of bel] (rev) {Revision\\[-1pt]{\figtiny $p(z'\mid z,a_t)$}};
+\node[lk, below=of pred] (test) {Test\\[-1pt]{\figtiny $p(o_{t+1}\mid z')$}};
+\node[lk, anchor=west] at ($(pred.east)!0.5!(test.east)+(4mm,0)$) (obs) {Observation\\[-1pt]{\figtiny $o_{t+1}$}};
 \begin{scope}[on background layer]
   \node[fill=cLik!7, inner sep=2.2mm, fit=(pred)(test)(obs)] (lkpanel) {};
 \end{scope}
@@ -30,7 +30,7 @@ Language-model agents now act over horizons of hours or months, and the failures
 \draw[arr] (mem) -- (bel); \draw[arr] (bel) -- (pred);
 \draw[arr] (pred.east) -| (obs.north); \draw[arr] (obs.south) |- (test.east);
 \draw[arr] (test) -- (rev); \draw[arr] (rev) -- (act);
-\draw[arr] (act) -- node[left, font=\tiny, text=black!70] {experience} (mem);
+\draw[arr] (act) -- node[left, font=\figtiny, text=black!70] {experience} (mem);
 \node[fm] at ($(mem.east)!0.5!(bel.west)+(0,2.6mm)$) {1};
 \node[fm] at ([xshift=1.8mm,yshift=-0.6mm]obs.south east) {2};
 \node[fm] at ($(test.west)!0.5!(rev.east)+(0,2.6mm)$) {3};
@@ -42,4 +42,4 @@ Language-model agents now act over horizons of hours or months, and the failures
 
 That something is a testable belief, and this is the shift the survey argues for. A memory records what has happened, whereas a belief is a hypothesis about what is true of the world, which a prediction exposes to evidence, a test supports or falsifies, and a revision updates (Fig.~\ref{fig:loop}). The test can take many forms (Section~\ref{sec:formulation}). This review follows three parts, a \emph{belief state} that says what is believed and how firmly, a \emph{revision} that carries it across an action, and a \emph{test} that scores it against the next observation, with the Bayes filter as their principled formalisation \citep{astrom1965optimal,kaelbling1998planning,thrun2005probabilistic,friston2010free}. The line runs through memory research, not around it. A store that attaches a confidence and an update rule to its claims already has the first two parts \citep{zhang2024memory,luo2026storage}, and what makes it a belief is the third, a test that connects the hypothesis to evidence that can support or falsify it. Memory and uncertainty research gave the agent a state with a confidence \citep{park2023generative,shinn2023reflexion,lin2022teaching,kadavath2022language}, and post-training taught it to revise, rewarding the response, the step, or the action \citep{ouyang2022training,lightman2023lets,zhou2024archer,zhang2026reasoning}. The test is still supplied from outside, by a fixed observation model, a simulator, a verifier, or a teacher.
 
-Work on the belief itself exists, from dialogue state tracking \citep{lee2021dialogue} to agents that write beliefs about tasks, opponents, and markets \citep{kim2024qube,cross2024hypothetical,yu2024fincon} and benchmarks that score the belief rather than its outcome \citep{xu2026should,deb2026stocktake,chao2026stale}, but it rarely cites itself (Fig.~\ref{fig:timeline}) and the nearest surveys organise by what is stored, stop at the action, or formalise a Bayes-filter belief for one setting at inference time only (Section~\ref{sec:related}, Table~\ref{tab:surveys}). This survey takes the belief state as its object and sorts the literature by which of its three parts a system has and where each comes from, whether written by the model, fixed by the designer, learned, or absent (Fig.~\ref{fig:taxonomy}), and follows the belief around the cycle of Fig.~\ref{fig:loop}. Section~\ref{sec:representation} asks where the state lives and what form it takes, Section~\ref{sec:revision} how it is carried and revised and where revision fails, and Sections~\ref{sec:learning}--\ref{sec:evaluation} who scores the belief against evidence, whether the score becomes a learning signal and \emph{which object receives it}, and how evaluation measures each part. We cover 2020 to September 2026 by a scripted protocol (Appendix~\ref{app:method}), and Section~\ref{sec:challenges} states the open problems.
+Work on the belief itself exists, from dialogue state tracking \citep{lee2021dialogue} to agents that write beliefs about tasks, opponents, and markets \citep{kim2024qube,cross2024hypothetical,yu2024fincon} and benchmarks that score the belief rather than its outcome \citep{xu2026should,deb2026stocktake,chao2026stale}, but it rarely cites itself (Fig.~\ref{fig:timeline}) and the nearest surveys organise by what is stored, stop at the action, or formalise a Bayes-filter belief for one setting at inference time only (Section~\ref{sec:related}, Table~\ref{tab:surveys}). This survey takes the belief state as its object and sorts the literature by which of its three parts a system has and where each comes from, whether written by the model, fixed by the designer, learned, or absent (Fig.~\ref{fig:taxonomy}\ifnature\else{} in the appendix\fi), and follows the belief around the cycle of Fig.~\ref{fig:loop}. Section~\ref{sec:representation} asks where the state lives and what form it takes, Section~\ref{sec:revision} how it is carried and revised and where revision fails, and Sections~\ref{sec:learning}--\ref{sec:evaluation} who scores the belief against evidence, whether the score becomes a learning signal and \emph{which object receives it}, and how evaluation measures each part. We cover 2020 to September 2026 by a scripted protocol (Appendix~\ref{app:method}), and Section~\ref{sec:challenges} states the open problems.

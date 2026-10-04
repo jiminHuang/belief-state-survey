@@ -13,8 +13,8 @@ Source A queried OpenAlex across all venues with publication date from 1~January
 Records were deduplicated by identifier and then by normalised title, so that a preprint and its journal version count once. Rule-based screening on title and abstract applied one inclusion criterion for an LLM-related term (I1), one exclusion criterion for off-domain applications (E1), and one inclusion criterion requiring at least two topic terms from a fixed list (I2). Records without an abstract of at least 200 characters were excluded. Included records were ranked by a relevance score used only for ordering the manual full-text screen, never for inclusion.
 
 \begin{table}[h]
-\nattab\small
-\caption{\textbf{Paper-collection counts for run \texttt{20260915\_v1}.}}
+\nattab[\small]
+\tcap{\textbf{Paper-collection counts for run \texttt{20260915\_v1}.}}
 \begin{tabular}{lr}
 \toprule
 \textbf{Stage} & \textbf{Count} \\
@@ -34,6 +34,7 @@ Full-text screened & 117 \\ \rr
 \quad of which included after reading & 106 \\
 \bottomrule
 \end{tabular}
+\bcap
 \label{tab:counts}
 \end{table}
 
@@ -44,10 +45,10 @@ The second run (34 queries, same sources and rules) returned 834 unique records,
 Keyword search cannot reach papers that describe belief maintenance in other words, so the included set was expanded by snowballing over the citation graph. Each round took the papers newly included in the previous round as seeds, fetched their reference lists (backward) and the papers citing them (forward) from the Semantic Scholar Graph API, kept candidates published from 2020, removed everything already screened, and applied the same rule-based screen as the keyword runs. Because forward citation of recent preprints is dense, the rule-included candidates were sampled for full-text reading by a fixed rule (topic score $\geq 10$, or the word \emph{belief} in title or abstract, or linked to at least three seeds, or a world-model paper from 2025 with score $\geq 7$), and every sampled paper was read and coded with the same fields as the keyword runs. Round one was seeded by the 179 keyword-included papers and each later round by the papers the previous round added; the full-text sample shrank from 302 to 115, 83, and 26 across four rounds, and the expansion stopped after the round whose sample fell below thirty, the stopping rule fixed in advance (Table~\ref{tab:snowball}).
 
 \begin{table}[h]
-\nattab\footnotesize
+\nattab[\footnotesize]
 \setlength{\tabcolsep}{3pt}
-\caption{\textbf{Citation-tree expansion by round.}}
-\resizebox{\columnwidth}{!}{%
+\tcap{\textbf{Citation-tree expansion by round.}}
+\tabfit{%
 \begin{tabular}{lrrrr}
 \toprule
 \textbf{Stage} & \textbf{R1} & \textbf{R2} & \textbf{R3} & \textbf{R4} \\
@@ -65,6 +66,7 @@ Included after reading & 171 & 58 & 47 & 7 \\ \rr
 \bottomrule
 \end{tabular}}
 \tabnote{Forward citations are capped at 9{,}999 per request batch by the API.}
+\bcap
 \label{tab:snowball}
 \end{table}
 
@@ -81,10 +83,10 @@ The released record is refreshed monthly with the same OpenAlex and Hugging Face
 Table~\ref{tab:years} gives the included papers by year, source, and whether peer-reviewed. The share that is peer-reviewed falls with recency, from four in five before 2025 to about one in nine for 2026, which is the ordinary lag of review rather than a property of the field.
 
 \begin{table}[h]
-\nattab\footnotesize
+\nattab[\footnotesize]
 \setlength{\tabcolsep}{3pt}
-\caption{\textbf{Included papers by publication year and by the run that found them (keyword search, citation-tree or targeted round, or monthly update).}}
-\resizebox{\columnwidth}{!}{%
+\tcap{\textbf{Included papers by publication year and by the run that found them (keyword search, citation-tree or targeted round, or monthly update).}}
+\tabfit{%
 \begin{tabular}{@{}lrrrrrrrrrr@{}}
 \toprule
 \textbf{Year} & \textbf{Keyword} & \textbf{R1} & \textbf{R2} & \textbf{R3} & \textbf{R4} & \textbf{R5} & \textbf{R6} & \textbf{U1} & \textbf{Total} & \textbf{Peer-rev.} \\
@@ -100,6 +102,7 @@ Table~\ref{tab:years} gives the included papers by year, source, and whether pee
 Total & 179 & 171 & 58 & 47 & 7 & 23 & 4 & 29 & 518 & 181 \\
 \bottomrule
 \end{tabular}}
+\bcap
 \label{tab:years}
 \end{table}
 

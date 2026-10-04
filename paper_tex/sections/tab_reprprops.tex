@@ -1,7 +1,7 @@
-\begin{table}[t]
+\begin{wtable}[t]
 \nattab
-\caption{\textbf{Classes of the belief state and where each part comes from.}}
-\resizebox{\columnwidth}{!}{%
+\tcap{\textbf{Classes of the belief state and where each part comes from.}}
+\tabfit[\linewidth]{%
 \begin{tabular}{@{}llcT{cState}cc T{cState}l@{}}
 \toprule
 \textbf{Locus} & \textbf{Form} & \textbf{State} & \textbf{Uncert.} & \textbf{Rev.} & \textbf{Test} & \textbf{Belief} & \textbf{Example} \\
@@ -17,5 +17,6 @@ Learned & latent world model & L & \hbhalf & L & L (prediction error) & \hbhalf 
 \bottomrule
 \end{tabular}}
 \tabnote{Locus: in the context, in a store outside the model, in an external estimator, or in learned dynamics. M, written by the model; D, fixed by the designer; L, learned; ---, absent (parts of Section~\ref{sec:formulation}). Uncert., the state carries uncertainty; Belief, meets conditions (i)--(iii) of Section~\ref{sec:formulation}. Solid, yes; tint, partly; grey, no.}
+\bcap
 \label{tab:reprprops}
-\end{table}
+\end{wtable}

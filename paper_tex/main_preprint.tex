@@ -40,6 +40,11 @@
 \DeclareRobustCommand{\hbhalf}{\tikz[baseline=-0.55ex]{\fill[tilec!35] (-0.8ex,-0.8ex) rectangle (0.8ex,0.8ex);}}
 \DeclareRobustCommand{\hbnone}{\tikz[baseline=-0.55ex]{\fill[black!8] (-0.8ex,-0.8ex) rectangle (0.8ex,0.8ex);}}
 \newcolumntype{T}[1]{>{\colorlet{tilec}{#1}}c}
+\newcolumntype{Y}[1]{l}
+\newcommand{\hd}[2]{#1 #2}
+\newcommand{\rh}[1]{#1}
+\newcommand{\tabsplit}{\hfill}
+\newenvironment{wtable}[1][t]{\begin{table}[#1]}{\end{table}}
 \newcommand{\grp}[1]{\multicolumn{6}{@{}l@{}}{\textit{#1}}\\}
 \newcommand{\grpp}[1]{\multicolumn{7}{@{}l@{}}{\textit{#1}}\\}
 \usepackage{pifont}
@@ -50,6 +55,10 @@
 \definecolor{cTrans}{HTML}{00A087}   % transition term
 \definecolor{cLik}{HTML}{E64B35}     % likelihood term
 \definecolor{cAux}{HTML}{4DBBD5}     % external estimators
+\newif\ifnature\naturetrue    % preprint: Nature-style tables and figures
+\newcommand{\appx}{\ifnature\else{} in the appendix\fi}
+\newcommand{\figscript}{\ifnature\scriptsize\else\footnotesize\fi}
+\newcommand{\figtiny}{\ifnature\tiny\else\footnotesize\fi}
 \AtBeginEnvironment{tabular}{\sffamily}
 \tikzset{every picture/.append style={execute at begin picture=\sffamily},
   natarr/.style={-{Stealth[length=1.5mm,width=1.2mm]}, line width=0.55pt, draw=black!70}}
@@ -57,12 +66,15 @@
 % Nature tables: hairline under every row; full width between groups, from column 2 inside a group
 \newcommand{\rr}{\arrayrulecolor{black!35}\hline\arrayrulecolor{black}}
 \newcommand{\rrin}[1]{\arrayrulecolor{black!35}\cline{#1}\arrayrulecolor{black}}
-\newcommand{\nattab}{\centering\scriptsize\setlength{\tabcolsep}{3pt}\setlength{\arrayrulewidth}{0.25pt}\renewcommand{\arraystretch}{1.12}}
+\newcommand{\nattab}[1][\scriptsize]{\centering#1\setlength{\tabcolsep}{3pt}\setlength{\arrayrulewidth}{0.25pt}\renewcommand{\arraystretch}{1.12}}
+\newcommand{\tabfit}[2][\columnwidth]{\resizebox{#1}{!}{#2}}
 % Nature-style captions: "Fig. 1 | Title." (bold label), table titles above, notes below the table
 \DeclareCaptionLabelSeparator{natbar}{\ \textbar\ }
 \captionsetup{labelfont={bf,sf}, textfont=sf, labelsep=natbar}
 \captionsetup[figure]{name=Fig.}
 \captionsetup[table]{position=top, skip=3pt, justification=raggedright, singlelinecheck=false}
+\newcommand{\tcap}[1]{\caption{#1}}
+\newcommand{\bcap}{}
 \newcommand{\tabnote}[1]{\par\vspace{2pt}{\raggedright\sffamily\fontsize{7pt}{8.4pt}\selectfont #1\par}\vspace{2pt}{\color{black}\hrule height 0.45pt}}
 \usepackage{url}
 \newcommand{\artifacturl}{\footnote{\url{https://github.com/jiminHuang/belief-state-survey}}}
@@ -110,6 +122,5 @@ Jimin Huang and Xueqing Peng are affiliated with The Fin AI, which produced seve
 \input{A_method}
 \input{B_tables}
 \input{C_taxonomy}
-\input{D_details}
 
 \end{document}

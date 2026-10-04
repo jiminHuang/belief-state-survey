@@ -1,14 +1,16 @@
 \section{Additional Tables and Figures}
 \label{app:tables}
 
+\ifnature\else\input{fig_taxonomy}\input{tab_reprprops}\input{fig_credit}\fi
+
 
 \begin{table*}[t]
-\nattab\footnotesize
-\caption{\textbf{The belief state by who maintains it, with the revision and test each system carries.}}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{llcccccl}
+\nattab[\footnotesize]
+\tcap{\textbf{The belief state by who maintains it, with the revision and test each system carries.}}
+\tabfit[\textwidth]{%
+\begin{tabular}{Y{2.5cm}Y{4.4cm}cccccY{3.4cm}}
 \toprule
-\textbf{Class} & \textbf{Method} & \textbf{State written by model} & \textbf{Append-only} & \textbf{Uncertainty} & \textbf{Test (\op{Test})} & \textbf{Revision (\op{Revise})} & \textbf{Domain} \\
+\textbf{Class} & \textbf{Method} & \textbf{\rh{State written by model}} & \textbf{\rh{Append-only}} & \textbf{\rh{Uncertainty}} & \textbf{\rh{Test (\op{Test})}} & \textbf{\rh{Revision (\op{Revise})}} & \textbf{Domain} \\
 \midrule
 Context as state & ReAct \citep{yao2023react} & \cmark & \cmark & \xmark & \xmark & \xmark & general \\ \rr
 External memory & MemGPT \citep{packer2023memgpt} & \xmark & \xmark & \xmark & \xmark & store update & dialogue \\ \rr
@@ -27,16 +29,17 @@ World model & BB-WM \citep{kumar2026towards} & \xmark & \xmark & latent & \cmark
 \bottomrule
 \end{tabular}}
 \tabnote{\op{Test}: the belief commits to a testable prediction.}
+\bcap
 \label{tab:representation}
 \end{table*}
 
 \begin{table*}[t]
-\nattab\footnotesize
-\caption{\textbf{Belief revision methods and benchmarks by failure mode addressed, revision trigger, and where the signal is projected.}}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lcccccl}
+\nattab[\footnotesize]
+\tcap{\textbf{Belief revision methods and benchmarks by failure mode addressed, revision trigger, and where the signal is projected.}}
+\tabfit[\textwidth]{%
+\begin{tabular}{Y{4.2cm}ccccY{3.0cm}Y{3.0cm}}
 \toprule
-\textbf{Method} & \textbf{Failed stay} & \textbf{Failed update} & \textbf{Failed isolation} & \textbf{Failed act} & \textbf{Trigger} & \textbf{Signal projected to} \\
+\textbf{Method} & \textbf{\rh{Failed stay}} & \textbf{\rh{Failed update}} & \textbf{\rh{Failed isolation}} & \textbf{\rh{Failed act}} & \textbf{Trigger} & \textbf{Signal projected to} \\
 \midrule
 Reflexion \citep{shinn2023reflexion} & & \cmark & & & task failure & whole context \\ \rr
 BeliefShift \citep{myakala2026beliefshift} & \cmark & \cmark & & & user evidence & (benchmark) \\ \rr
@@ -50,14 +53,29 @@ Agent-BRACE \citep{singh2026agent} & & \cmark & & \cmark & certainty & belief mo
 Werewolf audit \citep{gao2026auditing} & & \cmark & & \cmark & external belief log & (benchmark) \\
 \bottomrule
 \end{tabular}}
+\bcap
 \label{tab:revision}
 \end{table*}
 
 
 \input{tab_learning}
 
-\input{tab_benchmarks}
+\ifnature\input{tab_benchmarks}\else\input{tab_benchmarks_arr}\fi
 
 \input{tab_master}
 
 \input{tab_master_full}
+
+\ifnature\else
+\section{Evaluation Constructs in Detail}
+\label{app:constructs}
+
+\input{eval_constructs}
+\fi
+
+\ifnature\else
+\section{State-Level Credit in Detail}
+\label{app:statecredit}
+
+\input{learn_state_oracle}
+\fi
