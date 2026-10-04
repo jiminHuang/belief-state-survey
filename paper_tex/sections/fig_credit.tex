@@ -7,7 +7,7 @@
   lvl/.style={font=\figtiny, anchor=east}]
 % one span of a trajectory: b_t (written belief) then a_t (action), then o_{t+1}
 \node[tok, fill=cState!22] (b1) at (0,0) {belief\\$\belief_t$};
-\node[tok, fill=cState!22, right=0.4mm of b1] (b2) {\op{Predict}};
+\node[tok, fill=cState!22, right=0.4mm of b1] (b2) {prediction};
 \node[tok, fill=black!9, right=0.4mm of b2] (r1) {step};
 \node[tok, fill=black!9, right=0.4mm of r1] (r2) {step};
 \node[tok, fill=cTrans!22, right=0.4mm of r2] (a1) {action\\$a_t$};

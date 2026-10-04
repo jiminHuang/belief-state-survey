@@ -4,7 +4,7 @@
 \tabfit[\linewidth]{%
 \begin{tabular}{@{}lllT{cLik}T{cLik}T{cState}T{cTrans}T{black!70}@{}}
 \toprule
-\textbf{Level} & & \textbf{Test from} & \textbf{Env.} & \textbf{No oracle} & \textbf{Belief} & \textbf{Act gap} & \textbf{Maturity} \\
+\textbf{Level} & & \textbf{Test from} & \textbf{Env.} & \textbf{No oracle} & \textbf{Belief} & \textbf{Act gap} & \textbf{Systems} \\
 \midrule
 Output & & humans, verifiers & \hbnone & \hbhalf & \hbnone & \hbnone & \hbfull \\ \rr
 Trajectory & & verifier, PRM & \hbhalf & \hbhalf & \hbnone & \hbnone & \hbfull \\ \rr
@@ -14,7 +14,7 @@ State & oracle or teacher & closed world, teacher, target & \hbnone & \hbnone & 
 & \textbf{own observation} & \textbf{returned observation} & \hbfull & \hbfull & \hbfull & \hbhalf & \hbhalf \\
 \bottomrule
 \end{tabular}}
-\tabnote[Columns mark whether the test comes from the environment, needs no oracle, reaches the written belief, and separates belief from action error, and how many systems exist. Solid, yes, tint, partly, grey, no.]{Env., the test comes from the environment; No oracle, no external source of truth is needed; Belief, the written belief receives the gradient; Act gap, belief and action error are separated; Maturity, solid many systems, tint a few, grey none. Otherwise solid, yes; tint, partly; grey, no.}
+\tabnote[Columns mark whether the test comes from the environment, needs no oracle, reaches the written belief, and separates belief from action error, and how many systems exist (Systems). Solid, yes, tint, partly, grey, no.]{Env., the test comes from the environment; No oracle, no external source of truth is needed; Belief, the written belief receives the gradient; Act gap, belief and action error are separated; Systems, solid many, tint a few, grey none. Otherwise solid, yes; tint, partly; grey, no.}
 \bcap
 \label{tab:levels}
 \end{wtable}
