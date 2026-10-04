@@ -10,7 +10,7 @@ is not a language-model agent; otherwise "no". Set from OWN_OBS below (decided p
 key-claim answers in reviews.json are kept in author_own_obs)."""
 import csv, json, sys, pathlib
 root = pathlib.Path(__file__).parent; ts, vin, vout = sys.argv[1:4]
-OWN_OBS = {"tang2026rewarding": "yes", "lidayan2025abbel": "yes", "adhikari2020learning": "yes-preLLM"}
+OWN_OBS = {"tang2026rewarding": "yes", "lidayan2025abbel": "yes"}  # author ruling 2026-10-04, checked against the full text
 FIX = {"who": "who_maintains_belief", "cred": "credited_object", "rev": "revision_signal", "metric": "belief_level_metrics"}
 rev = json.load(open(root.parent / "review_site" / "reviews.json"))
 src = root / "runs" / ts / f"manual_screen_all_{vin}.csv"

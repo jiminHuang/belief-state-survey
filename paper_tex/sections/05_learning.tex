@@ -5,7 +5,7 @@
 \ifnature\else\input{fig_timeline}\fi
 \input{tab_learning_main}
 
-A learning signal is a test that has become a gradient. Fewer than three in five included papers train anything at all, and for the rest the belief is built and revised at inference time. Where existing surveys organise post-training by reward source and density \citep{wu2025rewards,zhang2026reasoning,zheng2025prm}, we separate two axes that are usually run together (Fig.~\ref{fig:credit}, Table~\ref{tab:learningmain}), the \emph{credited object}, the quantity that receives the gradient, and the \emph{source of the test}, whatever signs it. A method is at the \emph{state level} if the credited object is a claim about the environment, whatever the source, and the source then decides whether the sign exists outside a simulator.
+A learning signal is a test that has become a gradient. Fewer than three in five included papers train anything at all, and for the rest the belief is built and revised at inference time. Where existing surveys organise post-training by reward source and density \citep{wu2025rewards,zhang2026reasoning,zheng2025prm}, we separate two axes that are usually run together (Fig.~\ref{fig:credit}, Table~\ref{tab:learningmain}), the \emph{credited object}, the quantity that receives the gradient, and the \emph{source of the test}, whatever signs it (humans, a verifier, the task reward, a teacher, a simulator, or the agent's own later observation). A method is at the \emph{state level} if the credited object is a claim about the environment, whatever the source, and the source then decides whether the sign exists outside a simulator.
 
 \subsection{Output and Trajectory}
 \label{sec:learn:traj}
@@ -15,12 +15,12 @@ Supervised fine-tuning and preference optimisation credit the completed response
 \subsection{Interaction}
 \label{sec:learn:inter}
 
-Agentic reinforcement learning credits actions over several turns \citep{zhou2024archer,wang2025ragen,zhou2025sweetrl,feng2025group,xiong2025flagtrader}, and the open question is how to make that credit denser without making it wrong, by hierarchical advantages, counterfactual estimators, potential-based shaping, or verifier-structured credit \citep{peng2026hiper,wang2026capo,diao2026hipif,wang2026groupgraph,ren2026iapo,liao2026tcpo,liu2026pica,li2026vict}. The nearest this level comes to the state is a group that credits the write to a memory \citep{zhou2025memento,zhou2025mem1,yu2025memagent,yan2025memory,sun2026verifiable,yan2026memoryr2}. These credit the \emph{operation}, so a well-executed update to a wrong claim is still rewarded.
+Agentic reinforcement learning credits actions over several turns \citep{zhou2024archer,wang2025ragen,zhou2025sweetrl,feng2025group,xiong2025flagtrader}, and the open question is how to make that credit denser without making it wrong, by hierarchical advantages, counterfactual estimators, potential-based shaping, or verifier-structured credit \citep{peng2026hiper,wang2026capo,diao2026hipif,wang2026groupgraph,ren2026iapo,liao2026tcpo,liu2026pica,li2026vict}. The nearest this level comes to the state is a group that credits the write to a memory, from a rewritten case bank to an RL-trained overwrite of a fixed written state \citep{zhou2025memento,zhou2025mem1,yu2025memagent,yan2025memory,sun2026verifiable,yan2026memoryr2}. These credit the \emph{operation}, so a well-executed update to a wrong claim is still rewarded.
 
 \subsection{State}
 \label{sec:learn:state}
 
-\input{learn_state_oracle} Two now take it from the agent's own observations, as a pre-language-model agent did \citep{adhikari2020learning}: ReBel rewards each predicate of a written belief that the next observation supports \citep{tang2026rewarding}, and ABBEL grades a natural-language belief by how well it reconstructs the prior observation \citep{lidayan2025abbel}. PaW's next-observation loss reaches the policy, not a belief \citep{lu2026policy}. None carries uncertainty, and the dense form is fragile: through group-normalised advantages it collapses every run, and as an auxiliary loss shuffled targets match it \citep{wang2026dark}.
+\input{learn_state_oracle} Two now take it from the agent's own observations: ReBel rewards each predicate of a written belief that the next observation supports \citep{tang2026rewarding}, and ABBEL grades a natural-language belief by how well it reconstructs the prior observation \citep{lidayan2025abbel}. PaW's next-observation loss reaches the policy, not a belief \citep{lu2026policy}. None carries uncertainty, and the dense form is fragile: through group-normalised advantages it collapses every run, and as an auxiliary loss shuffled targets match it \citep{wang2026dark}.
 
 \begin{table}[t]
 \nattab
