@@ -1,7 +1,7 @@
 \section{Additional Tables and Figures}
 \label{app:tables}
 
-\ifnature\else\input{fig_taxonomy}\input{tab_reprprops}\input{fig_credit}\fi
+\ifnature\else\input{tab_reprprops}\input{fig_credit}\input{fig_metrics}\fi
 
 
 \begin{table*}[t]
@@ -78,4 +78,13 @@ Werewolf audit \citep{gao2026auditing} & & \cmark & & \cmark & external belief l
 \label{app:statecredit}
 
 \input{learn_state_oracle}
+\fi
+
+\ifnature\else
+\section{Revision Failures and Mechanisms in Detail}
+\label{app:revdetail}
+
+\input{rev_failures}
+
+\input{rev_mechanisms}
 \fi

@@ -1,5 +1,6 @@
 \begin{figure*}[t]
 \centering
+\ifnature
 \resizebox{\textwidth}{!}{\Forest{
 for tree={
   grow'=east, parent anchor=east, child anchor=west, anchor=west,
@@ -40,6 +41,50 @@ for tree={
   ]
 ]
 }}
-\caption{\textbf{Taxonomy of belief-state work.} Work is split by the three parts of a testable belief, each branch by where the part comes from. The highlighted leaf holds two systems, both without uncertainty.}
+\else
+\tabfit[\textwidth]{\Forest{
+for tree={
+  grow'=east, parent anchor=east, child anchor=west, anchor=west,
+  if level=0{text width=1.55cm}{if level=1{text width=1.85cm}{if level=2{text width=2.75cm}{text width=8.55cm}}},
+  font=\scriptsize, node options={align=left}, fill=black!4,
+  edge={-, black!40, line width=0.35pt}, l sep=2mm, s sep=0.3mm, fit=band,
+  inner xsep=2pt, inner ysep=0.8pt
+},
+[{\textbf{Testable belief}\\(\S\ref*{sec:formulation}) a hypothesis, not a record, three parts, each model-written, designer-fixed, learned, or absent}, fill=black!14
+  [{\S\ref*{sec:representation} \textbf{Belief state}\\where it lives, who writes it}, fill=cState, text=white, for descendants={fill=cState!9, text=black}
+    [{Model-written, in context} [{CoT, ReAct, drifting as context accumulates}]]
+    [{Model-written, kept in a store} [{MemGPT, Generative Agents, A-MEM, Mem0, Zep, AGM-revision graphs}]]
+    [{\ldots{} with a probability} [{BeliefMem, D-MEM, Nous}]]
+    [{Designer-fixed filter} [{Belief-State Engine, Belief at Risk, BayesEvolve, Align-While-Search, CA-BED}]]
+    [{Model-written claim} [{calibrated (DST, Agent-BRACE, BOND), goal-state (ReflAct, CoEx), testable (Hypothetical Minds, CBM, EvoSCM)}]]
+    [{Learned world model} [{Dreamer, RAP, BB-WM, Qwen-AgentWorld, executable (PatchWorld), written with a parametric check (Hybrid-WM)}]]
+  ]
+  [{\S\ref*{sec:revision} \textbf{Revision}\\what triggers it, how it fails}, fill=cTrans, text=white, for descendants={fill=cTrans!9, text=black}
+    [{Absent (defaults)} [{sycophancy, exponential forgetting, misconceptions written into memory}]]
+    [{Triggered by} [{contradiction (TOKI), the moment before commitment (SAVeR), surprise (D-MEM, WorldEvolver)}]]
+    [{Failed stay or update} [{BeliefShift, MEDLEY-BENCH, STALE, DeltaLogic, DToM-Track}]]
+    [{Failed isolation or act} [{CBM, MemOps, STOCKTAKE, Werewolf audit, SimpleToM}]]
+  ]
+  [{\S\ref*{sec:learning}--\ref*{sec:evaluation} \textbf{Test}\\who scores the belief, what the score yields}, fill=cLik, text=white, for descendants={fill=cLik!8, text=black}
+    [{\S\ref*{sec:learning} a gradient, by what is credited}
+      [{\textbf{Output}\enspace RLHF, DPO, Self-Refine}]
+      [{\textbf{Trajectory}\enspace PRMs, GRPO, LATS, AgentRefine, T3}]
+      [{\textbf{Interaction}\enspace actions (ArCHer, RAGEN, GiGPO, AgentPRM, IGPO), memory operations (MEM1, Memory-R1, VerMem)}]
+      [{\textbf{World-model loss}\enspace Dyna-Think, SPA, RLVR-World}]
+      [{\textbf{State, test from outside}\enspace a simulator or verifier (VAGEN, CBM), a teacher (BOND, DEL-ToM), a calibration target (Agent-BRACE)}, fill=cLik!20]
+      [{\textbf{State, test from own observations}\enspace the next observation (ReBel), past observations (ABBEL)}, fill=cLik!38]
+    ]
+    [{\S\ref*{sec:evidence} what to observe} [{BayesEvolve, EvoSCM, Align-While-Search, CA-BED, InfoPO}]]
+    [{\S\ref*{sec:evaluation} a metric, by construct}
+      [{\textbf{Calibration (belief state)}\enspace TC-ECE, posterior entropy, FinBench}]
+      [{\textbf{Accuracy (revision)}\enspace BeliefTrack, STALE, Theory of Space, HaluMem, Memora}]
+      [{\textbf{Bayesian coherence (test)}\enspace BayesBench, Martingale Score, coherence coefficient}]
+      [{\textbf{Belief--action gap, outcome only}\enspace STOCKTAKE, Werewolf audit, Agent-ToM, FinBen, HERCULEAN}]
+    ]
+  ]
+]
+}}
+\fi
+\caption{\textbf{Taxonomy of belief-state work.} Work is split by the three parts of a testable belief, each branch by where the part comes from. The highlighted leaf holds two systems, both without uncertainty.\ifnature\else{} Table~\ref{tab:master} gives the reference for every system named.\fi}
 \label{fig:taxonomy}
 \end{figure*}
