@@ -20,9 +20,7 @@ Agentic reinforcement learning credits actions over several turns \citep{zhou202
 \subsection{State}
 \label{sec:learn:state}
 
-\ifnature\input{learn_state_oracle}\else
-Until 2026 every such method took its test from outside the environment, from symbolic verification \citep{xu2026should}, a calibration target \citep{singh2026agent}, a Bayesian teacher or process belief model \citep{cui2026distilling,wu2025deltom}, the simulator's state \citep{wang2025vagen,yu2025dynathink,chen2025why,wu2025rlvrworld}, or the known answer \citep{zou2025t3,wang2025information,kong2026infopo,zhang2026toward,wang2026gavel}. Each needs the answer or the latent state at training time (Appendix~\ref{app:statecredit}).
-\fi Three systems now take it from the agent's own observations. ReBel rewards each predicate of a written belief that the next observation supports, with the gradient reaching the belief \citep{tang2026rewarding}, ABBEL grades a natural-language belief by how well the prior observation can be reconstructed from it \citep{lidayan2025abbel}, and PaW adds a next-observation loss on the policy \citep{lu2026policy}. None carries uncertainty, and the dense form is fragile. The same reward through group-normalised advantages collapses every run, and as an auxiliary loss it is matched by shuffled targets \citep{wang2026dark}.
+\input{learn_state_oracle} Three systems now take it from the agent's own observations. ReBel rewards each predicate of a written belief that the next observation supports, with the gradient reaching the belief \citep{tang2026rewarding}, ABBEL grades a natural-language belief by how well the prior observation can be reconstructed from it \citep{lidayan2025abbel}, and PaW adds a next-observation loss on the policy \citep{lu2026policy}. None carries uncertainty, and the dense form is fragile. The same reward through group-normalised advantages collapses every run, and as an auxiliary loss it is matched by shuffled targets \citep{wang2026dark}.
 
 \begin{table}[t]
 \nattab
@@ -43,4 +41,4 @@ written testable belief & \emph{none in corpus} & --- \\
 \label{tab:evidence}
 \end{table}
 
-\insight{3}{\textbf{Credit has reached the belief, not yet its uncertainty.} The first systems now score a written belief against the agent's own observations, but the belief they score is binary, the dense form of that reward collapses under group normalisation, and none connects the score to revision or action. The open combination is an environment-signed test on a calibrated state.}
+\insight{3}{\textbf{Credit has reached the belief, not yet its uncertainty.} The first environment-signed tests score binary beliefs, and none connects the score to revision or action.}
