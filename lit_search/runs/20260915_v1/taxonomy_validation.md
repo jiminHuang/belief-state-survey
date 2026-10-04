@@ -25,7 +25,7 @@ which lags arXiv by a few days. Rerun `search_arxiv.py` from another network to 
 ### 1. The "state-level row is nearly empty" claim is no longer true, and that is the survey's hook
 Between 2026-04 and 2026-09 at least 12 papers put an explicit belief state into an LLM agent
 (Belief-State Engine, Belief at Risk, POMDP validation framework, BLF, Agent-BRACE, CBM/BeliefTrack,
-BeliefMem, BB-WM, BOND, plus BSPO). None of the five surveys published in the same window (Horizon Gap,
+BeliefMem, BB-WM, BOND). None of the five surveys published in the same window (Horizon Gap,
 credit-assignment survey, memory-evolution survey, forecasting-agents survey, UQ-for-agents taxonomy) has a
 belief-state category. Revised gap statement: *belief state appears as a component inside memory, planning,
 training and evaluation surveys, but never as the organizing object; the 2026 cluster has no shared
@@ -36,25 +36,23 @@ Close reading splits the 2026 cluster cleanly into three columns, which the outl
 - **External Bayesian filter, LLM as observation model** — Belief-State Engine, Belief at Risk, POMDP
   validation framework. Belief is a probability vector over latent regimes; LLM never writes it.
 - **Model-written belief in text** — Agent-BRACE (claims + ordinal certainty), BLF (probability + evidence
-  summary), BOND (posterior tags), CBM (predicted belief state), BSPO (temporal factor graph). This is the
-  column BSPO belongs to; the distinguishing sub-axis is whether the written belief is *testable*
-  (BSPO PREDICT, CBM symbolic verification) or only *calibrated* (Agent-BRACE, BLF).
+  summary), BOND (posterior tags), CBM (predicted belief state). The distinguishing sub-axis is whether the written belief is
+  *testable* (CBM symbolic verification) or only *calibrated* (Agent-BRACE, BLF).
 - **Learned world-model belief exposed to the policy** — BB-WM, text world models, POMDP world models with
   LM priors.
 Probabilistic memory (BeliefMem, Noisy-OR) sits between the first two.
 
 ### 3. Section 4 (revision) gets a validated failure-mode taxonomy
 Adopt CBM's three failure modes as the spine: **failed stay / failed update / failed isolation**, and add
-a fourth that CBM does not have but STOCKTAKE, Agent-BRACE and BSPO all document: **failed act**
+a fourth that CBM does not have but STOCKTAKE and Agent-BRACE both document: **failed act**
 (belief revised, action not). Sub-themes with 2026 evidence:
 - staleness detection: STALE, When Stale Constraints Go Unchecked, When Memory Updates but Behavior Does Not
 - contradiction resolution: TOKI (4 operator families), MemOps (update/forget ops)
-- surprise-gated revision: D-MEM (reward prediction error routing), BSPO (cross-span SURPRISE)
-- belief–action gap: STOCKTAKE (knowing-doing rate 34–43 %), BSPO (prediction ≈ oracle, action ≈ random)
+- surprise-gated revision: D-MEM (reward prediction error routing)
+- belief–action gap: STOCKTAKE (knowing-doing rate 34–43 %)
 
-### 4. Section 5 (learning signals): state-level training now has four instances
-- RL with belief-state rewards: CBM (−71 % failures), Agent-BRACE (joint belief + policy RL), BSPO
-  (operation-level advantages routed through SURPRISE).
+### 4. Section 5 (learning signals): state-level training now has three instances
+- RL with belief-state rewards: CBM (−71 % failures), Agent-BRACE (joint belief + policy RL).
 - Distillation of a Bayesian teacher's posterior: BOND.
 Keep the credit-assignment survey (69 papers) as the reference for step-level methods and cite ECPO /
 GiGPO / HiPER / IAPO / Memory-R2 as the "denser credit" line; cite "Explore More, Drift Less" as the
@@ -70,10 +68,9 @@ Collected from 2026 papers, none of which cite each other:
 - state resolution, premise resistance, implicit policy adaptation (STALE)
 - symptom detection lag, skill score vs Bayes-filter oracle, knowing-doing rate (STOCKTAKE)
 - operation-level probes (MemOps)
-- prediction accuracy, surprise alignment, revision latency, stale-factor persistence (BSPO)
 Table 4 of the survey should be this list, grouped by construct (calibration / accuracy / revision /
-belief–action). STOCKTAKE's "fair oracle" (exact Bayes filter per factor) is the same design as BSPO's
-controlled environment and should be cited as convergent methodology.
+belief–action). STOCKTAKE's "fair oracle" (exact Bayes filter per factor) is a reusable design for
+controlled evaluation and should be cited as such.
 
 ### 6. Competing surveys to position against in Section 1 (all 2026)
 | Survey | Scope | Organising axis | Belief category? |
