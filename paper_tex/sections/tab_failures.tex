@@ -7,9 +7,9 @@
 \textbf{Failure mode} & \textbf{Definition} & \textbf{Part at fault} & \textbf{Measured by} & \textbf{Headline result} \\
 \midrule
 Failed stay & belief moves without evidence & test absent: update unweighted & BeliefShift, MEDLEY-BENCH & consensus sensitivity from near 0 to large across 35 models \\ \rr
-Failed update & belief survives contradicting evidence & carried forward, not updated & DeltaLogic, DToM-Track, STALE & 66.7\% on a conclusion, 46.7\% on whether an edit changes it \\ \rr
-Failed isolation & irrelevant input enters the belief & belief state contaminated & BeliefTrack, MemOps & belief-state reward cuts failures by 71\% \\ \rr
-Failed act & belief revised, action unchanged & policy not conditioned on $\belief_t$ & STOCKTAKE, Werewolf audit & 34--43\% of correctly diagnosed weeks end in the wrong action \\
+Failed update & belief survives contradicting evidence & carried forward, not updated & DeltaLogic, DToM-Track, STALE & one model: 66.7\% before a premise edit, 46.7\% after \\ \rr
+Failed isolation & irrelevant input enters the belief & belief state contaminated & BeliefTrack, MemOps & RL on the belief: 71\% fewer failures than untrained \\ \rr
+Failed act & belief revised, action unchanged & policy not conditioned on $\belief_t$ & STOCKTAKE, Werewolf audit & 34--43\% of diagnosed weeks still stock out (4 models) \\
 \bottomrule
 \end{tabular}}
 \tabnote[Results as reported \citep{xu2026should,chao2026stale,myakala2026beliefshift,abtahi2026medleybench,dhanda2026deltalogic,nguyen2026dynamic,hao2026memops,deb2026stocktake,gao2026auditing}.]{For each mode, the part at fault, the benchmarks that isolate it, and their headline results \citep{xu2026should,chao2026stale,myakala2026beliefshift,abtahi2026medleybench,dhanda2026deltalogic,nguyen2026dynamic,hao2026memops,deb2026stocktake,gao2026auditing}.}

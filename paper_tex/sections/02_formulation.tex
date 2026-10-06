@@ -7,5 +7,5 @@ A belief $\belief_t$ is a hypothesis about the environment that the agent carrie
 \belief_{t+1}(z') \propto p(o_{t+1} \mid z') \textstyle\sum_{z} p(z' \mid z, a_t)\, \belief_t(z),
 \eqfilterlab
 \end{equation}
-with the belief state $\belief_t$, the revision $p(z' \mid z, a_t)$, and the test $p(o_{t+1} \mid z')$ as its factors. We call such an object a \emph{belief state} only if (i) it is a claim about the environment carried between decisions, (ii) it carries or admits uncertainty, and (iii) it is \emph{testable}, committing to a prediction that a returned observation can support or falsify (Appendix~\ref{app:full}).
+with the belief state $\belief_t$, the revision $p(z' \mid z, a_t)$, and the test $p(o_{t+1} \mid z')$ as its factors. Language-model agents rarely separate the filter's two steps, so we call revision the whole move to $\belief_{t+1}$, which the test feeds. We call such an object a \emph{belief state} only if (i) it is a claim about the environment carried between decisions, (ii) it carries or admits uncertainty, and (iii) it is \emph{testable}, committing to a claim that an observation the agent receives can support or falsify, usually a prediction of the next one (Appendix~\ref{app:full}).
 \fi

@@ -8,7 +8,7 @@ P = [r for r in rows if r["evidence"].strip()[:1].upper() == "P"]
 def sec(r, k): return k in [s.strip() for s in r["survey_section"].split(";")]
 def cnt(pred): return len([r for r in rows if pred(r)]), len([r for r in P if pred(r)])
 def who(r, k): return r["who_maintains_belief"].strip().lower().startswith(k)
-def cred(r, k): return r["credited_object"].strip().lower().startswith(k)
+def cred(r, k): c = r["credited_object"].strip().lower(); return c.startswith(k) or (k == "interaction" and c == "memory op")
 def metric_yes(r): return r["belief_level_metrics"].strip().lower().startswith("yes")
 def own_obs(r): return r.get("own_obs_test", "") == "yes"  # language-model agents only; see apply_review.py
 items = [
