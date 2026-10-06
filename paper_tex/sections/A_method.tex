@@ -97,9 +97,9 @@ Table~\ref{tab:years} gives the included papers by year, source, and whether pee
 2023 & 27 & 21 & 2 & 0 & 0 & 1 & 0 & 0 & 51 & 41 \\ \rr
 2024 & 16 & 20 & 9 & 4 & 1 & 1 & 0 & 0 & 51 & 40 \\ \rr
 2025 & 18 & 69 & 20 & 20 & 2 & 5 & 1 & 0 & 135 & 51 \\ \rr
-2026 & 105 & 52 & 25 & 22 & 4 & 16 & 3 & 29 & 256 & 29 \\
+2026 & 105 & 52 & 25 & 22 & 4 & 16 & 3 & 29 & 256 & 30 \\
 \midrule
-Total & 178 & 171 & 58 & 47 & 7 & 23 & 4 & 29 & 517 & 181 \\
+Total & 178 & 171 & 58 & 47 & 7 & 23 & 4 & 29 & 517 & 182 \\
 \bottomrule
 \end{tabular}}
 \bcap
@@ -107,7 +107,7 @@ Total & 178 & 171 & 58 & 47 & 7 & 23 & 4 & 29 & 517 & 181 \\
 \end{table}
 
 \paragraph{Evidence level.}
-Of the 517 papers included after full-text reading and the author check (178 from keyword search, 283 from citation-tree expansion, 23 from the targeted fifth round, 4 from the sixth, and 29 from the update run), 181 are peer-reviewed and 336 are preprints; every number quoted in the text is the paper's own headline figure, taken from the abstract or the reported table.
+Of the 517 papers included after full-text reading and the author check (178 from keyword search, 283 from citation-tree expansion, 23 from the targeted fifth round, 4 from the sixth, and 29 from the update run), 182 are peer-reviewed and 335 are preprints; every number quoted in the text is the paper's own headline figure, taken from the abstract or the reported table.
 
 \paragraph{Full-text screening.}
 A paper passed full-text screening if it (a) concerns a language-model agent or a component used by one, and (b) constructs, revises, tests, learns, or evaluates an explicit state carried between decisions, or documents a failure of such a state; benchmarks and surveys that do (b) were kept and coded as such. Each paper read in full was recorded with the fields: who maintains the belief (source of the belief state), credited object, revision signal (source of the revision and test), whether belief-level metrics are reported, survey section, and role. The record is the source of Fig.~\ref{fig:taxonomy}, Tables~\ref{tab:representation}--\ref{tab:benchmarks}, and Fig.~\ref{fig:metrics}. Screening and coding were carried out with large-language-model agents: each sampled paper was read and coded against these fields under the fixed codebook above, and every paper whose coding supports a claim in the text was re-read in full. The authors defined the framework, the inclusion criteria, and the codebook, and are responsible for the record. An author then checked every coding by hand against the full text: of 2{,}590 field values on 518 papers, four were changed, one paper (a survey) was excluded and two belief-maintainer codes were corrected, giving agreement of 99.8\% on inclusion, 99.6\% on who maintains the belief, and 100\% on credited object, revision signal, and metric. A system counts as testing a written belief against the agent's own observations only if the model writes the belief and the signal that scores it is computed from observations the agent itself receives, with no oracle, simulator state, or teacher; the author marked this for every paper, and only ReBel and ABBEL qualify (column \texttt{own\_obs\_test} in the record). The score must also train the belief. Table~\ref{tab:defsens} shows how the count moves when this reading is made stricter or looser.
@@ -133,6 +133,6 @@ Ours: next or reconstructed own observation (+ ABBEL) & 2 & 0 \\ \rr
 \end{table}
 
 \paragraph{Peer-reviewed subset.}
-Because 336 of the 517 papers are preprints, Table~\ref{tab:sensitivity} recomputes the counts behind each insight box on the 181 peer-reviewed papers alone.
+Because 335 of the 517 papers are preprints, Table~\ref{tab:sensitivity} recomputes the counts behind each insight box on the 182 peer-reviewed papers alone.
 
 \input{tab_sensitivity}

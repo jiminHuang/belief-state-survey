@@ -297,7 +297,7 @@ How the belief is carried across an action and revised: triggers, mechanisms, an
 - **MIST** — [Recalling Too Well: Sycophancy Evaluation and Mitigation in Memory-Augmented Models](https://arxiv.org/abs/2606.10949) (2026)  `state: store`
 - **TOKI** — [TOKI: A Bitemporal Operator Algebra for Contradiction Resolution in LLM-Agent Persistent Memory](https://arxiv.org/abs/2606.06240) (2026)  `state: store`
 - **Trivium** — [Trivium: Temporal Regret as a First-Class Objective for Causal-Memory Controllers](https://arxiv.org/abs/2606.04421) (2026)  `state: world model` `credit: world-model loss`
-- **Contextual Belief Management (BeliefTrack)** — [When Should Models Change Their Minds? Contextual Belief Management in Large Language Models](https://arxiv.org/abs/2605.30219) (2026)  `state: written` `credit: state`
+- **Contextual Belief Management (BeliefTrack)** — [When Should Models Change Their Minds? Contextual Belief Management in Large Language Models](https://arxiv.org/abs/2605.30219) (2026, EMNLP 2026)  `state: written` `credit: state`
 - **OmniToM explicit belief modeling** — [OmniToM: Benchmarking Theory of Mind in LLMs via Explicit Belief Modeling](https://arxiv.org/abs/2605.26322) (2026)
 - **Representation signatures in trading agents** — [Representation Signatures and Risk-Feedback Alignment in LLM Trading Agents](https://arxiv.org/abs/2605.28850) (2026)  `state: context` `credit: output`
 - **Why world models: LLM state-tracking failures (Flux)** — [Why We Need World Models for AGI: Where LLMs Fail and How World Models May Outperform](https://arxiv.org/abs/2605.23972) (2026)  `state: context`
@@ -685,7 +685,7 @@ Belief-level evaluation and benchmarks: calibration, accuracy and revision, memo
 
 ## How the list is maintained
 
-The list is generated from a screening record, not edited by hand: `lit_search/runs/20260916_v3/manual_screen_all_v*.csv` (517 included papers, 181 peer-reviewed) holds one row per paper with who maintains the belief, the credited object, the revision signal, whether a belief-level metric is reported, and notes. Each month `lit_search/monthly_update.py` runs the keyword queries on OpenAlex and a phrase search on Hugging Face Papers for the new month, applies the same rule screen, and removes everything already seen; the survivors are read in full, coded, merged with `merge_update.py`, and this README is regenerated with `make_readme.py`. The procedure is in [`UPDATE.md`](UPDATE.md); the search protocol behind the survey is in Appendix A of the paper.
+The list is generated from a screening record, not edited by hand: `lit_search/runs/20260916_v3/manual_screen_all_v*.csv` (517 included papers, 182 peer-reviewed) holds one row per paper with who maintains the belief, the credited object, the revision signal, whether a belief-level metric is reported, and notes. Each month `lit_search/monthly_update.py` runs the keyword queries on OpenAlex and a phrase search on Hugging Face Papers for the new month, applies the same rule screen, and removes everything already seen; the survivors are read in full, coded, merged with `merge_update.py`, and this README is regenerated with `make_readme.py`. The procedure is in [`UPDATE.md`](UPDATE.md); the search protocol behind the survey is in Appendix A of the paper.
 
 ```bash
 cd lit_search

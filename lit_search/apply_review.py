@@ -11,6 +11,7 @@ key-claim answers in reviews.json are kept in author_own_obs)."""
 import csv, json, sys, pathlib
 root = pathlib.Path(__file__).parent; ts, vin, vout = sys.argv[1:4]
 OWN_OBS = {"tang2026rewarding": "yes", "lidayan2025abbel": "yes"}  # author ruling 2026-10-04, checked against the full text
+VENUE = {"xu2026should": ("P: EMNLP 2026", "EMNLP 2026")}  # accepted after screening (arXiv comment, checked 2026-10-06)
 FIX = {"who": "who_maintains_belief", "cred": "credited_object", "rev": "revision_signal", "metric": "belief_level_metrics"}
 rev = json.load(open(root.parent / "review_site" / "reviews.json"))
 src = root / "runs" / ts / f"manual_screen_all_{vin}.csv"
@@ -18,6 +19,7 @@ rows = list(csv.DictReader(open(src))); fn = list(rows[0].keys()) + ["author_che
 stats = {"checked": 0, "excluded": [], "changed": []}
 for r in rows:
     r["own_obs_test"] = OWN_OBS.get(r["bibkey"], "no"); r["author_check"] = ""; r["author_own_obs"] = ""
+    if r["bibkey"] in VENUE: r["evidence"], r["venue"] = VENUE[r["bibkey"]]
     if not r["decision"].lower().startswith("incl"): continue
     j = rev.get(r["bibkey"])
     if not j or j.get("status") != "done": r["author_check"] = "not checked"; continue
